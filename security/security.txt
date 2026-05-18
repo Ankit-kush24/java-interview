@@ -1,0 +1,82 @@
+https://www.geeksforgeeks.org/advance-java/spring-security-interview-questions/
+https://www.linkedin.com/posts/sahniaman_param-java-springboot-share-7351242491859255296-xnLX/
+
+https://www.hirist.tech/blog/top-25-spring-security-interview-questions-and-answers/
+----------------
+What is the difference between Authentication and Authorization?
+Authentication is the process of verifying who a user is (e.g., login with credentials).
+Authorization is the process of determining what an authenticated user is allowed to do (e.g., checking roles like ADMIN or USER).
+-------------
+How does the DelegatingFilterProxy work?
+It is a standard Servlet Filter that bridges the Servlet container’s lifecycle and Spring’s ApplicationContext. It delegates the actual work to a Spring-managed bean that implements the Filter interface (typically the FilterChainProxy).
+------------
+What is the SecurityContextHolder?
+This is where Spring Security stores details of the currently authenticated user. By default, it uses a ThreadLocal to store these details, making them available to all methods in the same thread of execution.
+
+Explain the role of the AuthenticationManager.The AuthenticationManager is the main strategy interface for authentication. The most common implementation is ProviderManager, which delegates the authentication request to a list of configured AuthenticationProviders.
+------------
+What is CSRF and how does Spring Security handle it?Cross-Site Request Forgery (CSRF) is an attack that tricks a user into performing unwanted actions. Spring Security enables CSRF protection by default, requiring a unique, synchronized token to be included in all state-changing requests (POST, PUT, DELETE).
+
+What is the difference between hasRole() and hasAuthority()?hasRole("ADMIN") automatically prefixes the string with ROLE_ (checking for ROLE_ADMIN).hasAuthority("ADMIN") checks for the exact string provided without any prefix.
+
+How do you handle Password Encoding?Spring Security uses the PasswordEncoder interface. The recommended implementation is BCryptPasswordEncoder, which uses a strong hashing function with a built-in salt to protect against rainbow table attacks.
+
+----
+
+---------
+How did you implement role-based access control (RBAC) in your applications?
+
+RBAC is implemented using roles like ADMIN and USER.
+
+Example:
+
+- ADMIN → full access  
+- USER → limited access  
+
+Spring Security restricts endpoints based on roles.
+--------------
+Security in Projects
+“You implemented JWT-based authentication in the Finance Dashboard. How did you ensure that tokens are secure and user data is 
+protected against common security threats?”
+
+
+https://www.youtube.com/watch?v=C1VhTO9_UH8&t=64s
+------------
+Spring Security 6 with JWT Authentication Tutorial | Step-by-Step Guide
+
+Anuj Kumar Sharma
+-----
+Spring Security | OAuth2 Authentication Using Google, GitHub, Twitter in Spring Boot
+
+Anuj Kumar Sharma
+--------
+Secure Your Spring Boot App with Roles & Permissions | Spring Security 2025
+
+Anuj Kumar Sharma
+
+--------
+Razorpay Integrates with springboot || Payment integration step by step || Springboot Series. ||
+
+Jstc Bhopal
+--------
+https://www.youtube.com/watch?v=_eTcseS410E
+PayPal Integration with Spring Boot | Step-by-Step Tutorial!
+
+Ali Bouali
+----------
+https://www.youtube.com/watch?v=tYfAt6QSkdA
+
+Razorpay Payment Gateway | Razorpay + Spring Boot | Razorpay Integration in Spring Boot | Enggadda
+
+EnggAdda
+----------
+https://www.youtube.com/watch?v=ctJwoMZt-Nc
+Build streaming app using spring boot in one shot
+
+Learn Code With Durgesh
+-----------
+Spring Security | Spring Boot Interview Questions | 🔥✅ ‪@LearnCodeWithDurgesh‬
+
+Aadi and Java
+-------
+https://www.youtube.com/watch?v=yrVLPgaeVho

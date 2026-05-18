@@ -1,0 +1,42 @@
+
+
+When a Kafka producer sends a message, how does the consumer receive it? Does it receive messages one by one or in batches?
+
+Kafka me consumer messages ko broker se poll() karke fetch karta hai aur usually messages batch me milte hain, na ki strictly ek-ek karke
+----------
+Divergent@DESKTOP-VTB430P MINGW64 /c/kafka/kafka_2.13-2.4.1
+$ cat /dev/urandom | tr -dc 'a-f0-9' | fold -w 8 | head -n 4 | paste -sd '-' -
+c3761a52-d2e0a67c-b62a567c-2ffe4131
+
+Divergent@DESKTOP-VTB430P MINGW64 /c/kafka/kafka_2.13-2.4.1
+$
+------------
+C:\kafka\kafka_2.13-2.4.1>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+bin\windows\kafka-server-start.bat config\server.properties
+
+
+bin\windows\kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092
+
+bin\windows\kafka-topics.bat --describe --topic quickstart-events --bootstrap-server localhost:9092
+
+bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic quickstart-events
+
+bin\windows\kafka-console-consumer.bat --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+---------------
+C:\kafka>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+C:\kafka>bin\windows\kafka-server-start.bat config\server.properties
+
+C:\kafka>bin\windows\kafka-topics.bat
+
+C:\kafka>bin\windows\kafka-topics.bat --create --topic cab-location --bootstrap-server localhost:9092
+
+C:\kafka>bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+C:\kafka>bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic cab-location
+
+C:\kafka>bin\windows\kafka-console-consumer.bat --topic cab-location --from-beginning --bootstrap-server localhost:9092
+
+----------

@@ -1,0 +1,246 @@
+1. Coding Questions
+1. Reverse a String
+Question:
+Write a Java program to reverse a given string without using any built-in reverse function
+Example:
+Input: Hello
+Output: olleH
+Approach:
+Traverse the string from last character to first
+Append each character into a new string
+Code:
+String str = "Hello";
+String rev = "";
+
+for(int i = str.length()-1; i >= 0; i--) {
+    rev += str.charAt(i);
+}
+
+System.out.println(rev);
+Time Complexity:
+O(n)
+--------------
+2. Write a Java program to check whether a given string is palindrome or not.
+String str = "madam";
+String rev = "";
+
+for(int i = str.length()-1; i >= 0; i--) {
+    rev += str.charAt(i);
+}
+
+if(str.equals(rev)) {
+    System.out.println("Palindrome");
+} else {
+    System.out.println("Not Palindrome");
+}
+---------------
+3. Remove Duplicates from Array (without collection)
+int arr[] = {1, 2, 2, 3, 4, 4};
+
+for(int i = 0; i < arr.length; i++) {
+    for(int j = i+1; j < arr.length; j++) {
+        if(arr[i] == arr[j]) {
+            System.out.println("Duplicate: " + arr[j]);
+        }
+    }
+}
+----------------------
+4. Remove Duplicates Using HashSet
+Question:
+
+Write a Java program to remove duplicate elements from an array using HashSet.
+Example:
+Input: [1,2,2,3,4,4]
+Output: [1,2,3,4]
+import java.util.*;
+
+int arr[] = {1, 2, 2, 3, 4, 4};
+
+Set<Integer> set = new HashSet<>();
+
+for(int num : arr) {
+    set.add(num);
+}
+System.out.println(set);
+----------------------------
+
+calculate the average salary of employees earning more than 80k using Java Stream AP
+
+You are given an array of integers from 1 to n, but one number is missing. Write a Java program or explain 
+how you would find the missing number.
+
+Using Java Stream API, how would you sort a list of employees based on their last name?
+Calculate the average of positive numbers using Java Streams: 12, -3, 5, -1, 4, 7
+Using Java Stream API, how would you sort a list of employees based on their last name?
+Write a Java program to find the average of only the positive numbers in the array.
+
+---------
+Using Java Stream API, sort a list of employees based on their last name.
+Example:
+Input:
+Sachin Tendulkar
+Virat Kohli
+Rohit Sharma
+
+Output:
+Virat Kohli
+Rohit Sharma
+Sachin Tendulkar
+
+
+String[] str = {"Sachin Tendulkar", "Virat Kohli", "Rohit Sharma"};
+
+List<String> sortedList = Arrays.stream(str)
+        .sorted(Comparator.comparing(s -> s.split(" ")[1]))   // last name
+        .toList();
+
+sortedList.forEach(System.out::println);
+-------
+8. Longest Palindrome Substring
+Question:
+
+Write a Java method to find the longest palindromic substring in a given string.
+If no palindrome substring of length 3 or more exists, return "No Palindrome".
+
+Example:
+
+Input: "abaxyzzyxf"
+Output: "xyzzyx"
+
+Input: "hello"
+Output: "No Palindrome"
+
+
+Java Code Solution
+public class LongestPalindromeSubstring {
+
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() < 3) return "No Palindrome";
+
+        int start = 0, end = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandFromCenter(s, i, i);     // odd length
+            int len2 = expandFromCenter(s, i, i + 1); // even length
+            int len = Math.max(len1, len2);
+
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+
+        if (end - start + 1 < 3) return "No Palindrome";
+
+        return s.substring(start, end + 1);
+    }
+
+    private static int expandFromCenter(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1; // length of palindrome
+    }
+
+    public static void main(String[] args) {
+        System.out.println(longestPalindrome("abaxyzzyxf")); // Output: xyzzyx
+        System.out.println(longestPalindrome("hello"));      // Output: No Palindrome
+    }
+}
+Explanation:
+
+Har character ko center maan ke palindrome expand karte hain (odd aur even length dono).
+
+Agar longest palindrome ki length 3 se kam hai, "No Palindrome" return karte hain.
+
+Expand karte waqt start & end indices update karte hain.
+
+Time Complexity
+O(n²)
+Space Complexity
+O(1)
+---------------
+Slide 3: What is Collecting in Streams?
+- Streams me data ko collect karne ke liye Collectors ka use hota hai
+- Common Collectors:- Collectors.toList() → List me convert kare
+- Collectors.toSet() → Duplicate-free Set me convert kare
+- Collectors.toMap() → Key-Value format me store kare
+
+
+
+
+Slide 4: Example - Collecting as List
+Code Example:
+List<String> names = Stream.of("John", "Emma", "Amit", "Sara")
+                          .collect(Collectors.toList());
+System.out.println(names);
+
+Slide 5: Introduction to Grouping Data
+- Grouping ka matlab: Similar values ko ek category me collect karna
+- Main method: Collectors.groupingBy()
+- Collectors.groupingBy() ek Map<Key, List<Value>> return karta hai
+
+-------------------
+Slide 6: What is groupingBy()?
+Collectors.groupingBy() is used to group similar data
+into categories.
+It returns data in the form of:
+Map<Key, List<Value>>
+Problem Statement
+Group employees based on their department.
+class Employee {
+    String name;
+    String department;
+    Employee(String name, String department) {
+        this.name = name;
+        this.department = department;
+    }
+}
+List<Employee> employees = List.of(
+    new Employee("Alice", "HR"),
+    new Employee("Bob", "IT"),
+    new Employee("Charlie", "HR"),
+    new Employee("David", "IT")
+);
+Map<String, List<Employee>> groupedData = employees.stream()
+    .collect(Collectors.groupingBy(e -> e.department));
+
+System.out.println(groupedData);
+Output: {HR=[Alice, Charlie], IT=[Bob, David]}
+----------------------------
+Slide 7: Multi-Level Grouping Example
+- Nested grouping: groupingBy ke andar groupingBy
+- Suppose City + Department ke basis par group karna ho
+
+Map<String, Map<String, List<Employee>>> multiLevelGrouping = employees.stream()
+    .collect(Collectors.groupingBy(
+        e -> e.city,
+        Collectors.groupingBy(e -> e.department)
+    ));
+
+
+
+
+Slide 8: Partitioning Data - partitioningBy()
+- Grouping ka ek special case: True/False condition
+- Example: Employee data partitioning based on salary above 50k
+
+Map<Boolean, List<Employee>> partitioned = employees.stream()
+    .collect(Collectors.partitioningBy(e -> e.salary > 50000));
+
+ Output: {true=[High Salary Employees], false=[Low Salary Employees]}
+
+
+Slide 9: Grouping vs Partitioning
+| Feature | Grouping | Partitioning | 
+| Type | Multiple groups | Two partitions (True/False) | 
+| Method | groupingBy() | partitioningBy() | 
+| Use case | Categorizing items | Separating items based on condition | 
+
+
+
+
+Slide 10: Custom Collector Example
+Agar aapko apni custom grouping logic implement karni ho toh Collector.of() ka use kar sakte hain.
+----------

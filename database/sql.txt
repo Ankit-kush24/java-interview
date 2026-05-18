@@ -1,0 +1,23 @@
+⭐ SQL / Database Questions
+9. What is a JOIN?
+
+(Left, Right, Inner, Full simple explain.)
+
+10. What is Index?
+
+Ans: Index helps in fast search, but inserts become slightly slower.
+
+11. Normalization?
+
+Organize data to reduce redundancy and improve integrity.
+
+How do you optimize complex database queries?
+------------
+ find the employee name where the department is 'Agriculture'
+
+SELECT e.employee_name
+FROM employees e
+JOIN department d ON e.department_id = d.department_id
+WHERE d.department_name = 'Agriculture';
+
+--------------

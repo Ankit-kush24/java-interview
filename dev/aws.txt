@@ -1,0 +1,135 @@
+AWS ke Core Components (Services)
+
+Aapko AWS ke 10 important services basic level pe samajhne chahiye:
+
+Service	Kaam	Java Developer ke liye Use
+EC2	Virtual Machine (server)	Spring Boot app host karne ke liye
+S3	Storage (files/images)	File upload/download service
+RDS	Relational DB (MySQL, PostgreSQL)	App ka database
+IAM	Security (user/permissions)	Access control
+VPC	Network setup	App secure zone mein chale
+Lambda	Serverless functions	Java function run without server
+API Gateway	REST APIs manage karna	Lambda + API banane ke liye
+CloudWatch	Monitoring & Logs	Error track karne ke liye
+SNS	Notification Service	Alert bhejna
+DynamoDB	NoSQL DB	JSON based fast database
+---------
+Step 1: Select AWS Region
+
+Open AWS Console
+
+Select the region where the client API / VPC is located
+
+Step 2: Open EC2 Service
+
+In the console search bar → type EC2
+
+Click Launch instance
+
+Step 3: Name the EC2
+
+Name: jump-host-ec2
+
+Step 4: Select AMI
+
+Choose Amazon Linux 2 or 2023
+
+Click Select / Continue
+
+Step 5: Choose Instance Type
+
+Select t2.micro or t3.micro
+
+Click Next
+
+Step 6: Create / Select Key Pair
+
+Choose existing key pair or create new one
+
+Name: jump-host-key
+
+Type: RSA
+
+Download the .pem file 
+
+Step 7: Network Settings
+
+VPC → select the same VPC as client API
+
+Subnet → choose a Public subnet
+
+Auto-assign Public IP → ENABLE
+
+Step 8: Security Group
+
+Let a new security group be created
+
+Default SSH allow is fine
+
+Step 9: Storage
+
+Keep default 8 GB
+
+Click Next
+
+Step 10: Launch Instance
+
+Click Launch instance
+
+EC2 instance is created 
+
+Step 11: Check Public IP
+
+Go to EC2 → Instances
+
+Click your instance
+
+Check Public IPv4 address → make sure it’s visible
+
+Step 12: Set EC2 Security Group Rules
+
+Inbound: SSH (22) → Source: My IP
+
+Outbound: HTTPS (443) → Destination: Anywhere
+
+Step 13: Client Firewall / Security Group
+
+Allow the VPC CIDR on client side → Example: 10.0.0.0/16
+
+Step 14: Test Connectivity from EC2
+
+From laptop, login to EC2:
+
+ssh -i jump-host-key.pem ec2-user@<EC2-PUBLIC-IP>
+
+
+From EC2, test:
+
+curl https://client-api.internal
+
+
+or private IP
+
+ If response received → network is working
+
+Step 15: Create SSH Tunnel from Laptop
+
+Open terminal on your laptop:
+
+ssh -L 8443:client-api.internal:443 ec2-user@<ec2-public-ip>
+
+ Keep terminal open
+
+Step 16: Postman Configuration
+
+URL:
+
+https://localhost:8443
+
+
+--------------
+Day-1 | Fundamentals of DevOps | Free DevOps Course | 45 days | #devopscourse #learning
+
+Abhishek.Veeramalla
+
+--------------

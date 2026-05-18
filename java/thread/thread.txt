@@ -1,0 +1,11 @@
+What is lock?
+Difference between Runnable vs Callable?
+
+Q: Difference between Runnable and Thread class
+
+Expected:
+
+Runnable → interface (better, supports multiple inheritance)
+Thread → class (limited, single inheritance)
+-------
+reentrantlock

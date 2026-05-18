@@ -1,0 +1,7 @@
+Scenario Based Java Interview Questions & Answers - Part 1 Java Guides and Ramesh Fadatare - AI & Tech
+Here are the scenario-based Java interview questions discussed in the video:
+You passed an object to a method and modified it inside the method. The change is visible outside. Why does this happen? (0:12)
+You set an object reference to null, but the memory was not freed immediately. Why? (2:36)
+Two references point to the same object, one modifies it. What happens? (4:03)
+Your application memory keeps increasing even after objects go out of scope. Why does this happen? (5:35)
+Object creation must be stopped from outside a class. How should this be designed? (8:02)

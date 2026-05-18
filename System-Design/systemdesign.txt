@@ -1,0 +1,2 @@
+Which is suitable top to bottom or bottom to up approach ?
+When do we use Sequence Diagram?

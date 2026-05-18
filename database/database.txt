@@ -1,0 +1,4 @@
+Difference between MySQL, PostgreSQL, MongoDB, and Redis? When would you use each?
+
+How do you optimize database queries in MySQL/PostgreSQL for large datasets?
+

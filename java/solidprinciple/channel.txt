@@ -1,0 +1,69 @@
+SOLID Principles In Java explained in Hindi (हिंदी) | Single Responsibility Principle code examples
+
+AndroJava Tech4U
+---------------
+Writing Clean Code In Java 🧑🏻‍💻: SOLID Principles Open-Closed Principle (OCP) In Hindi By Surya
+
+AndroJava Tech4U
+-----------------
+Liskov Substitution Principle (LSP) In Hindi | SOLID Principles In Hindi | System Design In Hindi
+
+AndroJava Tech4U
+---------------------
+Interface Segregation Principle (ISP) In Hindi | SOLID Principles In Hindi | System Design In Hindi
+
+AndroJava Tech4U
+-------------------
+Dependency Inversion Principle (DIP) In Hindi | SOLID Principles In Hindi | System Design In Hindi
+
+AndroJava Tech4U
+-----------------------
+What is SOLID Principles in Java ? | Explained in Hindi
+
+Bits And Bytes
+-----------------
+SOLID Principles in Java Explained with Code Examples | Low Level Design | Interview Preparation
+
+Coding with Aman
+------------------
+SOLID Principle in Software Engineering in details | DAY 1 | Backend Concepts in Hindi
+
+Learn Code With Durgesh
+-------------
+Learn SOLID Principles - Interview Questions
+
+Daily Code Buffer
+-------
+What is SOLID(First 5 Principles of Object Oriented Design)principles in Java in Hindi by Amit Goyal
+
+Amit Technologies
+----------------------------------------------------
+What is Design Pattern | How many design patterns are there ? | Lets understand in detail in hindi
+Learn Code With Durgesh
+---------------
+Java Creational Design Patterns Tutorial: Factory, Builder, Singleton & Prototype Explained!
+
+Coding with Aman
+-------------------
+Top 5 Must-Know Creational & Structural Design Patterns in Java
+
+Coding with Aman
+--------------
+
+
+--------------------------------------
+What is SAGA Design Pattern in Microservices Architecture and how to handle distributed transactions
+
+Amit Technologies
+
+----------------
+
+3. Microservices Design Patterns | Part1: Introduction and Decomposition Pattern | HLD
+
+Concept && Coding - by Shrayansh
+
+---
+4. SAGA Pattern | Strangler Pattern | CQRS | Microservices Design Patterns | System Design
+
+Concept && Coding - by Shrayansh
+

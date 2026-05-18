@@ -1,0 +1,40 @@
+What is Singleton Design Pattern?
+Answer (Short):
+
+Singleton pattern ensures that only one instance of a class exists in the application.
+
+It provides a global point of access to that instance.
+
+Use cases: Logger, Configuration Manager, Database Connection Pool
+
+public class Singleton {
+    // Private constructor to prevent instantiation
+    private Singleton() {}
+
+    // Static inner class holds the single instance
+    private static class Holder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    // Global access method
+    public static Singleton getInstance() {
+        return Holder.INSTANCE;
+    }
+}
+
+What is a design pattern and why do we use it?”
+Expected Answer:
+
+Design pattern is a reusable solution to a common software problem.
+
+It helps write clean, maintainable, and scalable code.
+
+
+Can you write Singleton Class and why do we use it? Best Way to write Singleton?
+-----
+resolve method in sigletom
+
+readResolve()
+-----------
+https://github.com/codedecode25/design-patterns
+------------

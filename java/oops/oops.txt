@@ -1,0 +1,153 @@
+Difference between Abstract Class and Interface
+Feature	Abstract Class	Interface
+Methods	Can have abstract + non-abstract (implemented) methods	Only abstract methods (until Java 7), default & static methods allowed from Java 8
+Variables	Can have variables, including protected, public, and can be non-final	All variables are public, static, final (constants)
+Multiple Inheritance	Not supported (a class can extend only one abstract class)	Supported (a class can implement multiple interfaces)
+Use Case	When classes share common behavior or state (fields)	When you need capability/contract, not shared state
+Constructor	Can have constructor	Cannot have constructor
+Access Modifiers	Methods can have any access modifier	All methods are public by default
+Performance	Slightly faster	Slightly slower due to extra abstraction
+Java Questions
+2. What are the pillars of OOP?
+
+Ans: Encapsulation, Abstraction, Inheritance, Polymorphism.
+(Simply explain 1–2 examples if asked.)
+
+What is Marker Interface , when to use it?
+🔹 1. OOP Concepts
+
+Q: Explain the 4 pillars of OOP
+Expected:
+
+Encapsulation → data hiding
+Inheritance → reuse of code
+Polymorphism → one method, many forms
+Abstraction → hiding implementation details
+
+👉 Follow-up: Give real-life examples
+
+🔹 2. Strings
+
+Q: Difference between String, StringBuilder, and StringBuffer
+Expected:
+
+String → immutable
+StringBuilder → mutable, not thread-safe (fast)
+StringBuffer → mutable, thread-safe (slow)
+🔹 3. == vs equals()
+
+Q: Difference between == and equals()
+
+String a = new String("Hello");
+String b = new String("Hello");
+
+System.out.println(a == b);       // false
+System.out.println(a.equals(b));  // true
+
+Expected:
+
+== → compares memory/reference
+equals() → compares content
+🔹 4. Overloading vs Overriding
+
+Q: Difference between method overloading and method overriding
+
+Expected:
+
+Overloading → same method name, different parameters (compile-time)
+Overriding → same method in child class (runtime)
+🔹 5. Multithreading
+--------
+If multiple interfaces have same default method, how to resolve conflict?
+
+Logical answer: Class must override the method and provide its own implementation.
+
+Example:
+
+interface A {
+    default void hello() { System.out.println("Hello from A"); }
+}
+interface B {
+    default void hello() { System.out.println("Hello from B"); }
+}
+class C implements A, B {
+    public void hello() {
+        System.out.println("Hello from C");
+    }
+}
+-------------
+Abstract class is used when you want to provide a base class with some common functionality and some methods that the child must implement.
+Interface is used to define a contract that a class must follow, and it allows multiple inheritance.
+
+🔥 One-line Difference
+
+Abstract class = “What something IS” (base class with shared behavior)
+
+Interface = “What something CAN DO” (capabilities)
+
+---------
+Difference between abstract class and interface?
+Explain polymorphism with an example.
+------
+ava Interface Basics
+Interface ek blueprint hota hai, jo sirf method declarations aur constants rakhta hai.
+Java 7 tak, interface ke methods automatically abstract hote the (public abstract), aur variables automatically public static final hote the.
+Java 8+ me interface me default aur static methods bhi aa gaye, but normally 100% abstraction ka matlab hai sirf method signatures, koi implementation nahi.
+2️⃣ Interface = 100% abstraction
+
+Reasoning:
+
+Interface me methods ka body nahi hota (implementation nahi hoti, except default/static methods).
+Isliye, jo bhi class interface ko implement karti hai, woh methods ka pura implementation provide karegi.
+Matlab interface sirf “kya kaam hoga” batata hai, “kaise hoga” nahi → isliye 100% abstraction.
+
+Example:
+
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+Yahan Vehicle interface 100% abstract hai.
+Koi bhi class Vehicle implement karegi, use start() aur stop() ka implementation dena padega.
+
+3️⃣ Abstract Class = 0% to 100% abstraction
+Abstract class me concrete methods aur abstract methods dono ho sakte hain.
+Agar sab methods abstract hain → 100% abstraction
+Agar kuch methods concrete hain → 0% se 100% ke beech abstraction
+
+
+How can an interface achieve 100% abstraction in Java?
+
+An interface achieves 100% abstraction because it can only declare method signatures without providing any implementation. Any class that implements the interface must provide concrete implementations for all its methods. This way, an interface defines “what to do” but not “how to do it”, making it fully abstract.
+
+2️⃣ How can an abstract class achieve 0 to 100% abstraction in Java?
+
+An abstract class can contain both abstract methods (without body) and concrete methods (with implementation).
+
+If all methods are abstract, it achieves 100% abstraction.
+If it has some concrete methods, the abstraction level is less than 100%, potentially down to 0%.
+This flexibility allows an abstract class to provide partial abstraction, unlike interfaces which are fully abstract.
+
+-----
+1️⃣5️⃣ Difference between Method Overloading and Method Overriding.
+
+5️⃣ Difference between Interface and Abstract class.
+
+
+Java Interview Question [Hindi] - Final Class Can Extends Abstract Class in Java?
+
+ProgRank
+
+https://smartprogramming.in/tutorials/
+
+
+How can interface achieve 100% abstraction in Java?
+https://www.youtube.com/watch?v=DeC-dunc7Jc
+
+a class implements two interfaces with the same default method. What would happen in this case?
+
+can an interface have a constructors?
+
+“Can you explain OOP concepts in Java?”
+“What is the difference between == and .equals() in Java?”

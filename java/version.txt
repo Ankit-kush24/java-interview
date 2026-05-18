@@ -1,0 +1,9 @@
+
+Java’s Project Loom (Virtual Threads)
+
+Kya hai: Java 19+ mein introduce hua ek feature jo concurrency ko bahut efficient banata hai. Traditional threads ke comparison mein, virtual threads lightweight hote hain aur thousands of concurrent tasks ko handle kar sakte hain bina system resources ko zyada use kiye.
+------
+Java Foreign Function & Memory API (Project Panama)
+
+Kya hai:
+Ye Java ka ek experimental API hai jo aapko Java se directly native code (C/C++) ko call karne aur native memory ko manage karne ka mauka deta hai, bina JNI (Java Native Interface) ke complex boilerplate ke.

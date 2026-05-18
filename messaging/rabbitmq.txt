@@ -1,0 +1,11 @@
+
+https://www.youtube.com/watch?v=khyHN9QEDTI
+
+
+Spring Boot + RabbitMQ Publisher & Subscriber Example | Implement All RabbitMQ Exchange Types | AMQP
+
+Techno Town Techie
+
+RabbitMQ Integration with Spring Boot as Message Broker | Rabbit MQ | Spring Boot | Course Overview
+
+EnggAdda

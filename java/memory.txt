@@ -1,0 +1,4 @@
+How does Java garbage collection work?
+
+
+can Java have memory leaks despite GC?

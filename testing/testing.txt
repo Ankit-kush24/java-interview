@@ -1,0 +1,2 @@
+What is code coverage in unit testing ? How much % is minimum required? What if you can’t write above 80% , what to do?
+

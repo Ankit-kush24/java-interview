@@ -1,0 +1,41 @@
+What is Docker and why is it used?”
+Expected Answer:
+
+Docker is a containerization platform.
+
+It packages applications with all dependencies, so they run consistently across environments.
+
+2️⃣ Docker Components
+
+Question:
+
+“What is the difference between a Docker image and a Docker container?”
+Expected Answer:
+
+Image: Blueprint or template of the application.
+
+Container: Running instance of the image.
+
+3️⃣ Practical Scenario
+
+Question:
+
+“How would you deploy a Spring Boot microservice using Docker?”
+Expected Answer:
+
+Package the app as a Docker image.
+
+Run it as a Docker container on a host or Kubernetes.
+
+Connect it to the required database and services.
+
+4️⃣ Docker Networking
+
+Question:
+
+“How do containers communicate with each other?”
+Expected Answer:
+
+Through Docker networks (bridge, host, overlay).
+
+In Kubernetes, services and cluster networking manage container communication.

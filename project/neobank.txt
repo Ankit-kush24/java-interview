@@ -1,0 +1,111 @@
+can you please introduce yourself and your recent project in brief?
+
+
+How did you ensure real-time performance while processing data every second?
+
+What was the biggest challenge in this project and how did you solve it?
+
+
+
+How did you design secure APIs for sensitive banking data?
+
+
+How did you ensure secure handling of UPI transactions while integrating third-party APIs?
+
+“Which feature was most challenging and how did you solve it?”
+“Can you tell me about a problem you faced in a project and how you solved it?”
+
+What challenges did you face in this project?
+
+Performance & Caching
+“In your Student Records project, you implemented server-side pagination and caching. Can you explain 
+your caching strategy and how you handled cache invalidation to maintain data consistency?”
+
+Scenario-based Problem Solving
+“Suppose one of your APIs is suddenly slowing down under high load. How would you debug it?”
+
+
+How do you manage time and deadlines while working on multiple projects?
+Describe a situation where you solved a complex bug in production.
+
+------
+Project: CamPostMoney – a NeoBank platform in Cameroon.
+
+Problem Solved: Digitizes banking services – wallets, payments, withdrawals, micro-loans, remittances – making financial services faster, secure, and accessible.
+
+NeoBank Difference: Fully digital, no physical branches; unlike traditional banks, it’s app/web-based, real-time, and scalable.
+---------
+🔹 Project: CampostMoney (Secure NeoBank Transaction Gateway)
+Client: AfricaSoftBank (Cameroon)
+Duration: Aug 2024 – Oct 2025
+Tech Stack: Java Spring Boot, PostgreSQL, Gradle, Angular, Tailwind CSS, REST APIs, JWT
+
+- Developed secure APIs for financial operations including cash-in/out, agent transfers, merchant payments, refunds, and customer onboarding.
+- Implemented AES-256 based application-level encryption, dynamic encryption keys, and 2FA for maximum data security.
+- Built and integrated Biller Gateway for merchant/utility payments with third-party API handling.
+- Designed Manager Portal with dashboards, secure login, and real-time analytics using Angular + Tailwind.
+- Added export/import features for transactions in PDF, Excel, and CSV formats.
+- Optimized APIs to support 10,000+ monthly transactions with <1% failure rate.
+- Collaborated remotely with international teams and participated in full SDLC (Agile model).
+-----------
+1️⃣ Refined Spoken Answer (for “Can you describe your project?”)
+
+Good morning.
+My name is Rahul, and I have over four years of experience as a Backend Developer.
+I mainly work with Java, Spring Boot, REST APIs, and PostgreSQL.
+
+For the past fifteen months, I’ve been working on a NeoBanking project called CamPostMoney, which is a digital banking platform in Cameroon.
+
+The system allows users to manage wallets, send and receive money, pay merchants, withdraw cash, take micro-loans, and perform international remittances.
+
+The platform has four main portals —
+
+Customer Portal for wallet management, payments, transaction history, and loan requests.
+
+Agent Portal where agents handle deposits, withdrawals, and customer transactions.
+
+Manager Portal for transaction approvals and performance analytics.
+
+Admin Portal for system configuration, user management, and reporting.
+
+I was responsible for developing and maintaining the backend APIs for all these portals using Spring Boot and PostgreSQL.
+
+In the authentication module, I built secure login, forgot/update password APIs, Two-Factor Authentication using OTP via SMS or Email, and a Refresh Token mechanism supporting multiple roles (Customer, Agent, Manager, Admin, Merchant).
+
+For transactions, I developed APIs for:
+
+Wallet-to-wallet transfer with duplicate transaction checks
+
+Merchant payments (initiation + confirmation)
+
+Cash-out / withdrawal APIs with retry mechanisms and validation
+
+Balance & transaction history APIs
+
+Transaction limits applied per customer
+
+I also integrated international remittance and external top-up APIs.
+
+For Managers and Admins, I implemented approval workflows, user management, analytics, and audit logging to ensure traceability.
+
+On the data management side, I built import/export APIs to handle large datasets in CSV, Excel, or PDF formats — including streaming exports for real-time audit data.
+
+Additionally, I implemented custom frequency execution, which allows scheduled merchant payments to process automatically every few seconds.
+
+On the analytics front, I designed APIs that aggregate transaction, merchant, and communication metrics from different journal and log tables.
+
+I used PostgreSQL for data storage — with encryption, validation, and auditing at both API and database levels.
+I also managed schema evolutions for new business requirements like merchant_collector_product and gateway_remittance.
+
+Overall, this project made CamPostMoney NeoBank a secure, scalable, and fully digital financial platform.
+It significantly improved transaction reliability, reduced operational errors, and enhanced customer experience.
+
+Through this project, I’ve strengthened my expertise in secure API design, financial transaction handling, and FinTech architecture.
+
+💡 2️⃣ Domain Explanation (if asked “Which domain?” or “Why FinTech?”)
+
+This project belongs to the FinTech domain, because it deals with digital wallets, payments, micro-loans, and remittance services — all of which fall under Financial Technology.
+
+A NeoBank is basically a 100% digital bank — no physical branches, everything happens online via mobile or web.
+Unlike traditional banks, NeoBanks rely heavily on secure APIs and real-time integrations for faster and more convenient banking.
+------------------

@@ -1,0 +1,146 @@
+https://www.hirist.tech/blog/top-40-spring-boot-interview-questions/
+
+1.Difference between @PathVariable and @RequestParam
+@RequestParam extracts query parameters from the URL (e.g., /search?name=john), whereas @PathVariable extracts values directly from the URI path (e.g., /users/1).
+
+Summary Table: Parameter Extraction
+Feature 	@RequestParam	@PathVariable
+URL Example	/api?id=10	/api/10
+Default Required	Yes (can be changed)	Yes
+Best Use Case	Optional filters, pagination	Identifying specific resources
+Multiple Values	Supported (List/Array)	Not supported for single path segment
+
+2.What happens if a parameter is missing in the request?
+By default, @RequestParam is required. If a client omits it, Spring Boot returns a 400 Bad Request. To avoid this, you can set required = false or provide a defaultValue.
+
+3.How to handle multiple values for the same parameter?
+If a URL contains ?id=1&id=2, you can map it to a List<Long> ids or an array Long[] ids in your controller method.
+
+4.Can you map query parameters to a POJO?
+Yes. Instead of using multiple @RequestParam annotations, you can use a Data Transfer Object (DTO)  (POJO) without any annotation. Spring will automatically bind matching query parameters to the fields of that object.
+
+5.How do you handle special characters or naming mismatches (e.g., snake_case to camelCase)?
+If a query parameter is named book_id but your Java field is bookId, you must explicitly specify the name: @RequestParam("book_id") String bookId.
+
+5.Can you read all query parameters dynamically?
+Yes, by using a Map<String, String> with the @RequestParam annotation. This captures all parameters into a single map regardless of their names. 
+----------
+7.Design a REST endpoint that filters products by type. If type is missing, return all products.
+Answer: Use @RequestParam(value = "type", required = false) String type. In your logic, check if type is null to decide whether to filter or return all results.
+Scenario: Validation
+
+8.How do you validate a @RequestParam (e.g., ensuring a age parameter is over 18)?
+Answer: Annotate your controller with @Validated and use Bean Validation  annotations like @Min(18) directly on the method parameter: @RequestParam @Min(18) int age.
+
+9.Can you pass a RequestBody in a GET method instead of using RequestParam?
+
+----------
+Parameter Extraction
+How do you map a query parameter with a name that isn't a valid Java identifier (e.g., page-number)?
+What happens if a @RequestParam is missing from the URL?
+How do you capture multiple values for the same parameter name (e.g., ?id=1&id=2)?
+Can you capture all query parameters without knowing their names beforehand?
+What is the core difference between @RequestParam and @PathVariable?
+Can you use @RequestParam to map complex objects in a GET request?
+How can you handle Snake Case query parameters into Camel Case Java fields?
+🔹 Cron & Scheduler Questions
+What is Cron in Spring Boot?
+What is Scheduler in Spring Boot?
+Difference between Cron and Scheduler
+🔹 Spring Boot @Transactional Questions
+How does @Transactional work in Spring Boot?
+When does @Transactional not work?
+What happens if @Transactional is used on private or protected methods?
+Why does Spring not apply @Transactional on private methods?
+How can you make @Transactional work in such scenarios?
+Can @Transactional work on private methods? Why?
+🔹 Spring Boot Internal / Architecture Questions
+Why do we need @SpringBootApplication instead of 3 annotations separately?
+What happens if we remove @ComponentScan?
+Can Spring Boot run without application.properties?
+What happens if two beans of same type exist with @Autowired?
+What is default embedded server in Spring Boot?
+Can we disable auto-configuration? How?
+What happens if @Repository is not used in DAO class?
+Why do we use @Qualifier?
+Difference between @Primary and @Qualifier
+What happens if no bean is found for @Autowired?
+Can we create Spring Boot app without main() method?
+Role of Spring Boot Starter dependencies
+Difference between @ControllerAdvice and @ExceptionHandler
+What happens if we don’t return ResponseEntity?
+Can we change default port without properties file?
+Use of CommandLineRunner
+What happens if two @Configuration classes define same bean?
+What is lazy initialization in Spring Boot?
+Difference between component scanning and manual bean creation
+What if multiple main classes exist?
+🔹 Beans & Lifecycle
+Can Spring Boot run without Spring context?
+What happens if no starter dependency is added?
+Why do we need SpringApplication.run()?
+What if main class is outside base package?
+Can we run multiple Spring Boot apps in one project?
+Default scope of Spring bean
+What if no @Component annotation is used?
+Can we create bean without @Configuration?
+Bean lifecycle in Spring
+What happens if bean initialization fails?
+🔹 Dependency Injection
+What happens if dependency is missing for @Autowired?
+Can we make dependency optional?
+What is circular dependency problem?
+How Spring resolves dependencies internally?
+Can we inject interface without implementation?
+🔹 Auto Configuration & Internal Working
+What happens internally when Spring Boot starts?
+Role of SpringApplication class
+How Spring Boot loads configurations
+What is spring.factories / AutoConfiguration.imports?
+Can we disable specific auto-configuration?
+🔹 Annotations Questions
+Difference between @Controller and @RestController
+Can we use multiple @Component in same class?
+What happens if @Service is missing?
+Is @Repository mandatory for JPA?
+Can we run Spring Boot without annotations?
+🔹 Exception Handling
+What happens if no exception handler is defined?
+Default error response in Spring Boot
+Use of @ControllerAdvice
+How Spring Boot handles runtime exceptions
+Can we customize error response?
+🔹 REST API Behavior
+What happens if wrong HTTP method is used?
+Difference between 404 and 500 error
+Can Spring Boot handle multiple content types?
+Default message converter in Spring Boot
+What happens if API returns void?
+🔹 REST / Request Mapping Questions
+Difference between @RequestParam and @PathVariable
+Can @RequestParam be used in POST?
+Can @PathVariable be optional?
+What if required @RequestParam is missing?
+defaultValue in @RequestParam
+Can we use both @RequestParam and @PathVariable?
+Why @PathVariable is more RESTful?
+Can @RequestBody replace @RequestParam?
+Can GET request have body?
+Which is more secure: query param or request body?
+🔹 Trap Questions
+Can we use GET to save data?
+Can POST be used to fetch data?
+Can we delete using GET?
+Why not use only POST for all APIs?
+Can we send body in GET?
+Can @RequestParam replace @RequestBody completely?
+Can @PathVariable send JSON?
+Is GET always safe?
+Can POST be idempotent?
+Can PATCH replace PUT?
+
+How would you design a REST API for a payment system?
+Difference between JPA and Hibernate?
+-----
+https://www.youtube.com/shorts/vqdJOTyNEEI
+------------

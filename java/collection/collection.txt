@@ -1,0 +1,339 @@
+How HashMap works internally in Java | Popular Java Interview Question | Explained in Hindi
+
+Bits And Bytes
+
+https://www.youtube.com/watch?v=eKoeKQ2yGjU
+#15 - Top 20 HashMap Interview Questions in Java || By Naveen AutomationLabs
+
+Naveen AutomationLabs
+below question
+-------------
+1️⃣1️⃣ How does HashMap work internally?
+
+1️⃣2️⃣ Use of HashSet.
+---------------------
+HashMap Basic Structure
+Interview Trap Questions
+❓ Q1: Agar 2 objects ka hashCode same ho?
+❓ Q2: Agar equals override kiya but hashCode nahi?
+❓ Q3: HashMap thread safe hai?
+❓ Q4: Null allowed?
+❓ Q5: HashMap ka size always power of 2 kyun hota hai?
+Answer:
+
+Index calculation:
+
+index = (n - 1) & hash
+
+
+Agar n power of 2 hoga →
+bitwise AND fast modulus ka kaam karega.
+
+Example:
+
+n = 16 (10000)
+n - 1 = 15 (01111)
+
+
+Isse hash evenly distribute hota hai.
+
+👉 Agar power of 2 nahi hota → distribution kharab.
+Q6: equals() kab call hota hai?
+
+✔ Jab:
+
+Same bucket index
+
+Same hash
+
+Tab equals() final decision karta hai.
+
+Sequence:
+
+hashCode() → index → compare hash → equals()
+❓ Q7: Agar hashCode() constant return kare?
+
+Example:
+
+public int hashCode() {
+    return 1;
+}
+
+
+Result:
+
+✔ Sab keys same bucket me jayengi
+✔ LinkedList/Tree ban jayega
+✔ Performance O(n) ya O(log n)
+
+👉 HashMap ban jayega slow map.
+❓ Q8: Mutable key use karne ka danger?
+
+Example:
+
+class User {
+   String name;
+}
+
+
+Agar key insert karne ke baad:
+
+user.name = "changed";
+
+
+To:
+
+✔ hashCode change ho sakta hai
+✔ get() fail karega
+✔ Entry lost lagti hai
+
+⚠ Rule: HashMap key immutable honi chahiye.
+
+Isliye:
+
+String safe hai
+
+Custom object me fields final rakho
+
+❓ Q9: HashMap fail-fast kya hota hai?
+
+Iterator use karte waqt:
+
+for(String key : map.keySet()){
+    map.put("X",10); // modify
+}
+
+
+→ ConcurrentModificationException
+
+Kyuki:
+
+HashMap modCount maintain karta hai.
+Structural modification detect karta hai.
+
+❓ Q10: HashMap vs Hashtable?
+HashMap	Hashtable
+Not thread safe	Thread safe
+Allows null	No null
+Faster	Slower
+
+Hashtable purana legacy class hai.
+
+❓ Q11: HashMap me order maintain hota hai?
+
+❌ Nahi
+
+Agar order chahiye:
+
+LinkedHashMap
+
+❓ Q12: Treeification kab nahi hoga?
+Treeification in HashMap occurs when a bucket contains more than 8 elements and the overall table size is at least 64. Otherwise, HashMap prefers resizing instead of converting the bucket into a tree.
+
+Agar bucket size > 8
+BUT total capacity < 64
+
+Tab resize hoga
+Tree nahi banega.
+
+👉 Ye interview ka rare trap hai.
+
+❓ Q13: HashMap internal resizing ka cost kya hota hai?
+
+✔ O(n)
+✔ Sab entries rehash hoti hain
+✔ Expensive operation
+
+Isliye initial capacity sahi dena smart move hai.
+
+❓ Q14: Concurrent access me problem kya hoti hai?
+
+Java 7 me:
+
+Resize ke time linked list reverse
+
+Infinite loop possible
+
+Java 8 me fix.
+
+Par still:
+HashMap thread safe nahi.
+
+❓ Q15: Why String is perfect key?
+
+✔ Immutable
+✔ Cached hashCode
+✔ Proper equals() implementation
+✔ Good distribution
+
+🧨 Ultra Deep Level Question
+❓ Q16: Why hash is modified like:
+hash ^ (hash >>> 16)
+
+
+HashSet Internal Working — Complete Interview Answer
+1️⃣ Definition
+
+"HashSet is a collection class in Java that implements the Set interface.
+It stores unique elements only and does not maintain insertion order."
+
+2️⃣ Underlying Data Structure
+
+"Internally, HashSet is backed by a HashMap.
+Every element of the HashSet is stored as a key in the HashMap, and all keys point to a dummy constant value, usually called PRESENT.
+HashSet does not care about values; it only uses the keys to store elements."
+
+3️⃣ How Elements are Added
+
+"When we call hashSet.add(element), internally it does hashMap.put(element, PRESENT).
+
+First, it calculates the hashCode of the element to find the correct bucket in the HashMap.
+
+Then it uses the equals() method to check if the element already exists in that bucket.
+
+If the element does not exist, it is added.
+
+If it already exists, it is ignored.
+This is how duplicates are avoided.
+
+----
+3. Difference between List, Set, Map?
+
+List – ordered, duplicates allowed
+
+Set – unordered, no duplicates
+
+Map – key/value pairs, keys unique
+
+Difference Between Set and List in Java
+
+Why does a Set in Java not allow duplicate elements?
+
+Difference Between Set and List in Java
+Feature	List	Set
+Duplicates	Allows duplicate elements	Does not allow duplicates
+Order	Maintains insertion order	No guarantee of order (except LinkedHashSet)
+Indexing	Elements can be accessed by index	No indexing, cannot access by position
+Common Implementations	ArrayList, LinkedList, Vector	HashSet, LinkedHashSet, TreeSet
+Use Case	When you need ordered collection or allow duplicates	When you want unique elements only
+
+Core Java – Data Structures
+“How does HashMap work internally in Java? What happens when two keys have the same hash code?”
+
+What is the difference between HashMap and ConcurrentHashMap?
+
+how does hashmap handle collision internally
+
+-------
+What is hashCode()?
+
+In Java, hashCode() is a method that returns an integer value (a hash value) for an object.
+It is used to efficiently store and retrieve objects in hash-based collections like:
+
+HashMap
+
+HashSet
+
+Hashtable
+
+🔍 Why is hashCode() important?
+
+Because hash-based collections use the hash code to decide which bucket an object will be placed in.
+A good hash code improves search performance.
+
+🔗 Relationship between equals() and hashCode():
+
+If two objects are equal (equals() returns true),
+→ they must have the same hashCode.
+
+But if hashCode is the same, they may or may not be equal.
+
+-------
+let's say you need a thread safe list where reads are very frequent and writes are rare. Which collection would you use?
+
+-----
+Question:
+
+Aapko ek method likhni hai jo ek List<Integer> ko input le aur return kare saaray unique elements jo list mein do baar ya usse zyada baar aaye ho, ascending order mein.
+
+Example:
+
+Input: [4, 5, 6, 4, 2, 6, 7, 6]
+Output: [4, 6]
+
+Challenge:
+
+Aap HashMap ya Streams ka use kar sakte ho.
+
+Complexity ko optimize karne ki koshish karein.
+
+1️⃣ HashMap ke saath solution
+import java.util.*;
+
+public class DuplicateElements {
+    public static List<Integer> findDuplicates(List<Integer> list) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (Integer num : list) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+            if (entry.getValue() >= 2) {
+                result.add(entry.getKey());
+            }
+        }
+
+        Collections.sort(result); // ascending order
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(4, 5, 6, 4, 2, 6, 7, 6);
+        System.out.println(findDuplicates(numbers)); // Output: [4, 6]
+    }
+}
+
+Explanation:
+
+HashMap me har number ki count store ki.
+
+Jo numbers 2 ya usse zyada baar aaye, unko result me add kiya.
+
+Last me Collections.sort() se ascending order me sort kiya.
+
+✅ Complexity: O(n log n) (sorting ke liye)
+✅ Space: O(n)
+
+2️⃣ Java 8 Streams ke saath solution
+import java.util.*;
+import java.util.stream.*;
+
+public class DuplicateElementsStream {
+    public static List<Integer> findDuplicates(List<Integer> list) {
+        return list.stream()
+                .collect(Collectors.groupingBy(n -> n, Collectors.counting()))
+                .entrySet().stream()
+                .filter(e -> e.getValue() >= 2)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(4, 5, 6, 4, 2, 6, 7, 6);
+        System.out.println(findDuplicates(numbers)); // Output: [4, 6]
+    }
+}
+
+Explanation:
+
+Collectors.groupingBy se frequency map bana liya.
+
+.filter se sirf count >=2 wale elements liye.
+
+.map se keys liye aur .sorted() se ascending order me sort kiya.
+---------------
+https://www.youtube.com/watch?v=4dneUzWZLCs
+https://www.youtube.com/watch?v=AX3Z3QDd-r0
+------------

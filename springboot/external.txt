@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=8U0LFpEe8oA
+
+How to Call External APIs RestTemplate, WebClient, RestClient and HttpExchange
+
+RestTemplate kis pattern par kam karta he blocking

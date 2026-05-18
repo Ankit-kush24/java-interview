@@ -1,0 +1,28 @@
+type of checcked and unchecked 
+
+8️⃣ Difference between Checked and Unchecked Exceptions.
+
+
+What is the difference between throw and throws in Java?
+
+Feature	throw	throws
+Purpose	Used to actually throw an exception	Used in method signature to declare exceptions that method might throw
+Where Used	Inside method body	In method declaration
+Number of Exceptions	Only one exception can be thrown at a time	Can declare multiple exceptions separated by comma
+Checked/Unchecked	Can throw both checked and unchecked exceptions	Mainly used for checked exceptions
+Example	throw new IOException("Error");	void readFile() throws IOException, SQLException { }
+
+What is Try with Resource ?
+
+How did you handle exception handling and error logging in your applications?
+
+“How do you handle exceptions in Java or Spring Boot?”
+Can you explain what exception handling is in Java and how try-catch-finally works?
+try {
+    return 10;
+} finally {
+    return 5;
+}
+“What will be the output of this code and why?
+
+How do you handle exceptions globally in Spring Boot?
