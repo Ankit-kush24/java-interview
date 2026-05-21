@@ -2,3 +2,32 @@ Spring Security Complete Course: Introduction and usage, application level secur
 
 CoderX Ankit
 --------
+https://www.youtube.com/watch?v=JuyaVlK-kGQ
+
+Build Your Own SSO | What is SSO | SSO Explained
+
+Piyush Garg
+---------------
+https://www.youtube.com/watch?v=QzntvHz23tw
+Token vs Session Authentication | Authentication Explained!!!
+
+Piyush Garg
+-----------------------
+
+https://www.youtube.com/watch?v=O4Mkmijijds&list=PL5jDaKBYGmhmHVG10nvyR0g2JYQBh8v3Y
+
+What is JWT in Hindi ? | JSON Web Token | Refresh Token | MBSA
+
+Duo Coderz
+---------------
+https://www.youtube.com/watch?v=xrj3zzaqODw
+What is JWT token and JWT vs Sessions
+
+Chai aur Code
+-------------
+https://www.youtube.com/watch?v=f54I61Apmxs
+Cookie vs Session vs Local Storage vs Session Storage in Web Development 🔥🔥
+
+Technical Suneja
+
+-------------------

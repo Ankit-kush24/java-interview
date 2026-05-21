@@ -1,0 +1,53 @@
+165 entitymanager vs entitymanagerfactory
+
+
+119 what is qualifier 
+118 what is autoworing 
+
+Day 117
+what is bean- A bean is basically an object only which is created configured and managed by the spring IOC container there are two ways of creating beans in spring first one is we can create a configuration class annotated with the @Configuration then within this class we can create methods annotated with the @Bean and from these methods we can return the objects this is basically helpful when we want customized beans something like resttemplate with the load balancer but generally we just want simple beans so for that we can annotate the respective classes with the stereotype annotations like @Component then spring will do a scanning and then create beans for all such classes.
+116 what is depedency injection.
+Day 115
+what is inversion of control
+Inversion of control is a desing principle where instead of our code creating the objects it depends on the framework to do so the framework is responsible for creating the objects managing the life cycle and injecting the depedencies as per the requirement generally on the basis of a configuration file or using annotations consider it like hiring the contractor to buid your house where we tell how the house needs to be created and then the contractor takes the control they further hire the specialist to fulfill our requirement.inversion of control helps in achieving loose coupling and makes us focus more on the business logic spring is a popular framework which helps do so with the help of depedency injection. 
+
+Day 114 tight coupling vs loose coupling 
+
+Day 113 what is method reference 
+
+112 what is thread local
+
+what is thread safe code
+
+what is memory leak in java
+
+what is cyclic depedency.
+
+what is the benefit of private method in interface
+
+what are covariant return type?
+
+permGen vs metaspace.
+
+what is ReentrantLock 
+
+what is fork join pool
+
+what is parallel stream
+
+why to use getter and setter?
+
+what is livelock in multithreading 
+
+89.runnable vs callable interface.
+
+88 how does thread pool reuse a thread?
+
+86.what is executor framework
+
+--------
+Help4CodeeLearning
+runnable vs callable interface
+Runnable and Callable are two interfaces used for multithreading in Java. 
+Runnable was introduced in Java 1.0, and Callable in Java 1.5. Runnable does not return any value and cannot throw checked exceptions,
+ whereas Callable returns a value and can throw checked exceptions. In Runnable, we override the run() method, and in Callable, we override the call() method

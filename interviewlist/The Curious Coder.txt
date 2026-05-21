@@ -1,0 +1,5 @@
+1)How @PathVariable works in REST APIs
+2)How to use @RequestParam in Spring Boot
+3)The difference between @PathVariable and @RequestParam
+4)How these two can be interchangeable in certain cases
+5)How to handle multiple @PathVariables in an API

@@ -1,0 +1,325 @@
+1.Why are hashcode() and equals() methods important in java?
+2.Why does equals get called less frequently than hash code in Hashmap?
+3.Can you tell me the condition where the finally block will not be executed?
+4.Can an interface have a constructor in java?
+5.Can a constructor return anything?
+6.Can a constructor be declared final and static?
+7.What are is-a and has-a relationships in java?
+8.how does encapsulation work using private fields and getters/setters.
+9.What are some commonly used annotations in spring boot?
+10.what is the difference between @Value and @ConfigurationProperties?
+Single property,structured config,cleaner approach.
+11.what is the default loggin framework used in spring boot?
+12.what is field injection and what are its drawbacks?
+@Autowired field, hidden dependency,hard testing,no immutability.
+13.what is the purpose of @Postconstruct and predestroy?
+@Postconstruct init,@PreDestroy cleanup.
+14.what is caching and how have you implemented it in your projects?
+Store frequent data,@Cacheable,@CacheEvict,Redis.
+15.What is an index in sql and why is it used?
+faster lookup,column structure,Reduce scan.
+16.Have you ever optimized a database query? how?
+Query Optimization-identity slow query,Execution plan,Add indexes,Optimize joins,Reduce data.
+17.what are functional interfaces in java?Can you name some built in ones?
+Functional interfaces- one abstract method,lambda support,runnable,callable,comparator.
+18.why is comparable not considered a functional interface?
+comparable concept-compareTo method,not lambda focused,natural ordering,comparator preferred.
+19.How are your APIs communicating in a microservices Architecture?
+API communication-REST calls,sync communication,Async communication.
+20.what happens if booking succeeds but payment fails in a microservices system?
+Distributed transaction-saga pattern,compensation action,booking rollback.
+21.How do you handle concurrent users hitting the same API?
+concurrency handling-synchronization,stateless design,scaling.
+22.How would you design a system to handle high traffic for the same request?
+High traffic desing, load balancer ,caching.
+23.How would you desing a system to handle high traffic for the same request?
+High traffic design- load balancer,cashing.
+24.How do you secure APIs using jwt authentication?
+JWT security-token based,token validation,User info.
+25.How does OAuth 2.0 work?
+OAuth 2.0-Authorization server,Access token,no password sharing.
+26.What is the half open state in a circuit breaker?
+Circuit breaker states-Closed state,open state,half open state.
+27.Can you create a custom spring boot starter?
+Custom starter- Bundle config,dependencies,Auto configuration.
+28.What is your current java version and what features do you use from it?
+java version usage- java 17-Switch expressions,Stream improvements.
+29.What is the .m2 folder and why is it important in maven?
+.m2 folder- local dependencies,faster builds,settings.xml.
+30.If streams are not allowed how would you solve the same problem?
+loop solution-modulus operation,extract digit.
+31.What kind of recent features have you worked on in your project?
+Project experience-API development,performance tuning,microservices work.
+32.Can you implement a solution to sum digits of a number using java streams?
+Stream solution-number to string,stream chars,map digits,reduce sum.
+33.How does spring boot handle dependency injection?
+34.what is circuit breaker pattern and where is it used?
+35.How do you ensure data consistency in microservices?
+data consistency-no global transaction.
+36.what is the difference between monolithic and microservices architecture?
+37.What is the difference between REST and SOAP web services?
+REST VS SOAP - lightweight rest,http methods,json format,xml protocal.
+38.how does the kafka producer and consumer work?
+kafka flow- producer sends data,topic storage,partitions,consumer reads,parallel consumption.
+39.what are deadlocks and how can you avoid them?
+dealocks- thread waiting,circular dependency,lock ordering.
+40.how does multithreading improve application performance?
+multithreading- parallel execution,cpu utilization,redices response time,IO performance.
+41.what happens internally when you call the main method in java?
+program execution flow-jvm starts,class loading ,main method entry,main thread, static block first.
+42.what are the different types of memory areas in jvm?
+JVM memory areas- Heap,stack ,method area.
+43.What is the difference between List and set in java.
+44.How does pagination work in spring data jpa?
+Pagination-Pageable,Page object,page number ,page size,limit offset.
+45.what is the difference between eager and lazy loading ?
+eager vs lazy loading-immediate fetch,on demand fetch.
+46.How do you optimize a slow running sql query?
+Query optimization-execution plan,indexing,reduce joins, select colums.
+47.What is the use of @Autowired annotation?
+@Autowired usage-Dependency injection,Automatic wiring,Bean injection,By type.
+48.what is the difference between put and post http methods?
+put vs post-create resource,update resource,not idempotent.
+49.What is the role of dispatcherservlet in spring mvc?
+DispatcherServlet-front controller,request handling,handler mapping,controller call.
+50.How do you implement cashing in a spring boot application?
+Cashing-@Cacheable,@CacheEvict,Redis,In memory cache,performance boost.
+51.Can you exaplain the difference between Hashmap and concurrentHashmap?
+key value storage-Hashmap not thread safe,concurrentHashmap thread safe,concurrent reads and writes,CAS/locking.
+52.What happens if you do not override the hashCode() and equals() methods properly?
+bucket placement,object comparision,Duplicate Objects,Retrieval issues.
+53.How does spring boot autoconfiguration work internally?
+Auto-configuration-@EnableAutoConfiguration,Classpath based,Conditional loading.
+54.Can you explain the concept of immutability in java?
+State cant change,new object created,Thread safe design,final fields,no setters.
+55.What are the differences between ArrayList and LinkedList?
+Dynamic array ,Doubly linked list,fast access,fast insertion/deletion.
+56.How do you handle exceptions in a spring boot application?
+Global handling,@ControllerAdvice,@ExceptionHandler,Error response.
+57.What is the difference between @Component,@Service and @Repository?
+58.How does the JVM manage memory?
+Heap,stack,method area,garbage collection.
+59.what is the difference between checked and unchecked exception?
+compile time checked,runtime unchecked,
+60.How does the @Transactional annotation in spring?
+@Transactional working-Transaction begins,Commit on success,rollback on failure,proxy based.
+61.What are the advantages of using microservices architecture?
+microservices advantages-independent deployment,easier scaling,Team independence,Added complexity.
+62.How d you secure rest APIs in spring boot
+REST API security-spring security ,Authentication,Authorization,JWT,OAuth2.
+63.what is the difference between final ,finally and finalize?
+final keyword,finally block,finalize method.
+64.How does garbage collection work in java?
+Garbage collection-unused objects,Heap cleanup,eligible objects,G1/ZGC.
+65.what are functional interfaces in java 8?
+one abstract method,lambda support,Default methods allowed,comparator/runnable.
+66.How does the stream API work in java 8?
+67.What is the difference between synchronized and volatile?
+locking,mutual exclusion,visibility only,no atomicity.
+68.How do you implement paginaion in spring boot?
+Pagination-Pageable,Page Size,Page number.
+69.what is the dependency injection and why is it important?
+framework managed objects,Bean injection,reduced coupling.
+70.what is the difference between REST and SOAP web services?
+71.How do you handle concurrency issues in java?
+72.what are the different types of joins in SQL?
+73.How do you optimize a slow-running query?
+74.what is the difference between put and post methods in REST?
+75.what is the use of @Qualifier annotation in spring ?
+76.How does spring handle bean lifecycle?
+Instantiation,dependency injection,initailization,@Postconstruct,@PreDestroy.
+77.what is the difference between requestparam and pathvariable?
+78.how do you handle null values safely in java?
+null handling-null checks,Objects.requireNonNull,Optioanl,defensive coding.
+79.what is the purpose of the Optioanl Class?
+Optioanl purpose-Avoid null,value wrapper,isPresent.
+80.what is the difference between ExecutorService and Thread?
+81.How can you include jetty and exclude tomcat in spring boot application?
+82.If there are two beans of the same type how does spring decide which one to inject using @Autowired?
+83.Can you expalin the solid priciples?
+84.Can Primitive datatypes be null?
+85.Your spring boot application starts very slowly .how would you debug the startup performance issues?
+Enable debug logs,Bean initialization,Actuator endpoint.
+86.what is the singleton design pattern and where is it used?
+87How would you handle high cpu utilization in an application?
+88.what is optional in java?
+89.can we override auto-configuration in spring boot?
+90.what are the different types of dependency injection in spring boot?
+constructor injection,field injection,setter injection.
+91.what are some shortcuts or productivity tricks you use in your daily development work?
+intellij shortcuts,code generation,Debug mode.
+92.Can Treeset contain null? why?
+null not allowed ,sorting based,comparator issue,NullpointerException.
+93.Whats the difference between @OneToMany and @ManyToOne?
+94.If one of your microservices goes down and others depend on it.how would you handle the situation?
+95.Whats the difference between retry and circuit breaker?
+96.How does java handle memory management?
+Garbage collection,Heap Objects,unused object cleanup,GC algorithms,Memory leaks.
+97.How would you disable auto-configuration for a specific class in a spring boot?
+exlude attribute,class exclusion,Properties exclusion.
+98.How does Spring boot handle dependency injection?
+Dependency Injection-IOC container,Bean creation,component scanning,@Autowired,Constructor injection.
+99.Can you exaplain a taugh production bug  you faced and how you debugged and resolve it?
+Real issue,check logs,Metrics analysis,Request tracing,Root cause fix.
+100.Have you written test cases for asynchronous method?
+Async method testing- CompletableFuture,Awaitility,wait for completion,success case,failure case.
+101.whats the difference between Git rebase and cherry pick?
+102.whats the difference between @Autowired and XML based dependency injection?
+103.why does not rollback work for checked exceptions in spring?
+104 Why is hashmap not thread safe?
+no synchronization,Data corruption risk,Lost updates,ConcurrentHashMap alternative.
+105.How would you sort employees by salary efficiently?
+comparator usage,checked exception default,Stream API,Timsort,Scale consieration.
+106.If multiple threads update a shared volatile variable is data integrity guaranteed?
+107.what is the load factor in hashmap?
+load factor-default 0.75,resize trigger,collission control.
+108.Are there any internal configurations for the @Transactional annotation?
+@Transactional config-propagation,isolation level,timeout,readOnly flag.
+109.Why is implementing runnable considered better than extending thread?
+Sepration of logic,No inheritance limit,reusable tasks,thread pool support.
+110.If a junior developer faces a production issues under a tight deadline,How would you take over or guide them?
+111.what is the difference between Docker and virtual machine?
+full os vm,container lightweight,shared os,fast startup.
+112.how do you handle blue green and canary deployments?
+blue green switch,zero downtime,canary rollout,gradual traffic.
+113.How would you implement authentication and authorization in microservices?
+JWt/Oauth,central auth,token validation,role based access.
+114.How do you handle configuration management across environments?
+Applicaion Profiles,Dev/QA/Prod,External config,Config server.
+115.How would you implement cashing in a spring boot application?
+@EnableCashing,@cacheable,Redis,Cache invalidation.
+116.How does ConcurrentHashmap achieve thread safety without locking the entire map?
+fine grained locking,ucket level control,lock free reads.
+117.How does garbage collection work in java?
+Heap objects,unused detection,mark and sweep.
+118.What is the difference between redis and in memory cashing?
+in memory local,fast access,redis distributed,shared cache.
+119.How would you handle versioning in REST APIs?
+URl versioning ,Header versioning.
+120.How do you handle database transactions accross multiple microservices?
+Distributed transaction-no single DB,Two phase commit,saga pattern,compensating actions.
+121.what is the difference between optimistic locking and pessimistic locking in JPA?
+Optimistic no lock,version check,pessimistic row lock,performance vs safety.
+122.What is the difference between PUT and PATCH in REST APIs?
+full update ,partial update,replace resource,modify fields.
+123.What is the difference between @RestController and @Controller?
+124.How do you secure a spring boot application?
+Authentication,Authorization,JWt token.
+125.What is the difference between fetch=LAZY and fetch=EAGER in JPA?
+on demand fetch,immediate fetch,performance impact,LazyINitializationException.
+126.what happens if a subclass defines a satatic method with same signature as in the super class?
+Static method hiding-method hiding,not overriding,reference type based.
+127.Have you worked on migrating from monolithic architecture to microservices?
+monolithic to microservices-bounded contexts,gradual split,database separation,REST or kafka,deployment challenges.
+128.Can ConcurrentModificationException occur in a single threaded environment?
+single thread possible,modify during iteration,iterator detection.
+129.how do you resolve a circular dependency issue in spring?
+constructor fails,setter injection,@Lazy usage.
+130.if two keys have the same hash code but are not equal what happens in a hashmap?
+Hash collission-same bucket,equals check,multiple entries,list/tree structure.
+131.In which scenarios will the finally block not execute?
+fianlly block-jvm crash, System.exist(),power failure.
+132.What is classpath and how are beans discovered and registered?
+classpath & beans- Class locations,Component scanning,Annotation detection.
+133.How does java achieve polymorphism?
+134.What are interfaces in java and how do they differ from abstract classes?
+Interface:contract
+Abstract:partail logic
+multiple inheritance
+single class extend.
+135.If a transactional method calls a non transactional method wil the transaction apply to it?
+Transaction behavour-proxy based,internal call issue,external call works.
+136.What are different bean scopes in spring?
+bean scopes- singleton,Prototype,Request,session.
+137.What is thread pool and why do we use it?
+138.Can we customize JWT token?
+JWT customization-header,payload,signature,custom claims.
+139.Have you worked with the Java Date Time API?
+java.time package.
+immutable classes
+Thread safe.
+140.How do you monitor and log microservices in production?
+Centralized logging,ELK stack,Prometheus,Grafana.
+141.What is the purpose of ZOOKEEPR  in kafka?
+Metadata management,Broker tracking,Leader election,Coordination.
+142.How do you handle duplicate messages in kafka?
+Idempotent processing,Unique message ID,skip duplicates,Exactly one option.
+143.what is the difference between kafka partitions and consumer groups?
+144.How do you ensure consistency in a distributed system?
+distributed consistency-eventual consistency,event driven,idempotency.
+145.what is the difference between blocking and non-blocking I/O?
+146.How would you optimize a slow SQL query in production?
+Query Optimization-Execution Plan,Add indexes,Optimize joins.
+147.What happens if you dont override hashCode() when overriding equals?
+148.How would you desing a rate limitter for an API?
+rate limitter design-limit type,redis storage,request count,token bucket,sliding window.
+149.When happens internally when you call stream.parallel() in java?
+parallel stream-ForkJoinPool,Dataspliting,parallel threads,Result merge,overhead cost.
+150.what is the difference between fail fast and fail safe iterators?
+151.Why do we need service,repositoy and conroller in spring boot?
+152.How do you create and use custom exceptions in java?
+custom exceptions-Extend Exception,Extend RuntimeException,Specific conditions,Custom messages.
+153.what causes NoUniqueBeanDefinationException in spring ?
+Bean ambiguity-same type beans,Injection conflict,@Qualifier,@Primary.
+154.what makes an interface a functional interface?
+functional interface-one abstract method,default methods allowed,static methods allowed,lambda support.
+155.what is the difference between Vector and ArrayList?
+verctor synchronized,ArrayList not synchronized.
+156.Have you used @Query(JPQL) in spring Data Jpa?
+Query in JPA-Custom queries,JPQL syntax,Entity based,Joins,Optimized queries.
+157.How would you handle disagreements with a senior team member?
+158.What is the saga pattern in microservices?
+159.What does spring.profiles.active do and how do you set it at runtime?
+Active Profiles-Environement Config,dev/qa/prod,Properties file,Command line,Environement Variable.
+160.Which database have you worked with and why?
+161.what is the difference between built in and custom exceptions?
+162.What happens when two different keys have the same hash code in HashMap?
+Hash collission-same bucket,equals check,Linked List,tree structure.
+163.How do you configure application.properties in spring boot(.properties vs .yml)
+164.How do microservices communicate in your project (REST,kafka,gRPC etc).
+165.How would you protect confidential data in a spring boot application used by multiple users with different roles?
+167.What steps would you follow if your spring boot application slow down under heavy traffic?
+168.If you need a spring boot REST API to manage user details, how will you structure the project?
+169.If you had to increase the capacity of a spring boot app to handle heavy traffic what would you do?
+170.How would you deploy a spring boot application on a cloud platform and manage config for different environment?
+171.How would you desing a spring boot API to handle large file uploads while keeping the system responsive?
+172.Suppose your spring boot application suddenly start throwing database connection error.how would you handle this situations?
+173.How would you organize a spring boot project that serves a static homepage and also shows dynamic server time?
+174.How can a spring boot backend allow requests from a particular frontend domain?
+175.If a spring boot System needs data from an external REST service,how would you integrate it?
+176.How can application events help different parts of a Spring boot system communicate?
+177.In a IOT use cases how can a spring boot backend process real-time data coming from thousands of devices efficiently?
+178.How would you add a GraphQL layer to an existing spring boot REST service?
+179.In what situation would a spring boot application switch between multiple databases during runtime and how would it work?
+180.How can Spring WbFlux be used to fetch data from another service without blocking the application?
+181.Imagine users complain that API responses are inconsistent between deployments.What steps would you take?
+182.If your Spring boot service needs scheduled background jobs,how would you implement them?
+183.If your Spring boot API suddenly starts returning slow responses after a recent code change, how would you investigate it?
+184.Suppose you need to ensure zero downtime while deploying a new version of a spring boot service.How would you handle deployment?
+185.Imgegine your application needs to send notifications (email,SMS) after certain actions.How would you desing this?
+186.If multiple microservices need shared configuration values,how would you manage them?
+187.Suppose users report occasional data inconsistency in your spring boot system.how would you address it?
+188.Imagine your spring boot application needs to support pagination and sorting for a large list API.How would you implement it properly?
+189.Suppose your service must call an external API,but the external API sometimes returns errors.How would you make your calls safer?
+190.What approach would you follow to optimize performance in your spring boot application?
+191.How would you use spring profiles to manage different configuration for development and production?
+192.If your spring boot system need to work with several external APIs,how will you deal with request linit and possible failures?
+193.If your Spring boot application needs to validate incoming request data before saving it,what approach would you follow?
+194.Imagine you need to create an audit trail for key actions in your spring boot application.how would you desing it?
+195.Suppose your Spring boot app needs to handle a burst of traffic for a short time,like a scale or event.How would you prepare for that?
+196.Suppose your Spring boot application needs to support API versioning as features evolve.How would you handle it?
+197.Imagine you need to restrict API access based on user request frequency.How would you implement rate limiting?
+198.If your Spring boot microservices need secure internal communication what would you do?
+199.Suppose your application must support graceful shutdown during deployments how would you manage it?
+200.Imagine you need to cache API responses but ensure data freshness.How would you balance both?
+
+201.What is the difference between @component @service @repository and @controller in spring?
+all four are spring beans meaning spring will detect them and manage them in the container.
+@Component is the generic one - i use it for utility classes or helpers where there is no specific layer meaning.
+@Service is for business logic layer like where you write validation orchestration and core flow.
+@Repository is for data access layer like DAO or spring Data Repository and it also helps with exception translation into Spring's DataAccessException.
+@Controller is for web layer - it handles incoming HTTP requests and returns response views or JSON (with @RestController).
+
+202.
+
+ 

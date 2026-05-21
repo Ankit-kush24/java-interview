@@ -1,0 +1,8 @@
+1.You need to prevent inheritance of a class.How would you design it?
+2.You are designing a payment system.when would you use an interface instead of an abstract class?
+3.you catch an exception but do nothing inside the catch block.what problems does this cause?
+4.there is return statement inside try or catch.Does the finally block still execute?
+5.two threads modify an ArrayList at the same time and data becomes inconsistent.why does this happen?
+6.why does the get method in hashmap return null after modifying the key object?
+7.you need only one instance of a class across the application.How do you implement it?
+8.

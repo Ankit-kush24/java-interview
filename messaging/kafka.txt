@@ -40,3 +40,252 @@ C:\kafka>bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --t
 C:\kafka>bin\windows\kafka-console-consumer.bat --topic cab-location --from-beginning --bootstrap-server localhost:9092
 
 ----------
+what is apache kafka?
+Apache kafka is like a communication system that helps different parts of a computer system exchange data by publishing and subscribing to topics.
+
+Apache kafka ki help se communication hoga do system ke bich me do microservices ke bich me 
+ye public and subscribe architector or model ko follow karta he.
+
+ 
+Why with real example
+Lets understand with example
+1.OLA Driver location update.-Driver ka location continuously update hota hai, jo passenger app ko live dikhta hai.
+2.ZOmato live food tracking.- Food delivery status aur location real-time track hota hai.
+3.Notiification System to huge user.-Bahut bade scale par users ko notifications bhejna.
+
+Yahaan "boy" publisher hota hai jo data ko topic me publish karta hai, aur users subscriber hote hain jo us topic ko subscribe kar ke data receive karte hain.
+
+Why 
+1. High throughput  - live tracking system bananhe ,Huge amount of messaging system banana he.
+2.Fault Tolerance(Replication)-Fault Tolerance means agar error aa jati he tab bhi hamara data mil jata .ye error ko handle kar leta he.kyuki kafka he wo Replication technique ko follow karta he.
+that means data store hota he wo copy ban ke multiple notes me store ho jati he.suppose 4 copy bani to main copy thi wo leader hota he.jab request aati he serve hamesha leader karta he.suppost leader wala data delete ho gya to dusre ko leader point kar diya jata he.
+lekin kabhi bhi data gyab nhi hota he kyuki replication technique follow hoti he.ek data ko copy karke rakha jata he isiliye fault ko tolerate bahut aasani se kar leta he.
+
+3.Durable - menas jaldi data gayab nhi hoga.
+4.Scalable - Distributed System thoughput bahut jyada he to bahut aasani se ise scale kar sakte he.
+
+====================
+Architecture of Kafka
+Components
+Producer-yhi wo component he jo hamare data ko produce karega.messages ko bhejega.
+Consumer - Consumer data ko consume karega.consume direct nhi karega consume karne ke liye topic ko subscribe karna padega pahle.then consume karega.
+
+data produce hoga kafka ke under.
+Kafka ke Ecosystem me - Brokers ,zookeeper.
+Zookerper- kafka ke state ko manage karta he.kafka ke broker ko manager karta he
+
+topic messages ko chategries karne ke liye jese is chategries ki chij idhar is chategries ki chije idhar mix na ho.
+Topic is the similer to the table in the database.
+jese hamare pass messages publice ho rhe he lagtar ek message login sytsem se related he ek message order system se related he or ek message user related he aise me 3 topics ban denge.
+
+partition topics ke under hote he
+partition ka use data ko store karne ke liye.
+
+Broker ke under hote he topics.
+
+==========
+Apache Kafka
+More than 80% of all Fortune 100 companies trust, and use Kafka.
+
+Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+
+Install
+1.Downlaod kafka zip file from the official site.
+2.File Extract.
+3.Start Zookeeper.
+4.Start kafka server
+
+C:\kafka>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+C:\kafka>bin\windows\kafka-server-start.bat config\server.properties
+
+C:\kafka>bin\windows\kafka-topics.bat
+
+C:\kafka>bin\windows\kafka-topics.bat --create --topic user-topic --bootstrap-server localhost:9092
+
+C:\kafka>bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+C:\kafka>bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic user-topic
+
+C:\kafka>bin\windows\kafka-console-consumer.bat --topic user-topic --from-beginning --bootstrap-server localhost:9092
+
+
+
+
+
+Lets use kafka with console
+1.create new topic with kafka-topics
+2.Producer example message with kafka-console-producer
+3.Consume the message with kafka-console consumer.
+
+
+
+Zookeeper kafka ke broker ko manage karta he.
+===================
+Engineering Digest
+
+Kafka open source distributed event streaming platform.
+
+distributed means - ye multiple server par chal sakta he.to handle large amount of data.
+
+kafka cluster is a group of kafka broker.
+================
+daily code buffer
+
+kafka is an communication system between sender and receiver.
+
+sender will published data to the kafka and receiver will subscribe the kafka.
+===========
+M prashant
+
+jese zomata swigy se food order karte he ya to ola uber se taxy book karte he .
+
+1.Delivery
+2.stock price
+3.Health Monitor
+
+1. Delivery (Zomato / Swiggy Example)
+🧒🏻 Example:
+Socho tumne pizza order kiya. Tum app me dekh pa rahe ho:
+
+Order received
+
+Pizza ban raha hai
+
+Delivery boy nikal gaya
+
+Delivery boy kaha tak pahucha
+
+👉 Ye sab information real-time me app me dikh rahi hai.
+Apache Kafka jesa system is data ko real-time me process karta hai taaki tum har step live dekh sako.
+
+📈 2. Stock Price (Trading Apps Example)
+🧒🏻 Example:
+Stock market me ek share ka price har second badal raha hai.
+Agar tum app me dekh rahe ho ki Tata ka share abhi ₹982 hai, 1 second me ₹984 ho gaya, to ye real-time update Kafka jese system se ho raha hai.
+
+👉 Agar Kafka na ho to price update slow hoga ya galat dikhega.
+
+❤️ 3. Health Monitor (Fitness Band / Smart Watch Example)
+🧒🏻 Example:
+Agar tumne smart watch pehna hai, aur wo har second tumhari heartbeat, steps, oxygen level track kar rahi hai, to ye data real-time me tumhare mobile app me dikh raha hai.
+
+👉 Apache Kafka jesa system use kiya jata hai taaki data delay na ho aur tum turant changes dekh sako (jaise heartbeat suddenly badh jaye to alert mile).
+
+aap apni mobile aaplication me real time location kese dekh pate he. ye possible he real time data streaming ke sath.
+
+bahut sare application he real time data streaming ke jese ki stock market ke price jese stock ka price up down hota he mobile application me
+
+what is apache kafka?
+kafka is a distributed streaming platform
+Allows applications to send, store and process data in real time.
+
+Q. Apache Kafka kya hai?
+Apache Kafka ek distributed streaming platform hai. Matlab, ye ek aisa system hai jo real-time data ko bhejne, store karne aur process karne ke kaam aata hai — wo bhi bahut bade scale pe (billions/trillions messages per day).
+
+ Simple Example – Sochiye ek School ka System
+🏫 School Example (Kafka ke bina)
+Sochiye ek school hai jahan 10 teachers hain. Har teacher ko roz students ke performance ka data principal ko bhejna hota hai (marks, attendance, etc).
+
+Agar sab teachers directly principal ko message bhej rahe hain, to principal ke paas ek hi time pe bahut saare messages aayenge, aur system overload ho jayega.
+
+👉 Problem: Direct connection se system slow ho sakta hai, data lost ho sakta hai, aur principal ko sab kuch real-time me dekhna mushkil ho jata hai.
+
+💡 Ab Kafka ko laate hain – Kafka as a Middleman
+Ab sochiye school me ek monitor teacher (Apache Kafka) hai, jiske paas sab teachers apna data bhejte hain. Phir principal sirf monitor se data dekhte hain.
+
+Teacher = Producer (Data bhejne wale)
+
+Kafka = Middleman (Jo data ko receive, store aur aage bhejta hai)
+
+Principal = Consumer (Jo data ka use karta hai)
+
+ Why Apache Kafka? (Benefits with Examples)
+Feature	Simple Explanation (Hindi)
+1. High Throughput	Bahut zyada data fast process karta hai (Zomato, Ola ke live data jese)
+2. Fault Tolerance	Agar server down bhi ho jaye to data gayab nahi hota (Replication se)
+3. Durable	Data safe rehta hai, jaldi delete nahi hota
+4. Scalable	Data badhne par bhi system slow nahi hota
+
+✅ Faayda kya mila?
+
+Data real-time me flow ho raha hai.
+
+Agar koi teacher late data bhejta hai to bhi principal dekh sakta hai (kyunki Kafka data store bhi karta hai).
+
+System zyada scalable aur fast ban gaya.
+
+🔁 Real Life Examples of Kafka:
+Zomato/Swiggy – Jab aap food order karte ho to order status (received, preparing, out for delivery) Kafka jese system se real-time me update hota hai.
+
+Netflix – Aap kya dekh rahe ho, kaha pause kiya, wo data Kafka se real-time me bheja jata hai.
+
+Stock Market Apps – Share ka price har second badal raha hai, Kafka ke through woh real-time me mobile me dikhai deta hai.
+
+🧠 Kafka kyun banaya gaya tha?
+Jab multiple producer systems hote hain (like mobile app, website, sensors), aur unka data ek ya zyada consumer systems ko bhejna hota hai.
+
+Real-time processing ke liye.
+
+Traditional methods slow aur unreliable the.
+
+Kafka ne is problem ka solution diya — fast, reliable, scalable real-time data processing.
+
+
+
+example spotify , netflix
+
+Q.why was kafka created ?
+wihtout kafka jab hamare pass multiple producer(source) data send karna he 
+
+
+✅ Kafka Core Concepts: Brokers, Topics, Partitions, Offsets & More 
+
+🟢 Kafka Broker 
+A Kafka broker is a server that stores and delivers messages.
+A Kafka cluster consists of multiple brokers for load balancing & fault tolerance.
+Brokers store messages in topics and handle consumer-producer interactions.
+
+🟢 Kafka Topics 
+Topics are logical categories where messages are published.
+A producer sends messages to a topic, and consumers subscribe to it.
+Topics can have multiple partitions to improve parallel processing.
+
+🟢 Kafka Producer & Consumer 
+Producers send data to Kafka topics.
+Consumers read data from topics asynchronously.
+Consumers subscribe to topics and process messages in real time.
+Kafka provides consumer groups to distribute load among multiple consumers.
+
+🟢 Kafka Partitions 
+Kafka splits topics into multiple partitions to scale horizontally.
+Each partition is stored on different brokers, allowing parallel processing.
+Data is ordered within a partition but unordered across partitions.
+
+🟢 Kafka Offsets
+Offsets track message positions within a partition.
+Each message has a unique offset number to ensure consumers read messages sequentially.
+
+🟢 Kafka Message Keys 
+Kafka message keys decide which partition a message is stored in.
+
+🟢 Kafka Serialization 
+Messages in Kafka are stored as bytes.
+Serialization formats: JSON, Avro (efficient for schema evolution), Protocol Buffers.
+
+🟢 Kafka Consumer Groups 
+Multiple consumers can read from the same topic in parallel.
+Consumers in the same group share partitions for better load balancing.
+Each partition is assigned to only one consumer per group.
+
+🟢 Kafka Cluster
+A Kafka cluster consists of multiple brokers working together.
+Clusters provide high availability & fault tolerance.
+Data is replicated across multiple brokers for reliability.
+
+🟢 Kafka Zookeeper 
+Zookeeper manages metadata and leader election in Kafka.
+Stores broker information, partition leader details, and consumer offsets.
+
+🟢 Kafka KRaft (Kafka Raft) 
+KRaft (Kafka’s built-in consensus protocol) replaces Zookeeper.

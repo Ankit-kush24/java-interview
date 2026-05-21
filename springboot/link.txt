@@ -3,4 +3,6 @@ https://smartprogramming.in/tutorials/spring-framework/top-50-spring-interview-q
 -------------
 durgesh
 https://www.youtube.com/watch?v=aW68FHrLAmA&list=PL0zysOflRCek0qgfTHPQkFezcib_yfnTl  
------------------- 
+------------------
+https://www.youtube.com/watch?v=ghATxKukbKc
+60+ Spring Boot Concepts in 90 Minutes | Must-Watch for Backend Engineers & Interview Prep 

@@ -1,0 +1,39 @@
+Q.21.WAP to skip the first 3 elements in a list using the java 8 Stream API?
+public class SkipFirstThreeElement21 {
+    public static void main(String[] args) {
+        List<String> words= Arrays.asList("apple","banana","orange","grape","kiwi");
+        List<String> new_list=words.stream().skip(3).collect(Collectors.toList());
+        System.out.println(new_list);
+    }
+}
+------------------
+program 22.java 8 collections programming series 
+Q.write a program to check if no elements in a list are negative using the java 8 stream API?
+public class NoNegativeNumbers_22 {
+    public static void main(String[] args) {
+        List<Integer> numbers= Arrays.asList(1,5,10,15);
+        boolean noNegativeNumbers=numbers.stream().noneMatch(n->n<0);
+        System.out.println("No negative numbers? "+noNegativeNumbers);
+    }
+}
+-------------------
+Q.23.WAP to find the minimum value in a list using the java 8 Stream API.
+public class FindMinimum23 {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(12, 45, 23, 5, 87, 19);
+        Optional<Integer> min = numbers.stream().min(Integer::compareTo);
+        min.ifPresent(value ->
+                System.out.println("Minimum number is: " + value)
+        );
+    }
+}
+-------------------------------
+Q.24.WAP to find the average of a list of integers using the Java 8 Stream API.
+public class AverageOfList24 {
+    public static void main(String[] args) {
+        List<Integer> numbers= Arrays.asList(1,2,3,4,5,6);
+        double avg=numbers.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        System.out.println(avg);
+    }
+}
+----------------------------

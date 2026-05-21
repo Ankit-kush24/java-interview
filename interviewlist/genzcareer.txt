@@ -1,0 +1,120 @@
+How would you handle inter service communication in a microservices architecture using spring boot?
+For simple direct communication-I would use RestTemplate which allows services to send requests and receive responses like a two way conversation.
+For more complex interactions-especially when dealing with multiple services i would choose feign Client.feign client simplifies declaring and making web services clients making the code cleaner and the process more efficient.
+
+For Asynchronous communication-where immediate responses are not necessary.I would use message brokers like RabbitMQ or kafka.These act like community board where services can post messages that other services can read and act upon later.this approach ensures a robust flexible communication System between microservices. 
+
+2.can you explain the cashing mechanism available in spring boot?
+3.How would you implement cashing in a spring boot application?
+4.your spring boot application is experiencing performance issues under high load.what are the steps you would take to identify and address the performance?
+5.what are the best practices for Versioning REST APIs in spring boot application?
+URL Versionaing-include the version number in the URL for example: api/v1/product
+Header Versioning : Use a custom header to specify the version.
+Media Type Versioning- version through content negotiation using the Accept Header.
+Parameter Versioning-specify the version as  a request parameter.
+
+6.How does spring boot simplify the data access layer implementation?
+7.what are conditional annotations and explain the purpose of conditional annotations in spring boot?
+8.Explain the role of @EnableAutoConfiguration annotation in a spring boot application.How does spring boot achieve auto configuration internally.
+9.what are spring boot actuator endpoints?
+10.how can we secure the actuator endpoints?
+11.what strategies would you use to optimize the performance of a spring boot application?
+12.how can we handle multiple beans of the same type?
+13.what are some best practices for managing transactions in spring boot applications?
+14.how do you approach testing in spring boot application?
+15.discuss the use of @SpringBootTest and @MockBean annotations?
+16.what advantages does YAML offer over properties files in Spring boot? are there limitations when using YAML for configuration?
+17.Explain how spring boot profiles work?
+18.what is aspect oriented programming in the spring framework?
+19.what is spring cloud and how it is useful for building microservices?
+20.How does spring boot make the decision on which server to use?
+21.How to get the list of all the beans in your spring boot application?
+22.describe a spring boot project where you significantly improved performance.what techniques did you use?
+23.explain the concept of spring boot embeded servlet containers?
+24.how does spring boot make DI easier compared to traditional spring?
+25.how does spring boot simplify the management of application secrets and sensitive configurations especially when deployed in different environments?
+26.Explain spring boot approach to handling asynchronous operations?
+27.how can you enable and use asynchronous methods in spring boot application?
+28.Describe how you would secure sensitive data in a spring boot application that is accessed by multiple users with different roles?
+29.you are creating an endpoint in a spring boot application that allows users to upload files.Explain how would you handle the file upload and where you would store the files?
+30.can you explain the difference between authentication and authorizatin in spring security?
+31.Afer successful registration your spring boot application needs to send a welcome email to user.describe how would you send the emails to the registered users?
+32.what is spring boot cli and how to execute the spring boot project using boot CLI?
+33.how is spring security implemented in a spring boot application?
+34.how to disable a specific auto-configuration?
+35.expalin the difference between cahce eviction and cache expiration?
+36.if you had to scale a spring boot application to handle high traffic what strategies would you use?
+37.describe how to implement security in a microservices architecture using spring boot and spring security?
+38.in spring boot how session management configured and handled especially in distributed system?
+39.imagine you are designing a spring boot application that interfaces with multiple exteranl APIs how would you handle API rate limits and failures?
+40 how would you manage externalized configuration and secure sensitive configuration properties in a microservices architecture?
+42.Imagine your application requires data from an external REST API to function.describe how you would use RestTemplate or WebClient to consume the REST API in your spring boot application.
+43.your spring boo backed needs to accept cross origin requests from a specific frontend domain.explain how you would configure CORS policies in your application.
+44.your spring boot application is experencing performance issues under high load.what are the steps you would take to identity and address the performance?
+45.imagine you need to make a simple web application with spring boot that serves a static homepage and a dynamic page displaying current server time.discuss the project structure you would use?
+46.your application behaves differently in development and production environments how would you use spring profiles to manage these differences?
+47.what strategies would you use to optimize the performance of a spring boot application?
+48.describe a scenario where a spring boot application needs to dynamically switch between multiple data sources at runtime based on the request context.
+49.Explain how you would add a GraphQL API to an existing spring boot Restful service?
+50.In a IOT application scenario explain how a spring boot backend could be designed to efficiently process and analyze real time data streams from thousands of IOT devices?
+51.discuss the specific security challenges associated with using websockets in a spring boot application?
+52.how would you implement efficinet handling of large file uploads in a spring boot REST API,ensuring that the system remains responsive and scalable?
+53.how would you use spring webflux to consume data from an external service in a non blocking manner and process this data reactively within your spring boot application?
+54.imagine you need to develop a REST API in a spring boot application that allows clients to manage user data explain how you would structure your application?
+55.you need to deploy a spring boot application to a cloud platform (eg AWS,AZURE) what steps would you take and how you configure the application properties for different environments?
+56.Explain how you would use application events in spring boot notify different parts of your application about significant activities?
+57.can we create a non web application boot?
+yes
+58. what does the @SpringBootApplication annotation do internally?
+59.how does spring boot internationalization(i18n)?
+60.what is spring boot devtools used for?
+61,how can you mock external services in a spring boot test?
+62.how do you mock microservices during testing?
+63.Explain the process of creating a docker image for a spring boot application?
+64.discuss the configuration of spring security to address common security concerns?
+65.discuss the how would you secure a spring boot application using JSON Web Token(JWT).
+66.how can spring boot applications be made more resilent to failures especially in microservices architecture?
+67.Explain the converiosn of business logic into serverless functions with spring cloud function?
+68.how can spring cloud gateway be configured for routing security and monitoring?
+69.How would you manage and monitor ashynchronous tasks in a spring boot application ensuring that you can track task progress and failures?
+70.your application needs to process notifications asynchronously using a message queue.explain how you would set up the integration and send messages from your spring boot application?
+71.you need to secure a spring boot application to ensure that only authenticated users can access certain endpoints describe how you would configure spring security to set up a basis from-based authentication?
+72.how to tell an autoConfiguration to back away when a bean exists?
+73.how to deploy spring boot web applications as jar and war files?
+74.what does it mean that spring boot supports relaxed binding?
+75.discuss the integration of spring boot applications with CI/CD pipelines?
+76.can we override or replace the embeded tomcat server in spring boot?
+77.how to resolve whitelabel error page in the spring boot application?
+78.can you implement pagination in a spring boot application?
+79.How to handle a 404 error in spring boot?
+80.how can spring boot be used to implement event driven architecture?
+81.what are the basic Annotations that spring boot offers?
+82.Discuss the integration and use of distributed tracing in spring boot applications for monitoring and troubleshooting?
+83.your application needs to store and retrieve files from a cloud storage service.describe how you would integrate this functionality into a spring boot application?
+84.to protect your application from abuse and ensure fair usage you decide to implement rate limiting on your API endpoints.describe s simple approach to achieve this in spring boot?
+85.for audit purposes your application requires a soft delete feature where records are marked as deleted instead of being removed from the database.how would you implement this features in your spring boot application?
+86.you are tasked with building a non building reactive REST API that can handle a high volume for concurrent requests efficiently.describe how you would use spring WebFlux to achieve this?
+87.Explain cross origin resource sharing and how you would configure it in a spring boot application?
+88.how does spring security integrate with OAuth2 for authorization?
+89.Explain SecurityContext and SecurityContext Holder in spring security?
+90.How do you mean by OAuth2 Authorization code grant type.
+91.how does spring security protect againts cross site request forgery attacks and under what circumtances might you disable CSRF protection?
+92.how can you implement method level security in a spring boot application and what are the advantages of this approach?
+93.your organization uses and API Gateway to route requests to various microservices how would you leverage spring security to authenticate and authorize requests at the gateway level before forwarding them to downstream services?
+94.how can you use Spring Expression language(SPEL) for fine grained access control?
+95.In your application ther are two types of users: ADMIN and USER each type should have access to different sets of API endpoints explain how you would configure spring security to enforce these access controls based on the users role?
+96.what do you mean by digest authentication?
+97.what is the best practice for storing passwords in a spring security application?
+98.Explain the purpose of the Spring security filter chain and how would you add or customize a filter within the spring security filter chain?
+99.How does Spring security handle session management and what are the options for handling concurrent sessions? 
+100.You have encountered an issue where users are being unexpectedly denied access to a resource they should have access to describe your approach to debugging this issue in a spring security enabled application?
+101.Describe how to implement dynamic access control policies in spring security?
+102.How do you test security configurations in spring applications?
+103.Explain salting and its usage in spring security?
+104.Explain what is AuthenticationManager and PoviderManager is spring security.
+104.when a user tries to access a resource without the necessary permissions you want to redirect them to a custom access denied page instead of displaying the default spring security error message how would you achieve this in your spring security configuration ?
+
+
+1.How does the Java Stream API work internally and what are is evaluations?
+2.What is the difference between authentication and authorization?
+

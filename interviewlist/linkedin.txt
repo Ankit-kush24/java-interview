@@ -1,0 +1,39 @@
+1️⃣ How would you design a scalable microservice in Spring Boot?
+Emphasize modular architecture, independent data stores, asynchronous communication using Kafka/RabbitMQ, and containerization with Docker + Kubernetes.
+ 👉 Example: Break a monolith into microservices like Order, Payment, and Inventory, communicating via REST or gRPC.
+
+2️⃣ How do you implement authentication and authorization?
+Use Spring Security with JWT tokens or a provider like Auth0 / Keycloak.
+ Prefer HttpOnly cookies, validate JWTs at the gateway, and ensure role-based authorization at the API layer.
+ 👉 Example: UI → Auth Provider → JWT → API Gateway → Services.
+
+3️⃣ How do you build fault-tolerant services?
+Use Resilience4j for circuit breakers, retries, rate limiting, and fallbacks.
+ 👉 Example: If PaymentService cannot reach OrderService → trigger fallback logic + retry queue.
+
+4️⃣ How do microservices communicate with each other?
+Synchronous: REST, gRPC
+Asynchronous: Kafka, RabbitMQ (preferred for decoupling)
+ 👉 Example: Publishing an OrderCreated event triggers Email + Inventory updates independently.
+
+5️⃣ How would you design a caching layer?
+Use Redis or Caffeine to reduce latency and DB load.
+ 👉 Example: Cache product details for 10 minutes to handle high read traffic.
+
+6️⃣ How do you implement observability in Spring Boot?
+Use Actuator, Micrometer, Prometheus, Grafana, and distributed tracing tools like Zipkin/Jaeger.
+ Monitor latency, error rates, CPU, memory, and request volume.
+
+7️⃣ How would you optimize database performance?
+Use HikariCP, proper indexing, query optimization, pagination, and batch operations.
+ 👉 Example: Replace SELECT * with only required columns + add appropriate indexes.
+
+8️⃣ How would you handle large traffic spikes?
+Apply load balancing, horizontal scaling, caching, and queue-based throttling.
+ 👉 Example: During flash sales, queue incoming requests to avoid overwhelming downstream services.
+
+9️⃣ How do you manage configurations across environments?
+Use Spring Cloud Config, Consul, or HashiCorp Vault for secure, centralized configuration and secret management.
+
+🔟 How would you design an API Gateway?
+Use Spring Cloud Gateway for routing, authentication, rate limiting, resilience, and centralized logging.

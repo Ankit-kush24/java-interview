@@ -1,0 +1,175 @@
+1. Basic Spring Boot and Core Concepts
+What is Spring Boot and how is it different from the Spring Framework?
+Explain the concept of "convention over configuration" in Spring Boot.
+What is the purpose of the @SpringBootApplication annotation?
+What is the role of the application.properties or application.yml file in Spring Boot?
+What are the common Spring Boot starter dependencies?
+Explain the use of @EnableAutoConfiguration in Spring Boot.
+2. Configuration and Profiles
+How do you externalize configuration properties in Spring Boot?
+What is the difference between @Value and @ConfigurationProperties for binding properties?
+Explain Spring Boot profiles. How would you define different configurations for development, testing, and production environments?
+3. Dependency Injection
+What are the different types of Dependency Injection in Spring?
+Explain the difference between @Autowired and @Inject.
+How does Spring Boot handle bean initialization and destruction?
+What is the role of @Qualifier annotation in Spring?
+4. Spring Boot Actuator
+What is Spring Boot Actuator, and what are its common features?
+How can you secure Spring Boot Actuator endpoints?
+What is the role of health checks and metrics in Spring Boot?
+5. RESTful Web Services
+How do you build RESTful services in Spring Boot?
+Explain how you would handle different HTTP methods (GET, POST, PUT, DELETE) in Spring Boot.
+What is @RestController and how is it different from @Controller?
+How would you handle exceptions in Spring Boot REST APIs?
+What is @RequestMapping, and how is it used for RESTful APIs?
+6. Spring Data JPA & Databases
+What is Spring Data JPA and how does it simplify database interactions?
+Explain the concept of JpaRepository and its advantages.
+How do you define custom queries in Spring Data JPA?
+How would you handle transaction management in Spring Boot?
+7. Spring Security
+How would you implement basic authentication in Spring Boot?
+What is the difference between @Secured and @PreAuthorize annotations?
+How do you integrate JWT for authentication in a Spring Boot application?
+8. Testing
+How do you test a Spring Boot application?
+Explain the difference between @WebMvcTest, @SpringBootTest, and @DataJpaTest.
+How would you mock external services or dependencies in unit tests in Spring Boot?
+9. Microservices and Spring Cloud
+How do you develop a microservices-based application using Spring Boot?
+What is the role of Spring Cloud in microservices architecture?
+Explain the concept of service discovery with Spring Cloud Netflix Eureka.
+How do you implement API Gateway using Spring Cloud Gateway?
+10. Performance and Optimization
+How can you optimize the performance of a Spring Boot application?
+What are some common ways to handle large amounts of data in Spring Boot?
+How do you use caching in Spring Boot applications?
+11. Advanced Topics
+What is the @Async annotation in Spring Boot, and when would you use it?
+Explain the concept of Spring Boot Profiles.
+How does Spring Boot handle background tasks?
+How would you deploy a Spring Boot application to production (including strategies like Docker and Kubernetes)?
+12. Spring Boot Integration with Other Technologies
+How would you integrate Spring Boot with messaging systems like Kafka or RabbitMQ?
+How do you integrate Spring Boot with Elasticsearch or Redis?
+Explain how you can integrate Spring Boot with third-party APIs or web services.
+
+==========
+Nitin 
+Java Developer 
+Profile 
+Experienced Web Developer adept in all stages of advanced web development. Knowledgeable in user interface, 
+testing, and debugging processes. Able to effectively self-manage during independent projects, as well as 
+collaborate in a team setting. 
+Employment History 
+Java Developer at FABHR Solutions Pvt. Ltd., Indore 
+May 2020 — Present 
+ Developed and maintained RESTful APIs using Spring Boot to meet business requirements. 
+ Leveraged Spring Security for secure endpoint protection, ensuring robust access control. 
+ Applied best practices in exception handling, clean code, and scalable architecture. 
+ Partnered with frontend teams to seamlessly integrate backend APIs into user interfaces. 
+ Developed and enforced input validation standards using Spring Validation. 
+ Followed Agile methodologies, participating actively in sprint planning, daily stand-ups, and 
+retrospectives. 
+ Collaborated with QA teams to maintain API integrity through testing with POSTMAN. 
+Education 
+B.E. (Mechanical Engineering), Shri Vaishnav Institute of Technology & Science, Indore 
+June 2012 — December 2016 
+Core Competencies 
+● Backend Development: Core Java, Spring Boot, Hibernate, RESTful APIs 
+● API Security & Validation: Spring Security, JWT, Spring Validation 
+● Frontend Collaboration: HTML, CSS, Angular 
+● Database Management: MySQL, PostgreSQL 
+● Version Control: Git 
+● Methodologies: Agile Scrum 
+Project Highlights 
+1. Bombay Hospital - Healthcare Management System 
+Role: Backend Developer 
+Team Size:6 
+Tech Stack: Java, Spring Boot, Hibernate, MySQL 
+● Designed and developed API services to manage patient records, appointments, and billing information. 
+● Secured patient data with Spring Security and encrypted sensitive information. 
+● Implemented comprehensive data validation and error handling. 
+● Coordinated with frontend developers to ensure smooth integration and UI performance. 
+2. FabHR - Recruitment Management System 
+Role: Backend Developer 
+Team Size:4 
+Tech Stack: Java, Spring Boot, Hibernate, MySQL, Spring Security 
+● Developed and maintained APIs for job posting, candidate applications, and interview scheduling. 
+● Implemented a role-based access control (RBAC) system to ensure secure access for recruiters, 
+interviewers, and candidates. 
+● Used Hibernate for efficient data persistence, managing large volumes of candidate and job data. 
+● Designed a custom notification system to keep candidates updated on their application status through 
+emails. 
+● Collaborated with the front-end team for seamless integration of recruitment workflows with the user 
+interface. 
+3. FabHR - Human Resource Management System (HRMS) 
+Role: Full- Stack Developer 
+Team Size:6 
+Tech Stack: Java, Spring Boot, Hibernate, Angular, MySQL 
+● Developed modules for employee management, payroll processing, and performance tracking. 
+● Implemented Spring Security to protect sensitive employee and payroll data. 
+● Integrated JWT authentication for secure user sessions and role-based access. 
+● Collaborated with UI developers to create dynamic dashboards for HR managers to track employee 
+performance and attendance. 
+● Ensured data integrity using Spring Validation and followed industry best practices for code quality and 
+maintainability. 
+Tools & Technologies 
+● Development Tools: STS, IntelliJ, Eclipse, MySQL Workbench, PHPMyAdmin 
+● Containerization Tools: Docker 
+● Version Control: Git 
+● Testing & Debugging: Postman, JUnit 
+● Database Management: MySQL, PostgreSQL
+============
+Project-Specific Interview Questions:
+
+1. Bombay Hospital - Healthcare Management System:
+Q: Can you walk us through how you developed the API services to manage patient records, appointments, and billing information in the Bombay Hospital project? What challenges did you face while designing the API for such sensitive data?
+Q: How did you ensure the security and encryption of sensitive patient data? Which security mechanisms did you use in the backend to ensure compliance with healthcare regulations?
+Q: What kind of data validation did you implement for the patient records and appointments API? How did you enforce the input validation standards using Spring Validation?
+2. FabHR - Recruitment Management System:
+Q: How did you implement role-based access control (RBAC) in the FabHR - Recruitment Management System? Can you describe the structure and flow of how different users (recruiters, interviewers, candidates) interact with the system?
+Q: What were the main challenges in managing large volumes of job and candidate data using Hibernate? How did you optimize database queries?
+Q: Can you explain the custom notification system that you designed for candidates in this project? How did you manage email notifications and ensure they were timely?
+3. FabHR - Human Resource Management System (HRMS):
+Q: In the HRMS project, you worked with both the backend (Java, Spring Boot) and frontend (Angular). How did you ensure smooth collaboration with the frontend team for API integration? What were some of the key challenges in building the dynamic dashboards for HR managers?
+Q: Could you describe the JWT-based authentication mechanism you implemented for user sessions in the HRMS? How does it work in ensuring secure user access to sensitive data (like employee and payroll information)?
+Q: How did you ensure data integrity and consistency in your Spring Boot application using Spring Validation?
+
+===
+Database and SQL-Related Questions:
+Database Design:
+
+How did you design the database schema for your projects, like  Bombay Hospital? Can you describe the structure of one of the key tables and relationships (e.g., Patient table or Candidate table)?
+What is normalization in databases? Did you follow it in your projects?
+JPA/Hibernate:
+
+How does Spring Data JPA simplify database interactions? Can you explain how you used it to perform CRUD operations in your projects?
+Can you explain the different fetch strategies in Hibernate? What is the difference between LAZY and EAGER fetching?
+Performance and Optimization:
+
+How did you optimize database queries when dealing with large datasets in your projects (e.g., job postings, candidates, patient records)?
+Did you use any caching strategies in your Spring Boot application to enhance performance? Can you provide an example?
+====
+Tools & Technologies:
+Docker:
+
+How do you containerize a Spring Boot application using Docker? Can you walk us through the process and any challenges you faced during the containerization of your projects?
+How does Docker help in deployment and scaling of your application?
+Git:
+
+How do you manage version control for a team project? Can you explain your Git workflow for managing branches and releases in a collaborative environment?
+Can you explain a challenging Git merge conflict you encountered and how you resolved it?
+
+Behavioral and Soft Skills:
+
+Team Collaboration:
+
+Can you provide an example of a challenging project you worked on in a team? How did you handle collaboration and ensure smooth communication between backend and frontend developers?
+How do you handle situations where requirements change rapidly during the development process? Can you give an example from your experience?
+Agile Methodologies:
+
+How do you contribute to an Agile Scrum process? Can you explain your experience in sprint planning, daily stand-ups, and retrospectives?
+
