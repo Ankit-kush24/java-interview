@@ -1,0 +1,68 @@
+you are implementing an API that returns users to the client but the database has 1lakh(100,000) users.
+how will you return data to the client efficiently?
+-------------------
+what is the default initial capacity of an arraylist when you use the default construcotr?
+
+which of the following is a key difference between Array and ArrayList in java?
+A)Arrays have a fixed size ,while arraylisy are dynamic.
+B)Arraylist allows primitive types directly.
+C)Arrays are thread safe but arraylist are not.
+D)ArrayList are faster than array.
+Correct answer: A) Arrays have a fixed size, while ArrayLists are dynamic
+
+Q.how can you sort an Arraylist in descending order?
+A)Collections.sort(list)
+B)list.sort(Comparator.reverOrder())
+c)Arrays.sort()
+D)sorign is not supported directly for arraylist
+Correct answer: B) list.sort(Comparator.reverseOrder())
+-------------------
+JVM(java virtual machine)
+what it is:the core engine that runs java programs by converting bytecode into machineCode.
+role:executes java program,manage memory,and performs garbage collection.
+key point:it is platform dependent but ensures javas write once run anywhere capability.
+
+JRE(java runtime environment):
+what it is:A package containing the jvm and the necessary libraries ,files,and tools to run java applications.
+role:provides the environment to execute java programs.
+key point:only for running java applications does not include development tools.
+
+
+jdk(java development kit):
+what it is:A superset of jre that includes tools like a compiler ,debugger,and libraries for developing java applications.
+role:Allows you to write ,compile and debug java programs.
+key point :used for development ,with jre bundled inside.
+---------
+if you use final on a variable,it means once you give it a value.you cant change it again.like setting a rule this number is final no updates allowed.
+if a method is declared final,it cant be overiden in a subclass.it means no one can change its behavior in subclass.
+if a class is declared fianl,it cant be inherited by other classes it means no one can extend it or create a child class .it is like saying this class is complete dont try to add anything new.
+
+finally:this is a part of exception handling when you use try catch thr finally block is code that always runswhether there is an error or not.you usually use it to cleanup resources ,like closing a file or a database connection.
+
+finalize():this is a method that java calls when an object is about to be deleted by the garbage collector.it is like a goodbye message from the object.
+-----------
+method overloading
+creating multiple methods with the same name but different parameters(either the number of parameters or type of the parameters will be different)in the same class.
+real world example:think of a search button in an app:
+you can search by name(String),you can search by phone number(int).
+you can search by location(String+radius).
+the action(searchhing)is the same,but the input parameters differ.
+Class Search{
+void find(String name){
+}
+void find(int phonenumber){
+}
+void find(String locaion,int radius){
+}
+}
+----------
+method overriding:method overriding is when a child class provides its own specific implementation of a method that is already defined in its parent class,but with the same name ,parameters and return type.
+real world example:imagine a payment system:
+A generic payment method exists in the parent class.
+child classes like creditcard payment and upipayment override the method to implement payment logic specific to their type.
+
+difference between interface and abstract?
+
+
+can we convert an interface into an abstract?
+

@@ -37,3 +37,19 @@ Use Spring Cloud Config, Consul, or HashiCorp Vault for secure, centralized conf
 
 🔟 How would you design an API Gateway?
 Use Spring Cloud Gateway for routing, authentication, rate limiting, resilience, and centralized logging.
+-----------------------
+string builder vs string buffer
+Strings are immutable for frequent modification.java provides string builder and string buffer.
+
+when should you use them?
+String builder-mutable,thread safe,slower,synchronization,multi thread.
+string buffer-mutable,no thread safe,faster,no synchronization,single thread.
+
+use stringbuilder when performance is important.
+use stringbuffer when multiple threads access the same object.
+
+your spring boot application starts throwing outofmemoryerror after running fine for weeks how would you investigate?
+your api response time jumps from 200ms to 6 s without any code changes where do you start?
+database cpu is only 20% but hikaricp reports connection is not available what could be wrong?
+your application works locally but return 503 only in production what are your first three checks?
+ 

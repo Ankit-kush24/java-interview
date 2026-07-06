@@ -37,3 +37,22 @@ public class AverageOfList24 {
     }
 }
 ----------------------------
+Q.25.WAP to filter strings containing a specific character using the Java 8 Streams API.
+public class FilterStringByCharacter25 {
+    public static void main(String[] args) {
+        List<String> words= Arrays.asList("apple","banana","grape","kiwi","orange");
+        List<String> filterWords=words.stream().filter(word->word.contains("a")).collect(Collectors.toList());
+        System.out.println(filterWords);
+    }
+}
+
+-------------------
+Q.26.WAP to convert list of strings to a single concateneated string using tha java 8 Streams API.
+public class ConcatenateString26 {
+    public static void main(String[] args) {
+        List<String> words= Arrays.asList("apple","banana","orange");
+        String concateString=words.stream().collect(Collectors.joining(","));
+        System.out.println(concateString);
+    }
+}
+----------------

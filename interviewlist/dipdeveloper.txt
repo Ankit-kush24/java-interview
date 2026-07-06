@@ -1,0 +1,60 @@
+what is jpa and how is it related to spring data jpa?
+jpa is a java specification for managing relational data.spring data jpa is a part of spring data simplifies jpa usage by reducing boiler plate code.
+
+what are the key annotations used in jpa?
+
+what is the difference between jpa and hibernate?
+jpa is a specification
+hibernate is an implementation of that specification.
+
+how do you define a primary key in jpa?
+
+what is the purpose of jpaRepository?
+it is a spring data interface that provides crud,pagination,and custom query functionality.
+
+difference between crudrepository and jpaRepository
+jpaRepository extend crud repository and adds jpa specific features like flushing and batch operations.
+
+how do you define custom queries in spring data jpa?
+
+how do you write native sql queries?
+use @Query with nativeQuery=true.
+
+what is the difference between jpql and native sql?
+
+what is FetchType.LAZT vs EAGEer?
+
+how do you implement one to many relationship in jpa?
+
+how to perform pagination and sorting?
+
+how to use projections in spring data jpa?
+
+what is a dto and why is it used in jpa?
+
+what is optimistic locking in jpa?
+
+how do you handle bidirectional relationships?
+
+how to prevent the N+1 select problem?
+
+what is cascading in JPA?
+
+what is save() vs saveANDFlus()?
+save (): persists entity but may delay db write.
+saveANDFlus(): immediatley flushes changes.
+
+how to enable jpa auditing?
+use @CreatedDate @LastModifiedDate,@EnableJpaAuditing.
+
+what are derived query methods?
+methods like findByFirstNameANdLastName() are automatically impekemted by spring.
+
+how to update an entity in spring data jpa?
+
+what is @Modifying and when is it needed?
+
+can you use spring data jpa without spring boot?
+yes but spring boot simplifies configuration with auto setup.
+
+what is the role of Entitty manager in jpa?

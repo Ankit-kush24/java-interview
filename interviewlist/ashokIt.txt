@@ -1,0 +1,41 @@
+what is multithreading in java
+what is thread in java
+what are the two ways of implementing thread in java?
+how many types of threads are there in java expalin?
+difference between creating thread using runnable interface and extending thrad class?
+can we change the name of the main thread if yes how?
+do two threads can have same name? how do you identify the threads having the same name?
+what are min priorirty norm priororty max priorirty?
+what is the default priorirty of a thread can we change it yes how?
+what is the priopriry of main thread can we change it?
+what is the purpose of join method?
+what is synchronization?
+what is the use of synchronized block?
+is it possible to make constructors synchronized?
+can we use synchronized keyword with variables?
+synchronized methods or synchronized blocks which one do you prefer?
+what is the difference between wait() and sleep() methods in java?
+what is the difference between isInterrupted() and Interrupted() methods?
+expalain thread life cycle or exlain thread states in java?
+can we call start() method twice?
+what is the difference between start and run method.
+what will happen if we dont override the thread class run() method?
+what is executor framework?
+explain volatile variable in java?
+what is deadlock?
+------------
+code decode
+Q.categories java desing pattern?
+what do we need design pattern?
+what are the creational patterns?
+what is factory pattern?
+what is abstract factory pattern?
+what is prototype design pattern?
+what is builder design pattern?
+what are the structural patterns?
+what is proxy design pattern?and roles in proxy desing pattern?and advantage
+what is flyweight design pattern?where to use flyweight design pattern and when to use flyweight design pattern
+why we need solid principle?
+what are solid principle
+
+

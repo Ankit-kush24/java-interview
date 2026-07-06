@@ -1,0 +1,33 @@
+how to handle and manage exceptions?
+how to extract unique key from JSON object?
+what is cyclic dependency & how to resolve this in spring boot?
+Impelement two rest templates with timeout 30 and 50 s 
+Explain this in terms of dependency injection (Use Qualifier)
+Autowire these 2 usernames & passwords
+Write API to retrieve user data based on user ID
+Equals hashcode contract
+difference between sleep and wait
+Object class and its methods available
+Sort custom object using java 8
+how will you convince your teammates in your ideas.
+have you ever done some big blunder
+what steps to take in case the pipeline fails?
+do you also do deployment?
+how much test coverage did you maintain?
+how do you implement test cases in the code?
+what steps did you take to solve the issue?
+what challenges did you face?
+tell us about your project work?
+how to make objects unreferenced for garbage collection?
+how did you handle unit test coverage?
+count occurence of each character in a string using stream API
+how to make hashmaps synchronized?
+Configuration setup to deploy service?
+why cache threadpool is used?
+If there is a multithreaded environement how will you achieve synchronization?
+what is concurrent exception and how to fix it?
+how to do logging within your project?
+what collection will you use to access a list of integers?
+if your queue is down how will the messages be processed?
+how will you handle when consumer cant process messages?
+if you are queue size limit is reached what will happen next?

@@ -6,3 +6,624 @@
 6.why does the get method in hashmap return null after modifying the key object?
 7.you need only one instance of a class across the application.How do you implement it?
 8.
+
+top 100
+1.what is java
+2.why is java so popular
+3.what types of App can you build using Java.
+4.why is java platform language
+5.why are pointer not used in java
+6.why java is not a purely object oriented language?
+7.Explain JRE JDK and JVM
+8.How JVM work internally 
+9.what is String constant pool
+10.what is the difference between == and equals for String in java
+11.why string are immutable?
+12.String vs StringBuilder vs StringBuffer?
+13.what is object oriented programming?
+14.what is a class and what is an object 
+15.what is encapsulation.
+16.what is inheritance
+17.what is polimorphism
+18.what is abstraction.
+19.what is method overloading
+20.what is method overriding.
+21.what is the difference between method overloading and overriding
+22.what is the this keyword?
+23.what is the super keyword?
+24.what are constructor in Java?
+25.what is constructor overloading?
+26.what is an abstract class?
+27.what is an interface in java?
+28.what is an java bean?
+29.what is the difference between java bean and a pojo?
+30.what is composition in OOPs?
+31.what is  aggregation in oops
+32.what is association in oops?
+33.what is coupling in java
+34.what is cohesion in oops?
+35.what is runtime polymorphism
+36.what is the difference between shallow copy and deep copy?
+37.what is object cloning in java?
+38.what is difference between is a and has a relationship?
+39.what is the principle of favor composition over inheritance?
+40.what is object identity vs object equality.
+41.what is the difference between immutable and mutable Objects?
+42.what is method hiding in java?
+43.what is object association and why is it important?
+44.what is a thread in java?
+45.what is the difference between a process and a thread?
+46.what is context switching in multithreading ?
+47.what is the thread life cycle in java?
+48.what is synchronization in java and why is it important?
+49.what is a deadlock and and how can is occur in java?
+50.what is a race condition in mulithreading?
+51.what is the difference between synchronized methods and synchronized blocks?
+52.what is the difference between wait sleep and yield.
+53.what is a thread pool and  why is it used?
+54.what is callable and future in java multithreading?
+55.what are volatile variables and how do they differ from synchronized?
+56.what is an exception java?
+57.what is the difference between checked and unchecked exceptions 
+58.Expalain the try catch finally mechanism in java?
+59.what is the difference between throw and throws?
+60.what is difference between an exception and a error in java?
+61.what is exception chaining in java ?
+62.what is the difference between final finally and finalized
+63.what is try with resources and why is it prefered over traditional try catch finally?
+64.what is the difference between throw new runtime exception and new exception?
+65.what happens in an exception occurs inside a catch block?
+66.difference between comparable and comparator in java?
+67.fail fast vs fail safe iterators in java?
+68.java collection vs collections?
+69.what is java collections framework & its hierarchy?
+70.java hashset vs linkedhashset vs treeset 
+71.java hashmap vs concurrenthashmap
+72.hashmap vs linkedhashmap
+73.intermediate vs terminal operations in java?
+74.difference between collections and streams in java?
+75.what is functional prpgramming in java
+76.what is lambda expression in java?
+77.what is a functional interface?
+78.what is the Stream API in java?
+79.what is the difference between map and flatmap in java Streams?
+80.what is the method reference in java?
+81.what is immutability in functional programming?
+82.what is a predicate in java functional programming
+83.what is optional in java and why is it used in functional programming
+84.how do you handle exceptions inside lamdda expressions
+85.what is lazy evaluation in streams and why is it important?
+86.what is supplier in java functonal programming
+87.what is a consumer and how is it used in java functional programming
+88.what is BiFunction and when would you use it?
+89.what is short circuting in java Streams 
+90 what is parallel stream processing and when should it be used?
+91.what is a reduction operation in java Streams
+92.what is a higher order function in java?
+93.what is the java collections framework?
+94.what is the difference between List set and map
+95.what is the difference between ArrayList and LinkedList
+96.what is the difference between HashSet and TreeSet
+97.what is an iterator in java and why is it used?
+98.what is the Iterator and ListIterator
+99.what is fail fast in java collections?
+100.what is the difference between Hashmap and HashTable?
+101.what is ConcurrentHashmap and how does it work internally?
+102.how does hash map work internally?
+103.what is linkedhashmap and when should you use it?
+104.what is treemap and how does it differ from hashmap 
+105.what is copyOnWriteArrayList and when should you use it?
+106.what is the difference between fail fast and fail safe Iterators?
+107.why is equals and hashCode important in collections like hashSet or HashMap?
+108.what is a priorityQueue and how does it work?
+109.what is a WeakHashmap and when should you use it?
+110.what is IdentityHashMap and how is it different from HashMap?
+
+
+
+
+
+maven-
+1.what is maven ?
+A build automation and dependency management tool used mainly in java projects.
+it helps you compile code run test package your application and manage external libraries.
+maven uses a standard project layout which makes every java project look organized and predictable.
+Every behaviour in maven is controlled by a single configuration file called pom.xml (Project Object Model).
+Maven save time avoids dependency conflicts and ensures your application builds the same way on every machine.
+
+2.what is POM.xml?
+the POM or project object model is the heart of any maven project.the file contains all configuration details.
+whenever you run a maven command maven reads the POM file builds a dependency graph.
+
+3.what is the maven build lifecycle?
+maven has three built in lifecycle but the most common one is the default lifecycle.
+validate-compile-test-package-verify-install-deploy.
+
+4.what is the difference between mvn clean,mvn install,mvn package?
+mvn clean-deletes the target directory the target directory stores compiled classes jars, and temporary files.clean ensures you next build starts fresh.
+mvn package-compiles your code and generates the final packaged output such as a jar or war file.
+mvn install-Does everything package does plus it installs the built artifact into your local repository.your other Maven projects can then use as a dependency.
+In simple terms- clean removes old builds,package builds the application,Install makes  your build available locally for other projects.
+
+5.what are maven repositories?
+repositories are storage locations where maven keeps artifacts such as jars,plugins and metadata.
+local repository-on your own machine when you download dependencies they are stored here.
+remote repository-companies host their own(e,g Nexus or Artifactory) 
+central repository-mantained by maven and contains thousands of commanly used libraries like spring hibernate and log4j.
+
+6.what are maven dependencies and dependency scopes?
+dependencies are external libraries your project needs.you declare then inside pom.xml with a group ID artifact ID and version.
+
+7.what is maven wrapper?
+the maven wrapper allows you to run maven even if maven is not installed on your system.
+it downloads the exact maven version required by the project.
+this ensures that everyone on your team uses the same maven version.
+
+8.what are maven plugins?
+plugins extend mavens functionality each plugin contains a set of goals that perform tasks.
+
+9.what is the difference between a parent POM and child POM?
+
+10.what is dependency management in Maven ?
+problem -verion conflicts.
+
+------
+Scenario: two classes share 70% common code.what design approach would you use?
+can primitive data types be null?
+Answer: primitves are designed for performance and simplicity.Reference types allow null to be represent the absence of an object.
+primitive types-int long double boolean char.cant be null ,Always hold a value.deafult value apply.
+
+why do collections use wrapper classes instead of primitives?
+
+what is auto boxing and unboxing ?
+
+can auto boxing or unboxing cause a NUllPointerException?
+
+when is StringBuffer preferred over String?
+Are there scenarios where the String pool is not beneficial?
+
+Why are String immutable in java?
+Security-stores sensitive data(passwords,network,addresses)Immutability prevents malicious modification.
+thread safety-String never change 
+performance-enables String pooling enables hash code cashing.
+
+what happens when a String is created using the new keyword?
+
+how does String immutability improve security?
+
+can we create an object without using the new keyword? if yes how?
+yes it is possible to create objects in java without directly using the new keyword.
+factory method,Object cloning,Deserialization,Reflection.
+
+can a class exist without any variables or methods?
+yes a class exist without any  variables or methods.
+
+what is the difference between object and object reference?
+An Object is the actual instance created in memory(Heap) containing data.
+An Object reference is a variable (Stack) that stores the address of the object.
+
+Does assigning null to a reference delete the object?
+no.
+
+can a class have only static members?if yes is it still object oriented?
+yes.
+
+is encapsulation only about making variables private?
+
+if a class has private fields but public setters is it truly encapsulated?
+
+why do we gettes and setters instead of making fields public?
+
+can fields be public and still maintain encapsulation?
+
+what are anonymous classes and where are they used?
+
+what is the differnce between encapsulation and abstraction?
+hide internal data and controls access.
+hide implementation details and shows essential behaviour.
+
+what problem does abstraction solve that encapsulation does not?
+
+why do we need abstract classes when interfaces alreasy exist?
+
+can abstract class exist without any abstract method?
+yes,an abstract class can exist without any abstract methods.
+
+what happnes when a return statement is executed inside a try or catch block?Does the finally block still execute?
+yes 
+
+is it possible wo write a try block without a catch block?how does try finally work?
+yes it is completely valid in java to write a try block without a catch block as long as a finally block is present.
+
+what conditon does a finally block not execute?
+
+can we write multiple finally blocks in java why or why not?
+no java does not allow multiple finally block for a single try statement each try block can have either zero or one finally block allowing multiple finally blocks would introduce ambiguity and complicate execution flow.
+
+how does exception handling impact the performance of a java application?
+
+how can you handle multiple exceptions in a single catch block?
+
+can a static block throw an exception?
+yes 
+
+what happens if an exception is thrown in both try and finally blocks?
+
+what is the difference between checked and unchecked exception?
+
+how should exceptions be handled in multi threaded java application?
+
+explain the internal working of hashmap in java?
+hashmap stores data in key-value pairs and internally uses an array of buckets.
+(i).the keys hash code is calculated.
+(ii).the hash code is trnasformed into an index pointing to a specific bucket in the internal array.
+(iii).each bucket behaves like a linked structure where entries are connected in sequence.
+if bucket is empty :Entry stored directly.
+if bucket has entries : compare keys replace existing value or add new entry.
+
+what happens when two keys have the same hashcode?
+
+what changes were introduced in hashmap in java 8?
+
+how does concurrenthashmap performance in a multithreaded environemnt?
+
+what is the difference between hashmap and concurrenthashmap?
+
+name the algorithms used by Arrays.sort() and Collections.sort().
+
+when should treeset be preferred over hashset?
+
+why hashmap not thread safe?
+
+how does resizing work in hashmap?
+
+what happens if a mutable object is used as a Hashmap key?
+
+what is java
+java is a high level,object oriented programming language that is desinged to be platform independent.
+
+what is an exception in java?
+An exception in java is an event that disrupts the normal flow of a program during execution.it occurs when the program encounters an unexcpected situation such as invalid input,division by zero accessing a null reference or reading a missing file.
+
+checked vs unchecked exceptions
+
+explain the try catch finally mechanism in java?
+
+what is the difference between throw and throws?
+
+what is exception chaining in java?
+
+what is the difference between final finally finalize()?
+
+try with resources vs traditional try finally?
+
+throw new RuntimeException vs Throw new Exception()
+
+what happens if an exception occurs inside a catch block?
+
+what is a String in java and why is it immutable ?
+A String is an object representing a sequence of characters.
+stores in the java.lang package.
+one of the most widely used classes in java applications.
+
+what is the String pool nd how does it work?
+
+what is the difference between == and equals() when comparing Strins?
+
+why are Strings considered immutable but StringBuilder and StringBuffer are mutable?
+
+what is the difference between String ,StringBuilder ,and StringBuffer?
+
+what is the purpose of the intern() method?
+
+why is string considered thread safe in java?
+
+what is thread in java?
+
+what is the difference between process and thread?
+
+what is context switching in multithreading?
+
+what is thread life cycle in java?
+
+what is synchronization in java and why is is needed?
+
+what is a deadlock and how can it occur in java?
+
+what is a race condition in multithreading?
+
+what is the difference between synchronized methods and synchronized blocks?
+
+what is the difference between wait(),sleep() and yield()?
+
+what is a thread pool and why is it used?
+
+what is callable and future in java multithreading?
+
+what are volatile and variables and how do they differ from synchronized?
+
+what happens internally when a object is created using the 	new keyword?
+
+Spring framework vs spring boot?
+
+@Bean vs @Component in Spring boot?
+
+@RequestParam vs @Pathvariable in spring boot.
+
+what is ResponseEntity and why is it used?
+
+how does Spring boot handle dependency injection and why is constructor injection preferred?
+
+what is IOC in Spring ?
+
+what is the Spring IOC Coontainer?
+
+what is the difference between BeanFactory and ApplicationContext?
+
+Explain the complete flow of a Spring boot application?
+
+how does Sprign boot auto configuration work internally?
+
+how does spring boot handle configuration for multiple environments?
+
+how do you secure REST API in spring boot in real production Systems?
+
+how do spring boot microservices communicate and hnalde failures?
+
+how do you optimize performance in a spring boot application?
+
+how do you handle exceptions and errors in spring boot REST APIs?
+
+how do you test Spring boot applicatons in real projects?
+
+how does caching work in Spring boot and when should it be used?
+
+what is asynchronous processing in spring boot and why is it important?
+
+how does spring boot interact with databases and what are common performance issues?
+
+how do you deploy spring boot applications in real productions environemtns?
+
+how does spring boot handle configuration for multiple environmetns?
+
+how do you mmonitor and obeserve spring boot applications in production?
+
+How do Spring boot microservices handle service discovery and why is it required?
+
+how do you handle inter service communication in spring boot microservices?
+
+how do you design and handle distributed transactions in microservices?
+
+how do you handle configuration and feature rollout safety in microservices?
+
+Q.what is maven ?
+A build automation and dependency management tool used mainly in java projects.
+It helps you compile code ,run tests package your application and manage external libraries.
+Maven uses a standard project layout which makes every java project look organized and predictable.
+Every behaviour in maven is controlled by a single configuration file called pom.xml (Project Object Model).
+Maven saves time avoids dependency conflicts and ensures your application builds the same way on every machine.
+
+Q.2 what is pom.xml?
+the pom or Project Object Model is the heart of any maven project.this file contains all configuration details.
+packaging type,versioning,Repository configuration,dependencies,plugins,build settings,project metadata.
+whenever you run a maven command maven reads the pom file builds a dependency graph and executes the required goals.think of pom as the master blueprint of your project.
+
+Q.3 what is the maven build lifecycle?
+maven has three built in lifecycles but the most common one is the default lifecycle.
+validate,compile,test,package,verify,install,deploy.
+
+Q.4.what is the difference between mvn clean,mvn install,mvn package?
+mvn clean-deletes the target directory the target directory stores compiled classes jars and temporary files clean ensures your next build starts fresh.
+mvn package-compiles your code and generates the final pakcaged output such as a jar or war file.
+mvn install-does everything package does plus it installs the built artifact into your local repository .your other maven projects can then use it as a dependency.
+simple-clean removes old builds,package builds the application,install makes your build available 
+
+Q.5.what are maven repositories?
+repositories are storage locations where keeps artifacts such as jars,plugins,and metadata.
+(i).local Repository.-on your own machine when you download dependencies they are stored here.
+(ii).Remote Repository.-companies host their own(eg Nexus,or Artifactory)
+(iii).Central Repository.-maintained by maven and contains thousands of commanly used libraries like spring ,hibernate and Log4j.
+search order : maven searches in order :Local,remore then central.
+
+Q.6.what are maven dependencies and dependency scopes?
+dependencies are external libraries your project needs.you declare then inside pom.xml with a group ID,artifactId ,and version.
+
+Q.7.what is the maven wrapper?
+the maven wrapper allows you to run maven even if maven is not installed on your system.
+It downloads the exact maven version required by the project.
+this ensures that everyone on your team uses the same maven version.
+it also helps achieve consistent builds accross local development ci cd piplelines and production environemnt.
+the wrapper is highly recommended for real world projects.
+
+Q.8 what are maven plugins?
+plugins extend mavens functionality each plugin contains a set of goals that perform tasks.
+maven-compiler-plugin
+maven surefire plugin
+maven jar plugin
+spring boot maven plugin.
+plugins make maven flexible and powerful for modern application development.
+
+Q.9.what is the difference between a parent pom and a child pom?
+
+Q.10.what is dependency management in maven?
+
+oops
+what is object oriented programming?
+object oriented programming or oop is a programming model where the entire application is built around objects.
+objects represent real world things they contain data in fields and behaviour in methods.
+oop helps developers build software that is moduler organized reusable and easier to maintain.it breaks a large problem into smaller manageable objects.
+java heavily follows oop principles which include encapsulation,inheritance,abstraction,and polymorphism.these 	four pillers form the foundation of javas design.
+
+what is a class and what is an object?
+Aclass is a blueprint or template that defines what an object should contain and how it should behave.it describes the structure.
+A object is a real instance created from the class it is the actual entity that holds data and performs actions.
+forexample-a car class describes properties like color and model and actions like start or accelerate but an actual car on the road is an object created from that class.
+
+what is encapsulation?
+encapsulation is the concept of grouping related data and behaviour inside a single unit and restricting direct access to the internal state.it means protecting the objects data and only allowing controlled access through methods.
+encapsulation provides security prevents unintended modifications and keeps the objects internal structure hidden.
+in simple terms it it like putting data in a capsule and opening it only through controlled methods.
+
+what is inheritance?
+inheritance allows one class to acquire properties and behaviours from another class.
+the class that inherits is called the child class,and the class being inherited from is the parent class.
+inheritance promotes reusability by avoiding duplication it also allows you to create specialized classes based on existing behaviour.
+through inheritance java supports hierarchical class sructures nd helps implement one of the key oop prinicples polymorphism.
+
+what is polymorphism?
+polymorphism means "many forms" it allows the same method name to behave differently depending on which object is calling it.
+in java polymorphism appears in two forms:
+compile time polymorphism through nethod overloading.
+runtime polymorphism through method overriding.
+polimorphism helps you write flexible code that works with parent references and executes child specific behaviour at runtime.
+
+what is abstraction?
+abstraction means showing only the essential features and hiding unecessary internal details .
+this principle allows developers to focus on the what instead of the how.
+java achieves abstraction using abstract classes and interfaces these mechanism let you define behavior without exposing the implementation.
+
+what is method overloading ?
+methid overloading occurs when multiple methods have the same name but different parameters.
+it allows you to create multiple variations of the same operation to support different inputs.
+overloading increases readability and happens during compile time making it a form of static polymorphism.
+
+what is the difference between method overloading and overriding?
+overloading occurs in the same class and changes parameters.
+overriding occurs accross classes through inheritance and changes the methods behavior.
+overloading happnes at compile time.
+overriding happens at runtime.
+
+what is the this keyword?
+the this keyword refers to the current object.
+it is used to differentiate  instance variables from parametes when the names are the same.
+It helps avoid confusion when working with constructors setters and instance methods.
+
+what is the super keyword?
+the super keyword refers to the parent class.
+it is used to call parent class variables parent methods and parent constructors.
+it helps when child classes want to reuse some of the parent functionality without rewriting it.
+
+what are constructors in java?
+A constructor is a special block that initializes an object when it is created.
+It has the same name as the class and does not return anything.
+constructors are used to set initial values allocate resources or prepare the object for use.
+
+What is constructor overloading?
+constructor overloading means having multiple constructors in the same class with different parameter lists.
+this provides flexibilty in object creation.you can create an object  with default values, custom values, or partial values based on the available constructors.
+
+what is an abstract class?
+An abstract class is a class that cant be instantiated and may contain both abstract and concrete methods.
+It proivdes a partial blueprint where common behavior is implemented in the abstract class and specialized behavior is defined in subclasses.
+Abstract classes are used when multiple related classes share common structure but still need individual implementation.
+
+what is interface in java?
+An interface is a fully abstract contract that defines what a class must do without specifying how it must do it.
+A class that implements an interface provides the actual behavior.
+modern java interfaces can contain default methods,static methods,and private helper methods,
+interfaces support multiple inheritance of type and are key to abstraction flexibility and clean architecture.
+
+what is a java bean?
+A java bean is a simple,reusable,software component that follows a few standard rules.
+it must have a public no argument constructor.
+its fields should be private.
+it must provide public getters and setters to access those fields.
+And it must be serializable.
+java beans are used heavily in frameworks for component based programming they promote encapsulation reusability and easy configuration.
+ 
+what is the difference between a java bean and a pojo?
+both are simple objects.
+but a pojo has no strict rules it is just a plain java object that may or may not have getters setters or constructors.
+A java bean has strict conventions including private fields public getter and setters a public no arg constructor and must be serialization.
+
+what is composition in oop?
+composition is a strong form of association where one class contains another class as part of its internal structure it represents a has a relationship.
+for example: a car has an engine 
+composition creates objects that cant exist independently if the containing object is destryed the composed objects are also destroyed.
+composition is preffered over inheritance because it proivdes better flexibility and reduce tight coupling.	
+
+what is association in oop?
+Association is broad relationship between two independent classes it can be one to one ,one to many,many to one ,many to many.
+for example a teacher is associated with multiple stuents.
+Association is foundation for modeling real world relationships in software.
+
+what is coupling in java?
+coupling refers to how much on class depends on another class.
+thight coupling means classes are closely dependent making the system difficult to change.
+loose coupling means classes depend on abstractions rather than concrete implementations.
+
+losse coupling improves
+flexibility
+tetability
+maintainability
+
+what is cohesion in oop?
+
+what is runtime polymorphism?
+
+what is the difference between shallow copy and deep copy?
+A shallow copy copies only the reference values of nested objects and the actual objects.
+a deep copy creates entirely new copies of all nested objects making the new object fully independent of the original.
+deep copying is safer but more expensive.
+shallow copying is faster  but may cause unintended modifications if both objects 	share the same internal data.
+
+what is object cloning in java?
+
+what is the difference between IS a and has a relationships?
+
+what is the principle of favor composition over inheritance?
+
+what is Object identity vs Object equality?
+
+what is the difference between immutable and mutable objects?
+ -------
+ Scenario based 
+ you passed an object to a method and modified it inside the method.the change is visible outside why does this happen?
+ 
+ you set an object reference to null but memory did not free immediatly why?
+ 
+ two references point to the same object.one modifies it what happens?
+ 
+ your application memory keeps increasing even after objects go out of scope.why does this happen?
+
+Object creation must be stopped from outside a class.How should this be designed?
+
+you passed an object to a method and modified it inside the method.the change is visible outside why does this happen?
+
+you need only one instance of a class accross the application how do you impelemt it?
+
+why does the get method in hashmap return null after modifying the key object?
+
+two threads modify an ArrayLIst at the smae time and data becomes inconsistent why does this happen?
+
+there is a return statement inside try or catch does the finally block still execute?
+
+you catch an exception but do nothing inside the catch block.what problems does this cause?
+--------
+Here are the top Spring Boot Microservices interview questions for developers with 3 to 5 years of experience:
+What are the core principles of microservices architecture, and how does Spring Boot support them? (0:20)
+How do Spring Boot microservices handle service discovery, and why is it required? (2:02)
+How do you handle inter-service communication in Spring Boot microservices? (3:32)
+How do Spring Boot microservices handle data management and database design? (5:01)
+How do you design microservices for fault tolerance and resilience? (6:30)
+How do you design and handle distributed transactions? (7:49)
+How do you handle API versioning in Spring Boot Microservices? (9:23)
+How do you ensure observability in complex Spring Boot microservice systems? (10:47)
+How do you design microservices for independent scalability? (12:12)
+How do you handle configuration and feature rollout safely? (13:24)
+Describe a common cascading failure scenario and how you debug it. (14:35)
+How do you debug high-latency issues? (16:16)
+Explain a production issue caused by misconfiguration and how you troubleshoot it. (17:43)
+How do you debug memory leaks? (19:17)
+Describe how you debug a production issue that you cannot reproduce locally. (20:44)
+-----------------
+how would you refactor a tightly coupled codebase?
+describe a scnerio 	 where you would use the builder pattern?
+your application memory keeps incresing even after objects go out of scope why does this happen?
+how would you design a singleton class and make it thread safe?
+how would you desing a thread safe in memory chache?
+you encounter a nullpointerexception in production.how would you resolve it.
+how do you log exceptions without losing the root cause?
+two references point to the same object one modifies it what happens?
+why does the get mehtod in hashmap return null after modying the key object?
+why does data beocome inconsistent when two threads modify an ArrayList at the same time?

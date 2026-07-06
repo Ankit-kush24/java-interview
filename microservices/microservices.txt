@@ -200,3 +200,30 @@ Microservices & Architecture
 How would you design microservices architecture for an event management platform?
 
 Explain service discovery with Eureka and load balancing.
+
+what is monolith application.
+
+when we will go for load balancer how load balancer will distribute the load?
+
+what is microservices and advanages of microservices?
+
+microervices architecture components?
+
+how many ways we can implement rest client?
+rest template,web client,feign client
+
+what is inter service communication
+
+how to configure feign clieent for inter service communication
+
+how to create service registry?
+
+how to implement API Gateway?
+
+Disadvantage of monolith pattern?
+tight coupling of services.
+if one service is down other services also get affected.
+if one service is planned to reployed other also get affected.
+scalling problem.
+technology locking.
+codebase become complex as project scale.

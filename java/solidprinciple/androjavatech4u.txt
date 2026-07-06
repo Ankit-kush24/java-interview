@@ -1,0 +1,66 @@
+What are SOLID Principles?
+SOLID Principles -
+
+It is the set of five deign principles for object oriented programming  developed by Robert C. Martin, also known as "Uncle Bob"  in his 2000 paper “Design Principles and Design Patterns.”
+
+SOLID Acronym
+
+SOLID is an acronym that stands for five key design principles:
+
+1. Single Responsibility Principle (SRP)  
+2. Open-Closed Principle (OCP)
+3. Liskov Substitution Principle (LSP)
+4. Interface Segregation Principle (ISP)
+5. Dependency Inversion Principle (DIP)
+
+Advantages of SOLID Principles :-
+
+Achieve the reduction in complexity of the code
+Increase readability, extensibility, and maintenance
+Increase scalability, code flexibility, and readability
+Achieve Better testability
+Reduce tight coupling
+Reduce error and implement Reusability
+Increase Parallel development
+
+1. Single Responsibility Principle (SRP)   A class should have one, and only one, reason to change.
+A class should only have one responsibility .
+
+2. Open-Closed Principle (OCP) -  A software entity/module (class) should be open for extension but closed for modification.
+Rule - Add new feature without breaking existing functionality.
+
+3. Liskov Substitution Principle (LSP) - Derived or child classes must be substitutable for their base or parent class.
+
+OR
+
+Objects of a super class should be replaceable with objects of its sub classes without altering the desirable properties of a program.   
+
+
+class Base
+{
+}
+
+|| 
+
+class Child extends Base
+{
+
+}
+
+Means Sub type substitutable for super type.
+
+This Principle is not limited to is a relation but also force you to follow is substitutable rule 
+
+Note -
+   
+1. Child is the Sub Class of Base 
+2. Object of Base should be replaceable with objects Child
+
+Implementation Guidelines -
+
+a - Avoid Inheritance when subclass cannot satisfy the behavior of its super class. 
+b - No new exception can be thrown by sub type.
+c - Separate class or interface are often better for represent the distinct behaviour.
+d - Encourage the Robust polymorphism. 
+e - New Derived classes just extends without replacing the functionality of Base class
+

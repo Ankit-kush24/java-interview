@@ -3,3 +3,248 @@
 3)The difference between @PathVariable and @RequestParam
 4)How these two can be interchangeable in certain cases
 5)How to handle multiple @PathVariables in an API
+
+mutable means ones created the Strings value can be changed.
+immutable means ones created the Strings value cant be changed.
+thread safe means that the String can be used safely when multiple threads run at the same time.
+not thread safe means the String may break or behave incorrectly in such situations.
+
+guess the output
+String s1="Hello";
+s1.concat("World");
+
+StringBuilder s2=new StringBuilder("Hello");
+s2.append("World");
+
+StringBuffer s3=new StringBuffer("Hello");
+s3.append("World");
+
+System.out.println(s1);
+System.out.println(s2);
+System.out.println(s3);
+
+output-
+Hello
+HelloWorld
+HelloWorld
+----------------
+String s1="Hello";
+s1=s1.concat("World");
+System.out.println(s1);
+HelloWorld
+---------------
+String constant pool is a special memory area designed only for strings.
+-----------
+instagram
+public class Employee {
+    {
+        System.out.println("Instance block");
+    }
+    static {
+        System.out.println("Static block");
+    }
+    Employee() {
+        System.out.println("Constructor");
+    }
+}
+what wiil be the output of this code for new Employee(); object 
+the output will be
+Static block 
+Instance block 
+constructor
+Static block → class loading ke time sirf ek baar
+Instance block → har object creation par
+Constructor → instance block ke baads
+correct can you exaplain why ?
+
+the static block executes 1st because it runs when the employee class is loaded into memory.
+then during object creation the instance block executes 1st folloed by the constructor.
+good whay if we had two employee object ?
+new Employee()
+new Employee()
+then the output will be 
+Static block 
+Instance block 
+constructor
+Instance block 
+constructor
+why did not the static block execute again?
+bacause static belongs to the class not object
+the employee class was already loaded when the 1st object was created.
+so the static block already executed.
+-----------
+Set<Employee> set=new HashSet<>();
+set.add(new Employee(1,"John"));
+set.add(new Employee(1,"John"));
+System.out.println(set.size());
+what will be the output of this code?
+it depends?
+Depends? on What?
+whether the Employee class has overriden equals() and hashcode().
+why does that matter?
+HashSet uses equals() & hashcode() to determine whether two objects are duplicate.
+lets say employee class overrides them
+And add a logic which consideres objects to be equal if their id and name are same.
+then output will be 1 because HashSet does not keep duplicates.
+Alright And what if they are not overriden?
+Then by deafult equals() compares Object references.
+So both Employees will be treated as different objects.
+hence the size will be 2.
+-----------------------------
+"HashSet duplicate check ke liye pehle kya use karta hai?
+hashCode() call hota hai.
+Agar hash same aaye to equals() call hota hai.
+equals() true hua to duplicate mana jata hai.
+--------------
+String s1="Java";
+String s2="Ja"+"va";
+System.out.prinlt(s1==s2);
+what will be the output of this code?
+it will be true.
+String s1="Java";
+String str="Ja";
+String s2=str+"va";
+System.out.prinlt(s1==s2);
+And what will be the output now?
+now it will be false.
+can you explain the the logic 
+start with 1st case:
+ja and va are string literals.
+the compiler combines them into "Java" at compile time.
+ok so
+we already have "Java" in the memory because of s1.
+So another java will not be created.
+s2 will also point towards it.hence s1==s2 will be true.
+what about the 2nd case?
+Ja is in a variable .its value is only available at runtime.
+so,concatenation will take place at runtime.
+but str has "Ja".we can clearly see.
+yes but java does not treat it that way.
+it cant consider str+"Ja" as a compiler time consant.
+ok so what happens?
+since concatenation happens at runtime "Java" is created as a new String Object.
+s1 and s2 point differently hence output is false.
+--------------
+class Parent{
+static void display(){
+System.out.println("Parent");
+}
+}
+class Child extend Parent{
+static void display(){
+System.out.println("Child");
+}
+}
+public class Main{
+main(){
+Parent obj=new Child();
+obj.display();
+}
+}
+what will be the output of this code?
+
+class Parent{
+ void display(){
+System.out.println("Parent");
+}
+}
+class Child extend Parent{
+ void display(){
+System.out.println("Child");
+}
+}
+public class Main{
+main(){
+Parent obj=new Child();
+obj.display();
+}
+}
+and what will be the output now?
+----------------
+class Parent{
+public void display(){
+System.out.println("Parent");
+}
+}
+class Child extend Parent{
+private void display(){
+System.out.println("Child");
+}
+}
+-------------
+package p1;
+class Display{
+void show(){
+System.out.println("Hello");
+}
+}
+package p2;
+import p1.Display;
+class Main{
+main(){
+Display obj=new Display();
+obj.show();
+}
+}
+-----------------
+LIst<Intger> list=Arrays.asList(5,1,9,2,7);
+list.stream().limit(3).sorted().forEach(System.out::println);
+list.stream().sorted().limit(3).forEach(System.out::println);
+-------------
+LIst<Intger> list=Arrays.asList(5,1,9,2,7);
+list.stream().skip(3).limit(2)().forEach(System.out::println);
+list.stream().limit(2).skip(1).forEach(System.out::println);
+----------
+List<List<String>> list=Arrays.asList(Arrays.asList("Java","Spring"),Arrays.asList("Docker","Kubernetes"));
+list.stream.map(Collection::stream).forEach(System.out::println);
+list.stream.flatMap(Collection::stream).forEach(System.out::println);
+----------
+LIst<Intger> list=Arrays.asList(1,2,3);
+list.stream().peek(x->System.out.println("Peek: "+x));
+---------
+List<String> list=Arrays.asList("Java","Spring boot","Kafka");
+int counter=0;
+list.forEach(tech->{
+counter++;
+System.out.printn(counter+":"+tech);
+});
+---------
+String a=new String("Java");
+String b=new String("Java");
+System.out.println(a==b);
+System.out.println(a.equals(b));
+
+String c="Java";
+String d="Java";
+System.out.println(a==b);
+System.out.println(a.equals(b));
+the output should be false true true true.
+-----------------------------
+try{
+FileInputStream file=new FileInputStream("test.txt");
+}catch(Throwable e){
+System.out.println("Exception");
+}catch(FileNotFoundException e){
+System.out.println("File Not found");
+}
+----------------
+Java 8 series episode 1.
+what is stream API?
+Stream API is used to process Collections in a functional and efficient way.
+
+Are streams stored in memory?
+No,streams process data on demand.
+
+Can Streams be reused?
+No,once consumed they cant be reused.
+
+can stream work with array?
+yes using Arrays.stream().
+
+is parallelStream always faster?
+No,it depends on data size and taskcomplexity.
+----------------
+Java 8 series episode 2.
+what is functional interface?
+Any interface with exactly one abstract method.
+

@@ -278,22 +278,139 @@ Hash collission-same bucket,equals check,Linked List,tree structure.
 163.How do you configure application.properties in spring boot(.properties vs .yml)
 164.How do microservices communicate in your project (REST,kafka,gRPC etc).
 165.How would you protect confidential data in a spring boot application used by multiple users with different roles?
+I will ensure every user logs in properly so identity verification is always done first.
+Based on user roles i will define clear authorization rules so only permitted users access sensitive information.
+I will encrypt important data while storing it and while transferrign it over the network.
+secrets like passwords tokens or keys will be stored securely outside the codebase.
+i will also maintain logs to track who accessed or modified sensitive data 
+this layered security helps keep critical information safe.
 167.What steps would you follow if your spring boot application slow down under heavy traffic?
+I will begin by monitoring the system using tools like Actuator or logging platforms to identity bottlenecks.
+i will analyze logs and performance metrics to detect unusable pattern or errors.
+To reproduce the issue i will run performance or load tests.
+Using profilers i will examine code level performance problems
+based on findings i will optimize database queries add caching or scale resources as required.
+continous monitoring will remain in place to prevent similor issues later.
+
 168.If you need a spring boot REST API to manage user details, how will you structure the project?
+I will divide the project into Controllers Services and Repositories
+Controllers will handle incoming HTTP requests like creating updating retrieving or deleting user data.
+Service will contain business logic validations and processing rules.
+Repositories will manage database interaction such as saving or fetching records.
+This layerd structure keeps responsibilities clear and simplifies future changes.
+It also makes testing and maintenance much easier.
+
 169.If you had to increase the capacity of a spring boot app to handle heavy traffic what would you do?
+First I will scale horizontaly by running multiple instances of the application.
+then we can add a load balance so incoming requests get distributed across those instances.
+If the application is large we can split it into microservices so each module can scale separately based on demand.
+I will use auto scaling features in cloud flatforms so resources adjust automatically when load increases.
+I will add cashing for commonly used data to reduce repeated database calls.
+if the architecture needs centralized request handling we can add an API Gateway for routing and authentication handling.
+ 
 170.How would you deploy a spring boot application on a cloud platform and manage config for different environment?
+I will package the application using Maven or gradle so it becomes ready for deployment.
+then i will choose a cloud service like AWS Elastic Beantalk or Azure App  service to host it.
+For Environment based settings I will use spring profiles like dev staging and prod.
+I will keep separate properly files such as application-dev.properties and application-prod.properties
+During deployment i will activate the correct profile so the right properties are picked automatically.
+This ensures each environment runs with correct settings without manual changes in code.
+
 171.How would you desing a spring boot API to handle large file uploads while keeping the system responsive?
 172.Suppose your spring boot application suddenly start throwing database connection error.how would you handle this situations?
+First I will check database connectivity and confirm whether the database server is reachable.
+I will review application logs to see exact error messages and patterns.
+I will verify configuration volumes like DB URL,username ,password,and connection pool setting.
+If load is high I will tune connection pool size so requests do not fail due to exhaustion.
+I will also add proper rertry handling where suitable.
+Continous monitoring will help prevent the issue from repeating.
+
 173.How would you organize a spring boot project that serves a static homepage and also shows dynamic server time?
+I will keep the main application class and controller classes inside the src/main/java directory
+in the controller i will add mappings such as / for the homepage and /time for showing current server time.
+Static content like HTML files will go inside src/main/resources/static
+Dynamic pages using templates like thymleaf will go inside src/main/resources/templates
+All configuration details will saty in application.properties under reources.
+this separation keeps static and dynamic content clear and makes maintanance easier.
+
 174.How can a spring boot backend allow requests from a particular frontend domain?
+I will use the @CrossOrigin annotation on specific controllers or methods to allow requests from a chosen domain.
+if multiple controllers need this i will configure it globally using a WebMvcConfigure bean.
+inside that configuration i will define allow origins and mapping clearly.
+this helps restrict unwanted cross origin access while allowing the required frontend domain.
+proper CORS setup improves security and avoids browser blocking issues.
+
 175.If a spring boot System needs data from an external REST service,how would you integrate it?
+I will first create a RestTemplate or WebClient bean using @Bean so it can be injected anywhere
+will RestTemplate i will make synchronous HTTP calls using methods like getForObject() by passing the API URL and response type.
+if non blocking calles are needed i will prefer WebClient asynchronous communication.
+Using WebClient I will call APis with methods like get() then use retrive to access resposnes.
+Depending on expected results i will process responses with bodyToMono() for single objects or bodyToFlux for collections.
+
 176.How can application events help different parts of a Spring boot system communicate?
+I will define event classes representing important actions such as user registration or system updates.
+whenever such actions occur i will publish events from the relevant part of the application.
+other components will listen for these events using event listners.
+listners can react indepedently without tightly coupling with other modules.
+this approach keeps the code modular flexible and easier to maintain 
+
 177.In a IOT use cases how can a spring boot backend process real-time data coming from thousands of devices efficiently?
+I will use a messsage system like Apache kafka to collect device data continously.
+the backend can consume that stream and process it in real time instead of waiting for batch collection.
+I will filter and separate useful data from noise so only meaningful data moves forward for analysis.
+For storing results I will use a database that supports fast writes and quick reads for analytics.
+this setup allows the system to handle large incoming volume wihout choking.
+It also keeps processing smooth even when thousands of devices push data together.
+
 178.How would you add a GraphQL layer to an existing spring boot REST service?
+First I will add the required GraphQL dependencies in pom.xml or build.gradle.
+I will create a schema file like schema.graphqls inside src/main/resources
+then i will create data fetchers to pull data from existing services or from the database layer.
+I will configure GraphQL to connect the schema and fetchers properly.
+After that i will expose the GraphQL endpoint and ensure it is accessible as expected.
+Finally i will test queries using tools like GraphQL or postman to confirm responses are correct.
+
 179.In what situation would a spring boot application switch between multiple databases during runtime and how would it work?
+A common example is when users come from different regions like Europe or Asia.
+we can route requests so a European user connects to the Europe database and an Asian user connects to the Asia database.
+I will add a request based logic that checks the request context and selects the correct data source.
+this selection can happen before the database call is made so the correct database is always used.
+It improves relevance and can also reduce latency for users in different regions.
+the application stays unified but database usage changes based on who is calling it.
+
 180.How can Spring WbFlux be used to fetch data from another service without blocking the application?
+I will use WebClient from WebFlux to make non-blocking API calls.
+the request will run asynchronously so other operations continue without waiting.
+As data arrives i can process it
+
 181.Imagine users complain that API responses are inconsistent between deployments.What steps would you take?
+I will first compare configuration across environments to ensure they are consistent.
+I will check active Spring profiles to confirm correct properties are loaded.
+Reviewing recent deployments and code changes will help Identify differences.
+I will verify database schema versions and API dependencies
+Logging and version tagging will help track future deployments better.
+this structured check helps quickly isolate the root cause.
+
 182.If your Spring boot service needs scheduled background jobs,how would you implement them?
+I will use Springs scheduling support with @EnableScheduling.
+Then I will add methods with @Scheduled for fixed time or interval execution.
+I will ensure jobs run indepedently so they dont block main requests.
+Loggin will be added to monitor job execution and failures.
+If jobs grow heavy we can move them to separate worker services.
+this keeps scheduled processing reliable and manageable.
+
+Suppose your application needs centralized logging across multiple microservices how would you approach it.
+I will configure structured logging in each service for consistency.
+Logs will be forwarded to a centralized system like ELK or Splunk.
+I will add correction IDs so requests can be traced across services.
+log levels will be properly defined to avoid unnecessarily noise.
+Monitoring dashboards will help quickly delect issues.
+this makes debugging distributed systems much easier.
+
+If an external service your app depends on becomes very slow how would you protect your application?
+I will add timeouts so requests dont hang indefinitely.
+Circuit breaker logic will prevent repeated calls to a failing servcie. 
+
 183.If your Spring boot API suddenly starts returning slow responses after a recent code change, how would you investigate it?
 184.Suppose you need to ensure zero downtime while deploying a new version of a spring boot service.How would you handle deployment?
 185.Imgegine your application needs to send notifications (email,SMS) after certain actions.How would you desing this?
@@ -301,9 +418,31 @@ Hash collission-same bucket,equals check,Linked List,tree structure.
 187.Suppose users report occasional data inconsistency in your spring boot system.how would you address it?
 188.Imagine your spring boot application needs to support pagination and sorting for a large list API.How would you implement it properly?
 189.Suppose your service must call an external API,but the external API sometimes returns errors.How would you make your calls safer?
+
 190.What approach would you follow to optimize performance in your spring boot application?
+First I will introduce caching for frequently requested data so repeated database hits can be avoided
+I will review databse queries carefully and improve slow queries to reduce load on the database.
+for tasks like sending emails or heavy processing i will use asynchronous execution so the main request is not delayed.
+if traffic grows we can add a load balancer to distribute requests accross multiple instances
+i will also review the code logic and improve time complexity whenever possible.
+if the system needs to handle many concurrent users we can consider reactive approaches like WebFlux for better responsiveness.
+
+
 191.How would you use spring profiles to manage different configuration for development and production?
+I will create separate 	configuration files like application-dev.properties and application-prod.properties.
+Each file contain environment specific settings such as database URLs or API endpoints 
+I will activate the required profile using environment variables command line arguments or the spring.profile.active property.
+If some beans sould load only in a ceratin environment i will use the @Profile annotation.
+this makes switching between environments easy and avoids manual configuration changes
+it also keeps the application behavoir consistent accross development and production
+
 192.If your spring boot system need to work with several external APIs,how will you deal with request linit and possible failures?
+I will add a circuit breaker so that if an external API keeps failing the system does not keep retrying unnecessarily.
+I will implement rate limiting logic to make sure we do not cross the allowed API request limits.
+If temporary failures happen i will add a retry mechanism with exponential delay to avoid overwhelming the service.
+to reduce repeated calls i will use caching for frequently requested data.
+this overall approach keeps the application stable and prevents service disruptions.
+
 193.If your Spring boot application needs to validate incoming request data before saving it,what approach would you follow?
 194.Imagine you need to create an audit trail for key actions in your spring boot application.how would you desing it?
 195.Suppose your Spring boot app needs to handle a burst of traffic for a short time,like a scale or event.How would you prepare for that?
@@ -320,6 +459,786 @@ all four are spring beans meaning spring will detect them and manage them in the
 @Repository is for data access layer like DAO or spring Data Repository and it also helps with exception translation into Spring's DataAccessException.
 @Controller is for web layer - it handles incoming HTTP requests and returns response views or JSON (with @RestController).
 
-202.
+What security concerns should be considered when using WebSocket in a Spring boot application?
+Since WebSockets keep a continous connection open i will ensure strong authentication before allowing the connection.
 
- 
+How would you desing a spring boot API to handle large file uploads while keeping the system responsive.
+
+How can Spring WebFlux be used to fetch data from another service without blocking the application.
+
+
+
+202.How does dependency injection improve application desing in spring boot?
+203.What is the difference between checked and unchecked exceptions in java?
+204.How does concurrentHashmap achieve thread safety internally?
+205.what are the main advantages of using microservices over monolithic architecture?
+206.How does spring boot auto configuration work?
+207.spring boot auto configuration tries to configure beans automatically based on what dependencies are present.
+It checks the classpath-like if spring-boot-starter-web is there it configures DispatcherServlet,Tomcat,MVC beans etc.
+It also checks existing beans-if you already defines onc boot backs off and does not override.
+This is driven by conditional annotations like @ConditionalOnClass,@ConditionOnMissingBean,@ConditionalOnProperty.
+thats why in most projects we just add starters and things start working without writing tons of config.
+if we want to debug it.we can enable debug logs or check the autoconfiguration report.
+
+how are primitive and non primitive data types differentiated based on memory allocation?
+
+How would you handle partial failures in a distributed system?
+
+How does Spring boot decide which auto configuration to apply?
+classpath check,property check ,Bean presense.
+
+How would you debug a memory leak in a java application?
+What is the difference between serializable and Externalizable?
+How do you handle idempotancy in REST APIs?
+What is the purpose of @Transactional Propogation level?
+why do microservices fail under high load and how do we fix it?
+How do you debug a slow API or Dashboard?
+
+1.Can you introduce yourself and briefly explain your recent project?
+Have you applied any design principles in your project?
+yes and i usually explain it through decisions i made in code not theory
+For example single responsibity : i keep controllers thin, services focused, and more mapping/validation to dedicated layers.
+open/closed: I design for extension using interfaces and strategy pattern instead of editing a huge if else every time.
+dependency inversion: services depends on interfaces and spring injects the right implementation.
+I also use composition over inheritance a lot especially when building reusable components.
+
+2.where have you used the singleton design pattern in your application?
+3.what is the best way to implement a singleton design pattern?
+4.Have you implemented the saga pattern in any project?
+5.have you used the builder pattern in real project or personal project?
+yes especially when creating complex request/response objects with many optional fields .
+builder makes object creation readable and avoids constructors with 10 parameters.
+in java Lomboks @Builder is commonly used for DTOs but i still watch for immutability and defaults.
+builder is also useful when mapping data from multiple sources into one object like DB+API+config.
+
+
+6.If production API latency suddenly increases how would you troubleshoot it?
+7.what factors like GC pauses ,memory spikes ,or SQL  queries would you check first?
+8.how do you debug an issue that works in development but fails in production?
+9.what strategies do you use to improve application performance?
+10.how do you handle exception management in microservices?
+11.what loggin practices do you follow in production system?
+12.how do you secure REST APIs in enterprise applications?
+13.what is your approach to database query optimization?
+14.how do you monitor microservices health in production?
+15.what challenges have you faced with distributed systems?
+16.how do you manage configuration accross environments?
+17.what caching strategies have you used in real projects?
+18.how do you handle concurrency issues in java application?
+19.what is your experience with messaging systems like kafka?
+20.how do you ensure reliable communication between microservices?
+21.what ci/CD practices have you followed in your projects?
+22.what is you experience with containerization tools like docker?
+23.how do you maintain code quality in large teams?
+code reviews are mandatory -not just syntax but design performance and readability.
+we enforce static analysis tools like sonarqube for coverage ,duplication and security checks.
+
+24.if a secret is accidentally exposed in a public GIthub repository how would you resolve it and prevent it in the future?
+First step is immediately revoke that secret or credential.
+then generate a new key or password so misuse stops instantly.
+next remove it from git history using tools like git filter repo or BFG
+just deleting the file is not enough history cleanup is important.
+going forward secret should be stored in vault or environtment variables.
+
+which build tools do you currently use and why?
+in most spring boot projects we commonly use maven or gradle.
+i personally perfer maven for stability ad strong ecosystem support
+It helps menage dependencies ,builds,packaging ,and CI/CD integration easily.
+gradle is faster due increamental builds so some teams prefer it.
+
+what is a heap dump and when would you use it?
+A heap dump is basically a snapshot of JVM memory at a specific time.
+it shows all objects ,references ,and memory usage patterns.
+we mainly use it when diagnosing memory leaks or outofmemoryerror.
+Tools like eclipse MAT or visualVM help analyze heap dumps.
+
+what is the difference between comaparable and comparator in java ?
+comparable defines natuaral sorting inside the class itself.
+it uses compareTo() method implemented in the model class.
+Comparator is external sorting logic defined separately.
+it uses compare() method and supports multiple sorting strategies.
+if only one default sorting exists comparable works fine.
+if multiple custom sortings are needed comparator is better.
+
+why is JWT commonly used in web application?
+
+how would you scale a spring boot application to handle high traffic?
+
+how can database clustering help with scalability?
+
+have you worked with single sign on how was it implemented?
+
+how do you implement API versioning in a REST service?
+
+what is circular dependency in spring and how do you resolve it?
+
+have you implemented password encoding or decoding which approach di you use?
+
+how would you design an API to support both JSON or XML responses?
+
+what is hybrid inheritance in java?
+
+how does java handle memory leaks?
+
+which API Gateway tools have you used in you projects?
+common API Gateways are Kong,Apigee ,AWS API Gateway ,Nginx.
+
+what is the comparable interface and when is it used?
+comparable is used when you want a natural ordering for objects.
+The class implements comparable and overrides compareTo().
+Then Collections.sort() or treeset can sort objects automatically.
+it is good when there is one obvious sorting like employeeId or name.
+
+how would you investigate a memory leak in a long running java application.
+
+what code coverage percentage do you maintain in your project?
+
+should testing effort be included during story point estimation?
+
+have you encountered ClassNotfoundException how did you resolve it?
+
+what significant performance optimization have you implemented?
+
+can you explain the producer consumer problem and how to implement it in java?
+
+how do you maitain code quality under tight delivery deadlines?
+
+how would you count numeric digits and alphabetic characters in a string?
+
+what major challenges have you faced in your projects?
+one big challenge was scalling microservices under heavy load.
+latency issues started appearing during peak traffic.
+we had to redesign caching and async messaging
+Another challenge was production memory leak debuging
+cross team coordination during releases was also tricky.
+but structured monitoring and communication solved most issues.
+
+which spring boot version are you currently working with?
+currently many teams are on spring boot 2.7 or 3.x
+migration to sprign boot 3 involves java 17 requirement.
+major changes include jakarta namespace updates.
+security and performance improvement are noticeable.
+dependency compatibility must be verified carefully.
+Always align version with project ecosystem stability.
+
+how do you handle merge conflit in git?
+
+if two objects are equal according to equals() can their hashcode be different?
+
+what production level best practices should be followed in a spring boot application before and after deployment?
+
+your system goes down at 3:am due to database overload what actions would you take?
+
+how does spring boot simplify web application development?
+
+which embeded servers does spring boot support and which one is the default?
+
+can you explain spring profiles and their usage?
+
+are you working with maven and what is its role in project management?
+
+what issues can occur with a singleton implemented using a private constructor and why is enum preferred?
+
+how does open/closed principle relate to polymorphism?
+
+can a spring boot application be deployed as a war file to an external server?
+
+what is the purpose of the synchronized keyword in multithreading?
+
+what happnes when you store an object in Hashset?
+
+what is the stragler pattern and when would you use it?
+
+what happens if a return statement is placed inside a finally block?
+
+can private or static method be overriden in java?
+
+what is the difference between lazy and eager loading in Jpa and what is LazyINitializationException
+
+what is method overriding in java
+
+how does spring boot auto configuration work internally?
+
+why should the stream peek method not be used for business logic?
+
+what challenges have you faced while upgrading a java version?
+
+what third party services have you integrated for sending emails?
+
+how would you handle a production issue caused by incorrect configuration properties
+
+what happens if no gloabl exception handler is defined in a spring boot application
+
+difference between spring and spring boot
+
+how does dependency injection improve application design
+
+what is the purpose of spring boot starter?
+
+how does spring boot auto configuration work internally?
+
+what are different bean scopes available in spring?
+
+suppose you need to handle validation errors in a clean and consistent way across all APIs how would you do it?
+
+Imagine your service depends on a third party API and you want to reduce repeated calls for the same data. what would you do?
+
+if your spring boot application needs to process tasks in the background reliably how would you design it?
+
+suppose you need to support bulk data upload through an API endpoint how would you keep it safe and efficient?
+
+suppose you need to add request tracing so you can follow a single user request across multiple services .how would you do it?
+
+Imagine your spring boot API must return different responses based on user role.how would you implement that?
+
+Imagine your spring boot app faces intermittent timeouts in production but not locally how would you troubleshoot it?
+
+suppose you need to handle a situation where the database becomes slow during peak trafficwhat will you do?
+
+if your app must support both synchronous REST calls and async event based processing how would you structure it?
+
+Imagine you need to protect your APIs from accidental breaking changes during development.what steps would you take?
+
+suppose your spring boot application needs to support multi tenant data where each tenant should only see their own records how would you design it?
+
+Imagine you need to introduce feature toggles so some users can a new  feature while oterhs cant how would you implement it?
+
+If one of your microservices goes down and others depend on it, how would you handle the situation?
+
+what is saga pattern in microservice?
+
+how do you handle large data efficiently in an API?
+
+why does not rollback work for checked exceptions in spring?
+
+if multiple threads update a shared volatile is data integrity guaranteed?
+
+how would you design a system to handle high traffic for the same request?
+
+what happens if booking succeeds but payment fails in a microservices system?
+
+what happens when two different keys have the same hash code in Hashmap?
+
+difference between @RequestParam and PathVariable?
+
+how do you handle transactions in spring boot application?
+
+what is the purpose of the @Transactional annotation?
+
+how does garbage collection impact java application performance?
+
+what is the difference between Hashmap and hashtable?
+
+how does kafka ensure message durability?
+
+what is the difference between REST and SOAP web services?
+
+how do you secure REST APIs in spring boot?
+
+what is the purpose of the volatile keyword in java?
+
+how do you resolve merge conflict in Git?
+
+what is the difference between eager loading and lazy loading in Hibernate?
+
+How do you optimize database queries in a spring boot application?
+
+what is the circuit breaker pattern and why is it used?
+
+how do you monitor microservice in production?
+
+what is the difference between docker container and virtual machine?
+
+how do you handle configuration secrets securely in application?
+
+lets say your microservice goes down under sudden load what checks would you perform?
+
+Have you heard about NoSuchBeanDefinationException?
+
+Can you explain a practical use case of the @ManyToOne annotation?
+
+If a RES endpoint returns outdated cached data instead of fresh data what could be the reason?
+
+can we create a server in code java wihtout using spring or other framework
+
+how do you design an immutable class in java?
+
+how does java manage memory allocation between heap and stack?
+
+what is the importance of the finally block in exception handling?
+
+can hashmap itself be made thread safe how?
+
+what is the latest spring boot version available currently?
+
+why are immutable objects useful in concurrent programming?
+
+what are the advantages of java being partially object oriented?
+
+is it possible to customize a specific auto configuration in spring boot?
+
+how would you trace a request across multiple microservices?
+
+If @ConfigurationProperties returns null values what could be wrong?
+
+if large file uploads fail silently in your REST API how would you debug it?
+
+what do you understand about the singleton design pattern?
+
+what is the difference between git clone,git pull,and git fetch?
+
+how would you design an asynchronous notification service for SMS and email?
+
+can you name some built in java exceptions?
+
+what are default methods in java interfaces?
+
+what is a memory leak in java and how does it impact java applications?
+
+Have you writen test cases for asynchronous methods how dod you approach it?
+
+what is the purpose of the volatile keyword in java?
+
+how do you solve or optimize the N+1 select problem in JPA/Hibernate?
+
+which spring boot versions have you worked with?
+
+what makes an interface a functional interface?
+
+have you implemented custom exceptions when would you use them?
+
+how can you implement a custom bean scope in spring?
+
+when should you use an interface versus an abstract class?
+
+what is lazy evaluation in java stream?
+
+ArrayList vs LinkedList which is better for search operations and why?
+
+how do you secure spring boot API endpoints?
+
+how do you implement the singleton design pattern?
+
+how can you create an immutable class in java?
+
+how do you secure sensitive data both in transit and at rest?
+
+how do you decide between parallel stream and sequential streams?
+
+what is the difference between UUIDs and sequential IDs ?
+
+Can Spring boot auto configuration be customized how?
+
+what happens if equals() is overriden without overriding hashCode()?
+
+can you explain the saga design pattern in microservices?
+
+what is the order of precedence for spring boot configuration sources?
+
+how do you configure a spring boot application for multiple environments like dev,test and prod?
+
+which set implementation maintains insertion order and why would you use it?
+
+what is the difference between returning a response with ResponseEntity and without it?
+
+what is a CI/CD  pipeline and why is it important?
+
+should testing effort be included during story point estimation?
+what approaches can be used for asynchronous processing in spring boot?
+have you ever created a custom spring boot starter?
+what is your experience with Docker and kubernetes?
+
+what problems can occur when mutable objects are used as keys in Hashmap?
+
+what is the difference between Git rebase and Git cherry pick?
+
+what is the role of application.properties and how do you manage environment specific configurations?
+
+what is the purpose of the @EnableJpaRepositories annotation?
+
+what happenss if two beans of the same type are defined without a qualifier or @Primary?
+
+what issues can LAZY loading cause in spring boot REST APIs?
+
+how does the singleton design pattern work and what types of situation implementation exist?
+
+if an interface extends another interface and a lambda expression stop working why might that happen?
+
+if you update a dependency in pom.xml but the old version is still used how would you fix it?
+
+how does concurrentHashmap manage concurrency compared to hashmap?
+
+Are you familiar with kiss and dry coding principles?
+
+if your microservices crashed due to sudden traffic spikes how would you investigate?
+
+After upgrading Spring boot your custom bean stopped working because a defualt bean overrides it how would you fix this?
+
+how can you override datasource URLs between environments without changing code?
+
+what challenges do you face when migrating a legacy system to microservices and how do services communicate?
+
+If a spring boot application suddenly needs to handle double the load how would you manage it?
+
+what deployment strategies have you used in production (blue-green,canary,rolling) explain your approach?
+
+are kafka communication asynchronous explain how it works?
+
+After a production deployment issue what would be your first steps to investigate?
+
+what agile ceremonies or processes have you followed and what benefits do they provide?
+
+
+
+
+what is the role of the IOC container in spring?
+
+Are singleton classes thread safe by default?
+what is the default embeded web server in spring boot?
+can you explain the internal working of spring boot at high level?
+have you used synchronized and nonsynchronized methods in your project?
+can primitive data types store null values ?
+how does abstraction help in achieving loose coupling?
+how can you make a class thread safe?
+have you implemented any design pattern in your project?
+what are spring boot starter dependencies?
+what is the Open/closed priciples?
+can constructors be overloaded in java?
+what does the @SpringBootApplication annotation do internally?
+
+How would you troubleshoot a performance issue where the application is fast in development but slow in production?
+
+how would you revert changes if you accidentally pushed code to the main branch ?
+
+how would you handle concurrent updates to the same data by multiple threads?
+
+what security concern should be considered when using websockets in a spring boot application?
+
+how would you design a spring boot API to handle large file uploads while keeping the system responsive?
+
+how can Spring WebFlux be used to fetch data from another service without blocking the application?
+
+what is string pool?
+String pool is nothing but a storage area in java heap where strings it is also known as String intern pool or String Constant pool it is just like object allocation by default it is empty and privately maintained by the java String class.
+
+what is the difference set and list?
+what is marker interface give me some example of marker interface?
+what is synchronized keyword in java?
+what is aggregation in java?
+what is immutable class?
+immutable class in java means that once an object is created we cant change its content in java.all the wrapper classes (Integer,Boolean,Byte ,Short)and string class is immutable we can create our own immutable class as well.
+
+why java is not 100% object oriented?
+what is volatile keyword in java?
+what is the internal working of a hashmap?how hashmap works internally?
+A hashmap in java stores both key and value objects in a bucket it is stored as an Entry object that implements Map Entry interface.
+the key object used in a hashmap has to provide implementation for hashCode(),and equals() method.
+when put() method is used to store a key value pair the hashmap implementation calls hashCode() method on Key object to calculate a hash that is used to find a bucket where Entry object will be stored.
+when get() method is used to retrive a value stored againts a key object we first calculate a hash of key object thenwe use this hash to find the bucket in which that particular key is stored.
+once key objects location is found it may happen that more than one key is stored in same location so now we use equals() method to find the exact key object.once the exact key object is found we use it to get value object.
+
+what is the heap memory in java and what is the stack memory in java?
+Stack memory is the space allocated for a process where all the function calls,primitive data types,(int ,double)etc.and local and reference variables of the functions are stored.	on the other hand heap memory is used to store the objects that are created during the execution of a java program.on the other hand heap memory is used to store the objects that are created during the execution of a java program.	
+
+what reflection in java
+why do we need reflection API in java?
+what is the difference between checked and unchecked exception in java?
+
+what is a functional interface?
+can you tell me any example of a functional interface?
+how is it different from a default method in the interface?
+
+is it possible to have more than one eureka servers in microservice?
+yes
+
+do you know what is hashcode method returns?
+what is dependency injection in spring?
+what do you understand by continous integration and continous delivery?
+how will you implement concurrency in your java program?how do you achieve concurrency?
+
+Explain two types of java memory model?
+two types of memory heap and stack do you know about that?
+in java where exactly does it store the objects?
+in java in which memory JVM stores the objects?
+
+what is the use of pom.xml file in maven apart from dependencies
+what are the steps to connect with database in java?
+what is the difference between put and patch?
+what are the features of treeset?
+how the size of the ArrayList increase dynamically?
+what is Iterator?
+what is listIterator?
+what are the methods of iterator?
+is there any concurrent version of treeset and treemap?
+what type of collections you have used to till now?
+have you used arraylist linkedlist hashset treeset abd hashmap?
+are collection you know that stores the value in the sorted order?
+treeset.
+what is fail fast and fail safe in java collection framework?
+
+in which scenario you will go for treeset?
+use treeset because it allows unique elements.
+use treeset because it provides faster access and retrieval of elements.
+use treeset because it stores elements in ascending order.
+
+in the collection there is arraylist and there is linked list right
+when you will go for linked list and when you will go for arraylist can you tell me?
+when to use linkedlist over arraylist in java?
+when would you use an array instead of a linked list?
+
+can you give me some exampples of synchronized collection and concurrent collection?
+how treeset is implemented iternally in java?
+
+how does the circuit breaker help make a microservice system more stable?
+
+why is having a separate databse for each microservice usually recommneded?
+
+what is the purpose of the API Gateway in a microservices setup?
+
+how does the retry pattern increase reliability in microservices?
+
+what is the main idea behind the saga pattern in distributed systems?
+
+what are the common difficulties when introducing an API Gateway in microservices?
+
+how do the retry pattern and circuit breaker pattern work together?
+
+how does service discovery support scaling in microservices?
+
+what is the strangler pattern and how does it help modernize old systems?
+
+what is bulkhead pattern and why is it useful in distributed systems?
+
+what are the different states in a circuit breaker and how do they function?
+
+what is the role of service discovery in a microservices environment?
+
+what benefits and drawbacks come with using an even-driven choreography approach?
+
+how does an orchestractor manage workflows between microservice?
+
+what challenges arise when managing multiple databases across microservices?
+
+how does an API Gateway help strngthen security and improve performance?
+
+when should a circuit breaker be applied in a microservices system?
+
+how do client side and server side service discovery approaches differ?
+
+what are compnesating transactions and how are they used in saga workflows?
+
+how can retries be controlled to avoid overwhelming dependent services?
+
+how is communication handled in a choreography based microservices design?
+
+how is data consistency maintained when each microservice has its own databse?
+
+how does resource isolation work in the bulkhead pattern?
+
+how does direct client to service communication differ from using an API Gateway?
+
+what is the disadvantage of microservices ways to address it?
+
+how would you call another service in microservice?
+
+microservice design pattern you know?
+Api Gateway-single netry point.
+Circuit breaker-stops repeated failling calls
+service registry-
+db per service
+saga.
+
+what is circuit breaker why used?
+converting monolith to microservices using Spring boot steps and challenges?
+
+if i autowire prototype bean in a singleton bean how many instances of prototype bean would be created?
+
+can you tell me you have a web application and it is taking some more time to load you have to reduce the load time of this application so what are the things you will optimize i am in there are a number of possibilities you can tell some of them?
+
+I have a try block inside try block i am writing a piece of code that code is throwing IOException then i am writing a catch block inside catch block and hand link runtimeException will that work>
+
+Ok so suppose in your application you are using treemap somewhere earlier it was simple it was a non concurrent system but you are thinking to speed up you want to add some threads and addd a threading environment so for this modification you have to modify i mean you have to use something else instead of treemap what will be your choice in the case of treemap in the concurrent situation?
+
+suppose you are developing software that is related to the share market so you have to store prices what data type do you prefer to store the prices?
+
+in your application you have a java application with and which you need to run some batch services at some particular time and your service are in a different country so how will you handle the timezone scenerio
+
+can you insert and delete at the same time in synchronized map?
+
+you are having your application which is spring version something like 2.3 and your project has some dependency on some other project that project is also using spring 2.3 version now you are moving 	your project from spring 2.3 to spring 2.5 you started getting conflict bacuase of the dependency mismatch  how will you resolve those conflict?
+
+suppose there are two threads thread A and thread B these both threads are operating on a shared resource called c thread A needs to inform B that some important has happned in c what technique do you use in java to achieve this?
+
+what are the security consideations when using @SessionAttributes and @CookieValue annotations?
+
+how do microservices update their registration and discovery information?
+
+what are some common use cases of kafka?
+real time data streaming
+log aggregation use case
+event driven systems
+messaging betweeen services
+analytics pipeline integration
+user activity tracking.
+
+how does an API Gateway manage traffic?
+single entry point
+routes requests correctly
+applies rate limiting
+handles authentication
+supports caching
+protects backend service.
+
+Explain features of spring data jpa?
+reduces boilerplatecode
+provides crud repositories
+query by method names
+supports jpql and native queries
+build in pagination sorting
+integration with hibernate
+
+how do you mock an object in mockito?
+
+what is the disadvantage of microservices? 
+how would you call another service in microservices?
+microservices design pattern you know?
+API gateway-single entry point.
+circuit breaker-stops repeated failing calls.
+service registry-
+db per service
+saga-event based distributed transactions.
+
+what is a circuit breaker why used?
+converting monolith to microservices using spring boot steps and challenges.
+
+how many threads will open for parallel streams and how does parallel stream internally work?
+
+what are strong,weak,soft,phantom references and what is their role in garbage collection?
+strong reference blocks garbage collection.
+weak reference cleared during GC.
+soft reference survives until memory pressure.
+phantom reference after finalization.
+
+what would happen if you override only the equals() method and not hashCode() in a custom key class used in hashmap?
+
+difference between synchronized and reentrantlock?
+
+what is java memory model and how is it linked to threads?
+
+explain the role of @EnableAutoConfiguration Spring boot how does spring boot achieve autoconfiguration internally?
+
+describe a spring boot project where you significantly improved performance what techniques did you use?
+
+discuss the patterns used to handle failures in microservices what is the circuit breaker pattern how does the bulkhead pattern help in improving system resilience can you explain the retry and backoff patterns?
+
+how do you handle data consistency in microservices?
+
+you are experiencing performance issues with certain frequently  accessed data how can you implement caching in spring jpa to imrove performance?
+
+what is optimistic locking in hibernate?
+
+your application needs to store user images safely and cheaply which aws service will you choose and why?
+choose amazom s3.
+
+how do you write a test for a method with database calls in junit without hitting the actual database?
+
+which desing pattern would you use to manage database connections effeciently in java application?
+
+how does a circuit breaker help make a microservices system more stable?
+
+why is having a separate databse for each microservice usually recommneded?
+
+what is the purpose of the API gateway in a microservices setup?
+
+how does retry pattern increase reliability in microservice?
+
+what is the main idea behind the saga pattern in distributed systems?
+
+what are the common difficulties when introducing an api gateway in microservice?
+
+how do the retry pattern and circular breaker pattern work together?
+
+how does service discvery support scaling in microservice?
+
+what is the strangler pattern and how does it help modernize old systems
+
+given an array and a target value return indices of the two numbers that add up to the target?
+Array [2,7,1,5]
+target :9
+
+class Persistance{
+main{
+int []numbers={2,7,11,15}
+int taret=9;
+int result=twoSum(numbers,target);
+print(result[0])
+print(result[1])
+}
+public static int[] twoSum(int[]arr,int target){
+Map<Integer,Integer> map=new Hashmap<>();
+for(int i=0i<arra.lenght;i++){
+int requirred=taret=arr[i];
+if(map.containsKey(required)){
+return new int[]{map.get(required),i};
+}
+map.put(arr[i],i);
+}
+return new int[]{-1,-1};
+}
+}
+-----------------
+Q.what happens internally when spring boot application starts?
+1)Main method SpringApplication.run(Applicaion.class,args)
+2)SpringApplication 
+(i) create application context
+(ii).start environment setup.
+(iii).load configuration
+(iv).trigger auto configuration
+(v).scan components.
+(vi).Create beans.
+All managed by spring IOC container.
+3)Applicaion Started.
+
+Q.why do we use @EnableAutoConfiguration internally?
+@EnableAutoConfiguration-classpath scanning,reads auto-configuration list,conditional cheching engine,bean creation.
+
+Q.How does spring boot handle Exceptions Globally?
+spring boot Globally Exceptions handling
+Request comes to controller,Exception occurs,@ControllerAdvice Intercepts exception,Exception Handler method executes,Clients recieves proper response.
+Advantage-Centralized handling,clean controllers,consistent responses,better api design,easier maintainance.
+
+Q.Why should field injection be avoided?
+field injection problems-
+constructor injection(recommeneded)-
+why constructor injection wins-better testability,cleaner design,immutable dependencies,easier maintanance.
+
+Q.why does spring boot use proxy objects?
+original bean created,spring creates proxy object,request goes through proxy first,Additional logic executes,Actual method executes.
+
+what happens if two beans of same type exist?
+
+why does @Autowired sometimes become null?
+
+why is @Transactional not working in some cases?
+
+why does circular dependency happen in spring ?
+
+what is the difference between @RestController and @Controller internally?
+@Controller-Brower request,@Controller,method return string,view resolver,html/jsp page,browser.
+@RestController-Client/API request,@RestController,method returns object,httpmessageconverter,json response,client.
+@Controller-is mainly for mvc view rendering.
+@RestController-is used for REST APIs.@RestController internally includes @ResponseBody.
+@Controller-returns view name,uses view resolver,mainly for mvc applications,requires @ResponseBody for json.
+@RestController-return response body directly,Automatic convert json/xml,used for rest apis,internally @Controller+@ResponseBody.
+
+
+
+
+
+
+
+
+
+
+
+

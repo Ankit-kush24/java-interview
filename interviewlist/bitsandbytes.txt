@@ -1,0 +1,41 @@
+Monolithic-Monolithic means single unit -the entire application is built as one big system.
+
+everything (UI,Business logic,Database) is in one codebase.
+
+Example An Ecommerce website where Order,Payment,Inventory,Shipping are all in one system.
+
+Benefit-
+Simple development & Testing-everything is in one place.
+easy debugging-since all code is together ,tracing issues is easy.
+single deployment-just one deployment for the entire system.
+
+Problems with monolithic applications
+scalability issues-if order modeule traffic increases the entire system must scale.
+slow deployment-A small change requires redeploying the entire application.
+technology lock in-if we use Spring boot all modules must use the same technology.
+large codebase-as the app  grows managing code becomes difficult.
+
+1.E-commerce platform- User service,product service,order service,payment service,delivery service.
+2.Banking System-Customer Account Service,Transaction Service,Loan Service,Card Service,Notification Service.
+3.Food Delivery App-restaurant service,order service,delivery service,payment service,review service.
+
+Product service-manage product details and stock availability.
+Cart service-handles shopping cart for users.
+payment service-process money transaction securely.
+delivery service- takes care of shipping orders.
+
+Circuit breaker-A circuit breaker is like a safety switch in microservices.
+if one service(example product service ) is doqn or slow the gateway stops sending requests to it temporarily and returns s fallback resposne.
+
+why use circuit breaker?-
+prevent cascading failures
+improves response time during downtime.
+gives time for the failed service to recover.
+
+basic flow-
+1.client sends request to API Gateway
+2.Gateway forward it to product service
+3.if product service is downt
+(i) circuit breaker opens
+(ii) no more calls go to product service
+(iii) gateway returns fallback response.

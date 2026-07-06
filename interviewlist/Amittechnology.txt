@@ -1,0 +1,10 @@
+what type of pattern is microservices?
+it is not a pattern it is architecture.
+
+what are the main issues with microservices?
+how you created microservices in your project?
+why spring boot is preferred for microservices in java?
+what is meant by term standlone and independent?
+if there are more than 2 microservices how do they communicate with each other?
+how you implemented service discovery pattern and how?
+ 

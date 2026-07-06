@@ -1,0 +1,29 @@
+mindmajix
+how do you handle data consistency in microservices?
+saga pattern
+event sourcing
+distributed transactions.
+
+what is canary deployment in microservices?
+
+how would you monitor microservices?
+
+what are DDD principles in microservices
+
+how do you design for scalability in microservices?
+
+what is chaos engineering and how is it applied in microservices?
+
+how do you perform logging in a distributed microservices system?
+
+what is the purpose of a retry pattern in microservices?
+
+what are sidecars in microservices?
+
+java backend interview cracked
+what is multithreading in java?
+
+what is the best way to create a thead?
+
+internal working of completable future chaining.
+

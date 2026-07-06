@@ -1,0 +1,275 @@
+client sends the data in the url which annotation i sused  to retrive this data?
+@Pathvariable
+
+client sends the data from a form that uses get method which annotation helps to retrive this data?
+@Requestparam
+
+what annotation marks the main class as a spring boot application?
+@Springbootapplication
+
+how do you change the server port?
+set server.port=8081 in yml/properties file.
+
+the client sends the data from a form that uses post method which annotation helps to retrive this data?
+@request body
+
+how do you convert a spring boot app to an external jar?
+build using maven/gradle plugin    -> mvn package
+
+which file holds default spring boot configuration?
+propertesi/yml/
+
+if more than one bean of the same type is available which annotation is used to choose and inject a specific bean?
+@Qualifier
+
+If the client wants to update few properties of a resource, which annotation is used to map the controller method?
+@PatchMapping
+
+difference between Patch and put
+put is for full update 
+patch for partial updates
+
+in a spring mvn application which servlet is responsile for handling all incoming client requests?
+DispatcherServlet
+
+which annotation is used to give a different table name to entity?
+@Table("producr_deatisl")
+
+Which annotation is used to inject dependencies into a class but also supports optional injection when no bean is available?
+Use @Autowired(required = false)
+
+which annotation is used to autogenerate the id?
+@GeneratedValue
+
+Which annotation allows the class to be autodetected as a Spring bean?
+@Component, @Service
+
+which annotation is used to mark a property as id?
+@Id
+
+how many instances of a bean are created 	by default?
+one instance for each class(singelton	)
+
+which type of dependency injection helps to create immutable classes?
+constructor bsed injection
+
+how to check the metrics and health of a spring application?
+add actuator dependency and expose the endpoints n yml.
+
+How would Spring inject a value from application.properties into a field?
+using @Value("${employee.name}")
+
+which annotation mark a class as a RESTAPI
+@RestController
+
+How to handle exceptions that occur in a controller class?
+Add a method annotated with @ExceptionHandler in controller.
+
+how to handle all the exceptions that occur in rest api?
+
+create a class annotated with @ControllerAdvice to handle exception.
+While autowiring, if two beans of type PaymentService exist, what will Spring do?
+throws NoUniqueBeanDefinitionException
+
+What does Spring do with a controller return value when you forget @ResponseBody or @RestController?
+the return value will be considered as view name.
+
+what design pattern does spring use to manage bean creation and wiring?
+dependency injection.
+
+what does @Springbootapplication actually contain
+@ComponentScan @Configuration,@EnableAutoConfiguration
+
+how do you ensure a collection is loaded immediately with parent entiyy in jpa 
+Use fetch = FetchType.EAGER in JPA.
+
+29.how do you validate request bodies in spring rest?
+USE @valid
+
+30.Which class in spring helps toreturn the status payload and headers from a rest api to the client?
+org.springframework.http.ResponseEntity
+
+31.what can be done to detect the classes in different packages?
+use @SpringBootApplication(scanBasePackages = "com.example")
+
+32.how does spring boot automatically configure your application
+using @Springbootapplication and @EnableAutoConfiguration
+
+33.how to execute a bulk update without using repository save()
+Use @Modifying along with @Query
+@Modifying
+@Query("UPDATE Employee e SET e.salary = :salary WHERE e.department = :dept")
+int updateSalaryByDepartment(@Param("salary") double salary,
+                             @Param("dept") String dept);
+							 
+34.how to define a bean in java configuration ?
+Add a method annotated with @Bean in the configuration class.
+
+35.how do you expose a rest endpoint in spring boot?
+RestController
+
+36,how to externalize configuration in spring boot?
+use profiles ,environemnt variables,or commongline
+
+37.which annotation combines web controller behavoir and gives automatic json reposne conversion in spring?
+@RestController -@Controller +@ResponseBody
+
+38.how to secure APIs without storing user sessions on the server?
+jwt authentication.
+
+39.how to allow public access to specific url while keeping others secured?
+configure authorizeHttpRequests() in SecurirtyFilterChain() and permit speciifc endpoint.
+
+40.how to apply sorting to query results in spring data jpa?
+
+45.how to enable caching in spring application?
+Annotate with @Enablecaching
+
+46.how to add profile to specific bean?
+use @Profile("dev") above the bean method.
+
+47.how to pick a specific bean if more than one bean of the same type is available in java based config?
+Udse @Primary
+
+48.which annotation would allow to inject a bean only when specific property is set and matches a given value?
+use @ConditionOnProperty
+
+41.if a secured endpoint keeps returning 403 despite valid credentials whats likely wrong?
+the authenticated user lacks the required authority or role.
+
+what annotation allows method level access control using SpEl expressiosns?
+@PreAuthorize.
+
+which annotation allows sorting a list of string values?
+@ElementCollection.
+
+which annotation allow to deifne cusotm jpql or sql in spring data jpa?
+Query.
+
+49.how can you execute code immediately after a spring boot application has started?
+Implement command line runnner or applicationrunner override run() method.
+
+50.which spring concept allows to execute cross cutting concern like oggin or transactions without modifying the core business logic o your application?
+AOP with @Aspect @Before @AFter.
+
+put vs patch
+put is used for a full update.
+while using put request the entire resource is replaced with a new one.
+
+what is patch
+patch is used for a partial update.
+send only the fields that has to be updated.
+
+what happens if a spring bean has a private constructor?
+
+difference between constructor injection and setter injection?
+
+can we create a spring bean without using @Component?
+yes using java based configuration.
+
+can we have multiple @Bean methods of the same type in a spring configuration class?
+yes
+
+what happens if more than one bean of the same type is available?
+spring throws NoUniqueBeanDefinitionException
+
+what is the difference between @Component @Service @Repository
+
+use of @Component 
+
+use of @Service
+
+use of @Repository
+
+can we create a spring boot application without @SpringBootApplication
+yes by adding this annotation @EnableAutoConfiguration ,@ComponentScan ,@Configuration.
+
+can we run a spring boot application without an embeded server?
+yes by the property spring.main.web-application-type=none.
+
+how to disable auto-configuration in spring boot?
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+
+can we change the port of a spring boot application without modify application.properties?
+yes command line args java -jar app.jar --server.port=9090.
+
+what happens if we have multiple application.properties file in spring boot?
+
+what happens if @SpringBootApplication is used on an interface?
+
+what is the difference between @Controller and @RestController?
+
+use of @Controller?
+
+use of @RestController
+
+what happens if we use @RequestMapping on a method without specifying a path?
+
+what happens if @Getmapping method in RESt returns null?
+if null is returned spring sends 204 no content.
+if an exception is thrown spring returns 500 internal server error.
+
+what happens if we send a post request to a get mapping?
+throws MethodNotAllowedException.
+
+what happens if two rest endpoint methods annotated with @Getmapping have the same path?
+spring throws an error at startup.
+
+what happens if we dont define an @Id field in a JPA entity?
+hibernate throws an exception because every entity must have a primary key.
+
+what is the difference between fetch=FetchType.LAZY  and fetch=FetchType.EAGER.
+
+what should we use if we do not want to save a property/instance variable in the database?
+@Transient.
+
+how to store a list of string values in database using data jpa?
+@ElementCollection.
+
+how to save the child entiy automatically while saving the parent?
+use the annotation @OneToOne(cascade=CascadeType.ALL).
+
+can we execute a native sql query in spring data jpa?
+yes @Query with nativequery=true.
+
+cna we execute a stored procedure using spring data jpa?
+yes using @Procedure.
+
+what happens if we dont use mappedBy in a bidirectional relationship?
+
+difference between iterator and list iterator?
+iterator-
+1.it allows iteration in forward direction only.
+2.hashNext(),next() method.
+
+ListIterator-
+1.allows the elements of the arraylist to be iterated in both forward and backward direction.
+2.hashNext(),next(),hashPrevious() ,previous() method.
+
+Q.difference between checked and unchecked exception?
+checked exception-1.Are exceptions that should be either handled by using try catch or declard by using throws.
+2.All the classes that come directly under Exception class are called as checked exceptions.
+3.IOException,SQLException.
+
+unchecked exception-1.Are exception if not handled can be handled by jvm.
+2.All the classes that come under RunTimeException class are called as unchecked exceptions.
+3.NumberFormatException,NullPOinter EXception.
+
+
+12.who receives the request first?
+
+Actuator is only for health checks true or false?
+would you return 20 milinion records?
+@Primary vs @Qualifier
+when should you use singleton vs prototype?
+how many service beans for 1000 users?
+why spring boot uses applicationContext?
+what hapens when spring boot starts?
+why not return objects directly?
+why do we need @Bean?
+
+
+
+
+
+

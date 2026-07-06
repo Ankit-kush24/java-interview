@@ -1,0 +1,350 @@
+what are the new features of java 8?
+what is the change in hashmap in java 8?
+if i need to run a task at 12 pm everyday .how to do it?
+What is the Consumer interface in Java 8?
+What is a Predicate in Java 8?
+in spring what are scope of spring beans?
+what is the use of @Qualifier Annotation?
+diff between constructor and setter injection?
+what are solid desing principles?
+diff between these two extending and implementing?
+how we can create a immutable class?
+what is serialization & why we need serialization?
+what is the use of executor framework?
+do you know fork join?
+what is the difference between sleep() and wait()?
+why java is not 100% object oriented?
+why pointers are not used in java?
+what is jit compiler in java?
+why string is immutable in java?
+what is a marker interface?
+can you overridea private or static method in java?
+does finally always execute in java?
+how can you make a class immutable?
+what is singleton class in java and how can we class a singleton?
+how to break a singleton pattern?
+does java support multiple inheritance?
+can you acces a non static variable in the static context?
+is it possible to load a class by two classloader?
+can you explain how inheritance and composition are different?
+what is the best candidate for hashmap key?
+can we use default constructor of a class even if an explicit constructor is defined?
+if two thread have the same priority which thread will be execute first?
+can we serialize static variables in java?
+what is deadlock in java and how can you can you create one programaticaly?
+will the finally block execute if you put the return statement or System.exit()?
+why pointers not used in java?
+weak hashmap class?
+identity hahmap class?
+what is hashmap class?
+what is stack class in java?
+what is vector class in java?
+hashmap vs hashtable?
+set vs list
+hashmap vs linkedhashmap?
+explain equals and hashcode contract?
+what will happen if two different objects have the same hashcode?
+how will you retrieve the value object if two keys will have the same hashCode?
+how does get() method of hashmap works in java?
+have you used any in memory databases?
+What is your testing strategy in your project, and how do you differentiate between unit testing and integration testing?
+how are you writing your apache kafka testcases?
+Which logging framework do you use (SLF4J / Log4j / Logback) and why? How do you manage logging in different environments (dev, QA, prod)?
+how do you detect a deadlock in your code?
+what are different ways to create a thread and which one is better?
+what is lockig in terms of thread?
+how will you detect memory leak in your application?
+how are you implementing disaster recovery in your project?
+how service discovery and registration works?
+how client side load balancing different then the server side load balancing?
+is server side load balancing causes a single point of failure ?
+what is binary tree?
+how are you writitng databases related testcases ? how will you mock those?
+do you have exeperience with working with in memory databases?
+can you tell about mapping in hibernate?
+difference between map vs flatmap?
+support there is password in the properties file how can i hide those?
+what are reasons for memory leak?
+How do microservices communicate in your application? What is the difference between synchronous communication (REST) and asynchronous communication (Kafka/RabbitMQ), and when do you use each?
+have you setup kafka?
+my producer is producing 100 records per second but my consumer is consuming 20 records per second so how will you handle this scenario?in some cases it will be full the queue and you will not be able to push the records in your queue?
+starvation vs deadlock in java threads?
+what are the ways to follow so we that we dont run into deadlock situation?
+why stream is faster than iterator?
+what is the use of service discovery and service registry?
+what is reentrant lock?
+what is the type erasure in generics?
+in which scenario have you written singleton class?
+what is jwt toekn and what does it contain?
+what are the different type of authentication?
+how do you authorize users?how do you understand that user has this particular role ?
+are you aware of stateless and stateful serivce?
+one of the best practices you follow to maintain the code quality?
+how to handle exception in your rest service?
+difference between intermediate vs terminal methods in java 8?
+i jave a entity called employee which has 50 variables i can create several constructors with different parameters like 50,15,20,if create an instance of employee i should be concious about position of parameter and type of variable.if any mistake is done then data would be diff,how can i overcome this?
+suppose there is a restriction that we should not modify the class?in this scenario which is suitable comparator or comparable?
+difference between runnable vs collable interface?
+what is producer consumer problem and how to handle it?
+i have class A(parent) and class B(child) .in parent class i have a method called display().in that class i am throwing nullpointerexception in child class same method throwing exception.will this class compile or will throw run time exception?
+what is functional interface and how is it related to lambda?
+how to secure the rest apis?
+what are views?can we perform crud operations on views?
+explain about your project architecture?
+how request mapping is done in AWS(from domain to ip address)?
+exaplain the working functionality of kubernetes?
+how do load balancer works?
+what is obfucation(making jar not to decompile) and how to do it?
+in which scenario ,would you choose ORM(hibernate) vs directly jdbc connection?
+what are the new features of java 17?
+in which cases would one go for interfaces with default method vs abstract method with abstract methods.becasue both of them are providing similar functionaity?
+what parameters you will verify during code reviews?
+how have you implemented spring security in your project?
+what will happen if i only implement hashcode and not implement equals method?
+what will happen if i only implement equals method and not implement hashcode method?
+what if in hashcode method i return same hashcode everytime?
+list & explain cocurrent collections in java?
+what is webflux?
+how will you modify an exixsting spring boot application to convert it tnto a servles architecture?
+can you name the datastructure which you are using in your current project?
+can you tell me time complexcity for common operations like intertion,deletion,retrieval in hashmap?
+difference between weak reference and soft reference and how they can be useful in managing collection of objects?
+can you tell me advantage advantage use cases of arraylist,linkedlist and hashmap?
+can you explain what is the entry point in java?
+can we create an server in java application without using spring framework?
+how does delegation model works in java classloader?
+stack and heap memory momory difference and what type of data is stored in these?
+how do you implement multithreading in java?
+can we explain how you would use multithreading to improve performance in a data processing applications?
+can you expalain spring mvc architecture?
+how do you handle from validation in spring mvc?
+how does restcontroller and requestmapping annotation support in restful webservice development?
+how do you handle session management and authentication in sprign security?
+how do you handle merge conflicts in git?
+significance of maven lifecycle and how do you use it in your projects?
+diff between mvn clean install and mvn clean package?
+how mockito is used to create mocks in tests?
+diff between mock and spy in mockito?
+notification microservice it should send notification of diffrent types email sms app each notification type here can be multiple variations sms we want to send from diffrent provisders (Amazon,gupshup,sns ) or any other provider create class diagram.dra all classes involved?
+kafka have you worked on any stream topologies?
+for reading data from kafka topic in spring boot what are you using you are using spring cloud stream?
+kafka you told you are consuming the data what feature in spring you are using to read the data?
+what is default message size which kafka can accept?
+for sending message of 15 mb from producer to broker and from broker to consumer then what all parameters could you be confguring?
+if message is beyond maximum size then what would happen?
+what is replication factor in kafka?
+why do we implement replication factor?
+what is fault tolerance?
+is it possible to implement fault tolerance using application factor?
+what is canary deployment startegy?
+suppose there are 10 microservices how will you debug an issue in 5th service?
+there is huge on microservices and multiple logs are generated.suppose 1 lac users logged in & logs are generated and session is also maintained .how will you identify these logs are for this particular user?
+how the retry patter works?
+which version of java are you using?
+how to create thread safe singleton class in java using double checked locking?
+why multiple inheritance is not suported in java?
+why java does not support operaor overloading?
+why string immutable in java?
+is string is thread safe in java?
+what is string tokenizer?
+what is string consant pool in java?
+write a program to reverse a string?
+what are differet ways to create a string object?
+list of diff strings ,how to concat all strings and creat a new string?
+why char array is preferred to store password than string in java?
+what is difference between StringBuilder and stringbuffer?
+what happens if your serializable class contains a memeber which is not serializable how do you fix it?
+how to create immutable class in java?
+what is use of intern() method in java?
+wap to remove duplicates from an array?
+how do you break a singleton pattern?
+how do prevent a singleton pattern from breaking?
+what are new features of java 8?
+what is lambda expression in java 8?
+what is metaspace in java 8?
+what is use of functional interface in java 8?
+in which scenerio you will use parallel stream in java 8?
+have you use paralle stream as well?
+how does lambda expressin relates to functional interfaces?
+can you tell me 3 terminal operators used in streams?
+what are the other features of java 8 you have used while coding?
+can you iterate and remove th element of ArrayList at the same time?
+what was log4j vulnerability how to fix log4j vulnerabilty?
+can you tell me how hashmap internally works?
+what is concurrent hashmap?
+what is weak hashmap?
+how load factor works in hashmap?
+hashmap vs hashtable?
+what will happen if we put key object in hasmap whihc is already there ?
+stack vs queue ?
+what is hashtable?
+how blocking queue works?
+hashmap vs concurrenthashmap?
+lets say you are working with hashmap first key is null value is ravi and second key is null value is bist hashmap.get(null).what will i get?
+explain the fail fast iterator and fail safe iterator along with examples for each?
+explain lambda expression and functional expressins?
+why we are using functional annotation for functional interface?
+lets say you have two variables a and b with value 5 and 10 interchange value of a a and b without using a temporary varoable will the program work for negative numbers?
+if catch is not present only finally is present will the code work?
+multiple catch with single finally will work?
+if insert can happen by put why do we have post?
+can we fetch data with the help of post?
+what is functional itnerface in java?
+expalain some of the functional interfaces which are used in java?
+how to make class thread safe?
+what is eureka server?
+how do you create custom exceprtion?
+when will you get 415 & 504 http resposne code?
+email field has not null constaint how to remove not null constaint from not null column?
+what is the difference between new ArrayList and Arrays.asList.
+which one is fast linked list or arraylist?
+which case would you prefer linkedlist and which case arraylist?
+aggregation vs composition?
+what is fault tolerance?
+heap memory and jvm?
+how do you create http post request create in java?
+what is the use of super keyword?
+what is throw and throws when do we use these?
+what is synchronization?
+what is a treeset?
+exaplain the role of apigateway of microservice architecture?
+explain functional interface and what are some of the available interface?
+what are rest api best practices?
+what is an one to one mapping and how to set up it with jpa/hibernate?
+difference between entity object and value object?
+what is the difference between classnotfoundexception and noclassdeffoundeerror?
+suppose you decalre variables outside main method how to access variables in main method?
+what is the difference between comparator and comparable?
+is it better to make method synchronized or critical section synchronized?
+in try catch and finally we return the value priority is in which block?
+what is a aggregation?
+have you use hibernate what is the different between hibernate first level cache and second level cache?
+what is inversion of control?
+how garbage collection work in java?
+which scenerio have you used optional class & how optional class is really helpful?
+which scenerio we will use arraylist and when we will use linkedlist?
+do you know what is singleton?
+what are objectives of get put post and delete methods?
+api can we use get method to create resources?
+employee service class will be annotated with which annotation?
+what would happen if i dont annotated with which annotation?
+what would happen if i dont import java.lang.long method?
+is finally block always executed?
+what is an exception in java and how do you handle exception in java?
+explain class loader in java?
+can we override static method in java?
+what is immutable classes & how we can create a new immutable class?
+what is hashcolition?
+how will you handle nullpointer exception?
+what is transient in serialization?
+can we serailiza stataic variable?
+what is volatile keyword?
+what are design pattern you worked on?
+how to create a sinlge class?
+what is garbage collection?
+this is a method called GC what is the purpose?
+how garbage collection works internally in java?
+what is use of actuators?
+constructor vs setter injection?
+how we can read the property from property file?
+what is the use of @Value annotation?
+what is ci and cd and why it is importtant?
+whay the main method static in java?
+can we override private variable in java?
+what is blanck final variable in java if we declare a final variable but we have not assigned any value what happens here?
+how the java object stored in memory?
+list of mobile numbers find customers having number starting with +91?
+what is predicte in terms of functional interface?
+expalain builder design patterm?
+how security is managed by your application?
+do you know what is jwt2.0 and jwt token?
+advantage of hibernate over jdbc?
+what is session in hibernate and is it thread safe?
+what is lazy loading in hibernate?
+can you override private and static method?
+what happens if an exception is thrown by super class 
+what is wrapper class?
+what is harbage collection?
+write a singleton design pattern in multithreaded environments?
+you need to store password what type of datatpye you will use?
+what is the difference between factory and abstract factory desgin pattern?
+sleep() vs wait()
+can access non static variable in static contest?
+have you used serialization anywhere in your application?
+what is response entity and benefit of using response entity?
+what is docker and docker image and docker container?
+suppose i have list and i want to reverse it how can i do that?
+can you tell me real world example of encapsulation?
+what is stateless object?
+can you tell me difference between @Component @Service @REpository annotation?
+why string is immutable in java?
+difference between String and StringBuffer in java?
+can we override static method in java?
+is string thread safe?
+what is string constant pool in java?
+how to prevent your class from being subclassed?
+which two methods are overriden by an object intended to be used as key in hashmap?
+list vs set?
+how do you make class immutable in java?
+hashtable vs hashmap in java
+how will you iterate map?
+what is type safety how to use it?
+arraylist vs linkedlist?
+checked vs unchecked exception?
+how to convert array to list?
+serailizable vs externalizable interface in java?
+explain singleton desing pattern write your class to make sibgleton design pattern?
+local vs instance variable?
+what is serialization?
+== vs .equal in java?
+unique key vs primary key
+what are types of access specifiers?
+explain use of this keyword?
+expalin exception hierarchy?
+what is index and view in databases?
+difference between extending thread class and runnable interface?
+how can avoid nullpointer exception?
+difference between Abstraction and encapsulation ?how you use it in your project?
+when to use abstract class and interface in java?
+why char array is preferred to store password than strings?
+how many objects are created in JVM when a string type avriable is assigned using new keyword?
+how desing pattern you have used in youe app?
+what are the tools you have used to improve the performane of your application?
+can you call a constructor of a class inside another constructor?
+in what situation is the super keyword used?
+Sytem.out vs ystem.error vs Sysytem.in
+how does the static keyword impact garbage collection in java?
+what are the main built in function interfaces in java?
+what happens if a constructor does not explicitly call super() in a child class?
+what if person get valid token from other an he tries to hit that api from postman?
+what lambda function is called anonymous if it return nothing then what is use if that?
+why pointers not used in java?
+what is jit compiler in java?
+why string is immutable in java?
+how to make class immutable?
+features of immutable class?
+diamond problem?
+does java support multiple inheritance?
+does java support multiple inheritance?
+why multiple inheritance is not allowed?
+can we serialize static variable?
+how to make hashmap thread safe?
+fail fast vs fail safe iterator?
+how to implement custom collection in java?
+how would you prefer a singlethreadexcutor over a manually created thread?
+in a low latency system how do you decide between volatile synchronized and reentrantlock under different contention scenerios?
+why can hashmap become unsafe durign concurrent resize?
+can you explain a real production issue where this cloud break system behaviour?
+how does visibbility issue occur even without race condition?
+what is multistage docker build and how does it help optimize container images?
+how do kafka partitions and replicas work togeter to ensure performance and fault tolerance?
+what is dead letter queue abd in which situations should it be configured?
+how do you retry failed transactions using message queue?
+what are sealed classes in java and what are different from enum?
+
+
+
+
+
+
+

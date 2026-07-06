@@ -1,0 +1,38 @@
+What are SOLID Principles?
+Why we need SOLID Principles? (Advantages of SOLID principles)
+SOLID Principles explanations with code examples
+    The Single Responsibility Principle
+    The Open-Closed Principle
+    The Liskov Substitution Principle
+    The Interface Segregation Principle
+    The Dependency Inversion Principle
+
+SOLID Principles -
+
+It is the set of five deign principles for object oriented programming  developed by Robert C. Martin, also known as "Uncle Bob"  in his 2000 paper “Design Principles and Design Patterns.” 
+
+
+SOLID Acronym
+
+SOLID is an acronym that stands for five key design principles:
+
+1. Single Responsibility Principle (SRP)  
+2. Open-Closed Principle (OCP)
+3. Liskov Substitution Principle (LSP)
+4. Interface Segregation Principle (ISP)
+5. Dependency Inversion Principle (DIP)
+
+Advantages of SOLID Principles :-
+
+Achieve the reduction in complexity of the code
+Increase readability, extensibility, and maintenance
+Increase scalability, code flexibility, and readability
+Achieve Better testability
+Reduce tight coupling
+Reduce error and implement Reusability
+Increase Parallel development
+
+1. Single Responsibility Principle (SRP)   A class should have one, and only one, reason to change.
+A class should only have one responsibility.
+------------------------------------
+use of throws in case of method overriding?

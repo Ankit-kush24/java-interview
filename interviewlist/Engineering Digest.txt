@@ -1,1 +1,5 @@
 https://www.youtube.com/watch?v=EG-o5t1wN2Y&t=553s
+
+what is sagapatten-
+saga is a design pattern used to manage distributed transactions.
+saga helps ensure that the entire process completes successfully or rolls back to maintain consistency.

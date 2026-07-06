@@ -113,8 +113,1343 @@ yes
 103.Explain salting and its usage in spring security?
 104.Explain what is AuthenticationManager and PoviderManager is spring security.
 104.when a user tries to access a resource without the necessary permissions you want to redirect them to a custom access denied page instead of displaying the default spring security error message how would you achieve this in your spring security configuration ?
+105.In AWs how do you autoscale and EC2 Instance?
+106.Difference between RabbitMQ  and kafka.
+107.What is API Gateway?
+108.What is kafka and how do you programatically implement kafka what annotations you will use?
+109.Stream APi coding question where you are given a string and you have to find character count.
+110.What are actuators in spring boot?
+111.Lets say your app fails during startup due to bean creation error how do you debug.
+112.whats the most challenging task you have faced in your last project?
+113.explain solid principles?
+114.Write basic CRUD REST APIs.
+115.What does @EmbededId annotation do?
+116.How do you achieve centralized logging mechanism in microservices?
+117.how do you secure your REST APIs.
+118.you are given a sentence and you have to fetch the longest word in that sentence using java 8 Streams,for Example if the sentence is "This is a stream problem".
+119.you are given a Employee class which consists of name,age,salary and departments so fetch all employee whose salary is greater than 50000 by using stream API.
+120.write a junit test of calculating prime numbers by using junit5 and mockito framework?
+121.What is garbage collection and its type.
+122.What are bean scopes in spring boot.
+123.find the longest substring without repeating character?
+124.reverse a linked list with recursion.
+125.Your application latency suddenly increased how will you debug and communicate this?
+126.A single api call is triggering 50+ microservices calls is this a good desing how will you improve?
+127.if a third party API you depend on goes down what will you do?
+128.what will you do if a client keeps changing requirement frequently?
+129.suppose your project deadline is near but testing is incomplete what will you proritize?
+130.if one of your team members is consistently inderperforming how will you manage it?
+131.how do you handle conflicts between developers and QA team?
+132.what would you do if a senior developer is not agreeing with your approach?
+133.what are the different HTTP methods used in web development and what is their purpose?
+134.how would you implement dynamic queries using the specification interface with jpa repository?
+135.consider a social media app with a complex friends and followers systems what challenges could arise with jpa when managing this relationships?
+136.how do you create a custom query using the @Query annotation in a JPA Repository?
+137.In a blog application how would methods like findAll(),save(),and delete() be typically used?
+138.whta could be consequences of using crudrepository instead of jpaRepository in a large application with complex database transactions?
+139.A healthcare system needs to restrict access to patient records based on whether the requester is a doctor nurse or administrative staff how would jwt and RBAC work together in this case?
+140.How can you implement RBAC using JWT in a spring boot application?
+141.Imagine an ecommerce application where a users token must be validated before they can place an order how does spring security handle this validation process?
+142.how does spring security validate a JWT in a incoming request?
+143.how do you generate a jwt in a spring boot application?
+144.can you detail a scenerio where modifying any part of a jwt could lead to security vulnerabilities?
+145.what are the three parts of a jwt and what does each part represent?
+146.consider an application where users must access resources based on their roles like (admin or user) how would jwt facilitate secure access control?
+ 
 
 
 1.How does the Java Stream API work internally and what are is evaluations?
 2.What is the difference between authentication and authorization?
+Explain full life cycle of a spring bean?
+your API works fine locally but is slow in production how would you debug?
+Lets say spring throws NoUniqueBeanDefinationException how would you fix?
+You get LazyInitializationException when accessing a collection why?
+Q.Suppose you have Services A and B using @Autowired on each other,now app fails to start what would be the reason
+How do you programatically implement circuit breaker pattern?
+What is service discovery and give steps to register a service in service registry?
+what is @Transactional annotation and its key attributes?
+How to Programatically implement JWT and Spring security?
+what is OAuth2?
+What are Bean scopes in Spring boot?
+Did you face any conflict with your teammates?
+You are given a singleton instance class and to implement lazy initialization?
+Difference between kafka and queue?
 
+Q.1.You have 3 microservices order service,payment service and inventory service.order service calls payment and then payment calls Inventory .so what happens if payment succeeds but INventory service fails?
+If payment succeeds but inventory fails we get an inconsistent state.
+money is deducted but the item is not reserved so the order cant be completed .
+to fix this we should use:
+rollback/refund mechanism where payment is reserved
+retry mechanism where we try inventory again.
+saga pattern where automatically undoes previous steps.
+
+Q.2.how saga pattern automatically undoes could you please explain its mechanism throughly?
+saga pattern works like a step by step transaction with a backup plan.
+A big process is broken into smaller steps(Example Order - payment- Inventory).
+Each step completes its own work and saves it.
+if any step succeed -process is done.
+If all step fails- system runs compensating actions
+Example: If payment succeeds but Inventory fails then saga triggers a refund to undo the payment.
+Q.3.could you please explain choreography and orchestration styles of saga pattern?
+4.Each microservice has its own database but sometimes you need data from another service so will you call another service every time or duplicate the data?
+5.why does each microservice should have its own database?
+6.why should we use an API Gateway instead of calling services directly?
+7.In microservices architecture share the scenarios when should you choose synchronous and asynchronous?
+we should use synchronous communication when we need an instant response.
+for example-login ,payment confirmation ,validate user etc.
+we should use asynchronous communication when work can happen in the background for example sending emails,notifications ,updating reports,analytics.Long running tasks and reducing load during high traffic.
+
+8.on of your services is down but your application keeps calling it repeatedly how will you handle this?
+if one service down and our app keeps calling it again and again it can overlaod the system and make things worse.
+to handle this we can a few simple techniques:
+(i)curcuit breaker :stop calling the failed service for some time after repeated failures let it recover.
+(ii)retry with delay:instead of calling immediately again wait (like a few seconds) before retrying.
+(iii)fallback show a default response (like service unavailable try later) instead of failing completely.
+(iv).Timeout: dont wait forever for a response wait only for a fixed time (say 2 seconds)then stop and move on.
+
+9.A request fails somewhere across 5 microservices how will you debug?
+First we should start by tracking the request end to end then use a request ID so we can follow the same request accross all 5 microservices in logs check logs step by step to see where it first failed .
+then check each service one by one :
+look at logs ,errors and response codes.
+verify if any service is slow down or returning wrong data.
+
+10.you want to deploy a new version without downtime .how will you do it?
+Use Zero downtime deployment techniques:
+Blue green deployment: Run old(blue) and new (green) verisons side by side switch traffic to the new version once its ready.
+Rolling deployment : update serevrs one by one so the app stays live.
+canary deployment: release to a small group first then gradually to all users.
+
+11.A service fails due to temporary issue.so how will you handle this situation?
+12.let say payment API is called twice accidentally how will you ensure duplicate payment doesnt happen?
+we should use idempotency here basically:
+send a unique transaction ID with each payment request.
+if same request comes again system checks ID and ignores duplicate .
+
+13.In microservice how would you handle transactions accross multiple services?
+14.Lets say ,two services update the same data at the same time and causing data conflicts so how will you handle concurrent updates in microservice?
+there are several ways to handle concurrent updates 
+(i).optimistic locking-we add a version number to add when updating check if version is still same 	if changed then reject and retry.
+(ii).pessimistic locking
+(iii).Idempotency
+
+15.suppose a service publishes events but due to a bug it starts sending incorrect data to multiple services so how will you prevent this?
+16.you have a centralized logging system but logs from different services are hard to debug so how will you trace a request accross services?
+17.your system uses message queues but messages are getting  stuck and not processed so how will you debug and fix message backlog issues?
+18.Lets say a service is accidentally exposed to outside and starts receiving malicious traffic how will you secure you internal services?
+19.Lets say you need to release a feature to only 10% of users initially.so how will you implement feature rollout?
+20.suppose that your microservice system has too many inter service calls and causing high latency so do we have any solution to reduce this latency?
+yes we can reduce the latency by these solutions.
+Instead of callng 5 services separately create one layer that fetches all data in one go.
+Dont call service again and again for same data and instead we should use caching.
+Analysis and avoid unecessary and repetitive calls.
+we could also use sysn communication and now we dont have to wait for every response.
+
+21.Lets say you are migrating a monolith to microservices but some modules are tighly coupled show how will you break them into services safely?
+we could add the timeouts and now we dont have to wait for the 	slow service.
+we could use circuit breaker if service is consistently slow or failing.
+we could add the fallback response meaning if service fails return the default data.
+we could also use caching for the repetitive data calls.
+we could increase the instances of the services in order to decrease the latency.
+
+22.Lets say your system has multiple services deployed globally but users face latency issues based on location so how will you desing for low latency globally?
+
+23.Assume that one service works on critical financial data and failure is not acceptable so how will you ensure high reliability and fault tolerance to your client or project manager?
+
+24.lets say you need to process millions of requests per second so how will you design you microservices for extreme scalability?
+
+25.lets say you have deployed a service successfully but suddenly you observed that there is cpu usage spikes how will you debug this production performance issue?
+First i would check the recent code changes if they are buggy or there are infinite loops then definitely we will rollback and fix it.
+if the code is not buggy then we would check the traffic if requests suddenly increases or system is overloaded then we would scale more instances.
+we have to identify heavy APIs as well there may be a chance one api is being called too much.
+we will also check DB queries and if they are heavy then we have to optimize those.
+
+26.lets say your system needs to support real time updates like chat or notifications so how will you design this is microservices?
+
+27.Assume that you are using third party APIs and they start failing randomly so how would you debug and resolve the issue?
+
+28.lets say you notice that a single user request triggers 50+ internal service calls so is this a good design and if not so how will you fix it?
+no, this is not a good design because triggering 50+ calls means higher latency more chances of failure and uncecesary load on the system.
+to fix this i would first try to reduce the number of calls by combining multiple calls into a single request using an API composition layer or gateway I would also check if some data can be cached so we dont call services repeatedly for the same information if certain data is needed frequently i might store a copy locally to avoid calling another service every time.
+
+29.if network latency increases will microservices still be better than monotith?
+
+30.how would you test microservices please share 2 -3 strategies?
+to test microservices i would use a few simple but effective strategies
+first: unit testing ,where i test each services logic independently by mocking external dependencies this ensures the service works correctly on its own.
+second: integration testing,where i test how services interact with each other or with databases and APIs this helps catch issues 	in communication between services.
+third: end to end testing ,where i test the complete flow (like a real user request) accross multiple services to ensure the whole system works together properly.
+
+31.how would you scale databases in microservices without any downtime?
+
+32.how would you handle schema changes in microservice architecture?
+
+33.Your system has an API Gateway and suddenly traffic increases heavily so what would you do in this situation?
+
+34.why should we use an API Gateway instead of calling services directly?
+
+35.In Microservices architecture share the scenarios when would you choose synchronous and asynchronous?
+
+36.on of your services is down but your application keeps calling it repeatedly how will you handle this?
+
+37.A request fails somewhere accross 5 microservices how will you debug?
+
+38.you want to deploy a new version without downtime how will you do it?
+
+39.A service fails due to temporary issue so how will you handle this situation?
+
+40.lets say payment APi is called twice accidentally how will you ensure duplicate payment does not happen?
+
+41.In microservices how would you handle transactions accross multiple serevices?
+
+42.one service is getting heavy load so how will you scale it?
+
+43.you have 10 microservices with environment configs how will you manage configs?
+
+44.your services work fine in lower env but fails in production how would you debug it?
+
+45.lets say service A calls service B but B is down  what happens?
+
+46.one microservice is slow and impacting the system what will you do?
+
+59.how would you handle security in microservices?
+first we will secure APIs using authentication and authorization (JWT or OAuth) and use HTTps for all communication.
+then we will validate inputs avoid exposing sensitive data and use API Gateway for centralized security.
+each service should have proper access control and secrets should be stored securely.
+
+60.when should we not use microservice architecture
+we should not use microservices for small or simple applications.
+if the team is small or not experineced it adds uncessary complexity.
+ALso if strong coordination and fast development are needed monolith is better.
+microservices are useful only when the system is large and needs scalability.
+
+how does @PreAuthorize work?
+what is the difference between @cacheable and manual redis cashing?
+what is the difference between @Component @Service ,@Repository ?
+how do you handle distributed transactions in microservices architecture?
+explain about facade design pattern?
+what is @Transactional annotation?
+what is circular dependency and how do we fix it?
+why we switched from linkedlist to red black tree in case of hashcollission from java 8?
+how do you implement exception handling globally in spring boot?
+you have a list of 10 million records to process and you need to transform and filter them how would you approach this?
+how will you implement a thread safe singleton in java Also explain different approaches?
+when would you use a builder pattern and factory pattern in java?
+what happens if you modify a collection while iterating over it?
+could you expalin heap,stack,metaspace and where objects or primitive live?
+where are static variables stored in java?
+find the first non repeating character in a string using java 8 stream
+If a method annotated with @Transactional is called from another method inside the same class will it work?
+what is the difference between field injection and constructor injection which is preferred?
+how does spring handle tread safety for singleton beans?
+what happens if you have two beans of the same type in spring?
+your kafka consumer processes a message and an exception occurs what happens and how do you handle poison pill messages?
+why might @Aysync not work in a spring boot application?
+how do you prevent cascading failures when a downstream service is slow?
+----------------
+what happens internally when you create an object using new?
+when we create an object using new java classes several steps behind the scenes.
+1.memory is allocated.
+java first creates space in memory(heap) for the new object.
+2.default values are set
+all variables of the object are given default values like 0 for numbers false for boolean and null for objects.
+3.constructor is called 
+then the constructor runs.it sets the values we pass and runs any setup code.
+4.reference is return 
+finally the address(reference) of that object is returned and stored in our variable.
+
+can we create an object without using the new keyword?if yes how?
+yes there are several methods like
+1.using clone()
+2.using reflection
+3.using deserialization
+4.using factory methods.
+
+can a class be declared without any variables or methods?
+yes a class can be declared without any variables or methods .java still creates a .class file it still has a defualt constructor and we can create its objects.when we need a class just to represent its type so we create empty class like this and this is also called as a marker class.
+
+what is the difference between object and object reference?
+first ,object and object reference are not the same.
+object is the real data stored in the heap and created using new keyword whereas object reference is a variable that stores the address of the object,stored in the stack memory and used to access the object.
+for example if we have student s=new object() s is the reference and its point to the actual object in the heap.
+
+does assigning null to a reference delete the object?
+no assigning null to a reference does not directly delete the object.
+we have student s=new student()
+when we do s=null the reference is removed the object is still there but unreachable.
+the object is not immediatly destroyed garbage collector will remove it later.
+------------------------
+40+ java multithreading
+is a thread lighter than a process and can exist without it?
+Actually a process is an instance of a program that is being executed when a program runs,the os creates a process to manage its execution.
+example when we open microsoft word i becomes a process in the os.
+whereas a thread is the smallest unit of execution within a process.A process can have multiple threads which store the same resources but can run independently.
+A web browser like google chrome might use multiple threads for different tabs with each tab running as a separate thread.
+so the answer is yes thread is lighter than process and cant exist without a process because it lives inside the process for example process is like a house and thread is like a room.
+multiple users hit the same REST API at the same time.are they served by one thread or multiple?
+they are served by multiple threads.when many users hit the same rest api at the same time,the server assigns a separate thread for each request so requests can run in parallel not one by one.
+
+what are the different 	ways to create thread?
+in older java ,there were mainly two ways to create thread:
+Extending the thread class
+Implementing the runnable interface
+from java 5 onwords,thread can also be created using the executor service framework along with callble.
+from java 8 onwards ,thread can be created using lambda expressions ,which make the code more concise and readable.
+
+difference between extending thread and implementing runnable and when to use each?
+in extending thread:
+when we extend thread ,our class becomes a thread .
+we put our code in the run() method and start it using start().
+but the limitation is that our class cant extend any other class because java allows only one class to be extended.
+when to use:very small programs where inheritance is not needed.
+class MyThread extend Thread{
+public void run(){
+System.out.prinltn("Thread is running");
+}
+}
+class Test{
+main{
+MyThread t=new MyThread();
+t.start();
+}
+}
+in implemting runnable:
+when we implement runnable our class represents a task not the thread itself.
+we put logic in run() and pass it to a thread object,here our class can still extend another 
+when to use :when our class already extends another class.
+class MyTask implement runnable{
+public void run(){
+System.out.prinltn("Task is running");
+}
+}
+class Test{
+main{
+Thread t=new Thread(new MyTask());
+t.start();
+}
+}
+
+can a class extend 	thread and implement runnable together?
+yes a class can extend thread and also implement runnable at the same time but it makes no real sense.
+why?thread already impelement runnable s if your class extends thread it automatically becomes a runnable.impelmenting runnable again adds nothing.
+
+why is runnable preferred in real-world applications?
+runnable is preferred in real world applications because it gives better design and flexibilty.
+when we use runnable our class only defines what work to do,not how to run the thread.this keeps things clean and reusable.our class can still extend another class ,which is very common in real projects.
+
+what happens internally when we call run() instead of start()?
+when we call run() directly now new thread is created.
+what actually happens :
+the run() method runs like a normal method call.
+it runs on the same thread that called it (usally the main thread).
+java does not create a separate thread or do any scheduiling.
+when we call start():
+java creates a new thread
+that new thread then calls run() internally.
+
+can one runnable instance be used by multiple threads?
+yes,one runnable instance can be used by multiple threads.
+
+
+
+what happens if start() is called twice on the same method?
+if we call start() twice on the same thread,java throws a runtime error.
+what exactly happens is:
+the first start() works and creates a new thread.
+the second start() causes an IllegalThreadStateException.
+why this happen
+A thread in java can be started only once.After it is started(or finished)it cant be restarted.
+
+
+expalain the life cycle of thread?
+A thread in java goes through different states from start to end.
+this is called the thread life cycle.
+1)New 
+the thread is created but not started yet.
+Example Thread t=new Thread();
+2)Runnable:
+when we call start() the thread becomes runnable 
+it is ready to run and waiting for cpu time.
+3)running:
+the thread is actually exxecuting its code(means run() method)
+4)Blocked/waiting:
+the thread is temporarily not running .
+this happens when :
+it is waiting for a lock
+it calls sleep() or wait().
+it is waiting for another tread to finish.
+5)terminated:
+the thread finishes its work or stops due to an error it cant be restarted.
+
+
+can a thread re-enter runnable after terminated?
+No,a thread cant re-enter runnable after it is terminated
+once a thread finishes its run() method or ends due to an error,it goes into the terminated (dead)state.At this point the threads life is completely over.
+java does not allow restarting a dead thread if we try to call start() again java throws an exception.
+
+if two threads are trying to uodate a counter variable in a getCounter method so what will happen and how could we solve that?
+if two threads try to update the same counter at the same time,a race condition can happen.
+what will happen:
+both threads may read the same old value of the counter ncrease it and write it back becuase this happens at the same time.one update can overwrite the other.so the counter value becomes wrong or inconsistent.
+how to solve it:
+we could use synchronized so only one thread can update the counter at a time.
+or use AtomicInteger which safely updates the value without locking. 
+
+how can we use synchronized keyword?
+1st is synchronized method:we can add synchronized keyword before method name and lock the entire method.
+synchronized void increment(){
+counter++;
+}
+2nd in synchronized block:we can create a synchronized block by curly braces and lock will be there in that particular block.
+synchronized(this){
+count++;
+}
+3rd is static synchronized: here we lock the class not the object. we add synchronized keyword after static keyword and before method name.
+static synchronized void update(){
+}
+
+is synchronized appied to code or to objects?
+synchronized is applied to objects not directly to code.
+when you mark a method or a block as synchronized the code gets a 	lock on an object before it runs.only one thread can hold that objects lock at a time.
+for an instance synchronized method the lock is on the current object.
+for a static synchronized method the lock is on the class object.
+
+what happens if an exception occurs inside a synchronized block?
+if an exception occurs inside a synchronized block ,the lock is automatically released.
+lest understand step by step:
+A thread enters a synchronized bloxk and gets the lock.
+An exception occurs inside the block.
+the thread  exist the block becuase of the exception.
+java released the lcok automatically.
+
+can synchronization guarantee thread ordering?
+No,synchronization does not guarantee thread ordering.
+what synchronization does:
+it makes sure only one thread at a time enters the critical section.(A critical section is a part of code that accesses shared data and must not be executed by more than one thread at the same time like counter)
+it protects shared data from corruption.
+
+what it does not do:
+it does not decide which thread goes first.
+it does not control the execution order of threads.
+thread scheduiling is decided by the cpu and jvm ,not by synchronized.
+
+what are the limitations of synchronization?
+synchronized helps keep data safe,but it also has some limitations.
+main limitations are:
+1)performance issue
+only one thread can enter at a time.so other threads wait.this can slow down the application when many threads are used.
+2)No fairness guarantee
+synchronized does not guarantee which waiting thread will get the lock first.some thread may wait longer.
+3)risk of deadlock:
+if locks are taken in the wrong order.threads can wait forever for each other.
+4)Blocking nature 
+waiting threads are blocked and cant do any other work.
+5)Hard to control
+you cant try to get a lock set timeout or interrupt a thread waiting for a synchronized lock.
+becuase of the limitations of synchronized ,reentrant lock was introduced in java 5.
+
+what is reentrant lock and why do we need it?
+A reentrantlock is a more powerful locking mechanism in java that controls access to shared code or data.
+whta reentrant means :
+the same thread can lock the same lock again and again without getting stuck.it can also unlock the same number of times.
+why we need it:
+it allows:
+more control over locking and unlocking.
+Ability to try to get a lock without waiting forever(By tryLock()).
+setting fairness so threads get the lock in order.
+waiting with time limits.
+using multiple condition variables.
+
+how reentrant lock works?
+we can use the lock() method to lock the critical section and use unlock() to release the lock once our work is done.we could also use tryLock() it does not block forever.if the lock is already held by another thread,it immediately returns false,so the thread can do something else instead of waiting.
+
+how does tryLock() prevent deadlocks?
+tryLock() helps prevent deadlocks by not forcing a thread to wait forever for a lock.
+what normally causes deadlock:
+two threads hold different locks and wait for each others lock.Both wait forever.
+how tryLock() helps
+A thread tries to get the lock
+if the lock is not available if fails immediately (or after a short time)
+the thread can then release other locks retry later or do something else.
+becuase the thread does not block forever circular waiting is avoided.
+
+what happens if you forget to unlock?
+If we forget to call unlock() the lock is never released.
+wgat heppens then:
+other thread will wait 	forever to get the lock.
+the program may appear struck or frozen.
+this can lead to deadlock or starvation.
+the only thread that can release the lock has already finished or moved on.
+
+when should you prefer reentrantlock over synchronized?
+we should prefer reentrantlock over synchronized when we need more control over locking.
+use reentrantlock when:
+we dont want threads to wait forever(use tryLock() or timeout).
+we need fairness so threads get the lock in order.
+we want to lock and unlock at different places in code.
+we want better handling in complex multithreading scenarios.
+
+use synchronized when:
+this logic is simple.
+we want automatic lock handling.
+readability and safety matter more than flexibilty.
+
+what is volatile keyword?
+volatile is used to make sure that one thread changes a variable,all other threads see the latest value immediately.it avoids the problem where threads use old or chached values.
+each thread keep its own local copy of variable in cpu chache or register but volatile read values directly from main memory 
+lets take an example:
+Imagine we have music player app with a play thrad that keeps playing songs in a loo. there is also a stop button handled by the main thread.
+
+but threads share a variable called stopPlaying.
+play thread keeps checking stopPlaying
+when the user clicks stop.the main thread sets stopPlaying=true.
+If stopPlaying is not volatile ,play thread may keep using an old cached value and continue playing forever.
+if stopPlaying is volatile ,play thread immediately sees the updated value and stops playing. 
+
+why does not volatile guarantee atomicity?
+Atomicity means an operation happens in one single step.
+many operations (like count++) are actually multiple steps:read value -increase -write block
+volatile only guarantees visibility not tha these steps happen together. so two threads can still read the same value and update it at the same time,causing wrong results.
+
+can vlatile fix race conditions?
+no,volatile cant fix race condition.
+what volatile does:
+make sure all threads see the latest value(thats called visibility).
+what a rece condition needs:
+Atomicity(means only one thread updates at a time).
+
+
+what is AtomicClass and how do atomic classes work internally?
+Atomic classes(like AtomicInterger ,AtomicLong) are special java classes that let multiple threads update shared values safely without using locks.
+they are used when many threads need to change a value at the same time lick counters.
+How Atomic classes work internally(CAS):
+Atomic classes use a technique called CAS(compare and swap).
+Simple idea of CAS:
+1)read the current value
+2)check if it still the same as expected.
+3)if yes -update it.
+4)if no-try again.
+if another thread changes the value in between the update fails and CAS retries.
+
+why are Atomics faster than synchronized?
+Atomic classes are faster than synchronized because they avoid blocking threads.
+with synchronized:
+threads wait and block if the lock it taken.
+blocking and waking threads is slow and costly
+with atomic classes:
+thread do not block.
+they use CAS(campare and swap) to retry instead of waiting.
+if an update fails.the thread just tries again.
+
+what is executor framework and why do we need it?
+the executor framework is a java feature that manages thread for us.instead of creating and starting threads manually ,we submit tasks and java decides which thread runs them and when.
+why we need it:
+creating threads again and again is slow and hard to manage.we also have to handle how many threads to create,when to reuse them and when to stop them.
+the executor framework:
+reuses threads (thread pool)
+controls how many threads run at once.
+makes code cleaner and safer.
+improves performance and scalability.
+
+explain the concept of threadpool?
+A thread pool is a group of redy-made threads that are reused to do multiple tasks.
+instead of creating a new thread every time a task comes the thread pool gives the task to an existing idle thread.when the task is done.the thread goes back to the pool and waits for the next task.
+lets take an example of restaurant kitchen:
+the threads are the chefs.
+the thread pool is the set of chefs already hired.
+orders are the tasks.
+when a customer places an order:
+the restaurant does not hire a new chefs every time.
+An available chefs takes the order and cooks it.
+after finishing the chefs becomes free and takes the next order.
+if all chefs are busy:
+new orders wait in a queue until a chef is free.
+
+who manages the thread lifecycle in executors?
+the executor framework manages the entire thread lifecycle.it creates threads assigns tasks to them,reuses them,and shuts them down when needed.
+you dont manage threads manually.
+
+can executors reuse the same thread for different tasks?
+yes,executors reuse the same thread to run many different tasks.after a task finishes,the thread goes back to the pool and waits for the next task.
+
+what happens if the executor queue is fulll?
+if both the thread pool is busy and the task queue is full,the executor rejects new tasks.this usually throws a rejectedExecutionException or follows a rejection policy(like running the task in the caller thread or discarding it).
+
+difference between submit() and execute()?
+execute() is used when we just want to run a task and dont care about any result.it takes a runnable and returns nothing.if something goes wrong inside the task (an exception) ,it is thrown directly on the worker thread and usually ends up in logs via the threads exception handler.
+whereas whether submit() is used when we want more control over the task.it returns a future which lets us check whether the task is finished cancel it,or get a result (if its callable) .if the task throws an exception is stored and is thrown when we call future.get().
+because of this submit() is safer and more flexible and is generally preferred in real applications.
+
+difference between runnable and callable in executors?
+In java when we use threads or the 	executor framework ,we dont directly tell a thread how to run.instead we tell it what work to do.
+that work is represented using runnable and callable so:
+threads and executors manage threads.
+runnable and callable represent the task that a thread will execute.
+both are used to define the code that runs inside a thread especially when using executorService and thread pools.
+taking about runnable:
+it does not return a result.
+it cant throw cheched exceptions.
+it is used for tasks that just perform work.
+
+in callable:
+it returns a result.
+it can throw checked exceptions.
+it is used when you need on outcome from the task.
+
+
+explain the types of thread executor?
+there are multiple types of executor:
+1.fixed thread executor
+here we define how many threads should work
+for example if we create executor like :
+ExecutorService es=Executors.newFixedThreadPool(4);
+here we have fixed that 4 threads will be in use.
+in means at most 4 threads can run in parallel
+if more than 4 tasks are submitted the extra wait in a queue until a thread becomes free.
+basically it is a pool with a fixed number of threads.
+2).signle thread executor
+here we define that only one thread should work
+for exmaple if we create executor like:
+ExecutorService es=Executors.SingleThreadExecutor();
+here only one thread will be created
+it means only one task can run at a time
+all other tasks will wait in a queue and execute one by one.
+basically it is a pool with exactly one thread and execution is sequential.
+3)cached thread Executor
+here we do  not define any fixed number of threads.
+for exmaple if we create executor like:
+ExecutorService es=Executors.newCachedThreadPool():
+in this exector:
+new threads are created when needed
+idel threads are reused
+threads that stay idle for some time are destroyed.
+it means the number of threads can increase or decrease automatically based on load.
+basically it is a dynamic thread pool
+if two many tasks come,it may create too many threads which can cause performance or memory issues.
+4)schedules thread executor
+this executor is used when we want to run tasks after a delay or repeatedly
+for exmaple if we create executor like:
+ScheduledExecutorService es=Executors.newSheduledThreadPool(2).
+here 2 threads are avilable for scheduled tasks.
+we can :
+run a task after some delay
+run a task at fixed time intervals.
+basically it is used for time based tasks like backgroud jobs or periodic checks.
+5)fork join pool executor
+this executor is used for parallel processing.
+for exmaple if we create executor like:
+ForkJoinPool pool=new ForkJoinPool();
+in this executor:
+A big task is divided into a smaller tasks 
+these tasks run in parallel 
+idle threads can steal work from busy threads 
+basically it is useful for cpu intensive tasks and divide and conquer problems.
+
+what is completableFuture and how does it work?
+completableFuture is used to run tasks asynchronously and chain multiple steps without blocking.
+how it works:
+we start a task
+while it runs our main thread is free.
+when the task finishes we can say then do this then do that.
+simple example:
+order food -food gets prepared-then deliver -then notify customer.
+each steps run automatically after the previous one finishes.
+
+how do you handle exceptions in completableFuture?
+completableFuture has built in exception handling methods:
+exceptionally()-give a fallback value.
+handle()-handle success or failure together.
+whenComplete()-just log or observe errors.
+simple idea:
+if something fails we decide what to do next instead of crashing the program.
+
+
+can completableFuture casue thread starvation?
+yes if used incorrectly.
+by default completableFuture the forkjoinpool common pool.
+if:
+tasks are blocking (sleep,I/O,DB calls).
+too many long tasks run.
+
+Then:
+threads get stuck.
+new tasks wait forever -starvation.
+solution:use a custom executor for blocking tasks.
+
+
+why is completableFuture better than Future?
+problems with future:
+we must call get()(blocks thread).
+no chaining.
+poor exception handling.
+
+completableFuture advantage:
+non blocking
+task chaining (thenApply,thenRun).
+better exception handling.
+combine multiple tasks easily.
+
+what are the common methods in completableFuture?
+Completablefuture provides many methods to run and manage asynchronous tasks.we can create async tasks using methods like supplyAsync() (when you need a result) and runAsync() (when no result needed) after a task compeletes we can chain next actions using thenApply() to transform the result,thenAccept() to use the result or thenRun() to run another task.to wrok with multiple async tasks,methods like thenCombine(),thenCompose(),allOf(),anyOf() are used.Completablefuture also offers strong exception handling through exceptionally(),handle() and whenComplete().if needed we can block and get the result using get() or join().it also provides control methods like complete(),cancel()and isDone to manually manage or check the tasks state.
+ 
+
+what is forkjoin and its real example?
+ForkJoinPool is a special thread pool designed for divide and conquer tasks.
+how it works:
+big task is split into smaller tasks(fork).
+results are combines(join)
+idel thread can steal work from busy threads.
+real example:
+searching a big arraydeque
+parallel sorting 
+processing large data in chunk.
+
+50+
+1.why does not collection framework have a common interface for both list and map?
+The java collection framework is organized like a tree structure with interfaces at the top and classes below them that implement those interfaces.there are majorly two interfaces branches,first is collection interface branch that contain List,Set and Queue ,2nd is Map interface branch that contain all kind of maps.
+It does not have one interface becuase they store and handle data in completely different ways.
+A List stores elements as a single collection of values and works with indexes (like position 0,1,2).but a map stores data as key value pairs ,where each value is linked to unique key.
+since their structure behavior and methods are very different ,one common interface would not make sense,it would either be too generic or confusing.
+
+2.what problems would arise if collections allowed primitive types?
+collections in java work with objects,not raw values.they use features like generics,inheritance,and methods that only apply to objects.primitive types dont support these,so they sould not fit into the collection design.
+
+
+3.can you design your own collection?what methods are mandatory?
+yes,we can design our own collection in java.
+we can do this by either:
+implementing the collection interface or
+extending an existing class like AbstarctList,AbstractSet etc.
+If we implement list we must also define:
+get(index).
+set(index,element)
+If we implement map,you must define:
+put(key,value)
+get(key)
+remove(key).
+
+4.what is equals() and hashCode() contract?
+Actully this a rule in java that keeps object caparision and hasing in collections.
+equals() is used to check if two objects are logically equal(same data).
+hashCode() returns a number that represents the object for fast searching and decide bucket.
+The rules says that:
+1)if two objects are equal using equals(),their hashCode() must be the same.
+2) if two objects have the same hashCode(),they may or may not be equal.
+3)if we override equals(),we must also override hashCode().
+4)during one execution ,hashCode()should return the same value unless object data changes.
+
+5.what happens if equals is overriden but hashCode is not?
+if we override equals() but do not override hashCode() ,so equals() may say two objects are equal.but their hashCode() will be different.so they will be stored in different buckets.
+because of this duplicate objects may get stored in hashmap or searching in hashmap may fail even if the object is logically equal.
+
+6.can two unequal objects have the same hashCode()?
+yes,two unequal objects can have the same hashCode().
+hashCode is just a number used to quickly group objects and locate the bucket.
+since many objects exist but the number range is limited ,sometimes different obeject may produce the same hash value .this is called a hash collision.
+
+7.what breaks if mutable fiels are used in hashCode?
+if mutable or changeable fields are used in hashCode(),it can break how hash-based collections like hashmap and hashset work.
+what happens is:An obejct is added to a collection .its hashCode()is calculated based on its fields later,one of those fields changes.now the hashCode() also changes.
+now lets discuss the problem:the object was stored in one bucket using the old hash code.after change ,java searches using the new hashcode .it cant find the object anymore even though it exists.
+
+8.what happens if you modify a list while iterating using a for each loop?
+if we modify a list while iterating it using  a for-each loop,java will usually throw a concurrentModificationException.
+
+9.explain the internal working of arraylist?
+An arraylist works like a dyanmic array.Internally is uses a normal array to store elements ,but it can grow automatically when more items are added.
+how it works step by step:
+1)stored data in array:inside arraylist there is an internal array where elements are stored in order.
+2)Initial capacity:when created it has a default capacity(usually 10).
+3)Adding elements :when you add items ,they are placed in the next free index of the array.
+4)Resizing:if the array becomes full ,a new bigger array is created ,old elements are copied into it and then new element is added.new size 1,5times the old size.
+5)Accessing elements:fast,because it uses index(array -based).
+time complexity :o(1).
+6)Removing elements:slow because elements must shift left after removal.
+time compelxity:o(n).
+
+10.can arraylist store null multiple times?
+yes,arraylist can store null multiple times ,since null is treated like a normal element.you can add it many times and it will store each one at different positions.
+11.why is linkedlist slower for search operations?
+linkedlist is slower for search operations because it does not use indexing like an array.
+in linkedlist elements are connected using nodes(each node point to the next )to find an element java must start from the first node and move one by one until it reaches the target.
+
+12.what are the use cases of arraylist and linked list?
+use arraylist when we need:
+fast reading/searching by index.
+more read operations than insert/delete.
+storing data in order and accessing it frequently.
+use linkedlist when we need:
+frequent insertions and deletions 
+adding/removing elements from the begining or moddle.
+queue or stack type operations.
+
+13.how to make out collections thread safe?
+we could use Collections.SynchronizedList(),Collections.SynchronizedSet() and Collections.SynchronizedMap() to make our collections threadsafe.
+
+14.which one is best option usign hashmap inside collections.synchonizedMap() or concurrentHashMap?
+in most real world cases ,concurrentHashMap is the better option.
+because Collections.synchonizedMap() locks the entire map when one thread uses it.other thread must wait.slower when many threads are working.
+whereas concurrentHashMap allows multiple threads to work at the same time locks only a small pasrt internally not the whole map.
+
+15.how does set ensure uniqueness without knowing object equality logic ?
+A set ensures uniqueness using hashCode() and equals() methods:
+when we add an object to a set:
+1)if first checks the objects hashCode() to decide where to store it.
+2)If another object with the same hash is found ,it then uses equals() to compare both objects.
+3)if equals() return true,it means elements are duplicate and then not added.
+if false object is added.
+so the set does not know equality logic itself.
+it simply calls the objects own hashCode() and equals() methods to decide.
+
+16.does set allow null value?
+it depends on the type of set.
+Hashset-allows one null value.
+Linkedhashset -allows one null value 
+treeset -does not allow null(throw error).
+
+17.why is there not get() method in set()?
+there is no get() method in Set becuase a set is not index based 
+A Set:
+stores unique element.
+does not maintain positions or indexes.
+focuses on is this elenent present or not.
+since there is no fixed order or index ,java cant return an element using something like get(0).
+
+18.how can we nake a set thread safe?
+we could use Collections.SynchronizedSet(new HashSet<>()); to make a set thread safe.
+
+19.why is treeset slower than hashset?
+treeset is slower than hashset because treeset maintains order and sorting ,it takes more time to insert delete and search.
+
+20.how does linkedhashset maintain insertion order?
+linkedhashset maintains insertion order by using a linked structure along with hashing.
+Internally:
+it works like a hashset (uses hashCode to store elements).
+but it also keeps a doubly linked list that connects elements in the order they were added.
+so when we add elements:
+they are stored usign hashing.
+at the same time ,links are created between elements to remember the order.
+when we iterate over the linkedhasset
+it follows the linkedlist
+so elements come out in the same order they were inserted.
+
+
+21.why does map not extend collection?
+because map works differently.Collection stores single values ,but Map stores key-value pairs .their structure and methdos are different ,so map is kept separate.
+
+22.why are keys reuired to be unique but values are not?
+keys are used to find data.if two keys were the same,java would not know which value to return.values are just data,so duplicates are allowed.
+
+23.why does map expose entrySet() instead of iterating directly?
+Map has two parts:key and value.entrySet() gives both together as a pair,making it easy and efficient to loop and access both at the same time.
+
+24.why are keys immuatble recommended?
+If a key changes after being added,its hashCode may change.Then Map cant find it again.and hence causing search and remove operations to fail.
+
+25.explain the internal working of hashmap?
+A hashmap stores data in the form of key-value pairs and uses a technique called hashing to store and find data quickly.
+Lets understand step by step:
+1)hashing of key:when you add data ,java takes the key and calls its hashCode() to generate a number.
+2)Bucket location:This number is used to decide which bucket(index)in an internal array the data should go to.
+3)Storing the entry:the key and value are stored together as an object(called Entry/Node) in that bucket.
+4)Handling collisions.
+if two keys give the same bucket.they are stored in a linked list(older java) if many entries collide ,it becomes a tree (java 8+) for faster search.
+5)REtrieving data:
+when you call get(key)
+java finds the bucket using hashCode().
+then uses equals() to find the exact key.
+returns the value.
+
+
+26.what is default capacity and load factor of hashmap?
+default capacity is 16.it means how many buckets the hashmap starts with.
+default load factor is 0.75,it decides when hashmap should grow .this means:
+when 75% of the buckets are filled ,hashmap will resize.
+Example:
+if capacity=16 so 75% of 16 is 12 and hence when we add the 13th entry resizing happens.
+
+27.what happens internally when two keys have the same hash()?
+this is called a collision.both collision go to the same bucket.hashmap then uses equals() to check and store them separately.
+
+28.what if equal() is true but hashCode () is differnt ?
+hashmap will treat them as different keys and store both.Later,searching may fail because it looks in a different bucket .this breaks hashmap behavior.
+
+29.why does hashmap allow one null key?
+hashmap handles null specially and stores it in a fixed bucket(that is index 0).since keys must be unique ,only one null key is allowed.
+
+30.what happens if hashCode changes after insertion?
+The object was stored using the old hashCode .After change,HashMap looks in a new bucket and cant find it.search and remove operations fsail.
+
+31.why should keys in hashmap be immutable?
+if a key changes its hashCode may change.Then Hashmap loses track of its location and hence key must be immutable.
+
+32.exaplain the internal working of linkedhashmap?
+linkedhashmap works like a hashmap+Linkedlist together.
+it stores data as key value pairs like hashmap ,but it also keeps a doubly linked list to remember the order of elements.
+lets understand gow it works step by step.
+1)Hashing like Hashmap
+Keys hashCode() decides the bucket.Entry is stored in an internal array.
+2)Maintaining order:Along with storing in a bucket ,LinkedHashmap connets entries using a doubly linked list.this list keeps track of insertion order(or access order if configured).
+3)REtrieval:when you got a value,Hashmap logic is used (hashCode+equals).when you iterate it follows the linked list to return elements in order.
+4)Collision handling:
+same as hashmap(linked list/tree inside bucket).
+
+33.how does linkedhashmap maintain access order?
+Linkedhashmap keeeps a doubly linked list of all entries.
+when access order mode is enabled:everytime you get() or put() a key ,that entry is moved to the end of the list.so the list always shows most recently used at the end and least used at the start.
+
+34.why is linkedhashmap use for lru cache implementations?
+LRU(Least recently used) cache removes the item that was not used for the longest time.
+linkedhashmap helps because:
+it already tracks access order.
+the least used item satys at the begining.
+when casche is full we simply remove the first entry.
+so it becomes easy to build an LRU cache.
+
+35. why is linkedhashmap slower than hashmap?
+linkedhashmap does everything hashmap does plus extra work:
+maintains a linked list for order.
+updates links on every insert/access.
+this extra work makes it slightly slower than hashmap.
+
+36.exaplain the internal working of treemap?
+A treemap stores data as key-value pairs and keeps them sorted by keys.
+internally it uses a special tree structure called a red black tree.
+how it works step by step:
+1)sorted storage:when you add a key value pair,treemap compares the key with existing keys and places it in the correct sorted position.
+2)Red black tree structure
+entries are stored in a self balancing tree:each node has a key,value left child ,and right child.the tree automatically balances itself after insertion/deletion.
+3)searching:
+to find a value:treemap compares the key step by step in the tree.moves left or right until the key is found.
+4)no hashing used:
+unlike hashmap,treemap does not use hashCode().
+it uses :CompareTo()(natural ordering) or compartor (custom sorting).
+
+37.why does treemap require natural ordering or a comparator?
+treemap keeps keys sorted.to sort it must compare keys.
+so it needs either:
+natural ordering(comparable),or
+A custom comparator
+without comparision it cant decide where to place keys in the tree.
+
+38.what happens if comparator logic is inconsistent?
+if comparision rules are wrong or inconsistent
+keys may go to wrong positions
+searching may fail
+duplicate keys may appear
+treemap behavior becomes unpredictable.
+
+39.why does not treemap allow null keys?
+threemap compares keys to sort them.
+if a key is null it cant be compared using compareTO() or comparator ,so java throws an error.
+
+40.how does treemap guarantee sorted order?
+treemap stores entries in a self balancing tree(red black tree).
+every time you add or remove data:
+it compares keys
+places them in the correct position
+rebalances the tree if needed.
+
+41.what is hashtable and why it is not recommended to use in our projects?
+hashtable is an old java class used to store data as key value pairs similar to hashmap.
+it was introduced before the modern collection classes and is thread safe bydefault.
+why it is not recommended now:
+1)it was made in early java.new classes like hashmap and concurrentHashMap are better.
+2)Hashtable locks the entire map for every operation ,so only one thread can use it at a time.
+3)It does not allow ull keys  null values which limits flexibility.
+4)better alternatives exist like hashmap and concurrentHashMap.
+
+42.exaplain the internal working of comcurrent hasmap?
+concurrentHashMap is a thread safe version of hashmap that allows multiple threads to read and write at the same time without like the whole map.
+how it works internally
+1)data stored like hashmap.it stores key value pairs in buckets using hashing(hashCode()).
+2)No full map locking:unlike hashtable or synchonizedMap,it does not lock the entire map.It locks only the small part(bucket/segment) where the update happens.
+3)reads are mostly lock free:multiple threads can read data at the time without waiting.
+4)writes use fine grained locking.
+when a thread updates:
+only that bucket is locked.
+other threads can still work on other buckets.
+5)collision handling:if multiple keys go to the same bucket :they get stored in linked list and converted to tree if many entries(like hashmap in java 8).
+6)resizing:when size grows :new bigger array is created,entries are redistributed and done carefully so threads dont break data.
+
+43.why does it not throw concurrentModificationException?
+concurrentHashMap is designed for multiple threads.it allows safe changes while iterating,so it does not fail like normal collections.Iteration works on a snapshot-like view,so no exception is thrown.
+
+ 
+44.why does not it allow null keys or values?
+ because in multithreading,null can create confusion.
+ Example:if get(key) returns null,we wont know.
+ key is not present,or
+ value is actually null
+ so it avoids ambiguity.
+ 
+45.how is it different from collections.synchonizedMap()?
+ synchonizedMap -locks the entire map.
+ concurrentHashMap -locks only a small part(bucket).
+ concurrentHashMap allows multiple threads to work together and is faster.
+ 
+46.why was concurrentHashMap introduced when collections.synchonizedMap() exists?
+ synchonizedMap is slow when many threads are wroking because only one thread can access at a time.
+ concurrentHashMap allows parallel access and better performance.
+
+47.what happens if two threads update the same key?
+ only one thread updates at a time for that key(internal locking).
+ the second thread waits and then updates safely.
+ 
+48.what is copyonwriteArrayList and expalain its use case?
+ CopyOnWriteArrayList is a thread safe list where every time you add,remove ,or update an element,it creates a new copy of the list and makes changes in that copy.
+ use case:
+ when reads happen a lot and writes happen very rarely.
+ Example:configuration data,listners list,cache readers.
+ 
+49.why does copyonwriteArrayList allow safe iteration?
+ becuase iteration happens on the old copy of the list.even if another thread changes the list,the iterator still uses the previous version,so it stays safe.
+ 
+50.how does it avoid concurrentModificationException?
+ since it works on a separate copy during iteration,the original list changes do not affect the iterator.so no exception is thrown.
+ 
+51.difference between copyonwriteArrayList and collections.synchonizedList().when is it better than collections.synchronizedList()?
+ CopyOnWriteArrayList:
+ creates a new copy on every write.
+ reads are very fast.
+ good when reads are more,writes are less.
+ 
+ Collections.SynchronizedList():
+ looks the entire list.
+ reads and writes both require locking 
+ slower when many threads read data.
+ 
+52.when is copyonwriteArrayList better?
+ when many threads are reading data.
+ when updates are rare.
+ when safe iteration without locking is needed.
+ 
+53.difference between comparable and comparator?
+ In comparable ,sorting logic is written inside the class.only one default sortig allowed.
+ whereas in comparator,sorting logic is written outside the class.multiple sorting ways possible.
+ 
+54.can a calss impelement multiple comparators?
+ A class can implement comparable but we can create many comparator classes for different soritng styles(by name ,age,salary etc).
+ 
+55.expalain the priorityqueue,dequeue ,arraydeque ,verctor,stack and their usecases?
+ PriorityQueue:A queue where elements are processed based on priority ,not order of insertion.Smallest(or highest priority) element come first.
+ Use cases:task scheduiling ,job processing ,shortest -path algorithms.
+ 
+ Deque(double ended queue) we can add/remove elements from both ends (front and back).
+ use cases:sliding window problems,caching,implementing stack +queue together.
+ 
+ ArrayDequeue: An implementation of dequeue using an array.faster than stack and linkedlist for most cases.
+use cases:stack operations,queue operations ,real time processing.
+
+Vector:an old thread safe list where every operation is synchronized.
+use cases:legacy systems,older applications(rarely used now).
+
+Stack:follows LIFO(last in first out) rule last added item is removed first.
+use cases:undo operations,browser history,function call tracking.
+
+56.can you replace vector with collections.synchonizedList() everywhere?
+ mostly yes,synchonizedList is modern and preferred.
+ but verctor has some legacy methods.so not always a direct replacement.
+ 
+57.why does synchronization not automatically make vector safer?
+ verctor looks every method,but:
+ coumpund operations(check then act) are still unsafe.
+ Iteration still needs manual synchronization.
+ so synchronization alone does not guarantee full safely.
+ 
+58.difference between fail fast vs fail safe iterators?
+ failfast throws concurrentModificationException if collection changes during iteration whereas example arraylist,hashmap.
+ fail safe: works on a copy no exception Example copyonwriteArrayList,concurrentHashMap.
+ 
+ 
+ scenario based questions
+ you need an ordered collection with fast index-based access and frequent reads.
+ ArrayList
+ 
+ you need a list where elements are frequently added and removed from the middle.
+ linkedlist
+ 
+ you need to store unique elements and ordering is not important
+ hashset
+ 
+ you need to store unique elements while maintaining insertion order.
+ linkedhasset.
+ 
+ you need to store key value pair with the fastest possible lookup time
+ hashmap.
+ 
+ you need to store key value pair and want iteration in the same order they were inserted
+ linkedhashmap
+ 
+ you need to store key value pair where keys are always sorted automatically
+ treemap
+ 
+ you need a thread safe map for a highly concurrentapplication.
+ concurrentHashMap
+ 
+ you need a thread safe list with many reads and very few writes
+ copyonwriteArrayList
+ 
+ 
+ 
+
+can a class have only static members if yes then is it still be object oriented?
+yes.
+
+is encapsulation only about making variables private?
+no ,encapsulation is not only about making variables private.Encapsulation means keeping data safe by making variables private and controlling how it is accessed by getters and setters.
+
+if a class has private fields but public setters is it truly encapsulated?
+it is partially encapsulated but not always truly encapsulated if setter method is allowing any value ,it means data is not really protected .private fields +public setter is just basic encapsulation.
+true encapsulation needs validation and business rules in the setter methods.
+for example if there is field age and set age method so we cant set negative number in the age attirbute so we must have validation inside the setter method and thats what a truly encapsulation.
+
+why do we use getters setter when we can make fields public and setting getting directly?
+
+what are anonymous classes?
+an anonymous class is a class without a name.
+
+can you tell me the difference between encapsulation and abstraction?
+encapsulation means hiding data and conrolling access to it.
+we wrap data(variables) and code(methods) together in a class and decide who can access them.
+for example a bank account hides its balance and only allows change through deposit or withdraw methods.
+
+whaereas abstraction means hiding internal working and showing only what is needed.
+user knows what an object does, not how it does it.
+for example: when we use a tv remote we press a button to change the channel we dont know the internal electronics.
+in simple word:
+encapsulation is to protect data.
+Abstraction is to hide complexity.
+
+what problem does abstraction solve that encapsulation does not?
+encapsulation only protects data.but abstraction reduces complexity for the user.
+abstraction allows the user to work with high level ideas instead of low level  details.
+for example: in a car encapsulation makes sure engine parts are hidden inside but abstraction is about to use brake streering accelator without knowing how engine works.
+
+
+why do we need abstract classes when we already have interfaces?
+abstract classes and interfaces both support abstraction,but they are used for different needs.
+we shoudl use abstract class when classes are closely related and share code for example there is a vehicle class,car and bike extending it.car and bike can share the common methods in vehicle like accelerate.
+
+we should use interface when many unrelated classes need to follow the same rule.for example we have payment interface and every payment type has a unique implementation like cardpayment upipayment bankingpayment etc they may not share the code.
+but after java 8 default private and static methods were introduces and two or more classes can reuse the default method but still in interfaces we dont have constructor and instance variable.
+
+can an abstract class exist without any abstract methods?
+yes 
+
+why can an interface not have instance variable?
+interface is a contract,not an 	object blueprint.
+instance variables belong to objects.
+interface does not create object.
+so it cant hold object state.
+thats why all variables in interface are public static final by default.
+
+why default static private methods are introduced in interfaces after java 8?
+why default method-if we add a new method in interface before java 8 all existing class would break so thats why defualt method was introduced.
+now we cant have new methods as default in interfaces without breaking exixting functionality.
+
+why static method-static methods are just helper methods.they avoid creating extra utility classes.
+
+why private methods-first thing is they were introduces in java 9 they are used to share common logic between default methods and avoid duplication.
+
+why does java support multiple inheritance using interfaces but not classes?
+java does not allow multiple inheritance with classes because it can create confusion and errors.if two classes have the same method or variable name,the child class will not now which one to use.this is called the diamond problem.
+but java allows multiple inheritance with interfaces because interfaces mainly define method names not full method code.so there is less confusion.even when two interfaces have the same method,the child class must write its own implementation 
+simple word
+multiple classes-too much confusion
+multiple interfaces-safe because you must write the real code yourself.
+
+can an interface exist without any methods?
+yes it is called marker interface.A marker interface is an interface in java that has no methods.it is used to mark a class with some special meaning.real example are serializable and cloneable.
+
+what exactly makes an interface a functional interface?
+An interface becomes a functional interface when it has exactly one abstract method.this single method represents the main work that the interface is supposed to do,and because there is 	only one such method it can be easily used with lambda expressions if an interface has more than one abstract method,
+then it cant be called a functional interface.
+
+can a functional interface have default methods and static methods?
+yes a functional interface can have default methods and static methods these methdos do not count as abstract methods so they do not affect the only one abstract method rule.
+
+why is @FunctionalInterface optional but recommended?
+the @FunctionalInterface annotation is optional because the compiler can automatically detect whether an interface has only one abstract method.but it is recommended becuase it clearly tells other developers that this interface is meant to be used as a functional interface and it also protects the code by giving a compile time error if someone accidentally adds another abstract method.
+
+can a functional interface extend another interface?
+yes a functional interface can extend another interface but only if the total number of abstract methods after extending is still one.if extending another interface adds more abstract methods and the total becomes more than one,then it will no longer be a functional interface.
+
+
+why cant private method be overriden?
+private methods belong only to the class in which they are written and are not visible to child classes since overriding needs the child class to see and change the parents method behavior a private method cant be overriden because the child class does not even know that method exists.
+
+why cant static methods be overriden and only hidden?
+static method belongs to the class not to the object overriding works with objects at runtime(runtime polymorphism) but static methods are decided at compile time based on the reference type.so when a child class has a static method with the same name,it does not override the parents method it only hides it.
+
+what is covariant return type and why is it allowed?
+covariant return type means that the overriden method in the child class can return a more specific type thanthe parents return type for example parents return animal and child returns dog.this is allowed because the childs return type is still a kind of the parents return type so it fits wherever the parent type is expected.
+
+can we override main method?
+no,we cant override the main method bacause it is static, and static methods cant be overriden however a child class can define its own main method with the same signature but this is method hiding not overriding.
+
+why is overlaoding resolved at compile time but overriding at runtime?
+overlaoding depends on the method signature (method name+parameter types) and is decided by the compiler by looking at the reference type and the argumetns passed so it is resolved at compile time.
+overriding depends on the actual 	object created at runtime and java decided which method to call based on the object type,so it is resolved at runtime.
+
+can you overload a method by only changing the return type?
+no,we cant overload  a method by only changing the return type.the compiler uses method name and parameter list to decide which method to call, not the return type.if only the return type is different,the compiler will get confused and give an error.
+
+can you overlaod static methods?
+yes,static methods can be overloaded.as long as the parameter list is different ,we can create multiple static methods with the same name in the same class.overlaoding is about method signatures and static or non static does not matter for overlaoding.
+
+can you overload main method?
+yes ,we can overload the main method by changing its parameter list.but the jvm will only call the exact method with signature public static void main(String args[]) to start the program.other overloaded main methods will not be called automatically.
+
+can you overload private methods?
+yes private methods can be overloaded within the same class by changing the parameter list.overlaoding happens inside the same class and does not depend on inheritance so access level does not matter.
+
+can a constructor be overriden?
+no,a constructor cant be overriden becuase it is not inherited by child classes.overriding works only for inherited methods and since constructors belong only to their own class,they cant be overriden.
+
+can an abstract class have a constructor?
+yes,an abstract class can have a constructor.even though we cant create objects of an abstract class,its constructor is called when a child class object is created to initialize the parent part of the object.
+
+why does not java allow static constructor ?
+java does not allow static constructors becuase static data is initialized using static blocks or static variable initialization.constructors are meant to initialize objects and static members belong to the class ,not ot objects so a static constructor does not fit the purpose.
+
+can a constructor call another constructor using this() and super()?
+yes,a constructor can call another constructor of the parent class using super().but it must be the first statement in the constructor ,and you cant use both this() and super() in the same constructor.
+
+why are constructos not inherited but accessible via super?
+constructors are not inherited because they are special methods meant only to create and initialize objects of their own class.but a child class can call the parents constructor using super() to make sure the parent part of the object is properly initialized.
+
+what happens if you make all constructors private?
+if all constructors are private,no other class can create objects of that class.
+this is used in patterns like singleton where we want to control or completely prevent object creation from outside.
+
+what problems arise with too many constructors?
+too many constructors make the class hard to understand and use.daining evelopers may get confused about which constructor to call,and maintaining the code becomes difficult,it can also lead to duplicate logic in many constructors which increases bugs and makes changes risky.
+
+can a subclass in another package access a protected member via object reference?
+A subclass in another package can access a protected member only through inheritance not through a normal object reference.this means it can use the protected member directly inside itself ,but it cant access it using an object of the parent class created outside the subclass.
+
+why are interface methods always public ,even if not specified?
+interface methods are meant to be implemented by other classes ,possibly in different packages.to make sure every implementing class can access them,java makes all interface methods public by default.if they were not public ,many classes would not be able to implement them properly.
+
+what happens if a classs has no access modifier in a multi module project?
+if a class has no access modifier,it has package private access,which means it is visible only inside its own package.in multi module project ,other modules usually use different packages so they cant access that class at all.
+
+why can a top-level class not be private or protected?
+A top level class must be accessible to the outside world at least within its package.if it were private or protected ,no other class outside its own file or hierarchy could use it,which would make it useless.so java allows only public or package-private for top level classes.
+
+can fields be public but still maintain encapsulation?
+in general,public fields break encapsulation becuase anyone can change them directly .however if the field is final and immutable ,making it public can still be safe ,becuase its value cant be changed after creation.
+
+what is the this and super keyword?
+this keyword
+this refers to the current object - the object that is calling the method or whose data is being used.it is mostly used to remove confusion between class variables and method variables with the same name.
+Example :if a class has a variable name and a method also has a parameter called name then this.name means the 	objects variable and name alone means  the parameter.
+so,this means my current object.
+super keyword:
+super refers to the parent (base)class object .it is used when a child class wants to use something fom its parent class like a variable ,method or constructor.
+Example: if a child class has its own version of a method but you still want to use the parrents version.you call it using super.methodName().
+so super means my parent class.
+
+what happens if you use this() and super() together in a constructor?
+in a constructor this() and super() are used to call another constructor.
+this() calls a constructor of the same class.
+super() calls a constructor of the parent class.	
+but you cant use both together in the same constructor.the rule is the first line of a constructor must be either this() or super() not both.
+so if write both the program will give an error.
+why?beacuse java needs to know first which constructor chain to start with -our own class or the parent class and it cant start from two places at the same time.
+in simple words :we must choose one path not two.
+
+can this or super be used inside a static method?
+no,neither this nor super can be used inside a static method.
+A static method belongs to the class.not to any object.
+this and super both need to object.
+this means the current object.
+super means the parent part of the current object.
+since static methods run without any object ,there is no current object so there is no this and no super.
+in simple word :no object -no this -no super.
+
+can super access private members of parent class?
+no,super cant access private members of the parent class.
+private members belongs only to the class where they are defined .even child classes cant directly use them.
+
+so if a parent class has a private variable or private method the child class cant access it using super or in any other way.
+in simpe word:
+super can access parents public and protected members.
+super cant access parents private members.
+
+can this and super be used together in the same method?give a scenario
+yes,this and super can be used together in the same method.
+this is used for the current class object.
+super is used for the parent class part of that same object.
+scenario
+we have a class car and a child class SportsCar
+car has a variable speed.
+sportscar also has its own variable speed.
+inside a method of sportscar ,we want to use both.
+this.speed-the sportscar speed
+super.speed-the cars speed.
+so in one method ,we might compare them like checking how much faster the sports car  is than the normal car.
+in simple word:
+this talks about me and super talks about my parent and we can use both in the same method.
+
+what is the difference between cohesion and coupling 
+cohesion:
+cohesion means how well the things inside one class or module belong together .high cohesion means a class does one clear job and all its methods and variables are related to that job.for example a class that only handles user login is highly cohesive. low cohesion means a class does many unrelated things like login payment and printing all in one class.
+coupling:
+coupling means how much one class depends on another class.low coupling is good it means classes dont rely too much on each other.so chainging one class wont easily break others.high cupling is bad it means classes are tighly connected so a small change in one class can cause problems in many places.
+
+can a class have high cohesion but still be tighly coupled give a real example?
+yes a class can have high cohesion but still be tighly coupled 
+high cohesion means the class does one clear job.tight coupling means it depends too much on other classes.
+real example 
+think of a payment service class that only handles payments.All its methods are about payment,creat payment,verify payment,refund payment so it has high cohesion.
+but if paymentservice directly uses concrete classes like bankAPI ,smsservice,and database service,inside its code (not through interfaces) then it is tightly coupled.if bankAPi changes or you switch to another bank you must change paymentservice.
+so even though the class is well focused(high cohesion) it is hard to change or reuse becuase it depends strongly on other specific classes.
+
+is it possible to increase cohesion and cohesion at the same time?
+yes,it is possible to increase cohesion,and coupling at the same time.
+when we split a big messy class into smaller focued classes you increase cohesion because each new class does one clear job.but now these new classes need to talk to each other to finish the same work,so they depend on each other more.that means coupling can increase.
+for example:we break a big ordersystem class into ordercreator ordervalidator,ordersaver .each class is now more focused(high cohesion)but these classes must call each othe to complete an order,so their connections increase which raises coupling.
+
+what is the difference between association ,aggregation and composition?
+Association:Association means two objects are connected or know each other .they can work together but none owns the other.
+for example:a doctor and a patient are associated they interact but both can live independently.
+
+Aggregation:
+aggregation is a special type of association that means has a relationship but with independence one object has another but the part can still without the whole.
+for example:A school has teachers if the school,closes teachers still exist.
+
+composition:
+composition is a strong form of aggregation it means full ownership .the part cant exist without the whole.id the whole is destroyed the part is also destroyed.
+for example:a house has rooms if the house is demolished the rooms are also gone.
+	
+can aggregation exist without association?
+no,aggregation cant exist without association.
+Aggregation is actually a special kind of association first two classes must be connected in some way that basic connection is called association.
+when that connection clearly means has a and one object groups or contains another it becomes aggregation.
+so every aggregation is an association but not every association is aggregation without a basic relationships ,we cant say 	one object has another.
+
+what design problem can occur if you use compsition everywhere?
+if we use composition everywhere a big problem is that our system becomes too tightly connected.in composition the child obejct cant live without the parent.so if we delete or change the aprent the chlild is also destroyed when we use this rule everywhere even where it does not fit real life small changes in one class can break many other classes.
+
+give a real world example where aggregation is a better choice than composition?
+A real world example where aggregation is better than compostion is a teacher and a school .A school has teacher does not fully depend on one school to exist.if a class closes .the teacher does not disappear they can move to another school and continue working.
+this shows aggregation because the the teacher and school have a has a relationship but they can exist independently .in composition if the main object is destroyed the part is also destroyed but here that does not happen and hence aggregation is better choice.
+-------------
+genpact
+tell me about your self and your current project.
+in your project how did you handle transactions accross multiple database operations?Did you use @Transactional ?what happens if one operation fails in the middle?
+what is the difference between hashamp and concurrentHashMap And in your project have you used any of these in a multithreaded scenario?
+what are the different types of bean scopes in spring ?which one did you use and why?
+what is the difference between @RestController and @Controller And what does @ResponseBody do?
+how do you handle exceptions globally in spring boot?have you used @ControllerAdvice?
+how do you microservices communicate with each other in your project whether synchronous or asynchronous and what are the tradeoff?
+what is a circuit breaker pattern ?have you implemented resilience4j or hystrix?
+what is the difference between API gateway and load balancer ?why do we need both?
+how do you manage distributed transactions in microservices?have you heard of saga pattern?
+write a program to find the first non repeating character in a string.
+for example:input is swiss output should be w.
+give a list of employee objects use java 8 streams to group them by department and find the highest salary in each department.
+where do you see yourself in the next 3 years?
+Are you comfortable with genpacts work culture?
+we sometimes work  client with different timezone?

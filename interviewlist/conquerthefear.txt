@@ -1,0 +1,59 @@
+1.your spring boot application is expereincing slow performance issues under heavy load you have profiled the application and identified that database calls are the bottleneck how would you optimize database performance without compromising data integrity?
+
+2.you have a spring boot microservice that needs to communicate with multiple external systems how would you design a resilent and fault tolerant communication strategies?
+
+3.your spring boot application is deployed in a cloud environment how would you handle configuration management to maintain consistency across different environments? 
+
+4.your spring boot application is facing security vulnerabilities how would you approach securing the application and preventing future vulnerabilities?
+
+5.you need to implement a distributed cache 	in your spring boot application how would you choose the right caching solution and handle cache invalidation?
+
+6.your spring boot application needs to integrate with a legacy system that uses a different data format how would you hanle data mapping and tranformation?
+
+7.your spring boot application needs to implement asynchronous processig how would you choose the right approach and handle potential issues.
+
+8.your spring boot application needs to interact with multiple databases how would you manage database connection and transactions?
+
+9.your spring boot application is deployed in a containerized environment.how would you optimize the application for containerization?
+
+what is spring security in spring boot?
+spring security in spring boot is a powerful and highly cusomizable framework for adding authentication and authorization to your sprign boot applications.
+
+what is spring security?
+Authentication:this is the process of verifying who a user is.it typically involves the user providing credentials like a username and password which are then checked againts datasource like a database or ldap server spring security support various authentication mechanism.
+
+OAuth 2.0:used for third party authentication login with google or facebook.
+saml: single sign on in enterprce environemnt.
+
+Authorization:after a user is authenticated authorization determines what the user is allowed to do.is is about granting or denying access to specific resources or functionalities spring security provides role based and 	permission based authorization.
+
+RoleBased:assigning users to roles (exa ADMIN USER)and granting access based on those roles.
+permission based:fine grained control over access based on specific permissions.
+
+security context:	spring security uses a SecurityContextHolder to store the currently authenticated users information (principle or authorities).
+
+what are the core components of spring security and how do they work together?
+securityContextholder:stores the current authentication.
+AuthenticationManager:handles authentication requests.
+AuthenticationProvider:performs  the actual authentication.
+GrantedAuthority:represents a users roles or permissions.
+UserDetailsService:loads user details (usernmae password authorities).
+filters: like usernamepasswordAuthenticationfilter,AuthorizationFilter,
+
+how do you implement role based authorization in spring security?
+
+difference between authentication and authorization?
+
+how do you secure rest apis usign spring security?
+
+what csrf protection and how does spring security handle it?
+
+how do you implement custom login and logout functionality with spring security?
+
+what is method level security in spring security and how do you use it?
+
+how do you handle exception in spring security?
+
+what is the purpose of passwordencoder interface in spring security?
+
+how do you configure spring security in a spring boot application?
