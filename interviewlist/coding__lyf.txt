@@ -66,3 +66,400 @@ difference between interface and abstract?
 
 can we convert an interface into an abstract?
 
+if a class has all the abstract methods can we make it as an interface?
+
+why threemap needs comparable and comparator?
+is java purely object oriented language?
+why it is not purely object oriented?
+why are default methods introduced in java 8?
+You are implementing an API that returns users to the client, but the database has 1 lakh users. How will you return data to the client efficiently?
+How would you detect and prevent memory leaks that cause OutOfMemory in a Java application?
+Suppose your endpoint only returns JSON data. To design that API, which one would you choose between Controller and RestController, and why?
+You have found that an API is very slow and you need to optimize it. What are the steps you are going to take?
+For search functionality, would you use GET or POST? How would you design it?
+What is the difference between final and immutable?
+Imagine you have a list of products, and we need to calculate the following details: count of products, total price, average price, minimum price, and maximum price.
+Can we make a constructor synchronized in Java?
+We need to log each API request and measure how much time it takes to process. How can you achieve this in Spring?
+What is the difference between a Filter and an Interceptor? When should you use each?
+You have an API, but it takes too long to respond. How would you debug it?
+is string thread safe in java?
+how string is thread safe?
+A company gives bonuses to employees based on experience: less than 2 years — no bonus, 2 to 5 years — 5000 bonus, and more than 5 years — 10000 bonus. Create an Employee class with attributes name and experience. Write a method to calculate the bonus and display() the employee details along with the bonus amount.
+You are working on a Spring Boot application and need to load different configurations for the dev and prod environments. How do you achieve this?
+You have a service class that needs to be injected into multiple controllers. What are the different ways to achieve this in Spring Boot?
+You have a REST API and when an invalid ID is provided, it should return a custom error message with a 404 Not Found status. How do you handle this?
+We need to log events in your application instead of using System.out.println(). How do you do it?
+You have an API that fetches user details based on userId. How do you capture it in Spring Boot, or which annotation will you use?
+You need to manually create and manage a Spring Bean. How do you do it?
+You are performing multiple database operations and you want all of them to succeed or none at all (rollback on failure). How do you handle this?
+
+You need to run a job every 5 minutes (for example, sending email notifications). How do you schedule it?
+Your application needs to fetch weather data from an external API (for example, OpenWeather). How do you make an HTTP request?
+You are returning a JSON response, but you need to hide some fields like passwords while exposing others. How do you do it?
+You need to implement an API that allows users to upload large files. How do you handle it?
+Your application fetches data from a slow database. How do you cache results to improve performance?
+----------------------
+A bank allows customers to deposit and withdraw money from their accounts. Create a BankAccount class with:
+Balance as a private variable.
+deposit(int amount) method and withdraw(int amount) method (withdraw only if the balance is sufficient).
+getBalance() method to display the balance.
+-----------------
+Can an abstract class or an interface have a static method? If yes, how is it different?
+Is it possible to have an abstract class without any abstract methods?
+Since Java 9, interfaces support private methods. Why would you use private methods inside an interface?
+Is it possible for an interface to extend an abstract class?
+Can we make an abstract class final? If not, why?
+Can an abstract class contain a final method?
+Why can't an interface have a constructor?
+Can we override constructors in Java?
+---------------
+Why is String immutable in Java?
+
+String is immutable, which means once we create a String object, we cannot change its value.
+
+If we try to modify it, a new String object will be created.
+-------------------------------------
+Let's say you have two beans implementing the same interface called NotificationService. One is EmailNotificationService, and the other is SMSNotificationService. The application.properties file contains a property called app.sms.enabled. Which annotation will you use and how?
+-------------------------
+We have a superclass that has a method process(), which throws IOException. You override this method in a subclass, and in the overridden method, it throws FileNotFoundException. Is this allowed? Why or why not?class superclass{
+class SuperClass {
+    void process() throws IOException {
+        throw new IOException();
+    }
+}
+
+class SubClass extends SuperClass {
+    @Override
+    void process() throws FileNotFoundException {
+        throw new FileNotFoundException();
+    }
+}
+
+SuperClass obj = new SubClass();
+
+try {
+    obj.process();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+--------------
+@Component
+public class MyComponent {
+
+    private final String name;
+
+    public MyComponent() {
+        System.out.println("1");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("2");
+    }
+
+    @Autowired
+    public void setNameFromContext(ApplicationContext context) {
+        System.out.println("3");
+    }
+}
+What is the order of execution?
+--------
+You are building a Spring Boot REST API for user registration.
+
+The client sends the following JSON request:
+
+{
+  "id": null,
+  "username": "",
+  "email": "",
+  "age": 0
+}
+
+You want to apply the following validation rules:
+
+- id can't be null.
+- username should be between 3 and 15 characters.
+- email should be in a valid email format.
+- age should be at least 18.
+
+-------
+You are working on a REST API for a user profile system. Each user has the following fields:
+
+{
+  "id": 101,
+  "username": "codinglyf",
+  "email": "abc",
+  "phone": "123"
+}
+
+Now, a client application needs to update only the phone number of the user.
+
+Which HTTP method would you choose between PUT and PATCH for this request?
+------------
+Suppose you have to make N number of API calls.
+
+For example, there could be 1000 users, and for each user, you need to make an API call.
+
+How would you implement this in Spring?
+---------
+Suppose there is a JAR file that contains already developed classes, and we want to use those classes in our project.
+
+How do you use it in Spring Boot?
+----------
+You have a Spring Boot REST API where users submit data via a POST request. You are using validation annotations like `@NotNull` and `@Size` on your request DTO.
+
+When a validation error occurs, by default Spring throws a `MethodArgumentNotValidException`, which results in a standard **400 Bad Request** response with a generic error message.
+
+You want to customize this response to return a nicely formatted JSON error response with details such as an error code, message, timestamp, and validation errors.
+
+How would you achieve this in Spring Boot?
+-------------------
+You need to fetch all users that belong to a certain email domain. For example, get everyone with an email ending in `gmail.com`.
+
+How do you implement this using Spring Data JPA?
+--------------------
+Imagine you are building an inventory management system. There is a requirement to load a predefined set of product categories into the database as soon as the application starts.
+
+How would you implement this requirement in a Spring Boot application?
+-------------
+You are building a reset password feature in a web application. When a user clicks the reset password button, your server sends a password reset email to their registered email address.
+
+Sometimes, because of a slow network, the user may click the button multiple times.
+
+How would you prevent your system from sending multiple reset emails to the same user within a short time frame?
+--------------
+You are building an API for an e-commerce application that fetches order details by order ID.
+
+Depending on the situation, the response should change:
+
+1. If the order exists, return the order details along with HTTP status 200.
+2. If the order does not exist, return a message saying "Order not found" with HTTP status code 404.
+3. If the order ID is invalid (for example, a negative number), return "Invalid order ID" with HTTP status 400.
+-------------------
+Imagine you are working on a Spring Boot application for processing visa applications.
+
+A user sends an H1B petition request to your application, and you need to check whether this petition comes with the correct processing fee, which is 1 lakh dollars.
+
+How do you implement this?
+------------------
+Let's say you are working with a User entity that has multiple fields.
+
+Now you need to update only the status of a user, say from inactive to active, without fetching the entire User object first.
+------------------
+You are fetching users and their orders from the database, but the application is firing one query for users and one extra query for every user's orders.
+
+What is this problem called, and how do you solve it?
+-----------
+You are building a cache with a fixed size. When the cache becomes full and we need space:
+
+1. The item that was used a long time ago should be removed.
+2. The item that was used recently should stay safely in the cache.
+
+Which Java collection can do this with minimal custom code?
+------------------
+N+1 Problem
+
+Let's say you have two tables: User and Order.
+
+A user can have many orders. Sometimes you only want the user details, and sometimes you also want their orders.
+
+User Table:
+- userId
+- name
+- email
+
+Order Table:
+- orderId
+- userId
+- productName
+- amount
+--------------------
+Suppose we are building a music app. Every time a song is played, we add it to a recently played list.
+
+Here, two things matter:
+
+1. We want the songs in the exact order in which they were played.
+2. If the same song is played again, we do not want it to be repeated in the list.
+-------------------------
+Suppose your API is fetching book details by ID, but that particular entry does not exist in the database.
+
+How would you handle this gracefully?
+----------------
+You are saving data into the database, and you want to roll back the transaction when there is an exception.
+
+How do you handle this in real time?
+--------------------------
+You are creating an API that saves data to the database. In some cases, you only need to store a single record. In other cases, you may have to insert thousands of records at once. 
+
+For example, when a user uploads a file, it may contain many records.
+
+How do you efficiently implement this?
+---------------------------
+Let's say you have written a REST endpoint, but when you try to test it, it returns 404 Not Found.
+
+How would you debug this?
+---------------------------
+You are building an endpoint to get all products under a category and want to sort the products by price.
+
+How would you design the endpoint, and when would you use PathVariable vs RequestParam?
+------------------------
+You are building a REST API that returns employee details. One client wants the data in JSON format, and another wants it in XML format.
+
+How do you return both formats without creating separate endpoints?
+--------------------------
+Suppose you are writing a Change Password API. When a user enters a new password, how would you save this password in the database?
+
+Will you encrypt it? But if someone with the key can decrypt it, how would you handle this?
+
+How does Spring store these passwords?
+--------------------
+you have found an apis is very slow and you need to optimize it what are the steps you are going to take?
+optimization technique :
+1.at the service level
+2.at database level.
+--------------------------
+You are building an API, and you would like to cache the results in order to improve performance.
+
+What caching strategies can you use in Spring?
+----------------
+Let's say you are building an order system. Every order has details like product, price, and status. We need to know when each order was created and when it was last updated.
+
+How would you achieve this?
+-------------
+Let's say you are building an API that handles sensitive data like card numbers and passwords.
+
+How do you make sure both the request and response are secure?
+---------------------------
+Let's say you are building an application with two types of users: regular users and admin users.
+
+Regular users can view and update data, but admins should be allowed to delete records.
+
+How do you implement this in Spring?
+-------------------------
+How did you handle a situation where two threads are updating the same record in the database?
+
+A real-time example is when two people are booking the same seat at the same time.
+-------------------------
+Let's say you are releasing a new search API as a beta feature. Only users with beta access should be allowed to use it.
+
+When clients send a request to the search API, they must include a header called `beta-access` with the value `true`.
+
+If this header value is `false`, we should block the request and return an error saying `AccessDenied`.
+
+What should you use: Filter or Interceptor?
+-------------------------
+Suppose you need to build a reporting system where reports can be generated in different formats, such as PDF, Excel, and CSV.
+
+All report types follow the same workflow:
+1. Fetch data from the database.
+2. Validate the data.
+3. Generate the report.
+
+The first two steps are common for every report, but the report generation logic changes depending on the report format.
+
+In this scenario, which is better to use: an abstract class or an interface? Why?
+----------
+You have found that an API is very slow, and you need to optimize it. What steps are you going to take?
+---------------
+class A{
+Object show(){
+return "A";
+}
+}
+class B extends A{
+String show(){
+return "B";
+}
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new B();
+        System.out.println(obj.show());
+    }
+}
+-----------------Spring Boot Startup Process
+
+1. Run method - SpringApplication.run()
+   - The application starts with the SpringApplication.run() method.
+
+2. Environment setup
+   - Loads configurations from sources like application.properties, system variables, and command-line arguments.
+
+3. ApplicationContext creation
+   - Creates the ApplicationContext. It is the heart of Spring that manages all the beans.
+
+4. Bean discovery and initialization
+   - Spring scans the code and finds annotations like @Configuration, @Component, and @Service.
+   - It creates beans and dependency injection happens.
+
+5. Runner execution
+   - Spring runs CommandLineRunner and ApplicationRunner.
+
+6. Spring fires the ApplicationReadyEvent
+   - The application is fully started and ready to accept requests.
+   -------------------
+You are implementing an API to accept file uploads, and the client might upload a large file.
+
+How would you handle this to avoid memory issues?
+-------------------
+Imagine we are building an API for a cricket analytics platform.
+
+For example, we need to show Kohli's batting performance over the last one year as a month-wise graph.
+
+The data is very huge, and we cannot use pagination because the graph must show the complete performance trend over 12 months.
+
+How would you design this API efficiently?
+---------------------
+Are HTTPS and Spring Security the same or different?
+
+HTTPS:
+HTTPS is a protocol that encrypts data between the client and the server using TLS/SSL.
+
+Its main goal is to protect data like passwords, tokens, or any sensitive content while transferring it from the client to the server.
+
+Generally, a web server or reverse proxy (like Apache, Nginx, or Tomcat) provides SSL certificates to enable HTTPS.
+
+Spring Security:
+Spring Security provides authentication, authorization, session management, CSRF protection, and more inside a Java or Spring application.
+------------------------
+What happens if you put a return statement in both try and finally block?
+
+Example:
+
+try {
+    return 1;
+} finally {
+    return 2;
+}
+--------------
+Will the below code compile?
+public void test() throws IOException {
+    throw new IOException("Oops");
+}
+-------------
+Is it mandatory to have a catch block after try?
+------------------
+What if I use both `@RestController` and `@Controller` on the same class?
+@RestController
+@Controller
+public class MyController {
+    // Methods here
+}
+---------
+What will happen if I use `@Controller` but forget to add `@ResponseBody`?
+@Controller
+public class MyController {
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+}
+----------
+What happens if I use `@RequestMapping` without specifying the HTTP method?
+@RequestMapping("/hello")
+public String hello() {
+    return "hello";
+}
+
+

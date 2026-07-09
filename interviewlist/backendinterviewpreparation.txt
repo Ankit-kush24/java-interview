@@ -8,7 +8,6 @@ what is the use of @Qualifier Annotation?
 diff between constructor and setter injection?
 what are solid desing principles?
 diff between these two extending and implementing?
-how we can create a immutable class?
 what is serialization & why we need serialization?
 what is the use of executor framework?
 do you know fork join?
@@ -20,7 +19,6 @@ why string is immutable in java?
 what is a marker interface?
 can you overridea private or static method in java?
 does finally always execute in java?
-how can you make a class immutable?
 what is singleton class in java and how can we class a singleton?
 how to break a singleton pattern?
 does java support multiple inheritance?
@@ -33,7 +31,7 @@ if two thread have the same priority which thread will be execute first?
 can we serialize static variables in java?
 what is deadlock in java and how can you can you create one programaticaly?
 will the finally block execute if you put the return statement or System.exit()?
-why pointers not used in java?
+Why pointers are not used in Java?
 weak hashmap class?
 identity hahmap class?
 what is hashmap class?
@@ -144,7 +142,7 @@ which version of java are you using?
 how to create thread safe singleton class in java using double checked locking?
 why multiple inheritance is not suported in java?
 why java does not support operaor overloading?
-why string immutable in java?
+Why String is immutable in Java?
 is string is thread safe in java?
 what is string tokenizer?
 what is string consant pool in java?
@@ -154,12 +152,11 @@ list of diff strings ,how to concat all strings and creat a new string?
 why char array is preferred to store password than string in java?
 what is difference between StringBuilder and stringbuffer?
 what happens if your serializable class contains a memeber which is not serializable how do you fix it?
-how to create immutable class in java?
 what is use of intern() method in java?
 wap to remove duplicates from an array?
 how do you break a singleton pattern?
 how do prevent a singleton pattern from breaking?
-what are new features of java 8?
+What are the new features of Java 8?
 what is lambda expression in java 8?
 what is metaspace in java 8?
 what is use of functional interface in java 8?
@@ -277,7 +274,6 @@ suppose i have list and i want to reverse it how can i do that?
 can you tell me real world example of encapsulation?
 what is stateless object?
 can you tell me difference between @Component @Service @REpository annotation?
-why string is immutable in java?
 difference between String and StringBuffer in java?
 can we override static method in java?
 is string thread safe?
@@ -318,10 +314,7 @@ what are the main built in function interfaces in java?
 what happens if a constructor does not explicitly call super() in a child class?
 what if person get valid token from other an he tries to hit that api from postman?
 what lambda function is called anonymous if it return nothing then what is use if that?
-why pointers not used in java?
 what is jit compiler in java?
-why string is immutable in java?
-how to make class immutable?
 features of immutable class?
 diamond problem?
 does java support multiple inheritance?
@@ -341,6 +334,260 @@ how do kafka partitions and replicas work togeter to ensure performance and faul
 what is dead letter queue abd in which situations should it be configured?
 how do you retry failed transactions using message queue?
 what are sealed classes in java and what are different from enum?
+in which snerios should virtual threads be used?
+hashmap before and after java 8 changes?
+is hashmap thread safe in java?
+why is string good key for hashmap?
+purpose of transient keyword?
+can we compare string using ==operator?
+can we rethrow exception in java?
+what are the main features introduced in java 11?
+how can you launch single file source code programs in jdk 11?
+what new methods were added to the string class in jdk 11?
+what are the key difference between strip(),trim(),stripLeading(),and stripTrailing()methods in jdk 11?
+how does the lines() methods in the String class function in jdk 11?
+how does the var keyword work in lambda parameters introduces in jdk11?
+what is the z garbage collector introduced in jdk 11 and what are its benefits?
+what is the new http client APi introduced in jdk 11 and how does it work?
+what are the benefits of using the new HTtp client api over the old httpurlconnection?
+what feature were deprecated or removed in jdk 11?
+why final and abstract cant be used at a time in java?
+kafka issue in production order is processed multiple times?
+what are common design pattern that make use of abstraction?
+why default methods are allowed in interfaces?
+can constructors be synchronized in java 
+how do you handle data consistency in microservices application?
+does an abstract class required to have an abstarct method inside?
+if there is memory leak in your application how will you find it?
+how microservices communicate with each other?
+advantages and disadvantages of using abstraction in oops?
+why char array is preffered to store password than strings?
+how do you decide if an inner class is required?
+what are types of inner class?
+in an online shopping system you have various types of userslike customers and admins both different actions after login.how would you implement this?
+two  threads one printing even numbers and the other printing odd numbers need to print consecutive numbers from a shared array in async for example given the array [1,2,3,4,5,6] the output should be [1,2,3,4,5,6]with odd and even numbers printed alternatively can you make this work?
+how would you develop a caching mechanism for your application to boost performance and decrease database load?
+suppose we have a scheduled chron job in our spring app.now we have that app deployed on prod(mulltiple prods on multiple servers) how do we ensure there is no duplicate work being done?
+cricket team class having a field called name which is complete name inclusive of first and last name cricket player names Virat Kohli Rohit Sharma Sachin Tendulkar Mahendra Singh Dhoni sort the above cricket players name by their last name only?
+how will you save millions of data into database using hibernate?
+we are working on a railway application and we have 5 railways ticket counters and we need to distribute unique tokens for each counter how do you design this scenario?
+two thread A and B operating on a shared resource R.A needs to inform B that some important changes has happened in R what technique would you use in java to achieve this?
+junit4 and junit5 how to retain both versions when versions of spring boot is upgraded?
+there are three tables customer product and order need to define mappings between them and need to write the code for entity classes how the tables will be created and how relationship will be established between them?
+you have 2 interfaces and you declare 4 methods in 1st interface and 2nd methods in 2nd interface and you are implementing these 2 interfaces in your class you would want to implement only few declared methods from those 2 interface so how you deal with this?
+design a system for a car dealership where cars can have different engines (eg petrol engine,electric engine)you want to model cars and engines such that engines can be easily replaced without needing to modify the car class?
+develop a caching mechanism for your application to boost performance and decrease database load?
+suppose you are getting an information on every request in controller level how can you utilize that particular info througout the project?
+suppose we have a scheduled cron job in our spring app .now we have that app deployed on prod(multiple prod on multiple servers) how do we ensure there is no duplicate work being done?
+we have a spring boot application and have scheduled tasks we want to deploy out application on multiple servers so will be multiple instances of application.how to configure spring to run scheduled tasks only on specified servers?
+suppose we have a scheduled cron job in our spring app .now we have that app deployed on prod(multiple prod on multiple servers) how do we ensure there is no duplicate work being done how would you solve using Aspect and apche curator?
+why service calls are very slow in our spring boot application?
+which annotation will you use and how?
+how would you design and implement a scheduled  method that trigger a post endpoint once a month with parameters like id,and hierarchical levels ?
+junit4 and junit5 how to retain both versions when spring version is upgraded?
+you have a 10 gb log file a containing indiviual bank transactions the task is to be effiently process this large file by filtering transactions with amounts greater than 10000 and then calculating the sum of those amounts?
+in an online shopping system you have different types of users like customers and admins both users need to login in but have differnt post login actions?
+how would you handle method overloading when the number of parameteres keeps increasing (eg 1 to 100) without creating multiple overloaded methods?
+in java if multiple overloaded methods could fit a call which one does the compiler pick first ?for examle if i pass an integer does java prefer a method that takes a long(widening)an integer object(boxing)or a varargs?
+how to use the enums in the entity class?
+which spring boot version used in project and key features changes in that version?
+what is the parent class of all classes in java what are the methods in it?
+if you are continiously manupulating the data in a list which collection you should use and why?
+you a list of student names in a college how can you convert the list into a set?what happens with the duplicate names?
+define spring boot actuators and how can you restrict them to a different kind of users?
+difference between git merge and rebase?
+how you can add liebraries in the application using maven in runtime(using plugins).
+what is spring security and how to provide access to run the application?
+how can we upgrade spring security version in spring boot what are the classes requiered to update spring security versions?
+which specific microservices did you design and implement for this architecture?
+with highly convenient apps like google pay,and phonepay dominating the market.what is your app unique value proposition.how did you pitch your product to users?
+what is your biggest achievment in your project?
+when dealing with over 1000 transactions how do you prevent the ui from logging how is this data load managed on the backend?
+how did you implement caching in your system?
+do we need to maintain session with jwt?
+suppose you have a batch if identical apples but one is sligthly differnt how would you programatically identify the outlier?
+wrtie a sprig boot code with annotation you know?
+how do you write exception handling classes?
+which aws services have you used?
+in a spring boot application that uses both .properties and .yml files with overlapping keys how does spring determine which value takes precedence and what rules govern the property resolution order?
+suppose over the weekend dev team does a release some new features in prod and monaday morning when the user came in and they are suing the application.it is not loading at all so how would you treat the priority fot this one and what would be your analyssis to address the issue?
+what would happen if you send a json body in a get request using postman?
+can you use @REquetBody with a get request?
+can sprign boot be configured to disallow @REquetBody on get completely?
+can a controller method return other format like yaml or csv?
+can single spring controoller return both json and xml?
+can you use both @Pathvariable and @RequestBody in the same method?
+how does spring inject method parameters like @REquestParam ,@Pathvariable ,or @RequestBody?
+how spring converts java object to json?
+how spring handles http requests internally?
+what is role of dispatcherservlert in spring mvc?
+how do yuo propogate an exception from a worker thread back to the main thread?
+difference between cachedthreadpool and fixedthreadpool and what are the tunable parameters for an executor?
+why would you prefer a singlethreadexecutor over a manual created thread?
+implement a program to print thread1 and thread2 from two parallel threads in sequnetial order?
+what guarantees does kafka consumer semantics give you any trade off?
+how does kafka track consumer offfset?
+if clas B extends class A then what will be the order of execution of static initializers instance initializers and constructors?
+what is serialization in java?
+what is the main purpose of serialization in java?
+what are alternatives to java serialization 
+exaplin about serializable interface in java ?
+how to make object serializale in java?
+what happens if we dont define serial version uid?
+when we serialize an object does the serialization mechanism saves it references too?
+if we dont want some of the fields not to serialize how to do that?
+can we serialize static varibale in java?
+what is seria version uid and its importnce?
+what is the purpose of transient keyword in java?
+
+1. Find unique elements in an array with O(1) space complexity.
+
+2. Explain Java memory management in detail.
+
+3. What is Docker? What are Docker images, and how are they used?
+
+4. Difference between Controller and RestController in Spring Boot.
+
+5. What is idempotency in APIs, and why is it important?
+
+6. Explain collections in Java and their use cases.
+
+1. What are the basic Controller layer APIs for CRUD operations?
+
+2. Explain HTTP status codes and their significance.
+
+3. What are REST methods and REST principles?
+
+4. Write code to reverse a linked list.
+
+5. Explain Dependency Injection in Spring Boot.
+
+6. How does JWT authentication work? Explain its implementation and benefits.
+
+7. Write a SQL query to fetch the last 50% rows from a table.
+
+8. What are the key features introduced in Java 8?
+
+9. Explain error and exception handling in Java.
+
+10. What is an LRU cache? Explain its working and how you would implement it.
+
+Write a Java example where an interface `Logger` is implemented by two classes: `FileLogger` and `DatabaseLogger`.
+
+Each class should return different output using polymorphism.
+--------------------
+Given two integers n and k, write a Java function that finds all combinations of n distinct numbers from the set {1-9} whose sum equals k.
+
+If no combinations are possible, return an empty list.
+----------
+1. Read a log file and check how many 404 errors it has.
+
+2. Write a program to convert an integer to a Roman numeral.
+-------------
+1. Difference between Firewall and Web Application Firewall (WAF).
+
+2. How to whitelist an IP address?
+
+3. How to roll back when a cyber attack occurs?
+
+4. How to enhance microservices security?
+---------------
+1. Find the total number of males and females in an organization.
+
+2. Calculate the sum of even and odd numbers from a list.
+
+3. Identify duplicate elements in an integer list.
+
+4. Remove all occurrences of a given character from a string.
+
+5. Detect special characters in a string.
+
+6. Extract numbers starting with 1 from a list.
+
+7. Find the employee with the highest salary.
+
+8. Join strings from a list separated by commas.
+
+9. Count the occurrences of characters in a string.
+
+10. Group strings based on their length.
+
+11. Count the frequency of each character.
+
+12. Find the average of numbers greater than 10.
+
+13. Map strings to their lengths.
+
+14. Merge a list of lists into a single list.
+
+15. Collect specific transactions into a set.
+
+16. Get the first name of the oldest person.
+
+17. Print elements after skipping the first five.
+
+18. Collect unique words from a sentence.
+
+19. Filter out null values from a string list.
+
+20. Separate integers into even and odd lists.
+
+21. Print the first 10 random numbers from an infinite sequence.
+
+22. Find the sum of the squares of integers in a list.
+
+23. Convert strings to their lengths.
+
+24. Find the product of all integers in a list.
+
+25. Merge two integer lists and remove duplicates.
+
+26. Verify if any string starts with a specific prefix.
+
+27. Sort a map by values using Stream API.
+===============
+1. What is HashMap in Java?
+
+2. Can you store a null key in HashMap?
+
+3. Explain the internal working of HashMap.
+
+4. How many entries can you put into a HashMap?
+
+5. HashMap vs Hashtable.
+
+6. HashMap vs ConcurrentHashMap.
+
+7. How does a HashMap work in Java?
+
+8. How does HashMap handle null keys in Java?
+
+9. HashMap vs HashSet.
+
+10. What is hash collision in HashMap?
+
+11. How do you remove an entry from HashMap while iterating over it?
+
+12. Does the iterator returned by HashMap fail-safe or fail-fast?
+
+13. Can you store duplicate keys in HashMap? What happens if you try to put a key that already exists in HashMap?
+
+14. HashMap vs WeakHashMap.
+
+15. How do you sort a HashMap by values in Java?
+
+16. Is HashMap thread-safe?
+
+17. What is the time complexity of get() and put() in HashMap?
+
+18. How does the get() method of HashMap work?
+
+19. How does the put() method of HashMap work?
+
+20. Does HashMap allow duplicate values?
+
+21. As we know that hash codes are generated for each key, what happens when the same hash code is generated for distinct keys?
+-----------
 
 
 

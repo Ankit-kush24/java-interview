@@ -1232,13 +1232,19 @@ what is the difference between @RestController and @Controller internally?
 @RestController-return response body directly,Automatic convert json/xml,used for rest apis,internally @Controller+@ResponseBody.
 
 
-
-
-
-
-
-
-
+optum java interview-
+how does concurrent hashmap achieve thread safety internally?
+how does the jvm manage memory using stack and heap?
+what is dependency inejection and what it is important in Spring?
+what happens internally when a spring boot application starts?
+how do you externalize configuration in spring boot?
+how do transactions work in spring using @Transactional?
+what challenges have you faced in production and how did you resolve them?
+how do you handle configuration changes without redeploying services?
+what is blue green deployment and how does it work?
+what is canary deployment and when would you use it?
+what is the difference between synchronous and asynchronous communication?
+what is n+1 query problem and how do you fix it?
 
 
 
