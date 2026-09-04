@@ -1,0 +1,349 @@
+backend interview preperation
+How did you optimize the performance of your Java application?
+How did you refactor Java legacy code?
+How did you ensure that the team adheres to Java coding best practices?
+Explain scenarios where you implemented multithreading and addressed concurrency issues in your project.
+Which database would you choose when handling extremely large volumes of data?
+For a big data system with a large volume of events and processes, if some services are broken and cannot produce logs, how do you identify those failures automatically?
+How do you handle load balancing at the client and server level?
+Explain how you troubleshoot and address errors in microservices when they are deployed on different clusters.
+In a Spring Boot application, if you get an OutOfMemoryError, how do you handle it?
+On what basis do you decide how many threads need to be created?
+How did you contribute to Agile sprint planning?
+How do you scale your applications?
+How do you check code coverage?
+How do you perform static code analysis?
+If one of your frontend teammates leaves the project and you are a backend developer, how will you handle the situation?
+What would you do if a critical service fails during peak traffic?
+What things have you improved in your SQL queries during a project?
+Describe a production incident you handled.
+How do you ensure Microservices remain loosely coupled?
+How do you balance delivery speed vs code quality?
+What are sealed classes in Java, and where would you use them?
+How do virtual threads (Project Loom) improve concurrency performance?
+How does pattern matching simplify the use of instanceof and switch statements?
+Describe how switch expressions with yield work in Java 14+.
+How does instanceof pattern matching enhance type safety in Java 16+?
+What are some new String methods introduced in Java 11+?
+What is the difference between List.of() and Arrays.asList()?
+How did you upgrade your Java 8 applications to Java 17?
+What improvements or new logic did you implement after migrating from Java 8 to Java 17?
+Explain scenarios where you implemented multithreading and addressed concurrency issues in your project.
+Suppose your Microservice is running on multiple instances. It has an API to create a resource, and multiple instances of the API can try to create the same resource at the same time. This can create ambiguity or exceptions. How will you handle it gracefully?
+Tell me about your project overview, your role in it, and what working model you followed (for example: Agile, Scrum, Waterfall).
+How is JWT authentication stateless?
+Difference between authentication and authorization?
+What are the differences between stateless and stateful authentication?
+How does a JWT token work?
+Which algorithm did you implement to generate a token?
+Session management in Spring Boot?
+How do you implement security for a desktop application without using Spring or any other framework?
+Can you use any Java version (Java 7, 8, 17, 18, 21)?
+Can you use the Collection Framework like HashMap, List?
+How do you retain both JUnit 4 and JUnit 5 versions when the Spring Boot version is upgraded?
+What is the difference between HashSet, LinkedHashSet, and TreeSet?
+How does Java handle immutability, and how do you create an immutable class?
+What is the purpose of the Optional class?
+What is the difference between int and Integer?
+What is the Java Memory Model?
+What is a thread pool, and how is it implemented using ExecutorService?
+What are annotations in Java, and how are custom annotations created?
+How do you implement serialization and deserialization in Java?
+How do you create a Hibernate SessionFactory for your application?
+What collections are used in your project and why?
+How can you send only unique records as a response using a Spring Boot API?
+Find the maximum number in an array using Stream API.
+Provide the skeleton of JUnit test cases.
+Difference between List and LinkedList?
+How is API Gateway implemented in your project and why?
+How does an API Gateway call any Microservice internally?
+What is fault tolerance, and how have you implemented it in your project?
+What is the Circuit Breaker pattern and its types?
+What is the Saga Pattern? Explain its use cases/scenarios.
+How are transactions handled in distributed transaction management systems?
+What is circular dependency in Spring?
+What is the N+1 problem in Hibernate?
+What is Garbage Collection?
+Difference between PermGen and Metaspace?
+Heap vs Stack memory in Java?
+What are the different parts of the Heap?
+Which part of memory is involved in Garbage Collection?
+How do you identify Minor GC and Major GC in Java?
+What are the algorithms used for Garbage Collection in Java?
+What is the finalize() method, and when does the Garbage Collector call it?
+What are the different ways to call Garbage Collection?
+What are the different ways to make an object eligible for Garbage Collection when it is no longer needed?
+What are the issues without the volatile keyword in Java?
+What is the volatile keyword in Java?
+Why do we need multiple threads?
+What are the different ways to create a thread in Java?
+List all thread methods in Java.
+What is the ThreadLocal class in Java?
+Explain the difference between the synchronized keyword, Lock, and Semaphore for managing thread synchronization.
+What is livelock in multithreading?
+What is deadlock in multithreading?
+What happens if the run() method is called without start() in Java threads?
+What is the use of a thread pool in Java?
+What is IllegalMonitorStateException?
+What are atomic variables?
+Object-level locking vs class-level locking?
+How would you ensure that a piece of code is executed by only one thread at a time?
+Difference between ExecutorService.submit() and execute() methods?
+Is it safe to iterate over a collection returned by Collections.synchronizedCollection()? Or should we synchronize the iteration code?
+Can we start a thread twice in Java?
+Is the ++ operation thread-safe?
+What is CompletableFuture, and how is it different from Runnable?
+ExecutorService vs CompletableFuture?
+How do you use CompletableFuture using the thenCombine() method?
+Why are default methods allowed in interfaces?
+Is it possible for a single class to implement two different interfaces?
+Advantages and disadvantages of using abstraction?
+What is method hiding?
+What is variable hiding?
+What is meant by static polymorphism?
+What is meant by dynamic polymorphism?
+What is HATEOAS in RESTful API?
+What are common security vulnerabilities in RESTful APIs?
+What is CSP header?
+How does versioning work in REST APIs?
+What is HSTS?
+What are strong, weak, soft, and phantom references, and what is their role in Garbage Collection?
+Is it possible to resurrect an object that became eligible for Garbage Collection?
+Why is a char array preferred to store passwords?
+How do you monitor a fleet of Microservices in production?
+What happens when the number of Kafka consumers is greater than the number of partitions?
+Give a scenario where thread starvation occurs.
+Explain how BiFunction, BiConsumer, and BiPredicate are different from their single-parameter counterparts, and give a scenario where you would use them.
+How do you divide a monolithic application into Microservices? What will be your approach?
+How does a JWT token work in Java?
+How is JWT authentication stateless?
+How do you ensure a JWT stored in a cookie is secure?
+Difference between authentication and authorization?
+Which algorithm implementation have you used to generate a JWT token?
+What is JWT security, and how have you used it in your project?
+What strategies do you use for authentication and authorization?
+What are the trade-offs between stateless JWT authentication and stateful session cookies?
+What are claims in JWT, and how do you extract roles from them?
+A user reports being logged out frequently. What could be the issue?
+How can you revoke a compromised JWT?
+How does JWT differ from a session-based cookie?
+How do you handle JWT expiration in long-lived sessions?
+How does the structure of a JWT support its functionality?
+How would you use a JWT in a web application for authentication?
+What are the potential risks of using JWT, and how can you mitigate them?
+How do you prevent CSRF attacks when using JWT in cookies?
+Why do you usually not store JWT access tokens in a database?
+Why do you need to store the refresh token in the database?
+How do you ensure a JWT stored in a cookie is secure?
+How would you Dockerize a Spring Boot application?
+What restrictions come with using Java Records?
+What is DDoS, and how would you implement protection against it in Spring Boot and Java?
+How would you detect whether a linked list contains a cycle?
+What is the difference between a Docker image and a running Docker container?
+What is a Large Language Model (LLM)?
+You are given a paragraph containing n number of words and m threads. Each thread should print one word and give control to the next thread. Each thread continues printing one word in sequence. When the last thread finishes, it should invoke the first thread. Printing should repeat until all words are printed, and finally all threads should exit gracefully. What synchronization technique would you use?
+In a multithreaded program, 100 threads each increment a shared counter 1000 times. Sometimes the final counter value is less than expected. Why does this happen, and how can you fix it so the final value is always correct?
+Two threads A and B operate on a shared resource R. A needs to inform B that some important change has happened in R. What technique would you use in Java to achieve this?
+We have three classes A, B, and C. Class C extends B, and class B extends A. Each class has an add() method. Is there a way to call A's add() method from class C?
+What is the Stack class in Java?
+What are the conditions for a class to be called abstract?
+How can Java Reflection be used to break encapsulation?
+In an online shopping system, there are different types of users such as customers and admins. Both users need to log in but have different post-login actions. How would you design this system?
+Design a system for a car dealership where cars can have different engines (for example, petrol engine and electric engine). Model cars and engines such that engines can be easily replaced without modifying the car class.
+How would you refactor a large class responsible for both database operations and sending email notifications to comply with the Single Responsibility Principle? What changes would you make to ensure scalability and maintainability?
+You have two interfaces. The first interface has four methods, and the second interface has two methods. You implement both interfaces in your class, but you want to implement only a few declared methods. How would you handle this?
+You have a 10GB log file containing individual bank transactions. The task is to efficiently process this large file by filtering transactions with amounts greater than 10,000 and then calculating the sum of those amounts. How would you do it?
+Sort cricket player names by their last name.
+How can you make sure a Microservices-based application can handle more users as the application becomes more popular?
+How do you slowly migrate users from an older version of an application to a newer version?
+We have two Microservices, and both are dependent on each other. One Microservice is completely down, but users should not feel that the application is down. How do we hide Microservice downtime from users?
+If class B extends class A, what will be the order of execution of static initializers, instance initializers, and constructors?
+In an application, millions of temporary StringBuilder objects are being created, causing large system-wide GC pauses. How would you fix the problem assuming memory cannot be increased significantly?
+If a bean is created for an abstract class and interface, if not, why is an interface extending JpaRepository annotated with @Repository? Does it create a bean?
+If you want to store country, state, and city in a data structure, and retrieving a state name should return all cities under that state, how would you design it?
+How do you implement security for a desktop application without using Spring or any other frameworks?
+How do you write multiple catch statements under a single try block?
+What is casting?
+What is implicit casting?
+What is explicit casting?
+What is an enum?
+Can you give examples of different utility methods in the String class?
+In which scenarios is code in the finally block not executed?
+How do you create a custom exception?
+Is try without catch allowed?
+In what situations is the super keyword used?
+What is the purpose of Generics?
+What is the difference between System.out, System.err, and System.in?
+Does Java work as a pass-by-value or pass-by-reference language?
+Write a Java program to find the factorial of a given number.
+Write a program to print the Fibonacci series using recursion.
+What are shallow copy and deep copy in Java?
+Why is synchronization necessary?
+How is creating a String using new() different from creating it using a String literal?
+What is an "is-a" relationship in Java?
+What do you mean by data encapsulation?
+What are composition and aggregation?
+What do you understand about instance variables and local variables?
+Why is Java not considered a pure object-oriented language?
+Difference between static methods, static variables, and static classes in Java?
+How does the size of ArrayList grow dynamically?
+How many objects are created in JVM when a String type variable is assigned using the new keyword?
+Why is a char array preferred to store passwords instead of String?
+What is an object, and how is it stored in Java?
+Why don't we have destructors in Java?
+Difference between an array and Vector?
+What is the purpose of a default constructor in Java?
+Difference between continue and break?
+How can Microservices be effectively monitored in a production environment?
+Which tools and platforms are commonly used for implementing CI/CD pipelines?
+How can logging be managed in distributed systems?
+What are the best practices for handling secrets and sensitive data in Microservices?
+What is a mutex, and how does it work?
+Explain the Producer-Consumer problem and how it can be addressed using concurrency mechanisms.
+What are the benefits and disadvantages of using many small threads vs a few large threads?
+What are common strategies to prevent deadlocks?
+What is a livelock, and how is it different from a deadlock?
+Explain the concept of context switching and how it affects concurrency.
+Give a scenario where thread starvation occurs.
+We need to fetch a customer employee list from an API that returns only 100 employees at a time. The current approach uses a single thread invoking the API with different offsets to retrieve all employees (for example, 30k employees), which increases processing time. How would you reduce the time taken for retrieving all employees?
+There are 10 API calls. I need to prioritize the first three responses and treat the other seven responses as low priority. How would you implement this?
+We want to send requests to a third-party REST API in parallel, but there should not be more than three in-flight requests at any time. How would you handle this?
+How would you efficiently convert a 5GB CSV file (stored on one server) into 2GB of PDFs using a Java API?
+A restaurant waiter can serve food only after all dishes (pizza, pasta, dessert) are prepared. Each dish is prepared by a separate chef, and preparation times vary. The waiter must wait until all chefs finish their tasks before serving food. How would you design multithreading in Java for this scenario?
+How does a movie theater seat booking system prevent multiple users from reserving the same seats?
+Explain a scenario where you implemented multithreading and addressed concurrency issues in your project.
+Two threads, one printing even numbers and another printing odd numbers, need to print consecutive numbers from a shared array in sync. Example: [1,2,3,4,5,6] should output 1,2,3,4,5,6 with odd and even numbers printed alternatively. How would you implement this?
+What happens when two threads read and write the same variable without synchronization?
+We are working on a railway application with 5 railway ticket counters. We need to distribute unique tokens for each counter. How would you design this scenario?
+Suppose you have two threads. One prints 1,2,3... and another prints (A,B,C...). How will you ensure they run in sequence like 1,A,2,B,3,C...?
+You want to run 10 tasks in parallel and wait for all of them to complete before proceeding. How would you implement this?
+Multiple threads are incrementing a counter using counter++. However, after execution, the final value is less than expected. Why does this happen and how can you fix it?
+You are given a paragraph containing n words and m threads. Each thread should print one word and give control to the next thread. The last thread should invoke the first thread. Printing repeats until all words are printed, and finally all threads should exit gracefully. What synchronization mechanism would you use?
+What are semaphores, and how do they differ from mutexes?
+How does ConcurrentHashMap work internally? Explain CAS operation, bucket-level locking, and resize behavior under high contention.
+What are common security vulnerabilities in Microservices?
+How do you slowly move users from an older version of an application to a new version?
+How can you ensure a Microservices-based application can handle more users as it becomes more popular?
+Difference between API Gateway and Load Balancer?
+What is choreography-based Saga in Microservices?
+How does an API Gateway provide security?
+How do you achieve zero-downtime deployment when there is a database change?
+What is Spring Batch?
+What are the use cases of Spring Batch?
+Explain Spring transaction propagation levels.
+List all Spring annotations.
+Difference between @RequestMapping and @GetMapping?
+How can we inject a bean in Spring?
+How do you define the scope of a bean?
+What is the best way of injecting beans?
+Which dependency injection approach do you suggest: constructor-based or setter-based dependency injection?
+How does the @Transactional annotation work internally?
+Explain the usage of the @Transactional annotation in Spring.
+What is dynamic binding (runtime/late binding)?
+What is static binding (compile-time/early binding)?
+Difference between SOAP and REST?
+Streams API distinct() and sorted() examples?
+Streams API reduce() method examples?
+Abstract class vs Interface?
+What is the purpose of the @ControllerAdvice annotation in Spring Boot?
+What are sequential and parallel streams?
+What is Metaspace in Java 8?
+Advantages of Metaspace over PermGen?
+What is a method reference in Java 8?
+What is a default method in Java 8?
+Why were default methods introduced?
+What are the four types of method references?
+What is the purpose of the @ResponseBody annotation in Spring Boot?
+How does the size of ArrayList grow dynamically?
+Difference between static method, static class, and static variable?
+What do you understand about instance variables and local variables?
+What do you mean by data encapsulation?
+How is creating a String using new() different from creating it using a String literal?
+Why is synchronization necessary?
+What are shallow copy and deep copy in Java?
+Can you call a constructor of a class inside another constructor?
+Can you implement pointers in Java?
+Define a copy constructor in Java.
+What tools have you used to improve the performance of your application?
+What design patterns have you used in your application?
+Can a Java file have more than one public class?
+What are indexes and views in a database?
+What is type safety, and how do you achieve it?
+Have you used serialization anywhere in your application?
+What would happen if we do not import java.lang methods?
+Have you used Hibernate? What is the difference between Hibernate first-level cache and second-level cache?
+In try, catch, and finally, if all blocks return values, which block has priority?
+What is a blank final variable in Java? If we declare a final variable without assigning a value, what happens?
+Do you know what JWT 2.0 and JWT tokens are?
+If you need to store passwords, what type of data type would you use?
+Can you access a non-static variable in a static context?
+Can we override a private variable in Java?
+Why is the main() method static in Java?
+What is the use of Actuator?
+Can we override a static method in Java?
+An email field has a NOT NULL constraint. How do you remove the NOT NULL constraint from a column?
+How does load factor work in HashMap?
+What will happen if we put a key object in HashMap that already exists?
+Can you iterate and remove elements from an ArrayList at the same time?
+What happens if your Serializable class contains a member that is not Serializable? How do you fix it?
+What are the features of Java 8?
+functional interface
+lambda expressions
+stream api
+default method
+method reference
+optioanl class
+date and time api
+nashorn java script api
+concurrency inhancement
+foreach method
+parralel array soritng
+improved annotations
+
+types of stream operations
+intermediate operation-filter map sorted distinct flatMap peek limit skip
+terminal operation-forEach count min max reduce collect toArray findAny findFirst allMatch anyMatch nonMatch.
+
+comparable vs comparator
+comparable-no separate parameter-when using comparable we need to pass any separate parameter.
+Arrays.sort(personArray)
+sort calls comparTo method of the comparable interface to perform the sort.
+comparable is an interface present in the java.lang package
+natural order sorting
+
+comparator-when using comparator we need to pass a separate parameter
+Arrays.sort(personArray,Person.AgeComparator);
+Arrays.sort(personArray,Person.NameComparator);
+Arrays.sort(personArray,Person.SalaryComparator);
+sort calls compare method of the comparator interface to perform the sort.
+comparator is an interface present in the java.util package
+custom order sorting
+
+
+
+
+how can we avoid nullpinter exception?
+1.initialize variables.
+2.use optional
+3.use defualt values.
+4.null checks.
+5.use annotations.
+@NOnNull,@Nullable
+6.constructor checks
+public MyClass(String name){
+if(name==null){
+throw new IllegalArgumentException(name cant be null)
+}
+this.name=name;
+}
+7.avoiding return value
+instead of returning null from methods return an empty collection or an optional 
+public List<String> getItem(){
+return new ArrayList<>();
+}
+8.use try catch blocks.
+try{
+object.doSomething();
+}catch(NullpointerException){
+println(e.getMessage())
+}

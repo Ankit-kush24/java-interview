@@ -1,0 +1,77 @@
+coding with deepa
+What is authentication?
+What is authorization?
+What is JWT and why is it used?
+What are the three parts of JWT?
+What are JWT claims?
+What is OAuth 2.0?
+What is the difference between JWT and OAuth 2.0?
+What is the difference between session-based authentication and JWT?
+What are access tokens and refresh tokens?
+What is the purpose of a refresh token?
+Explain the OAuth 2.0 Authorization Code Flow.
+What are the roles in OAuth 2.0 (Resource Owner, Client, Authorization Server, Resource Server)?
+What are auth scopes?
+What is OpenID Connect, and how is it different from OAuth 2.0?
+What is PKCE, and why is it used?
+How is a JWT generated and validated?
+Difference between HS256 and RS256?
+Why should sensitive information not be stored in a JWT?
+How do access tokens and refresh tokens work together?
+How do you implement JWT authentication in Spring Boot?
+Explain the Spring Security Filter Chain.
+Why do we use OncePerRequestFilter for JWT validation?
+What is Security Filter Chain, and why did it replace WebSecurityConfigurerAdapter?
+What is SecurityContextHolder, and how does it work?
+What is AuthenticationManager, and when is it used?
+What is UserDetailsService, and how does Spring Security use it?
+Difference between hasRole() and hasAuthority()?
+How do you implement role-based access control using Spring Security?
+How do you invalidate or revoke a JWT before it expires?
+How do you secure Microservices using JWT and OAuth 2.0?
+Filter and Interceptor are both used to handle requests. What is the difference?
+What is a Filter in Spring Boot?
+What is an Interceptor in Spring Boot?
+Difference between Filter and Interceptor?
+Which executes first: Filter or Interceptor?
+What are the main use cases of Filter?
+What are the main use cases of Interceptor?
+What methods are available in the Filter interface?
+Difference between application.properties and application.yml?
+How do you configure multiple environments in Spring Boot?
+What is Dependency Injection?
+What is Inversion of Control?
+Difference between @Autowired and constructor injection?
+What is Spring Data JPA?
+Difference between CrudRepository, JpaRepository, and PagingAndSortingRepository?
+What is @SpringBootApplication?
+How does @SpringBootApplication work?
+What annotations are included inside @SpringBootApplication?
+What is @Autowired?
+How does @Autowired work internally?
+What is the purpose of @Qualifier?
+Difference between PUT and PATCH?
+What is Hibernate?
+Lazy vs Eager fetching?
+What is Pagination?
+What is JWT authentication?
+Monolithic vs Microservices?
+What is Kafka used for?
+Constructor injection vs Field injection?
+What are Bean scopes in Spring Boot?
+Is a Singleton bean thread-safe?
+What is DispatcherServlet?
+Difference between save() and saveAndFlush()?
+How does Spring Security work internally?
+What is a Filter Chain?
+What is Service Discovery?
+What is Feign Client?
+What happens if hashCode() is the same for two objects?
+CompletableFuture vs Future?
+synchronized vs ReentrantLock?
+Fail-fast vs Fail-safe iterator?
+What is the N+1 problem?
+What is Circuit Breaker in Microservices?
+Difference between HashMap and ConcurrentHashMap?
+What causes deadlock?
+How does Spring Boot handle transactions internally?

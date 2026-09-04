@@ -1248,3 +1248,642 @@ what is n+1 query problem and how do you fix it?
 
 
 
+javainterview buddy
+
+When we call an overloaded method, how does the Java compiler choose the correct method?
+When we call an overloaded method, the Java compiler checks the arguments we are passing.
+It checks the number of arguments and the type of arguments.
+Based on that, the compiler selects the best matching method.
+
+Can we overload two methods only by changing the return type while keeping the same parameters?
+No, we can't overload a method only by changing the return type.
+In Java, method overloading depends on the parameters.
+The number of parameters, type of parameters, or order of parameters must be different.
+If only the return type is different, the Java compiler will get confused.
+
+Why do we use the @Override annotation when we override a method in Java?
+We use the @Override annotation to tell the compiler that this method is overriding a method from the parent class.
+If we make any spelling mistake or parameter mistake, the compiler will give an error.
+So, it helps us avoid mistakes.
+
+How is method overloading connected with polymorphism in Java?
+Method overloading is connected with compile-time polymorphism. In this, the same method name can do different work based on different parameters.
+The compiler decides which method to call at compile time.
+
+Can static methods be overridden in Java, or are they only hidden?
+No, static methods can't be overridden in Java.
+A static method belongs to the class, not to the object.
+If we write the same static method in the child class, it is called method hiding, not method overriding.
+
+What happens if a superclass method is overridden by more than one subclass in Java?
+If many subclasses override the same method from the parent class, then every subclass will have its own version of that method. At runtime, Java will call the method based on the actual object.
+
+
+What will happen if we create the main method in Java but forget to make it static?
+If the main method is not static, the JVM will not be able to start the program. The JVM calls the main method without creating an object. That is why the main method must be static.
+
+Can we override the main method in Java like we override normal methods in child classes?
+No, we can't override the main method.
+The main method is static, and static methods can't be overridden. They belong to the class, not to the object.
+
+Can we overload the main method in Java by changing the parameters of the main method?
+Yes, we can overload the main method in Java. We can create more main methods with different parameters.
+But the JVM will always call the standard main method with a String array argument.
+
+Before Java 8, was it possible to print something on the console without writing the main method?
+Yes, before Java 8, it was possible using a static block.
+A static block could run when the class was loaded. But from Java 8 onwards, the main method is required to run the program normally.
+
+
+What rules should we follow when we want to overload a method in Java?
+For method overloading, the method name should be the same, but the parameters should be different.
+We can change the number of parameters, type of parameters, or order of parameters.
+Return type can be different.
+But only changing the return type is not enough.
+
+What rules should we follow when we want to override a method from a parent class?
+For method overriding, the child class should have the same method name, same parameters, and same return type or compatible return type as the parent class.
+The method in the child class replaces the method of the parent class at runtime.
+
+What will happen if we write a return statement inside a try block or catch block? Will the finally block still run, or will it be skipped?
+The finally block will still run.
+Even if a return statement is written inside the try block or catch block, finally will execute before the method actually returns.
+finally is mainly used for cleanup code.
+
+
+Can we run a Java program using only try and finally without writing any catch block? In which situation can this be useful?
+Yes, we can use try with finally without a catch block.
+This is useful when we do not want to handle the exception, but we still want cleanup code to run, like closing a file or connection.
+
+In Java, is it allowed to write more than one finally block for the same try-catch block?
+No, we can't write multiple finally blocks for one try block. One try can have only one finally block.
+If we write more than one finally block, the compiler will give an error.
+
+If two or more exceptions need the same handling logic, how can we handle all of them inside one single catch block?
+We can use a multi-catch block.
+In this, we write different exception names separated by the pipe symbol.
+This helps when the same logic is needed for multiple exceptions.
+
+
+If we use try-catch-finally many times in a Java application, can it affect the performance of the application?
+try-catch-finally has very small overhead. Normally, it does not create a big performance issue.
+But if exceptions are thrown again and again in the normal flow, then performance can become slow.
+
+Can a static block throw an exception while the class is loading?
+Yes, a static block can throw an exception.
+But it should be handled properly. If the exception is not handled, class loading can fail and the program can stop with an error.
+
+Can primitive data types like int, boolean, double, or char store null values in Java?
+No, primitive data types can't store null.
+They always have some value. For example, int has 0, boolean has false, and double has 0.0. If we need null, we use wrapper classes.
+
+Why are wrapper classes needed when we want to store primitive values inside Java collections?
+Java collections can store only objects, not primitive values.
+So, we use wrapper classes like Integer, Double, Boolean, and Character.
+They convert primitive values into objects.
+
+
+What is the simple difference between autoboxing and unboxing in Java?
+Autoboxing means converting a primitive value into a wrapper object automatically.
+For example, int to Integer.
+Unboxing means converting a wrapper object back into a primitive value automatically.
+For example, Integer to int.
+
+How can autoboxing create a confusing result when we compare two Integer objects using the double equal operator?
+When we compare two Integer objects using the double equal operator, it may compare object references, not actual values. Because of caching, sometimes the result can be true and sometimes false. So, it can confuse people.
+
+Can unboxing create a NullPointerException if we try to convert a null wrapper object into a primitive value?
+Yes, it can create a NullPointerException if the Integer value is null and we try to convert it into int. Java will try to unbox null.
+Because null can't become a primitive, it gives a NullPointerException.
+
+Why does Java not allow us to use pointers like C and C++?
+Java does not allow direct pointers because Java wants to be more secure and simple.
+Pointers can create memory problems and security issues.
+So, Java gives references, but it hides direct memory addresses from us.
+
+
+Can we run a Java application on a system where JRE is not installed separately? Is there any other way to package and run it?
+Normally, a Java application needs JRE to run.
+But in newer Java versions, we can use tools like jlink to create a custom runtime with the application.
+Also, with GraalVM, we can create a native image.
+
+Is it possible to install only JDK without JRE, or does JDK already contain the required runtime parts?
+JDK already contains the required runtime parts to run Java applications. JDK is mainly for development, but it also has runtime support. So, we do not need a separate JRE when JDK is installed.
+
+Which garbage collection algorithms are used by JVM to clean unused objects from memory?
+JVM uses different garbage collection algorithms. Some common ideas are mark and sweep, mark and compact, and generational garbage collection. The actual algorithm depends on which garbage collector we are using.
+
+If Java already has automatic garbage collection, then how can memory leaks still happen in a Java application?
+Memory leaks can happen when objects are not needed but still some reference is pointing to them.
+Garbage collector removes only unreachable objects. If an object is still reachable, garbage collector will not remove it.
+
+
+
+Why do people say Java is not a 100% object-oriented programming language?
+People say this because Java uses primitive data types like int, char, boolean, and double.
+These are not objects. In a pure object-oriented language, everything should be an object.
+
+What benefit does Java get by using primitive data types along with object-oriented features?
+Primitive data types help Java to run faster and use less memory. They are simple and lightweight.
+So, Java gets object-oriented features as well as performance benefits.
+
+Why should we use getter and setter methods when we can directly make variables public and access them?
+Getters and setters give control over data. We can add validation before setting a value.
+We can also change internal logic later without changing other code. Public variables do not give this control.
+
+
+Can we declare a top-level class as private or protected in Java, or is it only allowed for inner classes?
+No, a top-level class can't be private or protected. A top-level class can be public or default.
+Private and protected are mainly used for members or inner classes.
+
+Is it valid to create a Java class without writing any fields or methods inside it?
+Yes, it is valid. A class can be empty in Java. We can still create an object of that class, but that object will not have any special state or behaviour.
+
+Can we use a private constructor in Java, and where is it mostly used?
+Yes, we can use a private constructor. It is mostly used in Singleton classes and utility classes.
+A private constructor stops other classes from creating objects directly.
+
+Can we overload constructors in Java by creating multiple constructors with different parameters?
+Yes, constructors can be overloaded. We can create multiple constructors in the same class with different parameters. This helps us create objects in different ways.
+
+
+How can we create a Singleton class so that only one object of that class can be created?
+To create a Singleton class, we make the constructor private.
+Then we create one private static object of the same class.
+After that, we provide one public static method to return that object.
+
+What problem can happen in a Singleton class if two threads try to create the object at the same time?
+If Singleton is not thread-safe, two threads can create two different objects at the same time.
+This breaks the Singleton rule. To fix this, we can use a synchronized method, synchronized block, or eager initialization.
+
+Why are multiple objects considered safe and useful when multiple threads are working together?
+Immutable objects can't be changed after creation. So, many threads can use the same object safely. There is no fear that one thread will change the value while another thread is reading it.
+
+What steps should we follow to create an immutable class in Java?
+To create an immutable class, make the class final, make fields private and final, do not provide setters, initialize values using the constructor, and if a field is a mutable object, return a copy instead of the original object.
+
+How does the final keyword help in making objects immutable and safe for multiple threads?
+The final keyword helps because once a final variable is assigned, it can't be changed. This supports immutability. When object data does not change, it becomes safer to share between multiple threads.
+
+
+Can a Java class extend itself directly, or will it create an error?
+No, a class can't extend itself. If a class tries to extend itself, the compiler will give an error.
+It creates circular inheritance, which is not allowed in Java.
+
+Why does Java not support multiple inheritance using classes?
+Java does not support multiple inheritance with classes because it can create confusion.
+If two parent classes have the same method, Java will not know which method to use.
+This is called the diamond problem.
+
+What happens if a class contains even one abstract method inside it?
+If a class has even one abstract method, then the class must be declared abstract.
+We can't create an object of an abstract class directly.
+The child class has to implement that abstract method.
+
+
+When should we use an interface, and when should we extend an existing class?
+Use an interface when we want to define rules that different classes should follow.
+Use class extension when we want to reuse existing code and behaviour from the parent class.
+
+Since Java does not support multiple inheritance with classes, how can we achieve similar behaviour using interfaces?
+We can achieve similar behaviour using interfaces.
+A class can implement multiple interfaces. This way, one class can follow rules from many interfaces.
+
+Can an interface in Java have static methods, and how do we call those static methods?
+Yes, an interface can have static methods. We can call them using the interface name. We do not need to create an object to call a static method of an interface.
+
+Can a functional interface extend another interface and still remain a functional interface?
+Yes, it can, but it should have only one abstract method in total. If the parent interface adds another abstract method, then it will not remain a functional interface.
+
+
+What is dynamic method dispatch, and how does Java decide which overridden method to call at runtime?
+Dynamic method dispatch means Java decides at runtime which overridden method should run.
+It depends on the actual object, not on the reference type. This is runtime polymorphism.
+
+Can constructors show polymorphism like normal overridden methods in Java?
+No, constructors can't show polymorphism like methods.
+Constructors are not inherited and can't be overridden.
+We can overload constructors, but we can't override them.
+
+Can we use this or super keywords inside a static method in Java?
+No, we can't use this or super inside a static method.
+A static method belongs to the class, not the object.
+this and super need an object context.
+So, they can't be used in a static context.
+
+
+Suppose you added @Transactional, but still data is partially saved when an exception happens. How will you debug and fix it?
+First, I will check where @Transactional is added.
+It should mostly be added to the service layer method.
+Then I will check what type of exception is coming.
+By default, Spring rolls back only for unchecked exceptions like RuntimeException.
+If it is a checked exception, rollback may not happen automatically.
+To fix this, I can use @Transactional(rollbackFor = Exception.class).
+I will also check whether the method is public.
+If the method is private, the transaction will not work properly.
+I will also check if the method is called from the same class.
+If the same class method is calling it, the Spring proxy will not work.
+So, I will move that method to another service class or call it through another Spring bean.
+
+
+Suppose your Spring Boot application is working fine in normal traffic, but during high traffic, the response time becomes very high. How will you find the root cause?
+First, I will not directly change the code.
+I will first try to find where the slowness is coming from.
+I will check application logs.
+I will check API response time.
+I will check database query time.
+I will check memory and CPU usage.
+I will check thread usage also.
+
+In your project, one microservice is calling another microservice using REST, but sometimes the second service is slow or down. How will you handle timeout, retry, and fallback?
+
+Suppose your JWT token is valid, but the user's role has changed in the database. How will you make sure old permissions are not misused?
+
+Suppose cached data is showing old values even after the database is updated. How will you fix this issue?
+
+In your project, database queries are increasing suddenly because of the N+1 query problem. How will you detect and solve it?
+
+Suppose one API is throwing LazyInitializationException in production. How will you identify and fix it?
+
+In your project, messages are processed from Kafka or RabbitMQ, but the same message is processed twice. How will you handle duplicate processing?
+
+Suppose one microservice publishes an event, but the consumer service is down at that time. How will you make sure the event is not lost?
+
+1. In your project, you have two implementations of the same interface, and Spring is confused about which bean to inject. How will you solve this?
+
+2. Suppose Actuator is enabled in your production application, but you do not want everyone to access health metrics and environment details. How will you secure it?
+
+3. In production, your application secrets, keys, and database passwords should not be kept in application.properties. How will you manage them securely?
+
+4. In your microservices project, authentication is handled by one service, but other services also need to know whether the user is valid or not. How will you design security?
+
+5. Suppose your application is calling three external APIs, and one of them has rate limits. How will you avoid crossing the limit and still keep your application stable?
+
+
+1. In your project, one API is fetching the same master data again and again from the database. How will you use caching to improve performance?
+
+2. In your project, one API returns thousands of records, and the frontend becomes slow. How will you implement pagination and sorting?
+
+3. Suppose your application has different database URLs for Dev, QA, and Production. How will you manage this without changing the code every time?
+
+4. In your project, users upload PDF or image files. How will you handle file upload validation, storage, and retrieval in Spring Boot?
+
+5. Suppose uploaded files are currently stored inside the application server folder, and after deployment, the files are getting lost. What will you change?
+
+6. In your project, you need to send a welcome email after user registration, but email sending should not slow down the registration API. How will you design this?
+
+7. In your project, you need to trace one request across multiple microservices to find where it failed. How will you implement logging and tracing?
+
+8. Suppose your Spring Boot application needs to be deployed using Docker and CI/CD. What steps will you follow from code push to deployment?
+
+9. Suppose your Spring Boot application needs to support multiple languages like English and Hindi. How will you implement internationalization?
+
+10. In your API, one API needs to handle a very high number of concurrent requests without blocking threads. When will you choose Spring WebFlux, and what mistakes will you avoid?
+
+What will happen if we try to start the same thread two times in Java?
+
+What problem was your project solving?
+
+Why did you create a separate service for this?
+
+What database was used by each service?
+
+How did these services communicate?
+
+What happened if the Payment Service was down?
+
+How did you handle failures?
+
+Our project was an order management system where customers could place orders, make payments, track delivery status, and customer support could manage refunds or failed orders.
+
+Our project was used by bank employees to process loan applications, verify customer details, check eligibility, and generate approval and rejection decisions.
+
+Our project was divided into multiple services based on business responsibility.
+User Service was responsible for user profile and authentication.
+Product Service was responsible for product catalog and availability.
+Order Service was responsible for order creation, order status, and order history.
+Payment Service was responsible for payment initiation, payment confirmation, and refund flow.
+The Notification Service was used to send email or SMS updates to the customer.
+
+
+
+Suppose you have an Order Service, Payment Service, and Inventory Service. How would you handle a situation where one service commits successfully but another service fails?
+What are the internal differences between HashMap in Java 7 and Java 8, and why was it changed?
+How does Spring handle circular dependencies, and when does it fail?
+What happens internally when a class is loaded by the JVM?
+How would you design a system to handle millions of concurrent API requests?
+Why was double-checked locking considered broken before Java 5, and how was it fixed?
+How would you prevent deadlocks in a multithreaded application?
+What are the trade-offs between consistency and availability in distributed systems?
+How does Hibernate manage the first-level and second-level cache internally?
+What happens if you call an @Transactional method from within the same class?
+How would you design a fault-tolerant Kafka consumer that avoids data loss?
+What are the internal working principles of CompletableFuture?
+How would you debug a production issue where CPU usage suddenly spikes to 100%?
+What is the difference between synchronized and locking using ReentrantLock?
+How does the JVM optimize code at runtime using JIT compilation?
+What are the challenges of schema evolution in Kafka, and how do you handle them?
+How would you implement a distributed lock, and what are the pitfalls?
+What happens when a thread pool is exhausted in Java?
+
+30 microservices interview questions
+1. In your project, two different microservices are showing different data for the same user. For example, the User Service shows one email address, but the Order Service or Payment Service shows an old email address. How will you identify the root cause and fix this data inconsistency?
+2. In your project, two microservices are trying to update the same customer data at the same time. One service is updating the customer profile, and another service is updating the customer verification status. How will you avoid wrong data updates or data overwriting?
+3. One microservice publishes events to Kafka and RabbitMQ, but due to a bug, it starts sending incorrect data to multiple services. How will you stop this bad data from spreading across the system?
+4. If one user request goes through the API Gateway, then Order Service, Payment Service, Inventory Service, and Notification Service, but the request fails somewhere in between, how will you trace exactly where the request failed?
+5. If Kafka and RabbitMQ messages are getting stuck in the queue and consumers are not processing them, how will you debug and fix this message backlog issue?
+6. In your project, one internal microservice is accidentally exposed to the internet and starts receiving unknown or malicious traffic. How will you secure this internal service immediately?
+7. If the business team wants to release a new feature only for 10% of users first, and if everything works fine, then release it to all users, how will you design this feature rollout?
+8. One API request is making too many internal microservice calls, and because of that, the response is becoming slow. How will you reduce the number of service calls and improve performance?
+9. You are migrating a monolithic application to microservices, but some modules are tightly connected with each other. How will you safely break these modules into separate microservices?
+10. Users from different countries are using the application, but users from some locations are facing slow response times. How will you design the microservices system for low latency globally?
+11. One microservice handles critical payment or financial data where failure is not acceptable. How will you make this service highly reliable and fault-tolerant?
+12. Traffic suddenly becomes very high, like thousands or millions of requests coming in a short time. How will you design your microservice system so it can scale properly?
+13. In production, one microservice suddenly starts using very high CPU after deployment. How will you debug this production performance issue?
+14. You need to support real-time updates like chat messages, order status updates, live notifications, or alerts. How will you design this in microservices?
+15. Your application is calling a third-party API for payment, KYC, SMS, or email, and that API starts failing randomly. How will you protect your system from this failure?
+16. One user request triggers more than 50 internal service calls. Do you think this is a good design? If not, how will you improve this design?
+17. Network latency is very high between microservices. Will microservices still be better than a monolithic architecture?
+18. Before releasing microservices to production, how will you test them properly so that individual services and the complete user flow both work correctly?
+19. Database traffic is increasing because read and write operations are growing. How will you scale the database without downtime?
+20. One database table needs a schema change, but the old service version and new service version will run together for some time. How will you handle this schema change safely?
+21. Users are seeing old data because the data is coming from the cache and not from the latest database value. How will you handle cache invalidation?
+22. Multiple services are updating the same data, but the updates are coming in different orders. How will you maintain data integrity and the correct update sequence?
+23. Due to a network failure, half of the microservices become unreachable. How should your system behave in this situation so that the complete application does not crash?
+24. The product team says that they want both strong consistency and high availability all the time. Is it always possible in a distributed microservices architecture?
+25. Retries are added to handle temporary failures, but now retries are increasing the load on the system and creating more failures. Why does this happen, and how will you fix it?
+26. One microservice is working correctly and not throwing any errors, but its response time is very high. How will you debug this high-latency issue?
+27. Messages are getting processed in the wrong order. For example, an update event is processed before a create event. How will you maintain the correct sequence?
+28. Read traffic is very high, but write traffic is low. How will you use the CQRS design pattern to improve read performance?
+
+
+Does using Optional completely protect an application from NullPointerException?
+No, Optional does not completely protect an application from NullPointerException.
+It helps us handle missing values without writing too many null checks.
+But we must use it correctly. For example, calling Optional.of() with a null value will throw a NullPointerException.
+Also, calling get() on an empty Optional will throw a NoSuchElementException.
+It is better to use methods like orElse(), orElseGet(), ifPresent(), or orElseThrow().
+
+Can an interface still be called a functional interface if it contains multiple methods?
+Yes, a functional interface can contain multiple methods.
+But it must have only one abstract method.
+It can have multiple default methods and static methods.
+It can also have methods that come from the Object class.
+As long as there is only one abstract method, we can use that interface with a lambda expression or method reference.
+
+Why can converting a normal stream into a parallel stream sometimes make the application slower?
+A parallel stream divides the work and processes it using multiple threads.
+But dividing the work, starting the tasks, and combining the results also takes time.
+For a small collection or a simple operation, this extra work may take more time than normal stream processing.
+Parallel streams can also be slower when order must be maintained or when multiple threads are changing shared data.
+So, a parallel stream is not always faster. We should use it only when it actually improves performance.
+
+
+
+Can a Java stream be reused after executing a terminal operation?
+No, a Java stream can't be reused after a terminal operation.
+Methods like collect, count, forEach, reduce, and findFirst are terminal operations.
+Once one of these methods runs, the stream is finished.
+If we try to use the same stream again, Java normally throws an IllegalStateException.
+To process the data again, we need to create a new stream from the original collection.
+
+Does Java create a new object in the same way when we use a lambda expression instead of an anonymous inner class?
+No, Java does not handle them in the same way.
+An anonymous inner class creates an object of a separate anonymous class.
+A lambda expression does not create a separate class in the same traditional way.
+The JVM handles lambdas in a more flexible way and may even reuse the same lambda object in some cases.
+So, we should use a lambda for its behaviour and should not depend on whether it creates a new object every time.
+
+Why can a lambda expression access a local variable but can't modify that variable?
+A lambda expression can use a local variable only when that variable is final or effectively final.
+Effectively final means that we assign the value once and do not change it later.
+A local variable belongs to the method, and the method may finish before the lambda runs.
+Because of this, Java copies the value for the lambda to use.
+If Java allowed that local variable to change, it could create confusion about which value the lambda should use.
+
+
+Why does nothing happen when we call filter or map on a stream without a terminal operation?
+filter and map are intermediate operations.
+They only prepare the steps that the stream should perform.
+They do not start processing the data immediately.
+The actual processing begins only when we call a terminal operation such as collect, count, forEach, or reduce.
+So, without a terminal operation, the stream does not process anything.
+
+Why does Java 8 allow interfaces to contain method implementation without turning them into abstract classes?
+Java 8 introduced default methods so that existing interfaces could be updated safely.
+Before Java 8, adding a new method to an interface forced every implementation class to implement that method.
+This could break a lot of existing code.
+With a default method, the interface itself can provide the method body by using the default keyword.
+This allowed Java to add methods like stream() to the Collection interface without breaking old collection classes.
+
+
+Why does map sometimes produce a stream of streams while flatMap produces a single stream?
+map changes each element into another value.
+If every element is changed into a stream, the result will contain multiple streams.
+For example, if each department gives us a stream of employees, map will create a Stream<Stream<Employee>>.
+flatMap also converts each department into a stream of employees, but then it joins all those streams together.
+So, the final result becomes one Stream<Employee>.
+
+Why can findAny() be faster than findFirst() when working with a parallel stream?
+findFirst() returns the first element according to the original stream order.
+In a parallel stream, different threads process different parts of the data at the same time.
+Java may need to wait and check which result actually comes first.
+findAny() does not need to maintain this order.
+It can return any element found by any thread, so it may finish faster in a parallel stream.
+
+
+How can you identify whether a requirement needs a Predicate, Function, Consumer, or Supplier?
+Use a Predicate when you need to check a condition and return true or false.
+Use a Function when you need to take one value and convert it into another value.
+Use a Consumer when you need to take a value and perform an action without returning anything.
+Use a Supplier when you need to provide a value without taking any input.
+For example, filtering uses a Predicate, mapping uses a Function, printing uses a Consumer, and creating an object can use a Supplier.
+
+When can a lambda expression be replaced with a method reference, and when can it not be replaced?
+A lambda can be replaced with a method reference when it only calls an existing method.
+For example, name -> System.out.println(name);
+can be written as: System.out::println
+But if the lambda contains extra conditions, calculations, or multiple statements, we normally can't replace it directly with a method reference.
+A method reference should be used when it makes the code shorter and easier to understand.
+
+
+How does reduce() method convert an entire stream into one final value?
+reduce() combines the stream elements one by one.
+For example, suppose we want to add all the numbers.
+It adds the first two numbers, then adds the next number to that result, and continues until all numbers are processed.
+At the end, it gives us one final value.
+We can use reduce() for sum, product, maximum value, minimum value, or joining strings.
+
+
+Why is the value passed to orElse created even when the Optional already contains a value?
+Java first prepares the value passed to orElse and then calls the orElse method.
+Because of this, the default value is created even when the Optional already has a value.
+orElseGet() works differently.
+It accepts a Supplier, and that Supplier runs only when the Optional is empty.
+So, when the default value requires a database call, service call, or heavy calculation, orElseGet() is usually a better choice.
+
+What is CompletableFuture different from simply creating and starting a new thread?
+A new thread allows us to run one task separately.
+But we still have to write extra code to get the result, handle errors, or connect one task with another.
+CompletableFuture provides ready-made methods for these tasks.
+We can change a result using thenApply(), use a result with thenAccept(), combine two tasks using thenCombine(), and handle errors using exceptionally().
+It also uses a thread pool, so we do not need to create and manage every thread ourselves.
+
+How are groupingBy and partitioningBy different when both are used to divide stream elements into groups?
+groupingBy can divide elements into many groups.
+For example, employees can be grouped by department, city, or job role.
+Each department or city becomes a separate key.
+partitioningBy divides elements into only two groups.
+Its keys are always true and false.
+For example, we can divide numbers into even and odd groups.
+
+Why was a completely new date and time API required when Java already had Date and Calendar?
+The old Date and Calendar classes were difficult and confusing to use.
+They were mutable, which means their values could be changed after creation.
+They were also not safe to share between multiple threads.
+Some behaviours were confusing. For example, months in Calendar started from zero.
+Java 8 introduced the java.time package with simpler classes like LocalDate, LocalTime, LocalDateTime, and ZonedDateTime.
+These classes are immutable, thread-safe, and easier to use.
+
+
+How does lazy evaluation prevent Java streams from processing unnecessary elements?
+
+Intermediate operations like filter and map do not run immediately.
+They wait until a terminal operation is called.
+When processing starts, Java can move one element through the complete stream pipeline at a time.
+If an operation like findFirst, anyMatch, or limit gets the required result, Java can stop early.
+Because of this, the stream does not always need to process every element.
+
+
+If both contain data, why is a stream not considered a data structure like a collection?
+A collection stores data.
+A stream does not store data. It only processes data coming from another source.
+That source can normally be used many times, but a stream can normally be used only once.
+So, a collection is used to store data, while a stream is used to process data.
+
+
+Why does filter keep the same type of elements while map can completely change their type?
+filter only checks whether an element should stay in the stream.
+It either keeps the element or removes it.
+It does not change the element, so the type remains the same.
+map changes each element into another value.
+For example, it can change an Employee object into an Employee name, which is a String.
+So, filter selects elements while map transforms elements.
+
+
+Why are static methods inside an interface not inherited by its implementation classes?
+A static method belongs to the interface itself.
+It does not belong to an object of the implementation class.
+This is why we can call it using the interface name.
+For example, MyInterface.display()
+An implementation class does not inherit this method.
+Default methods are inherited, but static methods remain connected only to the interface.
+
+
+What happens when a class implements two interfaces that contain the same default method?
+Java becomes confused because both interfaces provide the same default method.
+It can't automatically decide which method to use.
+Because of this, the class gets a compile-time error.
+The class must override the method and provide its own implementation.
+It can also call a particular interface method like this:
+Interface.super.display().
+
+Why did Java introduce IntStream, LongStream, DoubleStream when Stream already existed?
+Stream<Integer> works with Integer objects, not directly with primitive int values.
+Changing between int and Integer is called boxing and unboxing.
+When we process a large amount of numeric data, this conversion can use extra memory and time.
+IntStream, LongStream, DoubleStream work directly with primitive values.
+They also provide useful methods like sum, average, min, max.
+Why can forEach() change the output order of a parallel stream while forEachOrdered() does not?
+In a parallel stream, different threads process different elements at the same time.
+With forEach(), every thread prints or processes its element as soon as it finishes.
+Because of this, the output order can change.
+forEachOrdered() waits and keeps the original order of the stream.
+However, maintaining the order may make parallel processing a little slower.
+
+
+What is idempotency in REST APIs, and why is it important?
+How does Kafka ensure message durability and reliability?
+What is a race condition, and how can you prevent it?
+How does the Java Stream API handle parallel processing?
+How do you handle transactions in a distributed system?
+
+What is the difference between JPQL and native SQL queries?
+What is the purpose of the @Bean annotation in Spring?
+How does Spring Boot simplify application configuration compared to Spring?
+What is the difference between heap and stack memory in Java?
+Can you explain how the JVM executes a Java program step by step?
+
+Are you involved in deployment?
+Yes, I was involved in deployment activities from the application side. I used to monitor the pipeline, verify the build, check the deployment status, and perform post-deployment validation
+
+Why does LazyInitializationException occur in Hibernate?
+
+What is the N+1 query problem in Hibernate, and how would you solve it?
+How would you store database passwords and API keys securely in a Spring Boot application?
+How would you manage different configurations for development, testing, and production?
+
+What happens when a @Transactional method calls an @Async method?
+Why might @Transactional not work when one method calls another method inside the same class?
+When would you use ReentrantLock instead of the synchronized keyword?
+How would you identify and fix a race condition in an application?
+When can parallel streams make an application slower?
+What happens when a mutable object is used as a key in a HashMap and its value is changed?
+
+A retry mechanism sends the same order request twice. How would you prevent duplicate order creation?
+Two users try to update the same database record at the same time. How would you prevent incorrect data?
+How would you design an API that can handle millions of requests?
+Your Java application's memory usage keeps increasing in production. How would you find the cause?
+One microservice becomes slow and starts affecting all other services. How would you control the problem?
+
+A payment API times out, but the payment may already be completed. How would you prevent the payment from happening twice?
+
+Explain the deployment process in your project.
+test changes locally,commit code+raise pr,code review,pr approved code merge ,
+
+What are your responsibilities as a Java developer during the deployment?
+
+
+--------------------------
+Multithreading in Java
+Multithreading in Java is the process of executing multiple threads simultaneously.
+A thread is a lightweight subprocess and the smallest unit of processing.
+Multiprocessing and multithreading are both used to achieve multitasking.
+
+Multitasking
+Multitasking is the process of executing multiple tasks simultaneously to utilize the CPU efficiently.
+
+Types of Multitasking:
+1.Process-Based Multitasking
+Each process has its own memory (separate address space).
+Processes are heavyweight.
+Communication cost is high between processes.
+
+2. Thread-Based Multitasking
+Threads share the same memory (common address space).
+Threads are lightweight.
+Communication cost is low between threads.
+
+What is a Thread in Java?
+A thread is a lightweight subprocess and the smallest unit of processing. It represents a separate path of execution in a program.
+Threads are independent. If an exception occurs in one thread, it does not affect other threads. Threads use a shared memory area.
+Life Cycle of a Thread:
+New, Active, Blocked/Waiting, Timed Waiting, Terminated.
+New: Whenever a new thread is created, it is always in the New state.
+Active:When a thread invokes the `start()` method, it moves from the New state to the Active state. The Active state contains two states within it: one is Runnable and the other is Running.
+
+
+Java 17 is a Long-Term Support (LTS) release that brings performance improvements, security enhancements, and developer productivity features.
+Sealed Classes
+Pattern Matching for Switch
+Record Patterns
+Enhanced Pseudo-Random Number Generators
+Text Blocks
+Foreign Function and Memory API
+Removal of the Experimental AOT & JIT Compiler
+Stronger Encapsulation by Default
+
+What is Garbage Collection?
+Garbage collection is the process of identifying and reclaiming memory occupied by objects that are no longer in use by the application. It helps in automatic memory management and prevents memory leaks.
+
+

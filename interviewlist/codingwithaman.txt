@@ -1,0 +1,23 @@
+codingwithaman
+how does spring boot convert your json request into a java object?
+what is relaxed binding in spring boot?
+which is better properties or yaml?
+why do we need spring profiles?
+
+--------------------
+what is rest api?
+rest api is used to communicate between client and server.it exchanges data using json.
+what is an endpoint?
+endpoint is a url used to access api.
+
+what is an api?
+an api(application programming interface)is a set of rules and protocals that allows different software applications to communicate with each other.
+
+what are http methods?
+standard operations defined by http protocal for web communication.
+
+what are atomic avriable in java?
+what is the volatile keyword?
+what is the difference between final keyword and final variable?
+what is garbage collection in java?
+how do you ensure garbage collection is working correctly?

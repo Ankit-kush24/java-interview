@@ -1,0 +1,463 @@
+shivi explores
+What are the four pillars of OOP? Explain with examples.
+What is the difference between a class and an object?
+What is encapsulation, and what are its benefits?
+What is inheritance? What are its advantages and disadvantages?
+What is polymorphism? Explain method overloading and method overriding.
+What is abstraction? How is it different from encapsulation?
+What is the difference between an abstract class and encapsulation?
+When would you choose an interface over an abstract class?
+What is the difference between compile-time and runtime polymorphism?
+What is the difference between aggregation and composition?
+What is the difference between an "is-a" and "has-a" relationship?
+Why is composition preferred over inheritance?
+What is the difference between == and equals()?
+Why should hashCode() be overridden when overriding equals()?
+What is an immutable class, and how do you create one?
+What is the purpose of this and super keywords?
+Can static, private, and final methods be overridden? Why or why not?
+What is constructor chaining, and how is it achieved in Java?
+Can we instantiate an abstract class? If not, why?
+Why does Java not support multiple inheritance through classes, and how is it achieved using interfaces?
+Difference between List, Set, and Map?
+Difference between ArrayList and LinkedList? When would you use each?
+Difference between HashMap, LinkedHashMap, TreeMap, and ConcurrentHashMap?
+How does HashMap work internally?
+Difference between HashSet and TreeSet?
+Why are equals() and hashCode() important in HashMap and HashSet?
+What happens if you do not override hashCode() and equals()?
+What is hash collision, and how does HashMap handle it?
+What is the default capacity and load factor of HashMap?
+What is rehashing, and when does it occur?
+Difference between Iterator and ListIterator?
+What is ConcurrentModificationException, and how can you avoid it?
+Difference between fail-fast and fail-safe iterators?
+How do you remove duplicate elements from a List while preserving insertion order?
+How do you sort a list of custom objects? Comparable vs Comparator?
+Difference between Collections and Collection?
+Which collection classes are thread-safe, and when would you use them?
+What are the time complexities of ArrayList, LinkedList, HashMap, TreeMap, and HashSet operations?
+Difference between JVM, JDK, and JRE?
+What happens internally when a Java program runs?
+Difference between Heap and Stack memory?
+What is Garbage Collection, and how does it work?
+What is a memory leak in Java?
+What are instance, local, and static variables in Java?
+What is the static keyword, and why is the main method static?
+What is a static block, and when is it executed?
+What is a constructor? Can it be overloaded and overridden?
+Difference between this and super?
+What are access modifiers? Explain public, private, protected, and default.
+Explain the final keyword: final variable, method, and class.
+What are wrapper classes, autoboxing, and unboxing?
+What is the String Constant Pool?
+What is CompletableFuture, and when do we use it?
+How does Java Memory Model work?
+What is the volatile keyword?
+How does Spring Boot Auto Configuration work?
+How do we handle transactions in Spring Boot applications?
+What are propagation and isolation levels in transaction management?
+An application is slow due to JPA. How do you troubleshoot and fix it?
+What is dirty checking?
+How is JPA different from Hibernate?
+How can we implement DTO projection in JPA? Write a query.
+Two Microservices share the same database. Is it a good approach?
+Two Microservices update the same database row simultaneously. How do you handle it?
+How do you improve application performance?
+Given a String, how do you check whether brackets are balanced or not?
+What is API Gateway pattern, and why is it used in Microservices?
+How would you implement an API Gateway using Spring Cloud Gateway?
+What problems does API Gateway solve compared to direct client-to-service communication?
+What is Service Discovery in Microservices?
+Difference between client-side discovery and server-side discovery?
+What is the Saga pattern in distributed transactions?
+Difference between orchestration Saga and choreography Saga?
+When should Saga be preferred over 2-phase commit?
+What is Event-Driven Architecture in Microservices?
+How would you implement event communication using Apache Kafka?
+Why should each Microservice have its own database?
+What problems occur when multiple services share the same database?
+What is CQRS (Command Query Responsibility Segregation) pattern?
+When should CQRS be used in Microservices?
+What is Strangler Fig pattern used for in Microservices migration?
+What is Spring Data JPA?
+Difference between JPA and Hibernate?
+What is an Entity in JPA?
+Hibernate Session vs JPA EntityManager?
+What is the role of Persistence Context?
+Difference between save() and saveAndFlush()?
+What are different ID generation strategies?
+What is @Transactional, and how does it work?
+What is dirty checking in Hibernate?
+What is first-level cache in JPA?
+Difference between lazy and eager fetching?
+What is the N+1 problem? How do you solve it?
+What are cascade types in JPA?
+Difference between mappedBy and @JoinColumn?
+What is orphanRemoval?
+JPQL vs Native Query?
+What is Criteria API?
+What is pagination and sorting in JPA?
+What are projections (DTO-based queries)?
+How do you handle complex joins in JPA?
+Optimistic vs pessimistic locking?
+What is @Version annotation?
+How does JPA handle transactions internally?
+What is flushing, and when does it happen?
+Difference between get() and load() in Hibernate?
+How do you improve JPA performance in production?
+How do you debug slow queries in Hibernate?
+How do you handle large data in JPA (batch processing)?
+What issues have you faced with JPA in real projects?
+How do you design relationships in large-scale systems?
+What are Virtual Threads in Java 21, and how do they differ from traditional threads?
+How do Java Records improve DTO handling?
+Difference between Optional.get(), orElse(), and orElseThrow()?
+How does ConcurrentHashMap achieve thread safety internally?
+What are switch expressions, and how are they different from switch statements?
+Explain Fork Join Framework and its advantages.
+How does pattern matching for instanceof simplify code?
+How do you implement immutability in Java classes?
+What are the benefits of Streams and functional programming?
+How does Java handle memory management for unreachable objects?
+What is a thread in Java? How is it different from a process?
+What are different ways to create a thread in Java?
+Difference between start() and run() methods?
+Explain thread lifecycle and its states.
+What is context switching?
+Difference between Callable and Runnable?
+What is Executor Framework, and why is it preferred over manual thread creation?
+Difference between submit() and execute() methods?
+How does Java ensure thread safety in concurrent collections?
+What is Fork Join Framework?
+Difference between sleep() and wait() methods?
+What is the use of the join() method?
+What is a race condition, and how do you avoid it?
+Volatile keyword vs synchronization?
+What is ThreadLocal, and where is it used?
+What are daemon threads, and when should we use them?
+What is synchronization, and why is it needed?
+Difference between synchronized method and synchronized block?
+Object-level locking vs class-level locking?
+What is deadlock, and how can it be prevented?
+What is Spring Boot Actuator?
+Why do we use Actuator?
+What are Actuator endpoints?
+How do you enable Actuator in Spring Boot?
+What is /health endpoint?
+What is /info endpoint?
+What is /metrics endpoint?
+Difference between health check and monitoring?
+How do you expose Actuator endpoints?
+How do you secure Actuator endpoints?
+What is a custom Health Indicator?
+How do you create a custom Actuator endpoint?
+How does Spring Boot collect metrics?
+What is Micrometer?
+How do you integrate Prometheus with Spring Boot?
+How does Grafana work with Prometheus?
+What metrics should backend APIs monitor?
+How do you monitor JVM memory usage?
+How do you monitor thread usage?
+What is application tracing?
+How do you monitor API response time?
+Logging vs Monitoring?
+What is Distributed Tracing?
+How does Sleuth work?
+How do you monitor Microservices architecture?
+How do you identify memory leaks in production?
+How do you analyze high CPU usage?
+How do you track slow database queries?
+How do you monitor Kafka consumers/producers?
+What production issue did you solve using monitoring tools?
+What is Spring Boot?
+What are the main features of Spring Boot?
+Difference between Spring and Spring Boot?
+What is Spring Boot Starter?
+What is Spring Boot DevTools?
+What is Role-Based Access Control (RBAC)?
+How do you implement JWT authentication in Spring Boot?
+What is Spring Security?
+What is the difference between @Bean and @Component?
+What are Bean scopes in Spring Boot?
+How do you log an application in Spring Boot?
+How do you handle large-scale transactions?
+How do you improve performance in Spring Boot applications?
+What is Spring Boot?
+Why is Spring Boot used?
+What are the components of @SpringBootApplication?
+What is Auto Configuration?
+What is Starter Dependency?
+What is an Embedded Server in Spring Boot?
+What is @Configuration?
+How does Spring Boot Auto Configuration work internally?
+How do you handle exceptions in Spring Boot using @ControllerAdvice?
+How does Spring Boot startup flow work internally?
+What is Spring Boot Auto Configuration Condition Mechanism?
+How do you create a custom starter in Spring Boot?
+What is the @Conditional annotation?
+How does DispatcherServlet work?
+What is the Bean Lifecycle in Spring Boot?
+How do you improve Spring Boot performance?
+How do you secure Spring Boot APIs?
+How do you design scalable Microservices using Spring Boot?
+What are Blocking Queues?
+How does TreeMap maintain sorting?
+What is the internal structure of LinkedList?
+How does PriorityQueue maintain order internally?
+How does ConcurrentHashMap work?
+Why is HashMap not thread-safe?
+What is the time complexity of HashMap operations?
+What is Treeification in HashMap?
+How is HashMap implemented in Java 8?
+When should you use LinkedList over ArrayList?
+Difference between Queue and Deque?
+What is PriorityQueue, and how does it work?
+Difference between HashMap and TreeMap?
+Difference between HashMap and LinkedHashMap?
+What is collision handling in HashMap?
+What are Load Factor and Initial Capacity?
+What happens when two keys have the same hashCode?
+What is hashing? Difference between hashCode() and equals()?
+How does HashMap work internally?
+Comparator vs Comparable?
+Difference between Iterator and ListIterator?
+What is Comparable?
+What is Comparator?
+What is Iterator?
+Difference between HashMap and HashSet?
+Why is Set used? What is HashSet?
+Difference between ArrayList and LinkedList?
+Difference between List, Set, and Map?
+What is Java Collection Framework?
+What are Microservices?
+Monolithic vs Microservices: Key differences?
+Advantages of Microservices Architecture?
+Disadvantages of Microservices?
+what is api gateway?
+what is service discovery?
+what is load balancing in microservices?
+what is rest communication between services?
+what is configuration management?
+what is centralized logging?
+what is circuit breaker pattern?
+What is Retry Mechanism?
+What is Distributed Tracing?
+What is the role of Spring Cloud?
+What is Netflix Eureka?
+What is Feign Client?
+What is Zuul / Spring Cloud Gateway?
+What is Config Server?
+What is Inter-Service Communication?
+What is Event-Driven Architecture?
+How do you handle distributed transactions?
+What is Idempotency, and why is it important?
+How do you ensure data consistency between services?
+What is API Versioning Strategy?
+What are Bulkhead and Rate Limiting patterns?
+How does security work in Microservices?
+How do you handle failures and fault tolerance?
+How does containerization help?
+How do you design a scalable Microservices system end-to-end?
+what is @EnableAutoConfiguration?
+how does spring boot autoconfiguaraition work internally?
+what is @Entity and how mapping workds internally?
+what is @Transactional and its propogation types?
+what is @Valiad and how does valiadation work?
+what is @Bean and how is it different from @Component?
+what are lmabda expressiona and why were they introduced?
+what is functional interface expalin with example?
+difference between stream api and collection?
+how does map() vs flatmap() work?
+what is optional and how does it prevent nullpinterexception?
+difference between forEACH AND peek()?
+what are method reference types?
+How does filter() work in Stream?
+What is a parallel stream, and when should we not use it?
+What is the difference between findFirst() and findAny()?
+What is the sliding window technique?
+How does the two-pointer approach work?
+How do you detect a cycle in a linked list?
+Difference between BFS and DFS?
+How do you solve the Two Sum problem using HashMap?
+What is the Divide and Conquer strategy?
+What are greedy algorithms and their limitations?
+What is a trie and where is it used?
+How to find kth largest element using heap?
+Difference between merge sort and quick sort?
+How to solve 0/1 knapsack using DP?
+What is backtracking and when to use it?
+How to perform binary search in rotated arrays?
+How to detect islands in a matrix using DFS?
+Segment tree vs Fenwick tree?
+What is Java Stream API? How is it different from Collections?
+Difference between Stream and parallelStream()?
+Write a program to find all even numbers from a list using streams.
+Find the sum of all numbers in a list using Stream API.
+Find the maximum and minimum value from a list using streams.
+Count the number of elements greater than a given value.
+Group a list of employees by department using Stream API.
+Find the second highest number in a list using streams.
+Partition a list of numbers into even and odd using streams.
+Why does array index start from zero?
+Can we override constructor in Java?
+Constructors cannot be overridden but can be overloaded?
+Difference between size and capacity?
+Why does Java need both int and Integer?
+How does ArrayList grow dynamically if it uses arrays internally?
+What is a REST API?
+What are the core principles of REST architecture?
+What HTTP methods are used in REST API?
+What is the difference between GET and POST?
+What is the difference between PUT and PATCH?
+What is idempotency in REST API?
+What are common HTTP status codes used in REST?
+What is @RequestBody and @PathVariable?
+What is the role of @RequestMapping?
+How does Spring Boot internally handle a REST request?
+How do you implement global exception handling in Spring Boot?
+How do you implement pagination and sorting in a REST API?
+What is content negotiation in REST APIs?
+How do you secure a REST API using Spring Security?
+What is CORS and how do you configure it?
+How do you validate incoming request payload?
+How do you version a REST API?
+What is the difference between 401 and 403?
+How do you design a REST API for high scalability?
+How would you handle rate limiting in a distributed system?
+How do you ensure idempotency in POST request?
+What are REST API design best practices?
+How do you handle API backward compatibility?
+How do you implement JWT authentication in Spring Boot?
+What is an API Gateway and why is it needed?
+How do you handle large file uploads in REST APIs?
+How do you implement centralized logging and monitoring for REST services?
+RestTemplate vs RestClient vs FeignClient
+What problem does Spring Security solve?
+How does Spring Security work internally?
+What is Security Filter Chain?
+What is AuthenticationManager?
+AuthenticationManager vs AuthenticationProvider?
+How does password encoding work? Why BCrypt?
+What is Security Context?
+What is SecurityContextHolder?
+Stateless vs Stateful authentication?
+How does session-based authentication work?
+What is JWT? Why is it stateless?
+Where should JWT be stored? Header vs Cookie?
+How to validate JWT in Spring Security?
+What is a refresh token?
+JWT vs Refresh Token?
+What is CSRF, and why is it enabled by default?
+When should CSRF be disabled?
+CORS vs CSRF?
+What is OAuth 2.0?
+OAuth 2.0 vs JWT?
+What are the fault tolerance mechanisms in Spring Microservices?
+Choreography vs Orchestration?
+What is the Saga Pattern?
+Explain CQRS.
+Database design patterns in Microservices?
+Which Microservices design patterns have you used and why?
+How do Microservices communicate internally and externally?
+Should multiple Microservices share a database? Why or why not?
+What is 12-Factor Methodology?
+Design principles of Microservices?
+Advantages of Microservices over Monolithic Architecture?
+How does Spring manage bean scopes?
+If a Spring bean is singleton and multiple clients access it simultaneously, how does Spring ensure data consistency?
+What are records in Java?
+What are the advantages of records compared to POJO/DTO classes?
+What is the Saga design pattern?
+in which senerios shoulb be the saga pattern be used?
+In which scenarios should the Saga pattern be used?
+Suppose an application contains a cron job. If the application is deployed in multiple instances, the cron job will execute multiple times and cause duplicate data processing. How would you ensure that only one instance executes a cron job?
+Suppose we have two Spring Boot applications A and B, each exposing its own APIs. How would you merge them into a single application with minimal configuration changes?
+If in the future we want to split the same merged application again into two independent applications, how would you design the architecture to support that?
+What are the different ways services communicate in distributed systems?
+Introduce yourself, including your roles and responsibilities
+Which technologies are used as part of the current application for various types of operations?
+What is a ClassLoader, and how does it work? Explain the types of ClassLoaders.
+What is immutability?
+Do you know any existing immutable classes other than String in Java?
+How do you implement an immutable class?
+Define an array with integer values 34, 55, 66, 44, 22. How do you get the third value from the above array?
+Define a LinkedList with integer values 34, 55, 66, 44, 22. How do you get the third value from the above LinkedList?
+Which version of Java are you using in your application development, and why did you choose that version? What are its advantages?
+What are the features introduced in Java 8?
+What are default methods in Java?
+What is the purpose of default methods in Java?
+What is backward compatibility, and how are we achieving it with default methods? Explain with one example.
+What is a functional interface? What are the advantages of functional interfaces, and how do you define one?
+If we declare the @FunctionalInterface annotation at the interface level, which contains a single abstract method, can we call that interface a functional interface?
+ define try catch finally block as below?
+ try{
+ return "one";
+ }catch(Exception e){
+ return "two";
+ }finally{
+ return "three";
+ }
+ now what value will be the returned?
+ when exeption occured from try block logic?
+ when exception not occured from try block logic?
+ what is defualt size of arraylist and when arraylist size will be increased internally while we are adding elements ?
+ what will happen internally while size increased of an arraylist?
+ define an arraylist with intger values 34,55,66,44,22?sum of all values from the above list using stream api?
+ get second highest value from above list with stream api?
+ 
+What HTTP methods have you used so far?
+Difference between PUT and PATCH methods with one example?
+How are you consuming REST APIs from your application?
+What are the methods used in RestTemplate class?
+What are SOLID principles?
+Do you have knowledge of UI technologies?
+Which CI/CD tools are you aware of?
+Which Java version are you currently using in your application?
+What are the major features introduced in Java 21?
+What are virtual threads?
+what is the difference between virtual thread and traditional thread?
+why are virtual thread considered a game changer for multithreaded application?
+what are other important feature available in java 21?
+how does java support functional programming from java 8 onwards?
+how does the java compiler converts lambda expression into bytecode?
+how is the compiler designed to support functional programming without breaking older java version?]
+what is concurrency programming?
+have you implemented concurrency in your projects explain the scnerio?
+how does executor service help achieve concurrency?
+have you used virtual threads ?
+what are virtual threads and how do they work?
+what desing pattern have you implemented in your project?
+given a list of employee with properties id,name,age,gender,salary?
+count male and female employee?
+calculate average salary for male and female employee?
+find the yougest employee in the lsit?
+explain the reduce method in java stream?
+give a reduce operaation determice ehat the output will be 
+sum=intstream.rangeclosed(1,1000).parallel().reduce(10,Integer:sum);
+Tell me about yourself (including experience information, technologies, current roles in the project, day-to-day roles, and responsibilities).
+SOAP Web Services vs REST Web Services. Explain which is better with their advantages and disadvantages from security and performance perspectives.
+Difference between Spring and Spring Boot. Explain use cases and why everyone is using Spring Boot rather than Spring nowadays.
+What are Microservices? Explain the advantages of Microservices with real-time scenarios (performance, scalability, development, and deployment).
+What annotations have you used so far?
+What is @SpringBootApplication annotation? How does it work internally?
+Can we start a Spring Boot application without using @SpringBootApplication annotation?
+What is REST API?
+What are the key characteristics of REST API?
+What is the difference between REST and SOAP?
+What is idempotency in REST API?
+What is the difference between PUT and PATCH?
+What are common HTTP status codes used in REST APIs?
+How do you secure a REST API?
+What is API rate limiting?
+What are the key annotations used to create a REST API in Spring Boot?
+How does Spring Boot support the creation of REST APIs?
+What is the difference between @RestController and @Controller?
+How do you handle exceptions in a Spring Boot REST API?
+What are the different types of API authentication methods?
+How do you implement pagination in a Spring Boot REST API?
+What is an API Gateway?
+Why are we using REST services? Why are REST services popular?
+What is HATEOAS in REST APIs?
+How do you document a Spring Boot REST API?
+api documentation using swagger  

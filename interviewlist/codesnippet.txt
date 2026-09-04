@@ -1,0 +1,25 @@
+How to create an API Gateway?
+What is an API Gateway in Microservices?
+Why do we need an API Gateway in Microservices Architecture?
+BeanFactory vs ApplicationContext?
+What is a REST API?
+A rest api is an architectural style for building web services that use http methods and follow principles like statelessness ,client server separation,and resource based urls.
+What are the key principles of REST?
+What is statelessness in REST?
+What HTTP methods are used in REST?
+What is Dependency Injection?
+dependency injection is a desing pattern where an objects dependencies are provided by an external container instead of being created bt the object itself.
+Why do we need Dependency Injection?
+loose coupling,better testability,easier maintanance,cleaner code.
+
+You have a large list of objects. How would you remove duplicates efficiently?
+How do you handle a NullPointerException in production code?
+How would you implement a thread-safe Singleton class in Java?
+What is @Transactional in Spring?
+What is the default propagation behaviour of @Transactional?
+What are the different propagation types in Spring?
+What is IoC (Inversion of Control)?
+What is DI (Dependency Injection)?
+How does Spring implement IoC?
+Fail-fast vs fail-safe iterators?
+Why does a HashMap key need equals() and hashCode() methods?

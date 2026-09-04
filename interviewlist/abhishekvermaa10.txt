@@ -51,3 +51,86 @@ runnable vs callable interface
 Runnable and Callable are two interfaces used for multithreading in Java. 
 Runnable was introduced in Java 1.0, and Callable in Java 1.5. Runnable does not return any value and cannot throw checked exceptions,
  whereas Callable returns a value and can throw checked exceptions. In Runnable, we override the run() method, and in Callable, we override the call() method
+
+
+abhisek.codelab
+What is Dependency Injection (DI)?
+dependency injection is a desing pattern where instead of a class creating its own dependencies those dependencies are provided from outside.
+
+Why do we need Dependency Injection?
+
+Types of Dependency Injection?
+
+Why is the main method static in Java?
+Static means the method belongs to the class, not to the object.
+JVM calls the main method without creating an object.
+
+
+Spring Boot Application Flow (Architectural):
+Main method executes.
+SpringApplication.run() executes.
+Environment preparation.
+ApplicationContext creation.
+Auto-configuration starts.
+Component scanning.
+Bean creation and dependency injection.
+Embedded server starts.
+Application is ready.
+
+@SpringBootApplication-@SpringBootApplication is the main entry point of any spring boot application.it is a composit annotation that combines multiple annotations into one to simplify configuraion.
+what it actaully includes?
+it internally combines 3 imporatant annotation
+@Configuration-marks the class as a source of bean definations
+@EnableAutoConfiguration-tells spring boot to automatically configure your app based on dependencies in the classpath.
+@ComponentScan-scans the current package and subpackages for components.
+
+What is the difference between CrudRepository and JpaRepository?
+What are Spring Boot profiles?
+What are Spring Boot Actuator(s)?
+What are Spring Boot DevTools?
+What are Spring Boot Starter dependencies?
+What is the Spring Boot CLI?
+What is Thymeleaf?
+Why is Thymeleaf used?
+
+Spring Boot Key Features:
+Auto-configuration, Embedded Server, Actuator, Starter Dependencies, Profiles, Spring Boot CLI, Externalized Configuration, DevTools, No XML Configuration, Spring Initializr.
+
+Spring vs Spring Boot?
+Spring: Spring is a powerful and flexible Java framework that provides many features for enterprise applications.
+Spring Boot: Spring Boot is built on top of Spring to simplify development and reduce boilerplate code and configuration.
+
+Main Stereotype Annotations in Spring?
+Stereotype annotations are special annotations built on top of @Component. They help Spring detect classes and register beans.
+
+Spring Bean Scopes
+Singleton, Prototype, Request, Session, Application, WebSocket.
+
+What is IoC?
+Inversion of Control is a design principle where the control of object creation and dependency management is transferred from the programmer to the framework.
+
+Is @Override mandatory?
+no but it is recommended.
+
+Can we override a static method?
+no
+
+Can we override a final method? -no
+
+Can constructors be overridden? -no
+
+Can a private method be overridden?-no
+
+Why is String immutable in Java?
+
+Can we overload main()?
+yes
+
+Can we have multiple classes in one Java file?
+yes but only one public class.
+
+Why doesn't Java support multiple inheritance for classes?
+
+Why does Java support multiple inheritance through interfaces?
+
+ArrayList vs LinkedList.

@@ -463,3 +463,11 @@ public String hello() {
 }
 
 
+Client uploads a large file through the API. How would you handle this to avoid memory issues?
+
+Imagine you have the same property in both application.properties and application.yml. 
+Both files have different values. Now, when Spring Boot starts, which value will it pick?
+Will it use the one from the properties file or the one from the YAML file?
+
+Imagine you are building an e-commerce application. You have a class called DiscountCalculator. Its only job is to calculate the discount on a product. It is simply a reusable utility class. Notice that this is just a plain Java class. It does not have @Component, @Service, or any other Spring annotation. How do we make Spring manage this class so that we can inject it anywhere using @Autowired?
+

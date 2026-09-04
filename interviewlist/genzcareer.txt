@@ -1453,3 +1453,21 @@ give a list of employee objects use java 8 streams to group them by department a
 where do you see yourself in the next 3 years?
 Are you comfortable with genpacts work culture?
 we sometimes work  client with different timezone?
+
+Can you explain your current project from both the technical and architectural perspectives?
+Can you explain any five Linux/Unix commands?
+You mentioned using DTOs. How do DTOs help improve performance?
+How do you handle files using SFTP?
+What are transaction propagation and isolation levels?
+What is connection pooling?
+Which connection pool properties do we use in application.properties?
+Two different methods are running in parallel and one should not interrupt the other. What would you use and how?
+How does Dependency Injection work with @Autowired, and how does constructor injection improve it?
+How do you create and configure a scheduler?
+How do you write a @Scheduled cron expression?
+How do you write a scheduler properly?
+Write a program to find the second-highest number in an array without sorting.
+How long do you want to work with TCS?
+Have you worked as a team member or as a team lead?
+Would you like to relocate to Pune?
+What are your hobbies?

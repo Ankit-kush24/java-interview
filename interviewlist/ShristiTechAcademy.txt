@@ -269,6 +269,45 @@ why not return objects directly?
 why do we need @Bean?
 
 
+What is an object?
+object is a real work entity.represents physical ,conceptual or software entity.
+
+Difference between Exception and Error
+Difference between Overloading and Overriding
+Difference between Abstract Class and Interface
+
+What is Spring Boot?
+Spring Boot is a framework built on top of the Spring Framework that simplifies the development of Java-based enterprise applications by providing auto-configuration, embedded servers, and minimal configuration.
+
+what are the main features of spring boot?
+The main features of Spring Boot are 
+auto-configuration, 
+embedded servers, 
+starter dependencies,
+production-ready features using Actuator, and 
+minimal configuration without XML. These features help developers build and deploy Spring applications faster and easily.
+
+what is spring boot starter?
+I have used spring-boot-starter-web for REST APIs, spring-boot-starter-data-jpa for database operations, spring-boot-starter-security for JWT/OAuth2 based security, spring-boot-starter-validation for request validation, and spring-boot-starter-actuator for application monitoring.
+
+What is the use of @SpringBootApplication?
+What embedded servers are supported by Spring Boot?
+What is Auto Configuration?
+What is @Autowired?
+What is Spring Boot Actuator?
+What is the use of .yml file?
+What is the use of application.properties?
+How do you build a Spring Boot project?
+What is the use of @Profile?
+What is Spring Boot Starter Parent?
+What is a Bean in Spring?
+How do you connect Spring Boot with a database?
+What is Spring Boot CLI?
+What is @ComponentScan?
+What is @Configuration?
+What is Spring Boot DevTools?
+What is the use of @Value?
+@Putmapping vs @PatchMapping
 
 
 

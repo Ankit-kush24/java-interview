@@ -1,0 +1,27 @@
+What is a Constructor?
+A special method having the same name as that of the class name.
+Does not have any return type?
+
+
+top 10 oops
+What are the different ways to create objects in Java? Which one is the most preferred, and why?
+What is the difference between a class and an object in Java?
+Why do we need to create objects in Java? What is their main purpose?
+Can we access a class variable or call a method without creating an object in Java? If yes, how do we do it?
+What is the role of the new keyword in Java, and where is the memory allocated when we use it?
+
+Use of super keyword:
+It is used to refer to the parent class instance variable.
+It is used to refer to the parent class method.
+It is used to refer to the parent class constructor.
+
+What are the different ways to create objects in Java, and which one is most preferred and why?
+Can we create an object of a class inside the same class constructor? If yes, what will happen at runtime? If no, why
+What is the actual difference between composition and inheritance? If we want to use a class's functionality in another class, why should we prefer a has-a relationship over an is-a relationship?
+If a POJO class implements an interface or extends another class, does it still remain a POJO? What is the thin line between a POJO and a Java Bean?
+How can we create an immutable class in Java, and when do we need it?
+Can we override a static method in Java? If we create a method with the same signature in the child class, what is that concept called, and how does the JVM handle it?
+What are the strict rules for method overriding regarding return types (covariant returns)?
+If a method has two overloaded versions: print(String s) and print(Object o), and we pass null as an argument, which method will be executed and why?
+Both abstraction and encapsulation hide something. If that is true, what exactly does each one hide? Why do we need both, and can one exist without the other? Explain with a real-world Java example.
+Can an abstract class have a constructor? If yes, what is the purpose of it since we cannot instantiate an abstract class anyway?

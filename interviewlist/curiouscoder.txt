@@ -1,0 +1,177 @@
+java 17 features
+1. Pattern Matching for instanceof
+Pattern Matching for switch case
+Sealed Classes
+Records
+5. Enhanced Pseudo-Random Number Generators
+
+How do you disable CSRF in Spring Security?http.csrf(csrf->csrf.disable());
+
+What is CSRF?
+csrf stands for cross site request forgery.
+
+What is PasswordEncoder?
+password encoder is an interface in spring security.that is used to encode and verify password securly.
+never store plain text passwords in the database.always encode them before saving.
+What is SecurityContextHolder?
+securitycontextholder is core class in spring security that holds the security information of the currently authenticated user.
+What is AuthenticationProvider?
+
+what is the differenceece between authehtication and authorization?
+authehtication is the process of verifying the identiy of a user.
+authorization determines what actions the authenticated user is permitted the access.
+what is the difference between basic auth and form login?
+
+what are stateful and stateless authentication mechanism?
+stateful is a mechanism where the server store the authehtication information about the user.
+stateless is a mechanism where the server does not store any session information.
+explain security filter chain?
+explain the strucoitr of jwt token?
+payload :it contians all the data .
+signature:it is used for token validation.
+header :the algorithm to sign the token is defined inside the header.
+What is the state parameter in OAuth 2.0?
+it is used to maintain integrity between the authorization request and callback api.
+What are scopes in OAuth 2.0?
+scope define the level of access/permission that a client application is requesting.
+What is the difference between an access token and an authorization code in OAuth 2.0?
+What is OAuth 2.0 and when is it used?
+What is the difference between @PreAuthorize and @PostAuthorize?
+What is method-level security?
+What is the difference between hasRole() and hasAuthority()?
+What is the difference between roles and permissions?
+Can a JWT token be revoked?A jwt is not revoked automatically after logout or account disablement.
+How can you set an expiry time in JWT?
+What is the difference between symmetric and asymmetric signing?
+How is JWT stateless?
+
+Your API works fine sh 10 users but fails at 1000 users. What could break first?
+
+what are the main features of java?
+what is the difference between jdk ,jre and jvm?
+what are acess modifires in java?
+can a construcotr be private ?yes
+what is the difference abstraction and encapsulation?
+difference between static and non static variables?
+how does intern() work?
+hashset vs treeset?
+can hashmap store key null values?
+hashmap vs hashtable?
+what is concurrenthashmap?
+what happens if there is a try and finally block?
+synchronined method vs synchronined block?
+how to prevent deadlock;
+difference betewen process and thread?
+can we create an object an interface?no.
+can interface have construcot?no.
+what happens if a class does not implemetn all interface methods?
+can a class implement multiple interface?
+what is the diamong problem and how does java handle it?
+how does autoboxing and unboxing?
+what is method hiding?
+can a class be both abstarct and final
+producer consumer problem using thread?
+can static classes be inner classes?
+Difference between Serializable and Externalizable?
+What happens if a class has a non-serializable field?
+How to make a Java class serializable?
+What is serialVersionUID?
+When should you use @PathVariable and when should you use @RequestParam?
+Can we force garbage collection in Java?no.
+How does garbage collection work in Java?
+What are the types of references in Java?
+Difference between System.gc() and Runtime.gc()?
+Difference between static and non-static classes?
+Use cases of inner classes?
+What is the memory structure of JVM?
+What are PermGen and Metaspace?
+What is heap and stack memory?
+How to avoid memory leaks?
+What are the tools to analyze memory usage in Java?
+Difference between static block and constructor?
+Can we override static methods?
+Can main() be overloaded?
+Why is the main method static?
+Find the majority element in an array.
+Check if brackets are balanced in an expression.
+Implement a queue using two stacks.
+Implement a stack using an array.
+Find the first non-repeating character in a string.
+Count the number of even and odd numbers in a list.
+
+prototype desing pattern-it is a desing pattern that allows us to create new objects by copying existing objects.
+---------------------------------------------------------------
+HashMap vs IdentityHashMap
+HashMap:
+HashMap stores data in key-value pairs.
+It uses the equals() and hashCode() methods to compare keys.
+duplicate logical keys not allowed 
+String key1 = new String("Java");
+String key2 = new String("Java");
+
+HashMap<String, Integer> map = new HashMap<>();
+map.put(key1, 100);
+map.put(key2, 200);
+
+System.out.println(map.size()); // Output: 1
+Because key1.equals(key2) is true, the second value replaces the first one.
+
+IdentityHashMap:
+IdentityHashMap also stores data in key-value pairs.
+It compares keys using the == operator (reference equality), not equals().
+duplicate logical keys allowed if different reference.
+String key1 = new String("Java");
+String key2 = new String("Java");
+
+IdentityHashMap<String, Integer> map = new IdentityHashMap<>();
+map.put(key1, 100);
+map.put(key2, 200);
+
+System.out.println(map.size()); // Output: 2
+Because key1 and key2 are different objects in memory, both entries are stored.
+
+HashMap compares keys using equals() and hashCode(), whereas IdentityHashMap compares keys using reference equality (==).
+-------------------------------------------------------
+
+
+
+Why do we need SecurityContextHolder?
+because once a user is authenticated we need a way to access the user details anywhere in the application.
+security context holder store data in threadlocal.
+each request has its own separate security context.
+What is PasswordEncoder?
+
+
+
+1) Abstract class must have only abstract methods. True or false?
+False. Abstract methods can also have concrete methods.
+
+is it compilsary for a class which is declared as abstract to have at least one abstract method?
+Not necessarily. Abstract class may or may not have abstract methods.
+
+the curious coder?
+https://javaconceptoftheday.com/
+
+the curious code-
+@Component-it is a class level annotation which is used to register a class as a spring bean.
+@Bean-it is a method level annotation which is used to register an object as a spring bean.
+@Configuration-it tells spring that this class contains methods with @Bean.
+@ComponentScan-it scans the project tooks out for registered beans.and saves them in the ioc container.
+@Autowired-it performs dependency injection it injects the bean from an ioc container into a field.
+@RestController-it marks a class as a rest api controller where you can defne methods for apis.
+@Requestmapping- it is a class as well as method level annotation whcih maps incoming http reqiuest to a controller or a specific method.
+@Service-it is added on a class where we want to deifne our business logoic.
+@Repository-it is used on the class which interacts with the db where we can define db quieries.
+@Value-it injects values from environement variables or application properties into fields.
+what is dependency injection-
+spring creates objects as beans and stores them in a container called the ioc container.
+whenever we need an object spring automatically injects it from ioc.this is called dependency injection.
+what is the role of @SpringBootApplication?
+it serves as the main entry point of a spring boot application.
+it is a combination of @Configuration,@EnableAutoConfiguration,@ComponentScan.
+explain the differernt bean scopes?
+bean scopes defines how many bean instances spring creates.
+singleton-one instance per application.
+prototype-new instance evry time requested.
+request-one instance per http request.
+session-one instance per user session.

@@ -1,0 +1,479 @@
+top 50 oops
+What is OOPs?
+Write the basic concepts of OOPs.
+What is a class?
+What is an object?
+What is encapsulation?
+What is polymorphism?
+What is inheritance?
+What are manipulators?
+Explain the term constructor.
+Define destructor.
+what is an inline function?
+what is a virtula function?
+what is a friend function?
+what is function overloading?
+what is operator overloading?
+what is an abstract class?
+what is a ternary operator?
+what is the use of finalize method?
+what are the different type of arguments?
+what is the super keyword?
+what is method overriding?
+what is an interface?
+what is exception handling?
+What are tokens?
+What is the main difference between method overloading and method overriding?
+Class vs Object?
+What is abstraction?
+What are the access modifiers?
+What are sealed modifiers?
+How can we call the base method without creating an instance?
+what is the difference between new and override?
+what are the various types of constructors?
+what is early and late binding?
+What is a this pointer?
+What is the difference between a structure and a class?
+What is the default access modifier in a class?
+What is a pure virtual function?
+What are all the operators that cannot be overloaded?
+What is dynamic or runtime polymorphism?
+Do we require a parameter for constructors?
+What is a copy constructor?
+What does the keyword virtual represent in a method definition?
+Whether a static method can use non-static members?
+What are a base class, subclass, and superclass?
+What is static binding and dynamic binding?
+How many instances can be created for an abstract class?
+Which keyword can be used for overloading?
+What is the default access specifier in a class definition?
+Which OOP concept is used as a reuse mechanism?
+Which OOP concept exposes only the necessary information to the calling functions?
+Encapsulation
+
+Heap Memory in Java
+Heap memory is the runtime memory area where all objects and arrays are stored. It is the largest memory area managed by the JVM and is automatically cleaned up by the Garbage Collector.
+
+What is heap memory?
+Whenever you create an object using the new keyword, Java allocates memory for that object in the heap.
+
+Example:
+class Student {
+int id = 101;
+String name = "Alice";
+}
+
+main() {
+Student s = new Student();
+}
+
+What happens?
+A Student object is created in the heap.
+The reference variable s is stored in the stack.
+s points to the object in the heap.
+
+Why do we need heap memory?
+Objects usually need to exist longer than a single method call. If objects were stored in the stack, they would disappear as soon as the method ended.
+
+
+What is stored in heap?
+Heap stores:
+* Objects
+* Arrays
+* Instance variables
+* Object data
+
+Advantages of heap memory:
+
+* Supports dynamic object creation.
+* Shared across threads.
+* Automatically managed by the Garbage Collector.
+* Can store large and complex object graphs.
+
+Disadvantages:
+
+* Access is generally slower than stack memory.
+* Poor memory management can lead to high memory usage.
+
+How is the String Constant Pool related to heap memory?
+
+Why does Java create only one object?
+
+What is the String Constant Pool?
+
+Why was it moved from PermGen?
+
+Better memory management and garbage collection.
+
+Does new String("Java") use the pool?
+
+Why use the pool?
+Are pooled strings garbage collected?
+What does intern() do?
+
+
+Stack Memory — Stack memory is a part of the JVM memory that stores method execution information.
+
+What is stored in stack memory?
+
+Local variables, method parameters, reference variables, and method call information.
+It does not store objects; objects are stored in the heap.
+
+What is Spring Boot, and how does it differ from the Spring Framework?
+
+Explain the @SpringBootApplication annotation.
+
+What are the most important Spring Boot annotations?
+
+How does Spring Boot auto-configuration work?
+
+How do you externalize configuration in Spring Boot?
+
+@Value vs @ConfigurationProperties
+
+How do you handle different environments?
+
+How do you validate configuration properties?
+
+What is Spring Data JPA, and how does it work?
+
+What are the different types of relationships in JPA?
+
+How do you handle transactions in Spring Boot?
+
+How do you secure a Spring Boot application?
+
+What are the different authentication mechanisms in Spring Security?
+
+How do you implement JWT authentication?
+
+
+Abstraction in Java
+Abstraction means hiding implementation details and showing only essential features to the user.
+In simple words — you show what an object does, not how it does it.
+
+Real-life example — Think about a car.
+You press the accelerator — the car moves.
+You press the brake — the car stops.
+
+You don't know:
+* How the engine works.
+* How fuel is injected.
+* How internal systems function.
+Java achieves abstraction using abstract classes and interfaces.
+
+
+Why is abstraction used?
+
+Can a class have multiple constructors?
+
+Can we create an object for an abstract class? No.
+
+Can an abstract class have constructors? Yes.
+
+Can a final method be overridden? No.
+
+Can we declare an interface method as static? Yes.
+
+What happens if we write a return statement after throw?
+
+Can a constructor be inherited? No.
+
+Can we override a private method? No.
+
+Can we overload a main method?
+
+Can an abstract class have static methods? Yes.
+
+What is method overriding?
+
+What is dynamic method dispatch?
+
+What is a covariant return type?
+
+Can we override the main method? No.
+
+What happens if the superclass and subclass both have static methods with the same signature?
+
+What is the use of the instanceof operator?
+
+Can a method be both static and overridden? No.
+
+What is runtime polymorphism?
+
+What is compile-time polymorphism?
+
+What is constructor chaining?
+
+Can a class be both final and abstract? No.
+
+Can we have a try block without catch or finally? No.
+
+Can an interface contain constructors? No.
+
+Can abstract classes contain methods? Yes.
+
+Can we have an abstract method in a non-abstract class? No.
+
+Can we overload a method by changing only the return type? No.
+
+Can an interface extend a class? No.
+
+
+What is the real-time use of abstraction?
+Can we create an instance of an interface using an anonymous class? Yes.
+interface Greet {
+void sayHello();
+}
+
+class Test {
+main() {
+Greet g = new Greet() {
+public void sayHello() {
+System.out.println("Hello");
+}
+};
+g.sayHello();
+}
+
+}
+
+
+what is the difference between interface and abstract class?
+can we cast subclass object to superclass types? yes
+can we cast superclass to subclass directly? only with explicit casting and valid instance.
+what is method hiding?
+what happens if subclass construcor does not call?
+what is the diamond problem why is it not in java?
+how to access parent class method if overriden?
+class Parent{
+void show(){System.out.println("parent")}
+}
+class Child extends Parent{
+void show(){
+super.show();
+System.out.println("Child")
+}
+}
+can we have sattic class in java?
+can interface contain default methods?yes
+can we call construcotr explicitely ?no
+what is tight coupling in oops?
+what is loose coupling ?
+can static block throw exception?
+can a final variables be changed in constructor?yes
+what are some methods of object class?
+what is the use of toString()?
+what does eqauls() merthods do?
+what is hashCode()?
+can clone() be used without implementing clonable ?no.
+what is the use of final keyword?
+what is the use of static keyword?
+what are static block used for?
+== vs equals()
+what is method overriding?
+can we override a static method?no.
+can we override a final method ?no.
+what is the use of super keyword?
+what is the use of this keyword?
+can we override a private method?no
+can we overload manin method?yes
+what is singletondesign patter?
+what is factory desing pattern?
+what is immutable class in java?
+can we inherit constructor in subclass?
+can we make construcotor final?no
+what is the real time use of abstract class?
+what is composition ?
+what is aggregation in java?
+can abstract class have both abstract and concrete method?yes
+what is a pure abstract class?
+whta happens if we dont override abstract method in subclass?compilation error
+can we declare class as both abstract and final?
+what is default access modiefier?
+can abstract class extend concrete class?yes
+can a class implement multiple interface?yes
+can interface extend multiple interfaces?yes
+what is lisku subtittution principle?
+what is open closed principe?
+what is dependency injection?
+difference between deep copy and shallow copy?
+can we use interface as refernece type?
+real world example of polymorphism?
+real world use of encapsulation?
+can interface contain construcotr or instance block?no
+what are the different types of tests in spring boot?
+what are spring boot test slices?
+how do you test security in spring boot?
+what is psirng boot and why is it used?
+what are the main features and advantages of using spring boot for application developement?
+what are spring boot starter?
+how to create a spring boot application
+how to configure spring boot using application.properties?
+application.properties vs application.yml?
+how to externalize configuration in spring boot?
+what is @Value used for?
+what are spring profiles and how do they work?
+how create a simple restful api using spring boot?
+why isnot HashMap.get() always 0(1)?
+why does Hashset use hashmap internally?
+how does concurrenthashmap ensure thread safety without locking the entire map?
+what happens if you use a mutable object as a key in hashmap?
+why does not arraylist implement cloanable properly?
+why is vector slower than arraylist?
+collections.synchronizedlist vs copyonwritearraylist?
+why does priorortyqueue not maintain insertion order?
+how can you iterate over a map while modifying it?
+how does weakhashmap help in memory management?
+how does spring boot run without an external server?
+how do you externalize configuration in spring boot?
+how does profile management work?
+how do you enable asynchronous excecution
+how to craete a custom starter?
+what is spring boot cli?
+what is the defualt logging framework?
+how to secure actuator endpoints?
+what are banner customizations?
+how to disable auto-configuration?
+what is commond line runner?
+what is a spring bean?
+explain spring bean life cycle?
+what is @Postconstruct?
+what is initializing bean?
+what is disposable bean?
+what are bean scopes?
+what is singleton scope?
+what is prototype scope?
+how to define custom init/destroy methods?
+difference between @Postconstruct and init method?
+lifecycle callback sequence?
+what is beanfactorypostporcessor?
+what is bean post processor?
+what is lazy initialization?
+what is eager initailization?
+what is depends on?
+how to disable bean overriding ?
+how are prototype beans destroyed?
+how do you debug bean lifecycle?
+difference between singleton and prototype in lifecycle management?
+what is spring aop why do we use it?
+what is a cross cutting concern with a real example?
+what is an aspect?
+what is a join point?
+what is a pointcut?
+what is advice in aop?
+explain each of advice with real world use case?
+what weaving?
+how does spring aop work internally?
+spring aop vs aspectj?
+why is aop useful in microservices?
+can we apply aop on private methods?
+what problems occur when using aop incorrectly?
+how to enable aop in spring boot?
+how do you log exception time using aop?
+how do you handle exception using aop?
+can aop modify method return values?
+how does proxy creation impact performace?
+can aop work on final classes?
+real world scnerio where you used aop?
+what is spring securty?
+what are authentication and authorization?
+how does spring security work internally?
+what is the security filter chain?
+what is userdetails service?
+why do we need passwordencoder?
+what is csrf protection?
+what is the difference between stateless and stateful authehtication?
+how to secure apis using jwt?
+what is oauth2 and oidc?
+how to create a custom login page?
+how do you handle role based authorization?
+what is method level security?
+what is seciruty context?
+what is the difference between websecurity confifure adapter and new security approach?
+deprecated the old websecurityconfigureadapter approach.now we use bean based lambda configuration.
+what is exception translation filter?
+how does spring security handle session?
+what are granted authorities?
+mention a real world scnerio where you used spring securoty?
+what is spring data jpa?
+what is an entity in jpa?
+what is the importance of @Id and @GeneratedValue?
+crudrepository vs jparepository vs paging and soritng repository?
+how does spirng data jpa derive queires from method names?
+what is the @Query annotation and why do we need it?
+jpql vs sql?
+what is entitymanager? 
+
+how to handle http request method like get post put delete in spring boot?
+what is the use of @RequestBody and @ResponseBody in spring boot?
+how do you handle query parameters in spring boot?
+how to connect spring boot with a database?
+how can you configure and use multiple databases in a spring boot application?
+what is spring data jpa?
+what is @Entity annotation?
+what is @Repository annotation in spring boot?
+explain the @Transactional annotation in spring boot?
+how many ways can we implement security in spring boot?
+how to configure spring security in spring boot?
+what is @EnableWebSecurity annotation
+how do you handle authentication and authorization in spring boot?
+what is basic authentication in spring boot?
+how to configure form based login in spring boot?
+what is @springboottest used for?
+how do you test a rest controller in spring boot?
+what is @MockBean used for in spring boot?
+how to test service layers in spring boot?
+how to create a custom spring boot starter?
+how to confifure spring boot to use a custom port?
+what is spring boot support for microservices?
+what is spring cloud and how does it integrate with spring boot?
+how to use spring boot with eureka with service discovery?
+what is spring cloud config?
+how to integrate spring boot with kafka?
+how does spring boot support docker?
+how schedule tasks in spring boot?
+what is spring boot default logging framework?
+how do you enable ssl in spirng boot?
+what is the role of @ComponentScan in spring boot?
+what is spring boot why is it used?
+what is @Spring bootapplicatiion?
+what is auto-configuration in spring boot?
+what are spring boot starter dependencies?
+what is spirng boot devtools?
+how does spring boot handle dependency injection?
+what is the default server in spring boot?
+how do you create a rest api suing spring boot?
+what is application.properties and application.yml in spring boot?
+spring vs spring boot?
+what is the purpose of @RestController?
+what is a spring boot profile?
+how do you connect spring boot to a database?
+what is the use of command line runner?
+what is spring boot?
+how does spring boot differ from spring framework?
+what are the key features of spring boot?
+what is spring boot starter?
+what is spring boot auto-configuration?
+what is the purpose of the application.properties or application.yml?
+what are spring boot actuators?
+what is spring boot devtools
+restcontorleler vs contorller
+how to handle exceptions in spring boot?
+what is the difference between @SpringBootApplication and @EnableAutoConfiguration
+how does spring boot integrate with databases?
+what is spirng boot default embeded server how can we change it?
+how do you create a spring boot application?
+what are spring profiles
+what is the purpose @ConfigurationProperties
+what is spring boot security?
+how to enable cors in spring boot?
+how do you schedule task in spring boot?
+what is spring boot actuaotr?
+explain the internal workign of spring boot?
+what does the @Spring boot Application do internally?
+is it possible to change the port of the embeded tomcat server in spring boot?
+what is the default port of tomcat in spring boot?
+what are spring boot actuator endpoints?
+how can we secure the actuator endpoints?
+what is spring profiles how do you start an application with a certain profile?

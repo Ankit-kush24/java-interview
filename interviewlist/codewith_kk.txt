@@ -1,0 +1,504 @@
+codewith_kk
+what is spring boot?
+spring boot is a framework built on top of the spring framework that simplifies java application development.
+it reduces the need for complex configuration and setup.
+it helps developers build production ready application quickly with minimal effort.
+
+what is spring boot used?
+spring boot is used to speed up application development by reducing boiler plate code and manual configuration.
+it provides built in tools and configuration that make development easie and more effiecient.
+it is widely used for building web application ,rest api,microservices,and enterprice applications.
+
+what is the difference between spring and spring boot?
+spring requires more manual configuration and setup using xml files or java configuration.
+spring boot provides automatic configuration based on the project dependencies and sensible default settings.
+spring boot makes development faster by redusing setup effort ,boilerplate code and configuration.
+
+what are the main features of spring boot?
+spring boot provides autoconfiguration to reduce manual setup work.
+it includes starter dependencies that simplify dependency management.
+it offers embeded servers so applications can run without external deployment.
+it provides production reaady features like monitering logging ,lealth check,and metrics.
+
+what is autoconfiguration in spring boot?
+autoconfiguaration automatically sets up application components based on the dependencies present in the project.
+it reduces the amount of configuration developers need to write manually.
+it helps applications start faster with sensible default settings.
+
+what are starter dependencies in spring boot?
+starter dependencies are preconfigured dependency packages provided by spring boot.
+they help developers add required libraries with a single dependency.
+this reduces dependency conflicts and simplifies project setup.
+
+what is an embeded server in spring boot?
+An embeded server is a built in web server included inside the application.
+spring boot commonly uses tomcat jetty undertow as embeded servers.
+this removes the need to deploy applications separately on external servers.
+
+what is application.properties in spring boot?
+application.practices is a configuration file used to define application settings.
+it stores values like database connection details server port and logging configuration.
+it helps manages application setting in one central place.
+
+what is spring initializer?
+spring initializer is a web tool provided by sptring to generate spring boot projects.
+it helps to create a project skeleton with required dependencies and project structure.
+it saves time and simplifies the initaial setup of a spring boot application.
+
+what is the purpose of @SpringBootApplication?
+SpringBootApplication is a conbination of @Configuration,@EnableAutoConfiguration,@ComponentScan annotations.
+it is used on the main class to enable spring boot autoconfiguaraition.
+it also scans the base package for components and configurations.
+
+what is dependency injection in spring boot?
+dependency injection is a desing pattern where spring provides the objects that a class needs.
+spring boot uses di to manage and inject dependencies automatically.
+it reduces coupling and makes the application more modular and testable .
+
+what is the purpose of @RestController?
+@RestController is a stereotype annotation used to create restful webservices.
+it is a combination of @Controller and @ResponseBody.
+it indicates that the class handles http requests and returns data in the response body.
+
+what is the purpose of @Service annotation?
+@Service is a stereotype annotation used to mark a class as a service layer component.
+it indicates that class contains business logic.
+it is s specification of @Component.
+
+what is the purpose of @Repository annotation?
+@Repository is used to mark a class as a data layer access component.
+it indicates that the class is responsible for database operaation.
+it also enables exception translation for database related exception.
+
+what is the purpose of @Configuration annotation?
+@Configuration is used to indicate that a class contains spring configuration.
+the class can define one or more @Bean methods to create and manage beans.
+it is an alternative to xml based configuration.
+
+what is the purpose of @Bean annotation?
+@Bean is used in a @Configuration class to define a bean.
+it tells spring to create an object of the methods return type and manage it in the application context.
+it is useful when third party classes cant be annotated with spring annotations.
+
+what is the purpose of @Autowired annotation?
+@Autowired is used to automatically inject dependencies into a bean.
+it can be used on constructors,fields or setter methods.
+it tells spring to resolve and inject the required bean from the application context.
+
+what is the purpose of @Value annotation?
+@Value is used to inject values from properties file or environement properties.
+it can be used on fields constructor parameter or setter methods.
+it helps externalize configuration by mapping property values to variables.
+
+what is the purpose of @RequestMapping annotation?
+@RequestMapping is used to map http requests to handler mathods in a controller.
+it can be applied at the class level or method level.
+it supports various http methods like GET,POST,PUT,DELETE etc.
+
+what is the purpose of @PathVariable annotation?
+@PathVariable is used to extract values from uri path.
+it is typically used in restful web services.
+it helpds map dynamic url segmaents to method parameters.
+
+what is the purpose of @RequestParam annotation?
+@Request param is used to extract query parameter from the requets.
+it binds the value of a request paramter to a method parameter.
+it can also be used to set default values for optional parameters.
+
+what is the purpose of @RequestBody annotation?
+@RequestBody is used to bind the http request body to a method parameter.
+it is commonly used in post put and patch requests.
+it automatically convert the requets body (usually json) into a java object.
+
+what is the purpose of @ResponseBody annotation?
+@ResponseBody is used to return the response directly in the body.
+it converts the returned object into json or xml and sends it to the client.
+it it often used in combination with @Controller.
+
+what is the purpose of @CrossOrigin annotation?
+@CrossOrigin is used to enable cross origin resource sharing.
+it allows requests from different domains to access the applications resources.
+it can be applied at the class level or method level.
+
+what is the purpose of @ExceptionHandler annotation?
+@ExceptionHandler is used to handle exceptions in a centralized way.
+it can be used in a controller or in a @Controller Advice class.
+it maps specific exceptions to custom response messages or status code.
+
+what is the purpose of @ControllerAdvice annotation?
+@ControllerAdvice is used to define global exception handling and other cross cutting concern.
+it can be used to handle exceptions ,bind data,or modify responses globally.
+it helps reduce code duplication accross multiple controllers.
+
+what is the purpose of @Profile annotation?
+@Profile is used to define environement specific beans.
+it allows you to register beans only for certain profiles dev,test ,prod.
+it helps manage different configurations for different environement.
+
+what is the purpose of @Conditional annotation?
+@Conditional is used to register a bean only if a certain condition is met.
+it is a part of springs conditional configuration.
+it helps create flexible and dyanamic configurations based on custom logic.
+
+what is the purpose of @Transactional annotation?
+@Transactional is used to manage database transactions.
+it ensures that a series of opearations either success or fail as a whole.
+it can be applied at the service layer or method level.
+
+what is the purpose of @EnableAutoConfiguration annotation?
+@EnableAutoConfiguration is used to enable spring boots autoconfiguaraition.
+it tells spring boot to automatically configure the application based on the dependencies in the classpath.
+it is usually addded implicitly by @SpringBootApplication.
+
+what is the purpose of @ComponentScan annotation?
+@ComponentScan is used to specify the base packages to scan for components.
+it helps spring find and register @Component @Service @Repository @Controller.
+it is optional with @SpringBootApplication as it already includes default component scaning.
+
+what is the purpose of @Entity annotation?
+@Entity is used to mark a class as a jpa entity.
+it indicates that the class is mapped to a database table.
+it is used in the persistence layer with spring data jpa or hibernate.
+
+what is the purpose of @Table annotation?
+@Table is used to specify the table and other related properties for an entity.
+it can be used when the entity name and table name are different.
+it can also define schema catalog,and unique constrant for the table.
+
+what is the purpose of @Id annotation?
+@Id is used to mark a field as the primary key of an entity.
+it uniquely identifies each record in the database table.
+it is used in combination with other annotations like @GeneratedValue.
+
+what is the purpose of @GeneratedValue annotation?
+@GeneratedValue is used to specify the strategy for primary key generation.
+it works with @Id to automatically generate the value for the primary key.
+common strategies include identity sequenece table auto.
+
+what is the purpose of @Column annotation?
+@Column is used to map a field to a column in the database table.
+it can be used to customize column properties like name lenght nullable unique etc.
+it is optional if the field name and column name are the same.
+
+
+what is the purpose of @Repository annotation?
+@Repository is used to mark a class as a repository (data access layer).
+it idicated that the class is responsible for interating with the database.
+it also enables spring to translate database exceptions into spring dataAccessException hierarchy.
+
+what is the purpose of @Query annotation?
+@Query is used to define custom sql or jpql queries in jpql methods.
+it allows wrting custom queries instead of using derived query methods.
+it can be used with named parameters for dyanmic values.
+
+what is the purpose of @Modifying annotation?
+@Modifying is used with @Query for update delete and insert operation.
+by default @Query is for select queries this annotation enables modifying queries.
+is should be used with @Transactional to ensure the changes are commited.
+
+what is the purpose of @Param annotation?
+@Param is used to bind method parametes to named parameters in a query.
+it is used with @Query for named parameter binding.
+it helps improve readability and maintainability of custom queries.
+
+what is oops?
+oops (object oriented programming system) is a programming paradigm based on the concept of objects and classes.
+
+why use oops?
+reusability-reuse existing code into new programs.
+security-data hiding protects your data.
+maintainability-easy to update and maintain code.
+scalabilty-easy to extend and build large systems.
+
+class & object
+class-A class is a blueprint or template for creating objects.
+it defines properties(variables) and behaviors(methods).
+memory is not allocated when a class is created.
+
+object-oriented
+an objects is an instance of a class.
+memory is allocated when a object is created.
+objects can access class variables and methods.
+
+A class is a blueprint an object is the real world entity.
+
+what is abstraction-abstraction is the process of hiding the implementation details and showing only the essential features of an object.
+
+ways  to achieve abstraction in java?
+1.abstarct class-can have abstarct and non abstract methods.
+can have variables construcors and methods.
+achieved using abstract keyword.
+it provides partail abstraction.
+can have both abstarct and non abstarct methods.
+can have construcors.
+a class can extend only one abstarct class.
+
+2.interface-All methods are abstract bydefault.
+all variables are public static final by defualt.
+achieved using interface keyword.
+it is 100% abstraction
+all methods are abstract by defualt.
+no construcors
+A class can implement multiple interfaces.
+
+encapsulation-wrapping data and methods into a single unit.
+what is encapsulation-encapsulation is the concept of bundling the data(variables) and methods that operate on the data inot a sinle unit (class) and restricting access to some of an objects components.
+benefits- 
+data security-protects data from unauthorized access.
+data hiding -hides internal implementation.
+better control-we can control how data is accessed and modified.
+
+how to acheived?
+by using access modifiers.
+private-restricts access within the class.
+default-accessible within the same package.
+protected-accessible within the same package and subclasses.
+public -accessible from anywhere.
+
+inheritance-
+one class aquuires the properties and methods of another class.
+types of inheritance
+sinle ,multilevel,hierarchical,multiple,hybrid.
+
+polymorphism-one name many forms.
+polymorphism allows methods to do different things based on the object that invokes them.
+types of polymorphism-
+mehtod overloading-same method name different parameters
+methid overriding-same method name and parameters different implementation.
+
+hashing vs encryption
+hashing-hashing is the process of converting data into a fixed size string of characters 
+smaller storage(fixed size)
+one way process cant be reversed
+no key is required.
+same input always produces the same hash.
+example-sha-256,sha-3,md5 bcrypt ,argon2.
+
+Encryption-Encryption is the process of converting data into unreadable format(ciphertext) using a key.
+larger storage(variable size).
+two way process can be reversed with the right key.
+key is required for encryption and decryption.
+same input may produce different cypertext.
+example-aes,rsa,des,3des,chacha20.
+
+authehtication vs authorization.
+authehtication is the process of verifying the identity of a user or system.
+verifies the identity of the user.
+
+authorization-authorization is the process of determining what an authehticated user is allowed to access or do.
+verifies the permission and access rights of the user.
+
+spring vs spring boot?
+Spring is comprehensive java framework for building enterprice applications.
+requires manual configuraions xml or java configuration.
+requires external servers tomcat jetty.
+add and manage dependencies manually.
+slower due to manual setup and configuration.
+more boilerplate code and setup.
+requires additional setup for production.
+
+spring boot-spring boot is built on top of spring to simplify developement and make it production ready.
+auto configuration with minimal setup.
+comes with embeded server tomcat jetty undertow.
+uses starter dependencies for easy dependency management.
+faster development with convention over configuration.
+very little to no boilerplate code.
+includes production ready features actuators metrics,health check.
+
+What is idempotency in a REST API?
+What is API rate limiting?
+What is throttling?
+What is the difference between an API Gateway and a Load Balancer?
+What is CORS?
+What is API versioning?
+What is the difference between a URI and a URL in REST APIs?
+What is content negotiation?
+What is a MIME type (Content-Type)?
+What is the Accept header?
+What is pagination in an API?
+What is the difference between offset pagination and cursor pagination?
+What is API caching?
+What is an ETag in a REST API?
+What are webhooks?
+What is the difference between synchronous and asynchronous API calls?
+What are HTTP status codes in REST APIs?
+What is authentication?
+What are request and response in a REST API?
+What is HATEOAS in REST APIs?
+What is the difference between an ID and a resource in a REST API?
+What is the difference between PUT and PATCH?
+What is the purpose of HTTP methods in REST APIs?
+What is API documentation?
+What is API testing?
+What is Java?
+Why is Java platform-independent?
+What are the JVM, JRE, and JDK?
+What is the difference between the JVM, JRE, and JDK?
+Why are OOP principles important in Java?
+What is a class?
+What is an object?
+What is a constructor, and what are its types?
+What is method overloading and method overriding?
+What is the difference between an array and an ArrayList?
+what is a package?
+A package is a collection of related classes and interfaces.it helps in organizing code.it avoids naming conflicts.
+what is an api?
+api stands for application programming interface.
+it is a set of rules that allows different software applications to communicate with each other.
+it acts as a bridge between two systems.
+apis save developement time.
+apis define how requests and responses should be structured including methods data formats and authentication rules.
+
+what is rest api?
+rest stand for represnetation state trnasfer.
+rest api use http methods for communication such as get post put delete.
+rest apis are stateless meaning the server does not remember previous client requests.
+rest apis usually return data in json format as it is lightweight and easy to read.
+
+what is the difference between api and rest api?
+API is a general concept while rest api is a specific type of api.
+an api can use different protocals like http soap graphql,websocket.
+rest api follows rest architectural principles.
+all rest apis are apis but not all apis  are rest apis.
+
+what are http methods in api?
+get- used to retive data from the server.
+post-used to send new data to the server .
+put-used to update and entire exisiiting resource.
+patch-used to partial update data.
+remove - used to remove data.
+options-used to check allowed methods.
+head-similar to get but returns headers only.
+
+what is the difference between get and post?
+get-used to retrive data from server.
+data is sent in url as query parameters.
+less secure for sensitive data.
+can be cached.
+limited data size.
+
+post-used to send or create data on server.
+data is sent in request body.
+more secure than GET.
+not cached by default.
+supports larger data size.
+
+what is json?
+json stands for java script object notation.
+it is a lightweight format used for data exchange.
+it is easy for humans to read and machines to parse.
+rest apis commonly use json for request and response data.
+json stores data as key value pairs.
+
+what is an endpoint in api?
+an endpoint is a specific url where an api can be accessed.
+it represnets a resource or operation.
+clients send requests to endpoints.
+different endpoints perorm different tasks.
+
+what is stateless in rest api?
+stateless means the server does not store client session information.
+every request msut contain all necessary information.
+each request is independent of others.
+this improves scalability and performance.
+server becomes easier to maintain.
+
+what is http status code?
+http status code are server responses indicating the result of a request.
+they help clients understand whether the request was successful,redirected has an error or failed.
+status codes are grouped into 5 chatagories.
+they are an important part of api communication.
+
+what is the difference between 401 and 403?
+401 unauthorized-user is not authehticated.
+login or token is required
+authehtication failed or missing.
+the client must authenticate first.
+
+403 forbidden-user is authehticated but lacks permission.
+server understood the request but denies access.
+user does not have rights to access the resource.
+
+What is the difference between authentication and authorization?
+What is the difference between PUT and PATCH?
+What is CRUD in an API?
+What is API versioning, and why is it important?
+What is the difference between SOAP and REST APIs?
+What is JWT (JSON Web Token)?
+What is OAuth 2.0?
+What is CORS?
+What is rate limiting?
+What is pagination in an API?
+What is idempotency in an API?
+What is API testing?
+What is Swagger/OpenAPI?
+What is an API key?
+What is API throttling?
+What is API caching?
+What is API rate limiting, and why is it important?
+What is a Web API?
+What is API versioning, and why is it used?
+What is CORS in APIs?
+What is an API Gateway?
+What is the difference between throttling and rate limiting?
+What is API caching?
+What is API idempotency?
+What are the different types of API testing?
+What is API monitoring?
+
+Difference between HAVING and WHERE?
+
+What is CROSS JOIN?
+
+Difference between DELETE, DROP, and TRUNCATE?
+
+HTML stands for HyperText Markup Language. It is the standard language used to create the structure of web pages.
+
+A table is a collection of related data organized in rows and columns in a relational database.
+
+A primary key is a column that uniquely identifies each record in a table.
+
+A foreign key is a column in one table that refers to the primary key in another table.
+
+Indexes — An index is a data structure that improves the speed of data retrieval operations on a database table.
+
+Normalization — It is the process of organizing data in a database to reduce redundancy and improve data integrity.
+
+Interning the String Pool 
+The intern() method returns the canonical representation of the string in the String Pool. If it does not exist, it adds the string to the pool.
+
+
+What is Docker?
+Docker is a platform that packages your application and everything it needs to run into a container.
+
+What is Docker used for?
+Docker helps developers build, ship, and run applications consistently across any environment.
+
+Where can you use Docker?
+Cloud deployments — Deploy apps on AWS, Azure, Google Cloud, and more.
+Development — Create consistent development environments for every team.
+CI/CD pipelines — Automate building, testing, and deploying applications.
+Microservices — Run multiple services independently and efficiently.
+Testing — Test applications in isolated and clean environments.
+
+
+Why do developers love Docker?
+Faster development, consistent environments, better collaboration, highly portable, scalable solutions.
+
+What is a container?
+A container is a lightweight, standalone package that contains everything needed to run an application.
+
+How does Docker work?
+Docker follows a simple process to take your code from one machine to anywhere.
+
+Benefits of Docker?
+Docker makes development, testing, and deployment easier, faster, and more reliable.
+
+Docker vs Virtual Machine
+Docker containers are lightweight, fast, and efficient compared to virtual machines.
+
+Popular Docker commands:
+docker build — Builds a Docker image from a Dockerfile in the current directory.
+docker run hello-world — Runs a container from an image. hello-world is a sample image.
+docker ps — Lists all currently running containers.
+docker images — Lists all Docker images available on your system.

@@ -52,4 +52,16 @@ your spring boot application starts throwing outofmemoryerror after running fine
 your api response time jumps from 200ms to 6 s without any code changes where do you start?
 database cpu is only 20% but hikaricp reports connection is not available what could be wrong?
 your application works locally but return 503 only in production what are your first three checks?
+
+Explain the SOLID design pattern.
+What is JWT security, and how have you used it in your project?
+Streams vs flatMap?
+What is the difference between @Primary and @Qualifier?
+Explain the bean lifecycle.
+Explain the Maven lifecycle.
+What do you know about ISO 8583?
+Difference between IoC and Dependency Injection?
+What is Dependency Injection and its types?
+What is Spring Profile, and how did you use it?
+
  
