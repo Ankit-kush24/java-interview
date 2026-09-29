@@ -502,3 +502,205 @@ docker build — Builds a Docker image from a Dockerfile in the current director
 docker run hello-world — Runs a container from an image. hello-world is a sample image.
 docker ps — Lists all currently running containers.
 docker images — Lists all Docker images available on your system.
+
+codewith_kk
+what is hibernate?
+hibernate is an open source java orm framework.
+it maps java classes and objects to database tables and rows.
+it reduces the amount of jdbc and sql boilerplate code.
+it provides features like caching ,lazy loading ,dirty checking,and transaction management.
+
+what is orm?
+orm stands for object relational mapping.
+it is a technique for mapping objects to relational database data.
+it maps java classes to database tables and java objects to table rows.
+it allows developers to work with database data using java objetcs instead of writing sql queries manually.
+
+what is session factory in hibernate?
+session factory is an interface in hibernate.
+it is heavy weight and created once per database.
+it acts as a factory for creating session objects .
+it is thread safe and should be closed when the application is shut down.
+
+what is session in hibernate?
+session in an interface that provides a connection between the application and the database.
+it is light weight and not thread safe.
+it used to perform crud operations.
+it has a first level cache called persistence context.
+
+what is persistence context in hibernate?
+persistence context is a first level cache in hibernate.
+it stores the managed entity objects within a session.
+it ensures that the same object is returned for multiple databse requests in a session.
+it helps in tracking changes made to entities and synchronizes them with the database.
+
+what is lazy loading in hibernate?
+lazy loading is a desing pattern used to delay the loading of an object until it is needed.
+it is enabled by default for associations in hibernate.
+it improves performance by reducing unnecessary databse calls.
+if the associated object is not accessed it is never loaded from the database.
+
+what is dirty checking in hibernate?
+dirty checking is a feature in hibernate that detects changes made to an entity.
+hibernate automatically compares the in memory state of the entity with the databse state.
+if any changes are found hibernate automatically synchronizes them with the databse during flush.
+this reduces the need to manually update the entity in the database.
+
+what is transaction maangement in hibernate?
+transaction management ensures data consistency and integrity.
+hibernate supports both programatic and declarative transaction management. 
+it integrates with jdbc transactions to ensure acid properties .
+transactions are committed if everything is successful otherwise rolled back in case of an error. 
+
+what is caching in hibernate?
+caching is a mechanism to store frequently accessed data in memory.
+hibernate provides first level cache(session level)and second level cache (session factory level).
+it reduces the number of database hits and improves application performance.
+cached data is reused for the same requests within the cache scope.
+
+what is n+1 select problem in hibernate?
+the n+1 select problem occurs when hibernate executes one query for the parent entity and n additional queries for the child entities.
+it happens due to lazy loadeding of associations.
+it leads to poor performance becuase of multiple database calls.
+it can be solved using fetch join,entitygraph,or batch fetching.
+
+what is fetch join in hibernate?
+fetch join is used to fetch associated entities along with the parent entity in a single query.
+it helps in solving the n+1 select problem.
+it is done using join fetch in hql or criteria api.
+it improves performance by reducing the number of sql queries.
+
+what is entitylife cycle in hibernate?
+the entity life cycle refers to the different states an entity goes through in hibernate.
+the main states are transient,persistent ,detached,removed.
+it helps in understanding how hibernate manages entity objects.
+state transitions are managed by methods like persist(),save(),merge(),remove() and detach().
+
+what is lazy loading in hibernate?
+lazy loading delays the loading of associated entities until they are needed.
+it improves performance by loading only required data.
+it is enabled by default for collections can be enabled for to one associations.
+when the related data is accessed hibernate loads it on demand.
+
+what is eager loading in hibernate?
+eager loading loads associated entities immediatly along with the parent entity.
+it is useful when the associated data is always required .
+it can be enabled using fetch join ,criteria api,or setting fetchType.Eager.
+overuse of eager loading can impact performance by fetching unnecessary data.
+
+what is spring boot and how is it different from spring framework?
+spring boot is a framework that simplifies spring application development with auto configuration embeded serevers and starter dependensies spring framework requires more manual configuration.
+
+what is autoconfiugration in spring boot?
+Auto configuration automatically  configures beans based on the dependensies and settings in the classpath it reduces manual configuration and speeds up development.
+
+what are spring boot starters?
+starters are predefined dependensies sets that group related liabraries together they simplify dependency management by providing everything needed for a specific feature.
+
+what does @SpringbootApplication do?
+it is a composite annotation that combines @Configuration,@EnableAutoConfiguration,@ComponentScan,it marks the main class as the entry point of spring boot application.
+
+how does spring boot handle embedded server?
+spring boot includes embeded servers like tomcat jetty or undertow in the classpath so the application can run as a standlone jar without deploying to an external server.
+
+what is the difference between application.properties and application.yml ?
+application.properties uses key value pairs,while application.yml uses yaml format which is more readable and supports hirarchical data.
+
+how do you change the default port in sprign boot?
+you can chaneg the default port(8080)by setting server.port in application.properties or 
+server:
+  port :yourpport in application.yml.
+  
+what are sprign profiles?
+spring profiles allow you to define different configurations for different environements dev,test,prod you can active a profile using spring.profiles.active=dev.
+
+what does @ConfigurationProperties do?
+it binds external configuration properties to a java object using a prefix making it easier to manage related properties.
+
+@Value vs @ConfigurationProperties when to use which?
+use @Value for simple properties use @ConfigurationProperties for complex or group of related properties.
+
+what is dependency injection?
+dependency injection is a design pattern where the objects dependencies by provided by the spring container instead of the object creating them itself.
+
+what are the types of dependency injection in spring ?
+there are three types:construcotr injection,setter injection,field injection.
+
+what is a spring bean?
+A spring bean is an object that is managed by the spring ioc container .beans are created configured and managed by the container.
+
+what is the spring ioc container?
+the spring ioc container is responsible for creating configuring and managing the lifecycle of spring beans and their dependencies.
+
+what is the default scope of a sprign bean?
+the default scope of a sprign bean is singleton managing a single instance of the bean is created per spring ioc container.
+
+what does @Autowired do?
+@Autowired is used to automatically inject the required dependency into a spring bean by type.spring resolves and provides the matching bean from the context.
+
+what happens when multiple beans of the same type exist?
+spring throws a nouniquebeandefinationexception becuase it is unable to decide which bean to inject.you need to use @Qualifier or @Primary.
+
+what does @Qualifier do?
+@Qualifier is used to specify which bean should be injected when multiple beans of the same exist.
+
+what does @Primary do?
+@primary is used to mark one bean as the primary choice.when multiple beans of the same type exist.spring will inject the @Primary bean by default.
+
+what is the difference between @Component @Service @Repository
+All three are stereotype annotations and behave the same.the difference is in their purpose.
+@Component-generic steriotype for any spring managed bean.
+@Service-used for service layer components.
+@Repository-used for data access layer components.
+
+what is @RestController?
+@RestController is a combination of @Controller and @ResponseBody it is used to create restful web services.
+
+what is the difference between @RequestMapping and method level mapping annotations?
+@Requestmapping can be used at class level to map a base url while method level annotations like @GetMapping @Postmapping @Putmapping @delete mapping are used to map specific http methods.
+
+what does @GetMapping do?
+@GetMapping is used to handle http Get requests for a specific endpoint.
+
+what is @Pathvariable?
+@Pathvariable is used to extract value from uri path and bind them to method parameters.
+
+what is @RequestParam?
+@RequestParam is used to extract query parameters from the request url and bind them to method parameters.
+
+what is spring data jpa?
+spring data jpa is a part of spring data project that makes it easy to implement jpa based repositories it reduces boilerplate code for data access layer.
+
+what is a repository in sprign data jpa?
+A repository is an interface that extends jparepository or crud repository it provides readymade methods to perform crud operations and more on entity.
+
+what is the difference between jparepository and crud repository?
+crud repository provides basic crud methods like save() findById deleteById etc.
+jparepository extends crudrepository and adds pagination sorting and jpa specific methods.
+
+how do you define a custom query in spring data jpa?
+you can define custom queries by method name convertion or by @Query annotation.
+
+what is the use of @Entity and @Table?
+@Entity marks a class as a jpa entity @Table is used to specify the table name in the database.
+
+what is spring securirty?
+spring security is a powerful and highly customizable authentication and access control framework for spring applications.
+
+what are the main features of spring security?
+Authentication and authorization.
+protection againts common attacks.
+session management.
+csrf protection.
+integration with spring boot.
+
+what is authentication in spring security?
+Authentication is the process of verifying the identity of a user .username and password validation.
+
+what is authorization in spring security?
+Authorization is the process of determining whehter an authenticated user has permission to access a specific resource.
+
+what is the default login page in spring securirty?
+if not customized spring security provides a default login page at /login.
+
+

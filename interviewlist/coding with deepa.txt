@@ -75,3 +75,93 @@ What is Circuit Breaker in Microservices?
 Difference between HashMap and ConcurrentHashMap?
 What causes deadlock?
 How does Spring Boot handle transactions internally?
+
+coding with deepa
+Difference between jdk jre and jvm
+what are the main features of java
+explain oops concepts in java
+what is the difference between == and equals
+what is hashcode?
+what is the difference between string ,stringbuffer and stringbuilder
+what is exception handling
+checked vs unchecked exception
+what is finally block
+what is immutability why is string immutable?
+difference between list set and map
+arraylist vs linkedlist
+how does hashmap work internally
+hashmap vs concurrenthashmap
+what is multithreading
+thread vs runnable
+what is synchronization
+what is executorService
+callable vs future
+what is garbage collection
+how to avoid deadlock
+what is volatile keyword
+how concurrenthashmap work internally
+java memorymodel
+what are java 8 features
+lambada expressions
+stream api internally
+map vs flapmap
+what is optional and when to use it
+different types of garbage collection
+what is multithreading and why it is used?
+difference between process and thread
+difference between thread and runnable
+what is the thread lifecycle in java
+what is context switching
+what is deamon thread
+what is thread prority does it guaratee execution?
+what is synchronization and why it is needed
+difference between synchronized method and synchronized block
+what is an intrinsic lock(monitor)
+what is dealock how can you prevent it
+what is a race condition
+what is thread starvation
+what is livelock
+what are wait notify and notifyall
+difference between wait and sleep
+why must wait be called inside a synchronized block
+what happens if notify is called before wait
+what is executorService why it is prefered over thread
+what is a thread pool types of thread pools
+difference between submit and excute
+what is future 
+what is compatablefuture
+difference between synchronous and asynchronous execution
+what is java stream api how is it different from collections?
+difference between stream and parallel stream
+write a program to find all even  numbers from a list using stream
+find the sum of all numbers in a list using stream api
+find the maximum and minimum value from a list using stream 
+count the number of element greater than a given value
+group a list of employees  by department using stream
+find the second highest number in a list using stream.
+partition a list of numbers into even and odd using stream
+what is spring boot
+what are the main feature of spring boot
+what is the difference between spring and spring boot
+what is spring boot starter
+difference between application.properties and application.yml
+how do you configure multiple environments in spring boot
+what is depedency injection
+what is inversion of control
+difference between controller,service, repository and controller
+difference between autowired and constructor injection
+what is spring boot actuator
+what is spring boot devtools
+how do you improve performance in spring boot application
+how do you handle large scale transactions
+how do you log applications in spring boot
+what are bean scopes in spring boot
+what is the difference between bean and component
+what is spring security
+how do you implement jwt authentication in spring boot
+what is rolebased access control
+difference between crudrepository,jparepository,pagingandsortingrepository
+what is spring data jpa
+how do you configure multiple environments in spring boot 
+
+

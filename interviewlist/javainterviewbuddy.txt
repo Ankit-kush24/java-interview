@@ -1887,3 +1887,34 @@ What is Garbage Collection?
 Garbage collection is the process of identifying and reclaiming memory occupied by objects that are no longer in use by the application. It helps in automatic memory management and prevents memory leaks.
 
 
+javainterviewbuddy
+Q.how would you design a system to handle idempotent apis in a distributed microservices architecture?
+
+Q.2:what happens internally in java when you use concurrenthashmap under high contention and how is it different from synchronized block?
+
+Q.3:how would you handle partial failure in a microservices transaction without using ditributed transactions?
+
+Q.5.how would you design a rate limiting system for a public api at scale?
+
+Q.7.how does kafka ensure message ordering and what breaks that guarantees?
+
+Q.11.how would you design a feature flag system that supports dynamic rollout without redeployment?
+
+Q.13.how does @Transactional behave in spring when methods are called internally within the same class?
+
+Q.14.how would you ensure exactly once processing in a kafka +flink pipeline?
+
+Q.18.how would you handle schema evoluation kafka without bkeaking consumers?
+
+Q.19.what happens if your database goes down in a microservices architecture?whats your fallback strategy?
+
+Q.20.how would you implement distributed tracing across microservices?
+
+Q21.what is the difference between thread local and normal varibales and where can it go wrong?
+
+Q.22.how would you design a caching strategy for frequently accessed data with consistency requirements?
+
+Q.23.what are the hidden problems with pagination using offset in large datasets?
+
+
+

@@ -27,3 +27,36 @@ what is the best way to create a thead?
 
 internal working of completable future chaining.
 
+Mention some Java 8 features
+What is Functional Interface and Lambda Function?
+Difference between Collections and Collection
+Difference between HashMap and ConcurrentHashMap
+Different ways to iterate a Map
+How many null values are allowed in HashMap and ConcurrentHashMap?
+Where do you use HashMap in your real project?
+Difference between static and instance variable
+Which static method executes (parent or child) when called from parent class? How does method binding work internally?
+What is a class loader and what are different types of class loaders?
+How microservices communicate (Synchronous vs Asynchronous communication)
+What is HTTPS communication and difference between RestTemplate and WebClient
+What is the N+1 problem in JPA
+How indexing works internally
+
+-Write a program to find missing element in a sorted array
+-Write code to find the longest non‑repeating substring in a string
+-What are checked and unchecked exceptions
+-What is volatile in Java
+-What are Exceptions in Java?
+-What are the ways to enhance API response apart from caching or Redis (horizontal and vertical scaling)
+-What is HashMap
+-Lazy initialization? Lazy evaluation in Java
+-What is microservice architecture
+-How do you secure a Spring Boot application?
+-What is an immutable class, how do we make it, and which default class is immutable in Java
+-SQL to find second highest salary from employee table
+-What is sharding in DBMS
+-Inner join vs left join
+-Create a DB schema for your phone contacts which saves multiple phone numbers and emails for a particular contact
+
+
+
